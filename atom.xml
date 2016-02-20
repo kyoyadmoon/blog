@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>DMoon&#39;s Laputa</title>
   
-  <link href="/atom.xml" rel="self"/>
+  <link href="/blog/atom.xml" rel="self"/>
   
-  <link href="http://kyoyadmoon.github.io/"/>
+  <link href="http://kyoyadmoon.github.io/blog/"/>
   <updated>2016-02-20T21:36:21.000Z</updated>
-  <id>http://kyoyadmoon.github.io/</id>
+  <id>http://kyoyadmoon.github.io/blog/</id>
   
   <author>
     <name>DMoon</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Hello Laputa</title>
-    <link href="http://kyoyadmoon.github.io/2016/02/21/Hello-Laputa/"/>
-    <id>http://kyoyadmoon.github.io/2016/02/21/Hello-Laputa/</id>
+    <link href="http://kyoyadmoon.github.io/blog/2016/02/21/Hello-Laputa/"/>
+    <id>http://kyoyadmoon.github.io/blog/2016/02/21/Hello-Laputa/</id>
     <published>2016-02-20T21:36:21.000Z</published>
     <updated>2016-02-20T21:36:21.000Z</updated>
     
