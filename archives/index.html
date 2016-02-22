@@ -88,7 +88,8 @@
         
     
 
-<nav id="sidebar" data-behavior="1">
+<nav id="sidebar" data-behavior="1"
+     style="background-color: rgba(0,0,0,0.65);  border-right: 3px solid rgba(255,255,255,0.8);" >
     
         <div class="sidebar-profile">
             <a href="/#about">
@@ -206,7 +207,8 @@
             <div id="main" data-behavior="1"
                  class="
                         hasCoverMetaIn
-                        ">
+                        "
+                  >
                 
     
 
@@ -253,9 +255,33 @@
 <li>Comment: Disqus</li>
 </ul>
 </blockquote>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><hr>
-<p><a href="https://hexo.io/zh-tw/docs/" target="_blank" rel="external">https://hexo.io/zh-tw/docs/</a></p>
-<p><a href="https://wwssllabcd.github.io/blog/2014/12/22/how-to-install-hexo-on-window/#安裝_Hexo_所需檔案" target="_blank" rel="external">https://wwssllabcd.github.io/blog/2014/12/22/how-to-install-hexo-on-window/#安裝_Hexo_所需檔案</a></p>
+<h1 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h1><p>instal Node.js &amp; Hexo</p>
+<p>已經有 Node.js 環境可以直接安裝 Hexo</p>
+<p><code>$ npm install hexo -g</code></p>
+<p>詳細可以參考這裡 <a href="https://wwssllabcd.github.io/blog/2014/12/22/how-to-install-hexo-on-window/#安裝_Hexo" target="_blank" rel="external">安裝 Hexo</a></p>
+<h1 id="Init_Your_Blog"><a href="#Init_Your_Blog" class="headerlink" title="Init Your Blog"></a>Init Your Blog</h1><p><code>hexo init &lt;blog_name&gt;</code></p>
+<p><code>cd &lt;blog_name&gt;</code></p>
+<p><code>npm i</code></p>
+<p>再加裝一些 plugin</p>
+<p><code>npm i hexo-deployer-git hexo-renderer-ejs hexo-renderer-marked hexo-renderer-stylus --save</code></p>
+<blockquote>
+<p>hexo-deployer-git:  deploy to github</p>
+</blockquote>
+<p>hexo g  # 產生 blog </p>
+<p>hexo new <post_title> # 建立一個新的文章</post_title></p>
+<p>hexo s  # hexo server 讓 blog 可以在 local 端檢視 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a></p>
+<h1 id="Blog_Setting"><a href="#Blog_Setting" class="headerlink" title="Blog Setting"></a>Blog Setting</h1><p>前面有說過只需要透過設定 _config.yml 就可以完成，這邊需要注意的是， _config.yml 有兩個，一個在專案根目錄，另一個在 theme 資料夾裡</p>
+<h1 id="Blog_Deploy"><a href="#Blog_Deploy" class="headerlink" title="Blog Deploy"></a>Blog Deploy</h1><p>deploy 到 github 前需要先到 github 開一個 repo</p>
+<p>接著將 repo 的資訊填寫到 _config.yml 的 deploy 部分</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deploy:&#10;    type: github&#10;    repository: git@github.com:yourname/yourRepo.git&#10;    branch: gh-pages</span><br></pre></td></tr></table></figure>
+<p>url 的部分也需要調整一下，下面是範例</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url: http://xxx.github.io/Blog&#10;root: /Blog/</span><br></pre></td></tr></table></figure>
+<p>透過指令部署之前請先確定你有 github 的 SSH key </p>
+<p>沒有的話請參考 <a href="url: http://xxx.github.io/Blogroot: /Blog/" target="_blank" rel="external">這篇</a></p>
+<p>然後就可以部署到 github 上了</p>
+<p>hexo d # hexo deploy </p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://hexo.io/zh-tw/docs/" target="_blank" rel="external">Hexo offical docs</a></p>
+<p><a href="https://wwssllabcd.github.io/blog/2014/12/22/how-to-install-hexo-on-window/#安裝_Hexo_所需檔案" target="_blank" rel="external">Hexo 中文安裝教學</a></p>
 <p><a href="http://v123582.github.io/blog/2015/10/25/用-hexo-建立一個自己的部落格/" target="_blank" rel="external">http://v123582.github.io/blog/2015/10/25/用-hexo-建立一個自己的部落格/</a></p>
 
                     

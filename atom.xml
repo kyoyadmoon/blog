@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://kyoyadmoon.github.io/blog/"/>
-  <updated>2016-02-21T11:33:50.000Z</updated>
+  <updated>2016-02-22T16:24:42.000Z</updated>
   <id>http://kyoyadmoon.github.io/blog/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://kyoyadmoon.github.io/blog/2016/02/21/Github-Blog-%E6%9E%B6%E8%A8%AD-Hexo/"/>
     <id>http://kyoyadmoon.github.io/blog/2016/02/21/Github-Blog-架設-Hexo/</id>
     <published>2016-02-21T10:22:32.000Z</published>
-    <updated>2016-02-21T11:33:50.000Z</updated>
+    <updated>2016-02-22T16:24:42.000Z</updated>
     
     <content type="html">&lt;p&gt;最近在爬文學習前端技術時，發現不少網誌都是用 github 的靜態網站來當 blog，覺得很酷，而且也不必煩惱主機的事，便搜尋了一下建立的方法，發現有滿多語言框架可以快速建立&lt;/p&gt;
 &lt;blockquote&gt;
@@ -40,9 +40,33 @@
 &lt;li&gt;Comment: Disqus&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
-&lt;h1 id=&quot;Reference&quot;&gt;&lt;a href=&quot;#Reference&quot; class=&quot;headerlink&quot; title=&quot;Reference&quot;&gt;&lt;/a&gt;Reference&lt;/h1&gt;&lt;hr&gt;
-&lt;p&gt;&lt;a href=&quot;https://hexo.io/zh-tw/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://hexo.io/zh-tw/docs/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://wwssllabcd.github.io/blog/2014/12/22/how-to-install-hexo-on-window/#安裝_Hexo_所需檔案&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://wwssllabcd.github.io/blog/2014/12/22/how-to-install-hexo-on-window/#安裝_Hexo_所需檔案&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;Setup&quot;&gt;&lt;a href=&quot;#Setup&quot; class=&quot;headerlink&quot; title=&quot;Setup&quot;&gt;&lt;/a&gt;Setup&lt;/h1&gt;&lt;p&gt;instal Node.js &amp;amp; Hexo&lt;/p&gt;
+&lt;p&gt;已經有 Node.js 環境可以直接安裝 Hexo&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$ npm install hexo -g&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;詳細可以參考這裡 &lt;a href=&quot;https://wwssllabcd.github.io/blog/2014/12/22/how-to-install-hexo-on-window/#安裝_Hexo&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;安裝 Hexo&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;Init_Your_Blog&quot;&gt;&lt;a href=&quot;#Init_Your_Blog&quot; class=&quot;headerlink&quot; title=&quot;Init Your Blog&quot;&gt;&lt;/a&gt;Init Your Blog&lt;/h1&gt;&lt;p&gt;&lt;code&gt;hexo init &amp;lt;blog_name&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;cd &amp;lt;blog_name&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;npm i&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;再加裝一些 plugin&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;npm i hexo-deployer-git hexo-renderer-ejs hexo-renderer-marked hexo-renderer-stylus --save&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;hexo-deployer-git:  deploy to github&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;hexo g  # 產生 blog &lt;/p&gt;
+&lt;p&gt;hexo new &lt;post_title&gt; # 建立一個新的文章&lt;/post_title&gt;&lt;/p&gt;
+&lt;p&gt;hexo s  # hexo server 讓 blog 可以在 local 端檢視 &lt;a href=&quot;http://localhost:4000&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost:4000&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;Blog_Setting&quot;&gt;&lt;a href=&quot;#Blog_Setting&quot; class=&quot;headerlink&quot; title=&quot;Blog Setting&quot;&gt;&lt;/a&gt;Blog Setting&lt;/h1&gt;&lt;p&gt;前面有說過只需要透過設定 _config.yml 就可以完成，這邊需要注意的是， _config.yml 有兩個，一個在專案根目錄，另一個在 theme 資料夾裡&lt;/p&gt;
+&lt;h1 id=&quot;Blog_Deploy&quot;&gt;&lt;a href=&quot;#Blog_Deploy&quot; class=&quot;headerlink&quot; title=&quot;Blog Deploy&quot;&gt;&lt;/a&gt;Blog Deploy&lt;/h1&gt;&lt;p&gt;deploy 到 github 前需要先到 github 開一個 repo&lt;/p&gt;
+&lt;p&gt;接著將 repo 的資訊填寫到 _config.yml 的 deploy 部分&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;deploy:&amp;#10;    type: github&amp;#10;    repository: git@github.com:yourname/yourRepo.git&amp;#10;    branch: gh-pages&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;url 的部分也需要調整一下，下面是範例&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;url: http://xxx.github.io/Blog&amp;#10;root: /Blog/&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;透過指令部署之前請先確定你有 github 的 SSH key &lt;/p&gt;
+&lt;p&gt;沒有的話請參考 &lt;a href=&quot;url: http://xxx.github.io/Blogroot: /Blog/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;這篇&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;然後就可以部署到 github 上了&lt;/p&gt;
+&lt;p&gt;hexo d # hexo deploy &lt;/p&gt;
+&lt;h1 id=&quot;Reference&quot;&gt;&lt;a href=&quot;#Reference&quot; class=&quot;headerlink&quot; title=&quot;Reference&quot;&gt;&lt;/a&gt;Reference&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://hexo.io/zh-tw/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo offical docs&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://wwssllabcd.github.io/blog/2014/12/22/how-to-install-hexo-on-window/#安裝_Hexo_所需檔案&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo 中文安裝教學&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://v123582.github.io/blog/2015/10/25/用-hexo-建立一個自己的部落格/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://v123582.github.io/blog/2015/10/25/用-hexo-建立一個自己的部落格/&lt;/a&gt;&lt;/p&gt;
 </content>
     
