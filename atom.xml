@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://kyoyadmoon.github.io/blog/"/>
-  <updated>2016-02-22T16:24:42.000Z</updated>
+  <updated>2016-02-27T06:41:53.000Z</updated>
   <id>http://kyoyadmoon.github.io/blog/</id>
   
   <author>
@@ -16,11 +16,78 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Webpack ProvidePlugin: 不用再import React 了</title>
+    <link href="http://kyoyadmoon.github.io/blog/2016/02/23/Webpack-ProvidePlugin-%E4%B8%8D%E7%94%A8%E5%86%8Dimport-React-%E4%BA%86/"/>
+    <id>http://kyoyadmoon.github.io/blog/2016/02/23/Webpack-ProvidePlugin-不用再import-React-了/</id>
+    <published>2016-02-22T16:35:32.000Z</published>
+    <updated>2016-02-27T06:41:53.000Z</updated>
+    
+    <content type="html">&lt;p&gt;透過 webpack 的 ProvidePlugin 可以幫你將 dependency 自動 import&lt;/p&gt;
+&lt;p&gt;不只是 react , jquery  或其他 lib 都可以使用&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://webpack.github.io/docs/list-of-plugins.html#provideplugin&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官方文件在這邊&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;u4F7F_u7528_u65B9_u6CD5&quot;&gt;&lt;a href=&quot;#u4F7F_u7528_u65B9_u6CD5&quot; class=&quot;headerlink&quot; title=&quot;使用方法&quot;&gt;&lt;/a&gt;使用方法&lt;/h1&gt;&lt;p&gt;把 ProvidePlugin 加到 webpack.config.js 的 plugins&lt;/p&gt;
+&lt;p&gt;example&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; webpack.ProvidePlugin(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;React&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;react&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          $: &lt;span class=&quot;string&quot;&gt;&quot;jquery&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;原理是 webpack 在 build bundle.js 時，如果發現 &amp;#39;React&amp;#39; 、 $ ，就會自動去 import 設定中對應的 dependency&lt;/p&gt;
+&lt;h1 id=&quot;Reference&quot;&gt;&lt;a href=&quot;#Reference&quot; class=&quot;headerlink&quot; title=&quot;Reference&quot;&gt;&lt;/a&gt;Reference&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://medium.com/@thejenniekim/never-import-react-from-react-again-thanks-to-webpack-s-provideplugin-69e7feb69e#.o6x19nno8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://medium.com/@thejenniekim/never-import-react-from-react-again-thanks-to-webpack-s-provideplugin-69e7feb69e#.o6x19nno8&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;透過 webpack 的 ProvidePlugin 可以幫你將 dependency 自動 import&lt;/p&gt;
+&lt;p&gt;不只是 react , jquery  或其他 lib 都可以使用&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://webpack.github.io/
+    
+    </summary>
+    
+      <category term="前端工具" scheme="http://kyoyadmoon.github.io/blog/categories/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="webpack" scheme="http://kyoyadmoon.github.io/blog/tags/webpack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>iOS App Deploy 證書簽發者無效: Failed to locate or generate matching signing assets</title>
+    <link href="http://kyoyadmoon.github.io/blog/2016/02/23/iOS-APP-Deploy-%E8%AD%89%E6%9B%B8%E7%B0%BD%E7%99%BC%E8%80%85%E7%84%A1%E6%95%88-Failed-to-locate-or-generate-matching-signing-assets/"/>
+    <id>http://kyoyadmoon.github.io/blog/2016/02/23/iOS-APP-Deploy-證書簽發者無效-Failed-to-locate-or-generate-matching-signing-assets/</id>
+    <published>2016-02-22T16:30:53.000Z</published>
+    <updated>2016-02-27T06:05:28.000Z</updated>
+    
+    <content type="html">&lt;p&gt;這幾天在幫公司處理 iOS APP 上架的事情，整個流程需要一堆簽章，真的很麻煩&lt;/p&gt;
+&lt;p&gt;其中最雷的就是這篇要講的證書的簽發者無效，是什麼證書的簽發者無效呢？&lt;/p&gt;
+&lt;p&gt;我所有的 Apple 開發相關憑證上面全部都寫簽發者過期....&lt;/p&gt;
+&lt;p&gt;查了才知道是 Apple 之前給開發者的憑證 ( Apple World Wide Developer Relation Certification Authority ) 有效期限到 2016.2.14 ，也就是說這是一個熱騰騰的雷阿!&lt;/p&gt;
+&lt;h1 id=&quot;u89E3_u6C7A_u65B9_u6CD5_uFF1A&quot;&gt;&lt;a href=&quot;#u89E3_u6C7A_u65B9_u6CD5_uFF1A&quot; class=&quot;headerlink&quot; title=&quot;解決方法：&quot;&gt;&lt;/a&gt;解決方法：&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;打開 Keychain 在登陸和系統中刪除過期的這一個 Apple World Wide Developer Relation Certification Authority&lt;/li&gt;
+&lt;li&gt;下載並安裝這個新的憑證 &lt;a href=&quot;https://developer.apple.com/certificationauthority/AppleWWDRCA.cer&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;WWDR intermediate certificate&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;安裝之後再回去看一下Keychain應該就不會出現簽發者過期了，新的有效期限是 2023.2.8&lt;/p&gt;
+&lt;h1 id=&quot;Reference&quot;&gt;&lt;a href=&quot;#Reference&quot; class=&quot;headerlink&quot; title=&quot;Reference&quot;&gt;&lt;/a&gt;Reference&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://blog.leanote.com/post/kilig/Failed-to-locate-or-generate-matching-signing-assets&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.leanote.com/post/kilig/Failed-to-locate-or-generate-matching-signing-assets&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;這幾天在幫公司處理 iOS APP 上架的事情，整個流程需要一堆簽章，真的很麻煩&lt;/p&gt;
+&lt;p&gt;其中最雷的就是這篇要講的證書的簽發者無效，是什麼證書的簽發者無效呢？&lt;/p&gt;
+&lt;p&gt;我所有的 Apple 開發相關憑證上面全部都寫簽發者過期....&lt;/p&gt;
+&lt;p&gt;查了才知道是 
+    
+    </summary>
+    
+      <category term="iOS App" scheme="http://kyoyadmoon.github.io/blog/categories/iOS-App/"/>
+    
+    
+      <category term="上架" scheme="http://kyoyadmoon.github.io/blog/tags/%E4%B8%8A%E6%9E%B6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Github Blog 架設 - Hexo</title>
     <link href="http://kyoyadmoon.github.io/blog/2016/02/21/Github-Blog-%E6%9E%B6%E8%A8%AD-Hexo/"/>
     <id>http://kyoyadmoon.github.io/blog/2016/02/21/Github-Blog-架設-Hexo/</id>
     <published>2016-02-21T10:22:32.000Z</published>
-    <updated>2016-02-22T16:24:42.000Z</updated>
+    <updated>2016-02-27T06:08:26.000Z</updated>
     
     <content type="html">&lt;p&gt;最近在爬文學習前端技術時，發現不少網誌都是用 github 的靜態網站來當 blog，覺得很酷，而且也不必煩惱主機的事，便搜尋了一下建立的方法，發現有滿多語言框架可以快速建立&lt;/p&gt;
 &lt;blockquote&gt;
@@ -52,7 +119,7 @@
 &lt;blockquote&gt;
 &lt;p&gt;hexo-deployer-git:  deploy to github&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;hexo g  # 產生 blog &lt;/p&gt;
+&lt;p&gt;hexo g  # 產生 blog&lt;/p&gt;
 &lt;p&gt;hexo new &lt;post_title&gt; # 建立一個新的文章&lt;/post_title&gt;&lt;/p&gt;
 &lt;p&gt;hexo s  # hexo server 讓 blog 可以在 local 端檢視 &lt;a href=&quot;http://localhost:4000&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost:4000&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;Blog_Setting&quot;&gt;&lt;a href=&quot;#Blog_Setting&quot; class=&quot;headerlink&quot; title=&quot;Blog Setting&quot;&gt;&lt;/a&gt;Blog Setting&lt;/h1&gt;&lt;p&gt;前面有說過只需要透過設定 _config.yml 就可以完成，這邊需要注意的是， _config.yml 有兩個，一個在專案根目錄，另一個在 theme 資料夾裡&lt;/p&gt;
@@ -61,10 +128,10 @@
 &lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;deploy:&amp;#10;    type: github&amp;#10;    repository: git@github.com:yourname/yourRepo.git&amp;#10;    branch: gh-pages&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;url 的部分也需要調整一下，下面是範例&lt;/p&gt;
 &lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;url: http://xxx.github.io/Blog&amp;#10;root: /Blog/&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;透過指令部署之前請先確定你有 github 的 SSH key &lt;/p&gt;
+&lt;p&gt;透過指令部署之前請先確定你有 github 的 SSH key&lt;/p&gt;
 &lt;p&gt;沒有的話請參考 &lt;a href=&quot;url: http://xxx.github.io/Blogroot: /Blog/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;這篇&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;然後就可以部署到 github 上了&lt;/p&gt;
-&lt;p&gt;hexo d # hexo deploy &lt;/p&gt;
+&lt;p&gt;hexo d # hexo deploy&lt;/p&gt;
 &lt;h1 id=&quot;Reference&quot;&gt;&lt;a href=&quot;#Reference&quot; class=&quot;headerlink&quot; title=&quot;Reference&quot;&gt;&lt;/a&gt;Reference&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://hexo.io/zh-tw/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo offical docs&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://wwssllabcd.github.io/blog/2014/12/22/how-to-install-hexo-on-window/#安裝_Hexo_所需檔案&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo 中文安裝教學&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://v123582.github.io/blog/2015/10/25/用-hexo-建立一個自己的部落格/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://v123582.github.io/blog/2015/10/25/用-hexo-建立一個自己的部落格/&lt;/a&gt;&lt;/p&gt;
@@ -79,28 +146,14 @@
     
     </summary>
     
+      <category term="Blog" scheme="http://kyoyadmoon.github.io/blog/categories/Blog/"/>
+    
     
       <category term="Github" scheme="http://kyoyadmoon.github.io/blog/tags/Github/"/>
     
       <category term="Hexo" scheme="http://kyoyadmoon.github.io/blog/tags/Hexo/"/>
     
       <category term="Node.js" scheme="http://kyoyadmoon.github.io/blog/tags/Node-js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello Laputa</title>
-    <link href="http://kyoyadmoon.github.io/blog/2016/02/21/Hello-Laputa/"/>
-    <id>http://kyoyadmoon.github.io/blog/2016/02/21/Hello-Laputa/</id>
-    <published>2016-02-20T21:36:21.000Z</published>
-    <updated>2016-02-20T21:36:21.000Z</updated>
-    
-    <content type="html"></content>
-    
-    <summary type="html">
-    
-    </summary>
-    
     
   </entry>
   

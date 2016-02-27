@@ -88,8 +88,7 @@
         
     
 
-<nav id="sidebar" data-behavior="1"
-     style="background-color: rgba(0,0,0,0.65);  border-right: 3px solid rgba(255,255,255,0.8);" >
+<nav id="sidebar" data-behavior="1">
     
         <div class="sidebar-profile">
             <a href="/#about">
@@ -207,12 +206,12 @@
             <div id="main" data-behavior="1"
                  class="
                         hasCoverMetaIn
-                        "
-                  >
+                        
+                        transparent " >
                 
     
 
-<section class="postShorten-group main-content-wrap">
+<section class="postShorten-group main-content-wrap bg-white main-section">
     
     
     <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
@@ -231,6 +230,12 @@
 		    Feb 21, 2016
     	
     </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/blog/categories/Blog/">Blog</a>
+
+
     
 </div>
             </div>
@@ -267,7 +272,7 @@
 <blockquote>
 <p>hexo-deployer-git:  deploy to github</p>
 </blockquote>
-<p>hexo g  # 產生 blog </p>
+<p>hexo g  # 產生 blog</p>
 <p>hexo new <post_title> # 建立一個新的文章</post_title></p>
 <p>hexo s  # hexo server 讓 blog 可以在 local 端檢視 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a></p>
 <h1 id="Blog_Setting"><a href="#Blog_Setting" class="headerlink" title="Blog Setting"></a>Blog Setting</h1><p>前面有說過只需要透過設定 _config.yml 就可以完成，這邊需要注意的是， _config.yml 有兩個，一個在專案根目錄，另一個在 theme 資料夾裡</p>
@@ -276,10 +281,10 @@
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deploy:&#10;    type: github&#10;    repository: git@github.com:yourname/yourRepo.git&#10;    branch: gh-pages</span><br></pre></td></tr></table></figure>
 <p>url 的部分也需要調整一下，下面是範例</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url: http://xxx.github.io/Blog&#10;root: /Blog/</span><br></pre></td></tr></table></figure>
-<p>透過指令部署之前請先確定你有 github 的 SSH key </p>
+<p>透過指令部署之前請先確定你有 github 的 SSH key</p>
 <p>沒有的話請參考 <a href="url: http://xxx.github.io/Blogroot: /Blog/" target="_blank" rel="external">這篇</a></p>
 <p>然後就可以部署到 github 上了</p>
-<p>hexo d # hexo deploy </p>
+<p>hexo d # hexo deploy</p>
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://hexo.io/zh-tw/docs/" target="_blank" rel="external">Hexo offical docs</a></p>
 <p><a href="https://wwssllabcd.github.io/blog/2014/12/22/how-to-install-hexo-on-window/#安裝_Hexo_所需檔案" target="_blank" rel="external">Hexo 中文安裝教學</a></p>
 <p><a href="http://v123582.github.io/blog/2015/10/25/用-hexo-建立一個自己的部落格/" target="_blank" rel="external">http://v123582.github.io/blog/2015/10/25/用-hexo-建立一個自己的部落格/</a></p>

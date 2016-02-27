@@ -88,8 +88,7 @@
         
     
 
-<nav id="sidebar" data-behavior="1"
-     style="background-color: rgba(0,0,0,0.65);  border-right: 3px solid rgba(255,255,255,0.8);" >
+<nav id="sidebar" data-behavior="1">
     
         <div class="sidebar-profile">
             <a href="/#about">
@@ -207,11 +206,123 @@
             <div id="main" data-behavior="1"
                  class="
                         hasCoverMetaIn
-                        "
-                  >
+                        
+                        transparent " >
                 
 
-<section class="postShorten-group main-content-wrap">
+<section class="postShorten-group main-content-wrap bg-white main-section">
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/blog/2016/02/23/Webpack-ProvidePlugin-不用再import-React-了/">
+                            Webpack ProvidePlugin: 不用再import React 了
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Tue Feb 23 2016 00:35:32 GMT+0800">
+	
+		    Feb 23, 2016
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/blog/categories/前端工具/">前端工具</a>
+
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>透過 webpack 的 ProvidePlugin 可以幫你將 dependency 自動 import</p>
+<p>不只是 react , jquery  或其他 lib 都可以使用</p>
+<p><a href="https://webpack.github.io/docs/list-of-plugins.html#provideplugin" target="_blank" rel="external">官方文件在這邊</a></p>
+<h1 id="u4F7F_u7528_u65B9_u6CD5"><a href="#u4F7F_u7528_u65B9_u6CD5" class="headerlink" title="使用方法"></a>使用方法</h1><p>把 ProvidePlugin 加到 webpack.config.js 的 plugins</p>
+<p>example</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> webpack.ProvidePlugin(&#123;</span><br><span class="line">    <span class="string">'React'</span>: <span class="string">'react'</span>,</span><br><span class="line">          $: <span class="string">"jquery"</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>原理是 webpack 在 build bundle.js 時，如果發現 &#39;React&#39; 、 $ ，就會自動去 import 設定中對應的 dependency</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://medium.com/@thejenniekim/never-import-react-from-react-again-thanks-to-webpack-s-provideplugin-69e7feb69e#.o6x19nno8" target="_blank" rel="external">https://medium.com/@thejenniekim/never-import-react-from-react-again-thanks-to-webpack-s-provideplugin-69e7feb69e#.o6x19nno8</a></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/02/23/Webpack-ProvidePlugin-不用再import-React-了/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/blog/2016/02/23/iOS-APP-Deploy-證書簽發者無效-Failed-to-locate-or-generate-matching-signing-assets/">
+                            iOS App Deploy 證書簽發者無效: Failed to locate or generate matching signing assets
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Tue Feb 23 2016 00:30:53 GMT+0800">
+	
+		    Feb 23, 2016
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/blog/categories/iOS-App/">iOS App</a>
+
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>這幾天在幫公司處理 iOS APP 上架的事情，整個流程需要一堆簽章，真的很麻煩</p>
+<p>其中最雷的就是這篇要講的證書的簽發者無效，是什麼證書的簽發者無效呢？</p>
+<p>我所有的 Apple 開發相關憑證上面全部都寫簽發者過期....</p>
+<p>查了才知道是 Apple 之前給開發者的憑證 ( Apple World Wide Developer Relation Certification Authority ) 有效期限到 2016.2.14 ，也就是說這是一個熱騰騰的雷阿!</p>
+<h1 id="u89E3_u6C7A_u65B9_u6CD5_uFF1A"><a href="#u89E3_u6C7A_u65B9_u6CD5_uFF1A" class="headerlink" title="解決方法："></a>解決方法：</h1><ol>
+<li>打開 Keychain 在登陸和系統中刪除過期的這一個 Apple World Wide Developer Relation Certification Authority</li>
+<li>下載並安裝這個新的憑證 <a href="https://developer.apple.com/certificationauthority/AppleWWDRCA.cer" target="_blank" rel="external">WWDR intermediate certificate</a></li>
+</ol>
+<p>安裝之後再回去看一下Keychain應該就不會出現簽發者過期了，新的有效期限是 2023.2.8</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="http://blog.leanote.com/post/kilig/Failed-to-locate-or-generate-matching-signing-assets" target="_blank" rel="external">http://blog.leanote.com/post/kilig/Failed-to-locate-or-generate-matching-signing-assets</a></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/02/23/iOS-APP-Deploy-證書簽發者無效-Failed-to-locate-or-generate-matching-signing-assets/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
     
     
     <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
@@ -230,6 +341,12 @@
 		    Feb 21, 2016
     	
     </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/blog/categories/Blog/">Blog</a>
+
+
     
 </div>
             </div>
@@ -266,7 +383,7 @@
 <blockquote>
 <p>hexo-deployer-git:  deploy to github</p>
 </blockquote>
-<p>hexo g  # 產生 blog </p>
+<p>hexo g  # 產生 blog</p>
 <p>hexo new <post_title> # 建立一個新的文章</post_title></p>
 <p>hexo s  # hexo server 讓 blog 可以在 local 端檢視 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a></p>
 <h1 id="Blog_Setting"><a href="#Blog_Setting" class="headerlink" title="Blog Setting"></a>Blog Setting</h1><p>前面有說過只需要透過設定 _config.yml 就可以完成，這邊需要注意的是， _config.yml 有兩個，一個在專案根目錄，另一個在 theme 資料夾裡</p>
@@ -275,10 +392,10 @@
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deploy:&#10;    type: github&#10;    repository: git@github.com:yourname/yourRepo.git&#10;    branch: gh-pages</span><br></pre></td></tr></table></figure>
 <p>url 的部分也需要調整一下，下面是範例</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url: http://xxx.github.io/Blog&#10;root: /Blog/</span><br></pre></td></tr></table></figure>
-<p>透過指令部署之前請先確定你有 github 的 SSH key </p>
+<p>透過指令部署之前請先確定你有 github 的 SSH key</p>
 <p>沒有的話請參考 <a href="url: http://xxx.github.io/Blogroot: /Blog/" target="_blank" rel="external">這篇</a></p>
 <p>然後就可以部署到 github 上了</p>
-<p>hexo d # hexo deploy </p>
+<p>hexo d # hexo deploy</p>
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://hexo.io/zh-tw/docs/" target="_blank" rel="external">Hexo offical docs</a></p>
 <p><a href="https://wwssllabcd.github.io/blog/2014/12/22/how-to-install-hexo-on-window/#安裝_Hexo_所需檔案" target="_blank" rel="external">Hexo 中文安裝教學</a></p>
 <p><a href="http://v123582.github.io/blog/2015/10/25/用-hexo-建立一個自己的部落格/" target="_blank" rel="external">http://v123582.github.io/blog/2015/10/25/用-hexo-建立一個自己的部落格/</a></p>
@@ -290,47 +407,6 @@
                     
                         <p>
                             <a href="/blog/2016/02/21/Github-Blog-架設-Hexo/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/02/21/Hello-Laputa/">
-                            Hello Laputa
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Sun Feb 21 2016 05:36:21 GMT+0800">
-	
-		    Feb 21, 2016
-    	
-    </time>
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/02/21/Hello-Laputa/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>

@@ -37,7 +37,7 @@ PHP : Phrozn
 
 
 因為對於 js 較為熟悉所以選了 Hexo 來嘗試看看，先說心得好了， Hexo 框架">
-<meta property="og:updated_time" content="2016-02-22T16:24:42.000Z">
+<meta property="og:updated_time" content="2016-02-27T06:08:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Github Blog 架設 - Hexo">
 <meta name="twitter:description" content="最近在爬文學習前端技術時，發現不少網誌都是用 github 的靜態網站來當 blog，覺得很酷，而且也不必煩惱主機的事，便搜尋了一下建立的方法，發現有滿多語言框架可以快速建立
@@ -116,8 +116,7 @@ PHP : Phrozn
         
     
 
-<nav id="sidebar" data-behavior="3"
-     style="background-color: rgba(0,0,0,0.65);  border-right: 3px solid rgba(255,255,255,0.8);" >
+<nav id="sidebar" data-behavior="3">
     
         <div class="sidebar-profile">
             <a href="/#about">
@@ -235,8 +234,8 @@ PHP : Phrozn
             <div id="main" data-behavior="3"
                  class="
                         hasCoverMetaIn
-                        "
-                  >
+                        
+                         " >
                 
 <article class="post" itemscope itemType="http://schema.org/BlogPosting">
     
@@ -253,6 +252,12 @@ PHP : Phrozn
 		    Feb 21, 2016
     	
     </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/blog/categories/Blog/">Blog</a>
+
+
     
 </div>
 </div>
@@ -289,7 +294,7 @@ PHP : Phrozn
 <blockquote>
 <p>hexo-deployer-git:  deploy to github</p>
 </blockquote>
-<p>hexo g  # 產生 blog </p>
+<p>hexo g  # 產生 blog</p>
 <p>hexo new <post_title> # 建立一個新的文章</post_title></p>
 <p>hexo s  # hexo server 讓 blog 可以在 local 端檢視 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a></p>
 <h1 id="Blog_Setting"><a href="#Blog_Setting" class="headerlink" title="Blog Setting"></a>Blog Setting</h1><p>前面有說過只需要透過設定 _config.yml 就可以完成，這邊需要注意的是， _config.yml 有兩個，一個在專案根目錄，另一個在 theme 資料夾裡</p>
@@ -298,10 +303,10 @@ PHP : Phrozn
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deploy:&#10;    type: github&#10;    repository: git@github.com:yourname/yourRepo.git&#10;    branch: gh-pages</span><br></pre></td></tr></table></figure>
 <p>url 的部分也需要調整一下，下面是範例</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url: http://xxx.github.io/Blog&#10;root: /Blog/</span><br></pre></td></tr></table></figure>
-<p>透過指令部署之前請先確定你有 github 的 SSH key </p>
+<p>透過指令部署之前請先確定你有 github 的 SSH key</p>
 <p>沒有的話請參考 <a href="url: http://xxx.github.io/Blogroot: /Blog/" target="_blank" rel="external">這篇</a></p>
 <p>然後就可以部署到 github 上了</p>
-<p>hexo d # hexo deploy </p>
+<p>hexo d # hexo deploy</p>
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://hexo.io/zh-tw/docs/" target="_blank" rel="external">Hexo offical docs</a></p>
 <p><a href="https://wwssllabcd.github.io/blog/2014/12/22/how-to-install-hexo-on-window/#安裝_Hexo_所需檔案" target="_blank" rel="external">Hexo 中文安裝教學</a></p>
 <p><a href="http://v123582.github.io/blog/2015/10/25/用-hexo-建立一個自己的部落格/" target="_blank" rel="external">http://v123582.github.io/blog/2015/10/25/用-hexo-建立一個自己的部落格/</a></p>
@@ -326,7 +331,7 @@ PHP : Phrozn
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/02/23/iOS-APP-Deploy-證書簽發者無效-Failed-to-locate-or-generate-matching-signing-assets/"  data-tooltip="iOS App Deploy 證書簽發者無效: Failed to locate or generate matching signing assets">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -334,7 +339,7 @@ PHP : Phrozn
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/02/21/Hello-Laputa/" data-tooltip="Hello Laputa">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -407,7 +412,7 @@ PHP : Phrozn
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/02/23/iOS-APP-Deploy-證書簽發者無效-Failed-to-locate-or-generate-matching-signing-assets/"  data-tooltip="iOS App Deploy 證書簽發者無效: Failed to locate or generate matching signing assets">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -415,7 +420,7 @@ PHP : Phrozn
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/02/21/Hello-Laputa/" data-tooltip="Hello Laputa">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>

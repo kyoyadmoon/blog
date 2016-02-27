@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://kyoyadmoon.github.io/blog/2016/02/21/Github-Blog-%E6%9E%B6%E8%A8%AD-Hexo/</loc>
+    <loc>http://kyoyadmoon.github.io/blog/2016/02/23/Webpack-ProvidePlugin-%E4%B8%8D%E7%94%A8%E5%86%8Dimport-React-%E4%BA%86/</loc>
     
-    <lastmod>2016-02-22T16:24:42.000Z</lastmod>
+    <lastmod>2016-02-27T06:41:53.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://kyoyadmoon.github.io/blog/2016/02/21/Hello-Laputa/</loc>
+    <loc>http://kyoyadmoon.github.io/blog/2016/02/21/Github-Blog-%E6%9E%B6%E8%A8%AD-Hexo/</loc>
     
-    <lastmod>2016-02-20T21:36:21.000Z</lastmod>
+    <lastmod>2016-02-27T06:08:26.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://kyoyadmoon.github.io/blog/2016/02/23/iOS-APP-Deploy-%E8%AD%89%E6%9B%B8%E7%B0%BD%E7%99%BC%E8%80%85%E7%84%A1%E6%95%88-Failed-to-locate-or-generate-matching-signing-assets/</loc>
+    
+    <lastmod>2016-02-27T06:05:28.000Z</lastmod>
     
   </url>
   

@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="DMoon&#39;s Laputa">
-    <title>Hello Laputa - DMoon&#39;s Laputa</title>
+    <title>標籤: 上架 - DMoon&#39;s Laputa</title>
     <meta name="author" content="DMoon">
     
     
@@ -15,13 +15,12 @@
     
     <meta name="description">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Hello Laputa">
-<meta property="og:url" content="http://kyoyadmoon.github.io/blog/2016/02/21/Hello-Laputa/index.html">
+<meta property="og:title" content="DMoon's Laputa">
+<meta property="og:url" content="http://kyoyadmoon.github.io/blog/tags/上架/index.html">
 <meta property="og:site_name" content="DMoon's Laputa">
 <meta property="og:description">
-<meta property="og:updated_time" content="2016-02-20T21:36:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello Laputa">
+<meta name="twitter:title" content="DMoon's Laputa">
 <meta name="twitter:description">
     
     
@@ -65,7 +64,7 @@
         
     
 
-<header id="header" data-behavior="3">
+<header id="header" data-behavior="1">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <h1 class="header-title">
         <a class="header-title-link" href="/blog/ ">DMoon&#39;s Laputa</a>
@@ -89,8 +88,7 @@
         
     
 
-<nav id="sidebar" data-behavior="3"
-     style="background-color: rgba(0,0,0,0.65);  border-right: 3px solid rgba(255,255,255,0.8);" >
+<nav id="sidebar" data-behavior="1">
     
         <div class="sidebar-profile">
             <a href="/#about">
@@ -205,112 +203,82 @@
 </nav>
 
             
-            <div id="main" data-behavior="3"
+            <div id="main" data-behavior="1"
                  class="
                         hasCoverMetaIn
-                        "
-                  >
+                        
+                        transparent " >
                 
-<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+
+<section class="postShorten-group main-content-wrap bg-white main-section">
     
     
-        <div class="post-header main-content-wrap text-left">
-    
-        <h1 class="post-title" itemprop="headline">
-            Hello Laputa
-        </h1>
-    
-    <div class="post-meta">
-    <time itemprop="datePublished" content="Sun Feb 21 2016 05:36:21 GMT+0800">
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/blog/2016/02/23/iOS-APP-Deploy-證書簽發者無效-Failed-to-locate-or-generate-matching-signing-assets/">
+                            iOS App Deploy 證書簽發者無效: Failed to locate or generate matching signing assets
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Tue Feb 23 2016 00:30:53 GMT+0800">
 	
-		    Feb 21, 2016
+		    Feb 23, 2016
     	
     </time>
     
-</div>
-</div>
-    
-    <div class="post-content markdown" itemprop="articleBody">
-        <div class="main-content-wrap">
-            
-            
-                
+        <span>分類 </span>
+        
+    <a class="category-link" href="/blog/categories/iOS-App/">iOS App</a>
 
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>這幾天在幫公司處理 iOS APP 上架的事情，整個流程需要一堆簽章，真的很麻煩</p>
+<p>其中最雷的就是這篇要講的證書的簽發者無效，是什麼證書的簽發者無效呢？</p>
+<p>我所有的 Apple 開發相關憑證上面全部都寫簽發者過期....</p>
+<p>查了才知道是 Apple 之前給開發者的憑證 ( Apple World Wide Developer Relation Certification Authority ) 有效期限到 2016.2.14 ，也就是說這是一個熱騰騰的雷阿!</p>
+<h1 id="u89E3_u6C7A_u65B9_u6CD5_uFF1A"><a href="#u89E3_u6C7A_u65B9_u6CD5_uFF1A" class="headerlink" title="解決方法："></a>解決方法：</h1><ol>
+<li>打開 Keychain 在登陸和系統中刪除過期的這一個 Apple World Wide Developer Relation Certification Authority</li>
+<li>下載並安裝這個新的憑證 <a href="https://developer.apple.com/certificationauthority/AppleWWDRCA.cer" target="_blank" rel="external">WWDR intermediate certificate</a></li>
+</ol>
+<p>安裝之後再回去看一下Keychain應該就不會出現簽發者過期了，新的有效期限是 2023.2.8</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="http://blog.leanote.com/post/kilig/Failed-to-locate-or-generate-matching-signing-assets" target="_blank" rel="external">http://blog.leanote.com/post/kilig/Failed-to-locate-or-generate-matching-signing-assets</a></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/02/23/iOS-APP-Deploy-證書簽發者無效-Failed-to-locate-or-generate-matching-signing-assets/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
             
         </div>
-    </div>
-    <div id="post-footer" class="post-footer main-content-wrap">
         
-        <div class="post-actions-wrap">
-    <nav>
-        <ul class="post-actions post-action-nav">
-            <li class="post-action">
-                
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/02/21/Github-Blog-架設-Hexo/"  data-tooltip="Github Blog 架設 - Hexo">
-                
-                    <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
-                </a>
-            </li>
-            <li class="post-action">
-                
-                    <a class="post-action-btn btn btn--disabled">
-                
-                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
-                    <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-        </ul>
-    </nav>
-    <ul class="post-actions post-action-share">
-        <li class="post-action hide-lg hide-md hide-sm">
-            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
-                <i class="fa fa-share-alt"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/02/21/Hello-Laputa/">
-                <i class="fa fa-google-plus"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/02/21/Hello-Laputa/">
-                <i class="fa fa-facebook-official"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/02/21/Hello-Laputa/">
-                <i class="fa fa-twitter"></i>
-            </a>
-        </li>
+    </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
         
-            <li class="post-action">
-                <a class="post-action-btn btn btn--default" href="#disqus_thread">
-                    <i class="fa fa-comment-o"></i>
-                </a>
-            </li>
         
-        <li class="post-action">
-            
-                <a class="post-action-btn btn btn--default" href="#">
-            
-                <i class="fa fa-list"></i>
-            </a>
-        </li>
+        <li class="pagination-number">第 1 頁 共 1 頁</li>
     </ul>
 </div>
 
-
-        
-            
-                <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-            
-        
-    </div>
-</article>
-
+</section>
 
 
                 <footer id="footer" class="main-content-wrap">
@@ -320,89 +288,6 @@
 </footer>
 
             </div>
-            
-                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
-                    <div class="post-actions-wrap">
-    <nav>
-        <ul class="post-actions post-action-nav">
-            <li class="post-action">
-                
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/02/21/Github-Blog-架設-Hexo/"  data-tooltip="Github Blog 架設 - Hexo">
-                
-                    <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
-                </a>
-            </li>
-            <li class="post-action">
-                
-                    <a class="post-action-btn btn btn--disabled">
-                
-                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
-                    <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-        </ul>
-    </nav>
-    <ul class="post-actions post-action-share">
-        <li class="post-action hide-lg hide-md hide-sm">
-            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
-                <i class="fa fa-share-alt"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/02/21/Hello-Laputa/">
-                <i class="fa fa-google-plus"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/02/21/Hello-Laputa/">
-                <i class="fa fa-facebook-official"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/02/21/Hello-Laputa/">
-                <i class="fa fa-twitter"></i>
-            </a>
-        </li>
-        
-            <li class="post-action">
-                <a class="post-action-btn btn btn--default" href="#disqus_thread">
-                    <i class="fa fa-comment-o"></i>
-                </a>
-            </li>
-        
-        <li class="post-action">
-            
-                <a class="post-action-btn btn btn--default" href="#">
-            
-                <i class="fa fa-list"></i>
-            </a>
-        </li>
-    </ul>
-</div>
-
-
-                </div>
-                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
-    <ul class="share-options">
-        <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/02/21/Hello-Laputa/">
-                <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
-            </a>
-        </li>
-        <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/02/21/Hello-Laputa/">
-                <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
-            </a>
-        </li>
-        <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/02/21/Hello-Laputa/">
-                <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
-            </a>
-        </li>
-    </ul>
-</div>
-<div id="share-options-mask" class="share-options-mask"></div>
             
         </div>
         
@@ -454,25 +339,6 @@
 <script src="/blog/assets/js/jquery.fancybox-thumbs.js" type="text/javascript"></script>
 <script src="/blog/assets/js/tranquilpeak.js" type="text/javascript"></script>
 <!--SCRIPTS END-->
-
-    
-        <script>
-             var disqus_config = function () {
-                 this.page.url = 'http://kyoyadmoon.github.io/blog/2016/02/21/Hello-Laputa/';
-                 
-                    this.page.identifier = '2016/02/21/Hello-Laputa/';
-                                  
-             };
-            (function() {
-                var d = document, s = d.createElement('script');
-                var disqus_shortname = 'dmoonlaputa';
-                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-            })();
-        </script>
-    
 
 
 
