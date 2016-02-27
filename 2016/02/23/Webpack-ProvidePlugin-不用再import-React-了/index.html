@@ -13,31 +13,31 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="透過 webpack 的 ProvidePlugin 可以幫你將 dependency 自動 import
+    <meta name="description" content="從前可能需要每個檔案都自己 import jquery、react
+現在透過 webpack 的 ProvidePlugin 可以幫你將 dependency 自動 import
 不只是 react , jquery  或其他 lib 都可以使用
-官方文件在這邊
 使用方法把 ProvidePlugin 加到 webpack.config.js 的 plugins
 example
-1234new webpack.ProvidePlugin(&amp;#123;    &apos;Reac">
+1234new webpack.P">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Webpack ProvidePlugin: 不用再import React 了">
 <meta property="og:url" content="http://kyoyadmoon.github.io/blog/2016/02/23/Webpack-ProvidePlugin-不用再import-React-了/index.html">
 <meta property="og:site_name" content="DMoon's Laputa">
-<meta property="og:description" content="透過 webpack 的 ProvidePlugin 可以幫你將 dependency 自動 import
+<meta property="og:description" content="從前可能需要每個檔案都自己 import jquery、react
+現在透過 webpack 的 ProvidePlugin 可以幫你將 dependency 自動 import
 不只是 react , jquery  或其他 lib 都可以使用
-官方文件在這邊
 使用方法把 ProvidePlugin 加到 webpack.config.js 的 plugins
 example
-1234new webpack.ProvidePlugin(&amp;#123;    &apos;Reac">
-<meta property="og:updated_time" content="2016-02-27T06:41:53.000Z">
+1234new webpack.P">
+<meta property="og:updated_time" content="2016-02-27T07:12:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Webpack ProvidePlugin: 不用再import React 了">
-<meta name="twitter:description" content="透過 webpack 的 ProvidePlugin 可以幫你將 dependency 自動 import
+<meta name="twitter:description" content="從前可能需要每個檔案都自己 import jquery、react
+現在透過 webpack 的 ProvidePlugin 可以幫你將 dependency 自動 import
 不只是 react , jquery  或其他 lib 都可以使用
-官方文件在這邊
 使用方法把 ProvidePlugin 加到 webpack.config.js 的 plugins
 example
-1234new webpack.ProvidePlugin(&amp;#123;    &apos;Reac">
+1234new webpack.P">
     
     
         
@@ -243,7 +243,7 @@ example
     
         <span>分類 </span>
         
-    <a class="category-link" href="/blog/categories/前端工具/">前端工具</a>
+    <a class="category-link" href="/blog/categories/Frontend-Tool/">Frontend Tool</a>
 
 
     
@@ -252,14 +252,18 @@ example
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>透過 webpack 的 ProvidePlugin 可以幫你將 dependency 自動 import</p>
+            <p>從前可能需要每個檔案都自己 import jquery、react</p>
+<p>現在透過 webpack 的 ProvidePlugin 可以幫你將 dependency 自動 import</p>
 <p>不只是 react , jquery  或其他 lib 都可以使用</p>
-<p><a href="https://webpack.github.io/docs/list-of-plugins.html#provideplugin" target="_blank" rel="external">官方文件在這邊</a></p>
 <h1 id="u4F7F_u7528_u65B9_u6CD5"><a href="#u4F7F_u7528_u65B9_u6CD5" class="headerlink" title="使用方法"></a>使用方法</h1><p>把 ProvidePlugin 加到 webpack.config.js 的 plugins</p>
 <p>example</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> webpack.ProvidePlugin(&#123;</span><br><span class="line">    <span class="string">'React'</span>: <span class="string">'react'</span>,</span><br><span class="line">          $: <span class="string">"jquery"</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>原理是 webpack 在 build bundle.js 時，如果發現 &#39;React&#39; 、 $ ，就會自動去 import 設定中對應的 dependency</p>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://medium.com/@thejenniekim/never-import-react-from-react-again-thanks-to-webpack-s-provideplugin-69e7feb69e#.o6x19nno8" target="_blank" rel="external">https://medium.com/@thejenniekim/never-import-react-from-react-again-thanks-to-webpack-s-provideplugin-69e7feb69e#.o6x19nno8</a></p>
+<p>例如 使用 React 時 </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">React.createClass()</span><br></pre></td></tr></table></figure>
+<p>就會去 import react</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://webpack.github.io/docs/list-of-plugins.html#provideplugin" target="_blank" rel="external">官方文件</a></p>
+<p><a href="https://medium.com/@thejenniekim/never-import-react-from-react-again-thanks-to-webpack-s-provideplugin-69e7feb69e#.o6x19nno8" target="_blank" rel="external">https://medium.com/@thejenniekim/never-import-react-from-react-again-thanks-to-webpack-s-provideplugin-69e7feb69e#.o6x19nno8</a></p>
 
             
                 
