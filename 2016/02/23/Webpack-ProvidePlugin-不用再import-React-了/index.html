@@ -6,38 +6,38 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="DMoon&#39;s Laputa">
-    <title>Webpack ProvidePlugin: 不用再import React 了 - DMoon&#39;s Laputa</title>
+    <title>Webpack ProvidePlugin : 不用再 import React 了 - DMoon&#39;s Laputa</title>
     <meta name="author" content="DMoon">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="從前可能需要每個檔案都自己 import jquery、react
+    <meta name="description" content="從前可能需要每個檔案都自己人工 import jquery、react
 現在透過 webpack 的 ProvidePlugin 可以幫你將 dependency 自動 import
 不只是 react , jquery  或其他 lib 都可以使用
 使用方法把 ProvidePlugin 加到 webpack.config.js 的 plugins
 example
-1234new webpack.P">
+1234new webpack">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Webpack ProvidePlugin: 不用再import React 了">
+<meta property="og:title" content="Webpack ProvidePlugin : 不用再 import React 了">
 <meta property="og:url" content="http://kyoyadmoon.github.io/blog/2016/02/23/Webpack-ProvidePlugin-不用再import-React-了/index.html">
 <meta property="og:site_name" content="DMoon's Laputa">
-<meta property="og:description" content="從前可能需要每個檔案都自己 import jquery、react
+<meta property="og:description" content="從前可能需要每個檔案都自己人工 import jquery、react
 現在透過 webpack 的 ProvidePlugin 可以幫你將 dependency 自動 import
 不只是 react , jquery  或其他 lib 都可以使用
 使用方法把 ProvidePlugin 加到 webpack.config.js 的 plugins
 example
-1234new webpack.P">
-<meta property="og:updated_time" content="2016-02-27T07:12:58.000Z">
+1234new webpack">
+<meta property="og:updated_time" content="2016-02-27T09:33:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Webpack ProvidePlugin: 不用再import React 了">
-<meta name="twitter:description" content="從前可能需要每個檔案都自己 import jquery、react
+<meta name="twitter:title" content="Webpack ProvidePlugin : 不用再 import React 了">
+<meta name="twitter:description" content="從前可能需要每個檔案都自己人工 import jquery、react
 現在透過 webpack 的 ProvidePlugin 可以幫你將 dependency 自動 import
 不只是 react , jquery  或其他 lib 都可以使用
 使用方法把 ProvidePlugin 加到 webpack.config.js 的 plugins
 example
-1234new webpack.P">
+1234new webpack">
     
     
         
@@ -231,7 +231,7 @@ example
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            Webpack ProvidePlugin: 不用再import React 了
+            Webpack ProvidePlugin : 不用再 import React 了
         </h1>
     
     <div class="post-meta">
@@ -252,7 +252,7 @@ example
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>從前可能需要每個檔案都自己 import jquery、react</p>
+            <p>從前可能需要每個檔案都自己人工 import jquery、react</p>
 <p>現在透過 webpack 的 ProvidePlugin 可以幫你將 dependency 自動 import</p>
 <p>不只是 react , jquery  或其他 lib 都可以使用</p>
 <h1 id="u4F7F_u7528_u65B9_u6CD5"><a href="#u4F7F_u7528_u65B9_u6CD5" class="headerlink" title="使用方法"></a>使用方法</h1><p>把 ProvidePlugin 加到 webpack.config.js 的 plugins</p>
@@ -261,7 +261,7 @@ example
 <p>原理是 webpack 在 build bundle.js 時，如果發現 &#39;React&#39; 、 $ ，就會自動去 import 設定中對應的 dependency</p>
 <p>例如 使用 React 時 </p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">React.createClass()</span><br></pre></td></tr></table></figure>
-<p>就會去 import react</p>
+<p>就會自動去 import react</p>
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://webpack.github.io/docs/list-of-plugins.html#provideplugin" target="_blank" rel="external">官方文件</a></p>
 <p><a href="https://medium.com/@thejenniekim/never-import-react-from-react-again-thanks-to-webpack-s-provideplugin-69e7feb69e#.o6x19nno8" target="_blank" rel="external">https://medium.com/@thejenniekim/never-import-react-from-react-again-thanks-to-webpack-s-provideplugin-69e7feb69e#.o6x19nno8</a></p>
 

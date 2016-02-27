@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://kyoyadmoon.github.io/blog/"/>
-  <updated>2016-02-27T07:12:58.000Z</updated>
+  <updated>2016-02-27T09:33:12.000Z</updated>
   <id>http://kyoyadmoon.github.io/blog/</id>
   
   <author>
@@ -16,13 +16,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Webpack ProvidePlugin: 不用再import React 了</title>
+    <title>Webpack ProvidePlugin : 不用再 import React 了</title>
     <link href="http://kyoyadmoon.github.io/blog/2016/02/23/Webpack-ProvidePlugin-%E4%B8%8D%E7%94%A8%E5%86%8Dimport-React-%E4%BA%86/"/>
     <id>http://kyoyadmoon.github.io/blog/2016/02/23/Webpack-ProvidePlugin-不用再import-React-了/</id>
     <published>2016-02-22T16:35:32.000Z</published>
-    <updated>2016-02-27T07:12:58.000Z</updated>
+    <updated>2016-02-27T09:33:12.000Z</updated>
     
-    <content type="html">&lt;p&gt;從前可能需要每個檔案都自己 import jquery、react&lt;/p&gt;
+    <content type="html">&lt;p&gt;從前可能需要每個檔案都自己人工 import jquery、react&lt;/p&gt;
 &lt;p&gt;現在透過 webpack 的 ProvidePlugin 可以幫你將 dependency 自動 import&lt;/p&gt;
 &lt;p&gt;不只是 react , jquery  或其他 lib 都可以使用&lt;/p&gt;
 &lt;h1 id=&quot;u4F7F_u7528_u65B9_u6CD5&quot;&gt;&lt;a href=&quot;#u4F7F_u7528_u65B9_u6CD5&quot; class=&quot;headerlink&quot; title=&quot;使用方法&quot;&gt;&lt;/a&gt;使用方法&lt;/h1&gt;&lt;p&gt;把 ProvidePlugin 加到 webpack.config.js 的 plugins&lt;/p&gt;
@@ -31,16 +31,16 @@
 &lt;p&gt;原理是 webpack 在 build bundle.js 時，如果發現 &amp;#39;React&amp;#39; 、 $ ，就會自動去 import 設定中對應的 dependency&lt;/p&gt;
 &lt;p&gt;例如 使用 React 時 &lt;/p&gt;
 &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;React.createClass()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;就會去 import react&lt;/p&gt;
+&lt;p&gt;就會自動去 import react&lt;/p&gt;
 &lt;h1 id=&quot;Reference&quot;&gt;&lt;a href=&quot;#Reference&quot; class=&quot;headerlink&quot; title=&quot;Reference&quot;&gt;&lt;/a&gt;Reference&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://webpack.github.io/docs/list-of-plugins.html#provideplugin&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官方文件&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://medium.com/@thejenniekim/never-import-react-from-react-again-thanks-to-webpack-s-provideplugin-69e7feb69e#.o6x19nno8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://medium.com/@thejenniekim/never-import-react-from-react-again-thanks-to-webpack-s-provideplugin-69e7feb69e#.o6x19nno8&lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;p&gt;從前可能需要每個檔案都自己 import jquery、react&lt;/p&gt;
+      &lt;p&gt;從前可能需要每個檔案都自己人工 import jquery、react&lt;/p&gt;
 &lt;p&gt;現在透過 webpack 的 ProvidePlugin 可以幫你將 dependency 自動 import&lt;/p&gt;
-&lt;p&gt;不只是 react , jquery  或其他 lib 都可以使用
+&lt;p&gt;不只是 react , jquery  或其他 lib 都可以
     
     </summary>
     
