@@ -2471,5 +2471,5 @@ a.tag--small,
 #cover, .frosted-glass::before {
   background: url(https://images.unsplash.com/photo-1439694458393-78ecf14da7f9) 0/cover fixed !important; }
 
-#about-card p, #about-card i {
-  color: #444; }
+#about-card p, #about-card i, #about-card #about-card-location {
+  color: #444 !important; }
