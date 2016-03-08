@@ -6,32 +6,38 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="DMoon&#39;s Laputa">
-    <title>iOS App Deploy 證書簽發者無效: Failed to locate or generate matching signing assets - DMoon&#39;s Laputa</title>
+    <title>Webpack ProvidePlugin : 不用再 import React 了 - DMoon&#39;s Laputa</title>
     <meta name="author" content="DMoon">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="這幾天在幫公司處理 iOS APP 上架的事情，整個流程需要一堆簽章，真的很麻煩
-其中最雷的就是這篇要講的證書的簽發者無效，是什麼證書的簽發者無效呢？
-我所有的 Apple 開發相關憑證上面全部都寫簽發者過期....
-查了才知道是 Apple 之前給開發者的憑證 ( Apple World Wide Developer Relation Certification Authority ) 有效期限">
+    <meta name="description" content="從前可能需要每個檔案都自己人工 import jquery、react
+現在透過 webpack 的 ProvidePlugin 可以幫你將 dependency 自動 import
+不只是 react , jquery  或其他 lib 都可以使用
+使用方法把 ProvidePlugin 加到 webpack.config.js 的 plugins
+example
+1234new webpack">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="iOS App Deploy 證書簽發者無效: Failed to locate or generate matching signing assets">
-<meta property="og:url" content="http://kyoyadmoon.github.io/blog/2016/02/23/iOS-APP-Deploy-證書簽發者無效-Failed-to-locate-or-generate-matching-signing-assets/index.html">
+<meta property="og:title" content="Webpack ProvidePlugin : 不用再 import React 了">
+<meta property="og:url" content="http://kyoyadmoon.github.io/blog/2016/02/23/Front-end-Tool/ciljnm3jc0008o4yfnyxs188y">
 <meta property="og:site_name" content="DMoon's Laputa">
-<meta property="og:description" content="這幾天在幫公司處理 iOS APP 上架的事情，整個流程需要一堆簽章，真的很麻煩
-其中最雷的就是這篇要講的證書的簽發者無效，是什麼證書的簽發者無效呢？
-我所有的 Apple 開發相關憑證上面全部都寫簽發者過期....
-查了才知道是 Apple 之前給開發者的憑證 ( Apple World Wide Developer Relation Certification Authority ) 有效期限">
-<meta property="og:updated_time" content="2016-02-27T06:05:28.000Z">
+<meta property="og:description" content="從前可能需要每個檔案都自己人工 import jquery、react
+現在透過 webpack 的 ProvidePlugin 可以幫你將 dependency 自動 import
+不只是 react , jquery  或其他 lib 都可以使用
+使用方法把 ProvidePlugin 加到 webpack.config.js 的 plugins
+example
+1234new webpack">
+<meta property="og:updated_time" content="2016-02-29T08:54:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS App Deploy 證書簽發者無效: Failed to locate or generate matching signing assets">
-<meta name="twitter:description" content="這幾天在幫公司處理 iOS APP 上架的事情，整個流程需要一堆簽章，真的很麻煩
-其中最雷的就是這篇要講的證書的簽發者無效，是什麼證書的簽發者無效呢？
-我所有的 Apple 開發相關憑證上面全部都寫簽發者過期....
-查了才知道是 Apple 之前給開發者的憑證 ( Apple World Wide Developer Relation Certification Authority ) 有效期限">
+<meta name="twitter:title" content="Webpack ProvidePlugin : 不用再 import React 了">
+<meta name="twitter:description" content="從前可能需要每個檔案都自己人工 import jquery、react
+現在透過 webpack 的 ProvidePlugin 可以幫你將 dependency 自動 import
+不只是 react , jquery  或其他 lib 都可以使用
+使用方法把 ProvidePlugin 加到 webpack.config.js 的 plugins
+example
+1234new webpack">
     
     
         
@@ -230,11 +236,11 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            iOS App Deploy 證書簽發者無效: Failed to locate or generate matching signing assets
+            Webpack ProvidePlugin : 不用再 import React 了
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Tue Feb 23 2016 00:30:53 GMT+0800">
+    <time itemprop="datePublished" content="Tue Feb 23 2016 00:35:32 GMT+0800">
 	
 		    Feb 23, 2016
     	
@@ -242,7 +248,7 @@
     
         <span>分類 </span>
         
-    <a class="category-link" href="/blog/categories/iOS-App/">iOS App</a>
+    <a class="category-link" href="/blog/categories/Front-end-Tool/">Front-end Tool</a>
 
 
     
@@ -251,16 +257,18 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>這幾天在幫公司處理 iOS APP 上架的事情，整個流程需要一堆簽章，真的很麻煩</p>
-<p>其中最雷的就是這篇要講的證書的簽發者無效，是什麼證書的簽發者無效呢？</p>
-<p>我所有的 Apple 開發相關憑證上面全部都寫簽發者過期....</p>
-<p>查了才知道是 Apple 之前給開發者的憑證 ( Apple World Wide Developer Relation Certification Authority ) 有效期限到 2016.2.14 ，也就是說這是一個熱騰騰的雷阿!</p>
-<h1 id="u89E3_u6C7A_u65B9_u6CD5_uFF1A"><a href="#u89E3_u6C7A_u65B9_u6CD5_uFF1A" class="headerlink" title="解決方法："></a>解決方法：</h1><ol>
-<li>打開 Keychain 在登陸和系統中刪除過期的這一個 Apple World Wide Developer Relation Certification Authority</li>
-<li>下載並安裝這個新的憑證 <a href="https://developer.apple.com/certificationauthority/AppleWWDRCA.cer" target="_blank" rel="external">WWDR intermediate certificate</a></li>
-</ol>
-<p>安裝之後再回去看一下Keychain應該就不會出現簽發者過期了，新的有效期限是 2023.2.8</p>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="http://blog.leanote.com/post/kilig/Failed-to-locate-or-generate-matching-signing-assets" target="_blank" rel="external">http://blog.leanote.com/post/kilig/Failed-to-locate-or-generate-matching-signing-assets</a></p>
+            <p>從前可能需要每個檔案都自己人工 import jquery、react</p>
+<p>現在透過 webpack 的 ProvidePlugin 可以幫你將 dependency 自動 import</p>
+<p>不只是 react , jquery  或其他 lib 都可以使用</p>
+<h1 id="u4F7F_u7528_u65B9_u6CD5"><a href="#u4F7F_u7528_u65B9_u6CD5" class="headerlink" title="使用方法"></a>使用方法</h1><p>把 ProvidePlugin 加到 webpack.config.js 的 plugins</p>
+<p>example</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> webpack.ProvidePlugin(&#123;</span><br><span class="line">    <span class="string">'React'</span>: <span class="string">'react'</span>,</span><br><span class="line">          $: <span class="string">"jquery"</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>原理是 webpack 在 build bundle.js 時，如果發現 &#39;React&#39; 、 $ ，就會自動去 import 設定中對應的 dependency</p>
+<p>例如 使用 React 時</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">React.createClass()</span><br></pre></td></tr></table></figure>
+<p>就會自動去 import react</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://webpack.github.io/docs/list-of-plugins.html#provideplugin" target="_blank" rel="external">官方文件</a></p>
+<p><a href="https://medium.com/@thejenniekim/never-import-react-from-react-again-thanks-to-webpack-s-provideplugin-69e7feb69e#.o6x19nno8" target="_blank" rel="external">https://medium.com/@thejenniekim/never-import-react-from-react-again-thanks-to-webpack-s-provideplugin-69e7feb69e#.o6x19nno8</a></p>
 
             
                 
@@ -273,7 +281,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">標籤</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/上架/">上架</a>
+    <a class="tag tag--primary tag--small t-link" href="/blog/tags/webpack/">webpack</a>
 
             </div>
         
@@ -282,7 +290,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/02/23/Webpack-ProvidePlugin-不用再import-React-了/"  data-tooltip="Webpack ProvidePlugin : 不用再 import React 了">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/02/29/科技產品/ciljnm8lh000to4yfilojruvx"  data-tooltip="Chromecast Audio 變身無線音響">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -290,7 +298,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/02/21/Github-Blog-架設-Hexo/" data-tooltip="Github Blog 架設 - Hexo">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/02/23/iOS-App/ciljnm3i00003o4yfak3mqfw7" data-tooltip="iOS App Deploy 證書簽發者無效: Failed to locate or generate matching signing assets">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -305,17 +313,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/02/23/iOS-APP-Deploy-證書簽發者無效-Failed-to-locate-or-generate-matching-signing-assets/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/02/23/Front-end-Tool/ciljnm3jc0008o4yfnyxs188y">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/02/23/iOS-APP-Deploy-證書簽發者無效-Failed-to-locate-or-generate-matching-signing-assets/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/02/23/Front-end-Tool/ciljnm3jc0008o4yfnyxs188y">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/02/23/iOS-APP-Deploy-證書簽發者無效-Failed-to-locate-or-generate-matching-signing-assets/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/02/23/Front-end-Tool/ciljnm3jc0008o4yfnyxs188y">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -363,7 +371,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/02/23/Webpack-ProvidePlugin-不用再import-React-了/"  data-tooltip="Webpack ProvidePlugin : 不用再 import React 了">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/02/29/科技產品/ciljnm8lh000to4yfilojruvx"  data-tooltip="Chromecast Audio 變身無線音響">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -371,7 +379,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/02/21/Github-Blog-架設-Hexo/" data-tooltip="Github Blog 架設 - Hexo">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/02/23/iOS-App/ciljnm3i00003o4yfak3mqfw7" data-tooltip="iOS App Deploy 證書簽發者無效: Failed to locate or generate matching signing assets">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -386,17 +394,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/02/23/iOS-APP-Deploy-證書簽發者無效-Failed-to-locate-or-generate-matching-signing-assets/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/02/23/Front-end-Tool/ciljnm3jc0008o4yfnyxs188y">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/02/23/iOS-APP-Deploy-證書簽發者無效-Failed-to-locate-or-generate-matching-signing-assets/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/02/23/Front-end-Tool/ciljnm3jc0008o4yfnyxs188y">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/02/23/iOS-APP-Deploy-證書簽發者無效-Failed-to-locate-or-generate-matching-signing-assets/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/02/23/Front-end-Tool/ciljnm3jc0008o4yfnyxs188y">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -422,17 +430,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/02/23/iOS-APP-Deploy-證書簽發者無效-Failed-to-locate-or-generate-matching-signing-assets/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/02/23/Front-end-Tool/ciljnm3jc0008o4yfnyxs188y">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/02/23/iOS-APP-Deploy-證書簽發者無效-Failed-to-locate-or-generate-matching-signing-assets/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/02/23/Front-end-Tool/ciljnm3jc0008o4yfnyxs188y">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/02/23/iOS-APP-Deploy-證書簽發者無效-Failed-to-locate-or-generate-matching-signing-assets/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/02/23/Front-end-Tool/ciljnm3jc0008o4yfnyxs188y">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
@@ -496,9 +504,9 @@
     
         <script>
              var disqus_config = function () {
-                 this.page.url = 'http://kyoyadmoon.github.io/blog/2016/02/23/iOS-APP-Deploy-證書簽發者無效-Failed-to-locate-or-generate-matching-signing-assets/';
+                 this.page.url = 'http://kyoyadmoon.github.io/blog/2016/02/23/Front-end-Tool/ciljnm3jc0008o4yfnyxs188y';
                  
-                    this.page.identifier = '2016/02/23/iOS-APP-Deploy-證書簽發者無效-Failed-to-locate-or-generate-matching-signing-assets/';
+                    this.page.identifier = '2016/02/23/Front-end-Tool/ciljnm3jc0008o4yfnyxs188y';
                                   
              };
             (function() {
