@@ -6,38 +6,50 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="DMoon&#39;s Laputa">
-    <title>Webpack ProvidePlugin : 不用再 import React 了 - DMoon&#39;s Laputa</title>
+    <title>Github Blog 架設 - Hexo - DMoon&#39;s Laputa</title>
     <meta name="author" content="DMoon">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="從前可能需要每個檔案都自己人工 import jquery、react
-現在透過 webpack 的 ProvidePlugin 可以幫你將 dependency 自動 import
-不只是 react , jquery  或其他 lib 都可以使用
-使用方法把 ProvidePlugin 加到 webpack.config.js 的 plugins
-example
-1234new webpack">
+    <meta name="description" content="最近在爬文學習前端技術時，發現不少網誌都是用 github 的靜態網站來當 blog，覺得很酷，而且也不必煩惱主機的事，便搜尋了一下建立的方法，發現有滿多語言框架可以快速建立
+
+
+JavaScript : Hexo  
+Ruby : Jekyll  
+Python : Hyde  
+PHP : Phrozn
+
+
+因為對於 js 較為熟悉所以選了 Hexo 來嘗試看看，先說心得好了， Hexo 框架">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Webpack ProvidePlugin : 不用再 import React 了">
-<meta property="og:url" content="http://kyoyadmoon.github.io/blog/2016/02/23/free to import react/index.html">
+<meta property="og:title" content="Github Blog 架設 - Hexo">
+<meta property="og:url" content="http://kyoyadmoon.github.io/blog/2016/02/21/github-blog-build-with-hexo/index.html">
 <meta property="og:site_name" content="DMoon's Laputa">
-<meta property="og:description" content="從前可能需要每個檔案都自己人工 import jquery、react
-現在透過 webpack 的 ProvidePlugin 可以幫你將 dependency 自動 import
-不只是 react , jquery  或其他 lib 都可以使用
-使用方法把 ProvidePlugin 加到 webpack.config.js 的 plugins
-example
-1234new webpack">
-<meta property="og:updated_time" content="2016-03-08T17:32:57.000Z">
+<meta property="og:description" content="最近在爬文學習前端技術時，發現不少網誌都是用 github 的靜態網站來當 blog，覺得很酷，而且也不必煩惱主機的事，便搜尋了一下建立的方法，發現有滿多語言框架可以快速建立
+
+
+JavaScript : Hexo  
+Ruby : Jekyll  
+Python : Hyde  
+PHP : Phrozn
+
+
+因為對於 js 較為熟悉所以選了 Hexo 來嘗試看看，先說心得好了， Hexo 框架">
+<meta property="og:updated_time" content="2016-03-08T17:39:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Webpack ProvidePlugin : 不用再 import React 了">
-<meta name="twitter:description" content="從前可能需要每個檔案都自己人工 import jquery、react
-現在透過 webpack 的 ProvidePlugin 可以幫你將 dependency 自動 import
-不只是 react , jquery  或其他 lib 都可以使用
-使用方法把 ProvidePlugin 加到 webpack.config.js 的 plugins
-example
-1234new webpack">
+<meta name="twitter:title" content="Github Blog 架設 - Hexo">
+<meta name="twitter:description" content="最近在爬文學習前端技術時，發現不少網誌都是用 github 的靜態網站來當 blog，覺得很酷，而且也不必煩惱主機的事，便搜尋了一下建立的方法，發現有滿多語言框架可以快速建立
+
+
+JavaScript : Hexo  
+Ruby : Jekyll  
+Python : Hyde  
+PHP : Phrozn
+
+
+因為對於 js 較為熟悉所以選了 Hexo 來嘗試看看，先說心得好了， Hexo 框架">
     
     
         
@@ -125,7 +137,7 @@ example
                   >
               
                   <i class="sidebar-button-icon fa fa-lg fa-home"></i>
-                  <span class="sidebar-button-desc">Home</span>
+                  <span class="sidebar-button-desc">首頁</span>
                   </a>
             </li>
           
@@ -137,7 +149,7 @@ example
                   >
               
                   <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
-                  <span class="sidebar-button-desc">Categories</span>
+                  <span class="sidebar-button-desc">分類</span>
                   </a>
             </li>
           
@@ -149,7 +161,7 @@ example
                   >
               
                   <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
-                  <span class="sidebar-button-desc">Tags</span>
+                  <span class="sidebar-button-desc">標籤</span>
                   </a>
             </li>
           
@@ -161,7 +173,7 @@ example
                   >
               
                   <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                  <span class="sidebar-button-desc">Archives</span>
+                  <span class="sidebar-button-desc">所有文章</span>
                   </a>
             </li>
           
@@ -173,7 +185,7 @@ example
                   >
               
                   <i class="sidebar-button-icon fa fa-lg fa-question"></i>
-                  <span class="sidebar-button-desc">About</span>
+                  <span class="sidebar-button-desc">關於</span>
                   </a>
             </li>
           
@@ -236,19 +248,19 @@ example
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            Webpack ProvidePlugin : 不用再 import React 了
+            Github Blog 架設 - Hexo
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Tue Feb 23 2016 00:35:32 GMT+0800">
+    <time itemprop="datePublished" content="Sun Feb 21 2016 18:22:32 GMT+0800">
 	
-		    Feb 23, 2016
+		    Feb 21, 2016
     	
     </time>
     
-        <span>in </span>
+        <span>分類 </span>
         
-    <a class="category-link" href="/blog/categories/Front-end-Tool/">Front-end Tool</a>
+    <a class="category-link" href="/blog/categories/Blog/">Blog</a>
 
 
     
@@ -257,19 +269,52 @@ example
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <hr>
-<p>從前可能需要每個檔案都自己人工 import jquery、react</p>
-<p>現在透過 webpack 的 ProvidePlugin 可以幫你將 dependency 自動 import</p>
-<p>不只是 react , jquery  或其他 lib 都可以使用</p>
-<h1 id="u4F7F_u7528_u65B9_u6CD5"><a href="#u4F7F_u7528_u65B9_u6CD5" class="headerlink" title="使用方法"></a>使用方法</h1><p>把 ProvidePlugin 加到 webpack.config.js 的 plugins</p>
-<p>example</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> webpack.ProvidePlugin(&#123;</span><br><span class="line">    <span class="string">'React'</span>: <span class="string">'react'</span>,</span><br><span class="line">          $: <span class="string">"jquery"</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>原理是 webpack 在 build bundle.js 時，如果發現 &#39;React&#39; 、 $ ，就會自動去 import 設定中對應的 dependency</p>
-<p>例如 使用 React 時</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">React.createClass()</span><br></pre></td></tr></table></figure>
-<p>就會自動去 import react</p>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://webpack.github.io/docs/list-of-plugins.html#provideplugin" target="_blank" rel="external">官方文件</a></p>
-<p><a href="https://medium.com/@thejenniekim/never-import-react-from-react-again-thanks-to-webpack-s-provideplugin-69e7feb69e#.o6x19nno8" target="_blank" rel="external">https://medium.com/@thejenniekim/never-import-react-from-react-again-thanks-to-webpack-s-provideplugin-69e7feb69e#.o6x19nno8</a></p>
+            <p>最近在爬文學習前端技術時，發現不少網誌都是用 github 的靜態網站來當 blog，覺得很酷，而且也不必煩惱主機的事，便搜尋了一下建立的方法，發現有滿多語言框架可以快速建立</p>
+<blockquote>
+<ul>
+<li>JavaScript : Hexo  </li>
+<li>Ruby : Jekyll  </li>
+<li>Python : Hyde  </li>
+<li>PHP : Phrozn</li>
+</ul>
+</blockquote>
+<p>因為對於 js 較為熟悉所以選了 Hexo 來嘗試看看，先說心得好了， Hexo 框架真的很強大，blog 大多功能幾乎都包含在裡面了，而且只需透過編輯 _config.yml ，就能完成架構及功能設定，有些功能雖然是需要另外安裝 plugin 的，使用方法都相當簡單，程式碼都埋好了，只需申請服務後，填入 id 到設定檔就可以了</p>
+<blockquote>
+<ul>
+<li>Sitemap</li>
+<li>RSS Feed</li>
+<li>Google Analytics</li>
+<li>Comment: Disqus</li>
+</ul>
+</blockquote>
+<h1 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h1><p>instal Node.js &amp; Hexo</p>
+<p>已經有 Node.js 環境可以直接安裝 Hexo</p>
+<p><code>$ npm install hexo -g</code></p>
+<p>詳細可以參考這裡 <a href="https://wwssllabcd.github.io/blog/2014/12/22/how-to-install-hexo-on-window/#安裝_Hexo" target="_blank" rel="external">安裝 Hexo</a></p>
+<h1 id="Init_Your_Blog"><a href="#Init_Your_Blog" class="headerlink" title="Init Your Blog"></a>Init Your Blog</h1><p><code>hexo init &lt;blog_name&gt;</code></p>
+<p><code>cd &lt;blog_name&gt;</code></p>
+<p><code>npm i</code></p>
+<p>再加裝一些 plugin</p>
+<p><code>npm i hexo-deployer-git hexo-renderer-ejs hexo-renderer-marked hexo-renderer-stylus --save</code></p>
+<blockquote>
+<p>hexo-deployer-git:  deploy to github</p>
+</blockquote>
+<p>hexo g  # 產生 blog</p>
+<p>hexo new <post_title> # 建立一個新的文章</post_title></p>
+<p>hexo s  # hexo server 讓 blog 可以在 local 端檢視 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a></p>
+<h1 id="Blog_Setting"><a href="#Blog_Setting" class="headerlink" title="Blog Setting"></a>Blog Setting</h1><p>前面有說過只需要透過設定 _config.yml 就可以完成，這邊需要注意的是， _config.yml 有兩個，一個在專案根目錄，另一個在 theme 資料夾裡</p>
+<h1 id="Blog_Deploy"><a href="#Blog_Deploy" class="headerlink" title="Blog Deploy"></a>Blog Deploy</h1><p>deploy 到 github 前需要先到 github 開一個 repo</p>
+<p>接著將 repo 的資訊填寫到 _config.yml 的 deploy 部分</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deploy:&#10;    type: git&#10;    repository: git@github.com:yourname/yourRepo.git&#10;    branch: gh-pages</span><br></pre></td></tr></table></figure>
+<p>url 的部分也需要調整一下，下面是範例</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url: http://xxx.github.io/Blog&#10;root: /Blog/</span><br></pre></td></tr></table></figure>
+<p>透過指令部署之前請先確定你有 github 的 SSH key</p>
+<p>沒有的話請參考 <a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/" target="_blank" rel="external">這篇</a></p>
+<p>然後就可以部署到 github 上了</p>
+<p>hexo d # hexo deploy</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://hexo.io/zh-tw/docs/" target="_blank" rel="external">Hexo offical docs</a></p>
+<p><a href="https://wwssllabcd.github.io/blog/2014/12/22/how-to-install-hexo-on-window/#安裝_Hexo_所需檔案" target="_blank" rel="external">Hexo 中文安裝教學</a></p>
+<p><a href="http://v123582.github.io/blog/2015/10/25/用-hexo-建立一個自己的部落格/" target="_blank" rel="external">http://v123582.github.io/blog/2015/10/25/用-hexo-建立一個自己的部落格/</a></p>
 
             
                 
@@ -280,9 +325,9 @@ example
     <div id="post-footer" class="post-footer main-content-wrap">
         
             <div class="post-footer-tags">
-                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                <span class="text-color-light text-small">標籤</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/webpack/">webpack</a>
+    <a class="tag tag--primary tag--small t-link" href="/blog/tags/Github/">Github</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/Hexo/">Hexo</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/Node-js/">Node.js</a>
 
             </div>
         
@@ -291,17 +336,17 @@ example
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/02/29/Chromecast Audio/"  data-tooltip="Chromecast Audio 變身無線音響">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/02/23/iOS-App-Deploy-Signing-Failed/"  data-tooltip="iOS App Deploy 證書簽發者無效: Failed to locate or generate matching signing assets">
                 
                     <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
                 </a>
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/02/23/iOS App Deploy Signing Failed/" data-tooltip="iOS App Deploy 證書簽發者無效: Failed to locate or generate matching signing assets">
+                    <a class="post-action-btn btn btn--disabled">
                 
-                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
                 </a>
             </li>
@@ -314,17 +359,17 @@ example
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/02/23/free to import react/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/02/21/github-blog-build-with-hexo/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/02/23/free to import react/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/02/21/github-blog-build-with-hexo/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/02/23/free to import react/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/02/21/github-blog-build-with-hexo/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -372,17 +417,17 @@ example
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/02/29/Chromecast Audio/"  data-tooltip="Chromecast Audio 變身無線音響">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/02/23/iOS-App-Deploy-Signing-Failed/"  data-tooltip="iOS App Deploy 證書簽發者無效: Failed to locate or generate matching signing assets">
                 
                     <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
                 </a>
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/02/23/iOS App Deploy Signing Failed/" data-tooltip="iOS App Deploy 證書簽發者無效: Failed to locate or generate matching signing assets">
+                    <a class="post-action-btn btn btn--disabled">
                 
-                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
                 </a>
             </li>
@@ -395,17 +440,17 @@ example
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/02/23/free to import react/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/02/21/github-blog-build-with-hexo/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/02/23/free to import react/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/02/21/github-blog-build-with-hexo/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/02/23/free to import react/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/02/21/github-blog-build-with-hexo/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -431,18 +476,18 @@ example
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/02/23/free to import react/">
-                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/02/21/github-blog-build-with-hexo/">
+                <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/02/23/free to import react/">
-                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/02/21/github-blog-build-with-hexo/">
+                <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/02/23/free to import react/">
-                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/02/21/github-blog-build-with-hexo/">
+                <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
     </ul>
@@ -468,14 +513,16 @@ example
           
               <h4 id="about-card-name">DMoon</h4>
           
-              <h5 id="about-card-bio"><p>author.bio</p>
+              <h5 id="about-card-bio"><p>熱愛科技的資工系學生，喜歡學習新的技術</p>
+<p>目前主要開發 Web APP</p>
+<p>較熟悉的技術是 Node.JS / React.JS</p>
 </h5>
           
           
               <h5 id="about-card-job">
                   <i class="fa fa-briefcase"></i>
                   <br/>
-                  <p>author.job</p>
+                  <p>學生 / 創科資訊實習生</p>
 
               </h5>
           
@@ -503,9 +550,9 @@ example
     
         <script>
              var disqus_config = function () {
-                 this.page.url = 'http://kyoyadmoon.github.io/blog/2016/02/23/free to import react/';
+                 this.page.url = 'http://kyoyadmoon.github.io/blog/2016/02/21/github-blog-build-with-hexo/';
                  
-                    this.page.identifier = '2016/02/23/free to import react/';
+                    this.page.identifier = '2016/02/21/github-blog-build-with-hexo/';
                                   
              };
             (function() {
