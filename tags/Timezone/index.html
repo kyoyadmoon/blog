@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="DMoon&#39;s Laputa">
-    <title>all-archives - DMoon&#39;s Laputa</title>
+    <title>標籤: Timezone - DMoon&#39;s Laputa</title>
     <meta name="author" content="DMoon">
     
     
@@ -15,13 +15,12 @@
     
     <meta name="description">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="all-archives">
-<meta property="og:url" content="http://kyoyadmoon.github.io/blog/all-archives/index.html">
+<meta property="og:title" content="DMoon's Laputa">
+<meta property="og:url" content="http://kyoyadmoon.github.io/blog/tags/Timezone/index.html">
 <meta property="og:site_name" content="DMoon's Laputa">
 <meta property="og:description">
-<meta property="og:updated_time" content="2016-02-20T19:48:15.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="all-archives">
+<meta name="twitter:title" content="DMoon's Laputa">
 <meta name="twitter:description">
     
     
@@ -215,92 +214,77 @@
                         
                         transparent " >
                 
-<div id="archives" class="main-content-wrap main-section">
-    <form id="filter-form" action="#">
-        <input name="date" type="text" class="form-control input--xlarge" placeholder="搜尋日期（YYYY/MM/DD）" autofocus="autofocus">
-    </form>
-    <h5 class="archive-result text-color-base text-xlarge"></h5>
-    <section class="boxes">
+    
+
+<section class="postShorten-group main-content-wrap bg-white main-section">
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/blog/2016/03/08/GWT-vs-UTC-差異，Linux-Etc-GWT-為何與現實時區相反/">
+                            GWT vs UTC 差異，Linux Etc/GWT 為何與現實時區相反
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Tue Mar 08 2016 21:22:03 GMT+0800">
+	
+		    Mar 08, 2016
+    	
+    </time>
+    
+        <span>分類 </span>
         
-            
-            
-            
-                
-                
-                <div class="archive archive-year box" data-date="2016">
-                    <h4 class="archive-title">
-                        <a class="link-unstyled" href="/blog/archives/2016">2016</a>
-                    </h4>
-            
-            
-                
-                <ul class="archive-posts archive-month" data-date="201603">
-                    <h5 class="archive-title">
-                        <a class="link-unstyled" href="/blog/archives/2016/03">March</a>
-                    </h5>
-                
-            
-            <li class="archive-post archive-day" data-date="20160308">
-                <a class="archive-post-title" href="/blog/2016/03/08/GWT-vs-UTC-差異，Linux-Etc-GWT-為何與現實時區相反/">GWT vs UTC 差異，Linux Etc/GWT 為何與現實時區相反</a>
-                <span class="archive-post-date"> - mar 08, 2016</span>
-            </li>
-        
-            
-            
-            
-            
-                
-                    </ul>
-                
-                <ul class="archive-posts archive-month" data-date="201602">
-                    <h5 class="archive-title">
-                        <a class="link-unstyled" href="/blog/archives/2016/02">February</a>
-                    </h5>
-                
-            
-            <li class="archive-post archive-day" data-date="20160229">
-                <a class="archive-post-title" href="/blog/2016/02/29/Hexo-Blog-架設-進階篇/">Hexo Blog 架設- 進階篇</a>
-                <span class="archive-post-date"> - feb 29, 2016</span>
-            </li>
-        
-            
-            
-            
-            
-            <li class="archive-post archive-day" data-date="20160229">
-                <a class="archive-post-title" href="/blog/2016/02/29/Chromecast-Audio-無線音響/">Chromecast Audio 變身無線音響</a>
-                <span class="archive-post-date"> - feb 29, 2016</span>
-            </li>
-        
-            
-            
-            
-            
-            <li class="archive-post archive-day" data-date="20160223">
-                <a class="archive-post-title" href="/blog/2016/02/23/Webpack-ProvidePlugin-不用再import-React-了/">Webpack ProvidePlugin : 不用再 import React 了</a>
-                <span class="archive-post-date"> - feb 23, 2016</span>
-            </li>
-        
-            
-            
-            
-            
-            <li class="archive-post archive-day" data-date="20160223">
-                <a class="archive-post-title" href="/blog/2016/02/23/iOS-APP-Deploy-證書簽發者無效-Failed-to-locate-or-generate-matching-signing-assets/">iOS App Deploy 證書簽發者無效: Failed to locate or generate matching signing assets</a>
-                <span class="archive-post-date"> - feb 23, 2016</span>
-            </li>
-        
-            
-            
-            
-            
-            <li class="archive-post archive-day" data-date="20160221">
-                <a class="archive-post-title" href="/blog/2016/02/21/Github-Blog-架設-Hexo/">Github Blog 架設 - Hexo</a>
-                <span class="archive-post-date"> - feb 21, 2016</span>
-            </li>
-        
-    </section>
+    <a class="category-link" href="/blog/categories/Linux/">Linux</a>
+
+
+    
 </div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h2 id="GWT__26amp_3B_UTC"><a href="#GWT__26amp_3B_UTC" class="headerlink" title="GWT &amp; UTC"></a>GWT &amp; UTC</h2><p>首先來說 GWT 和 UTC 是什麼有什麼差別</p>
+<blockquote>
+<p>GWT：格林威治標準時間</p>
+<p>UTC：世界協調時間</p>
+</blockquote>
+<p>他們都是世界標準時間，而 UTC 的算法更為嚴謹，所以比 GWT 更為精準，不過兩者的差異是極小的，所以基本上時間是可以看作相同的</p>
+<h2 id="Linux_Etc/GWT__u6642_u5340_u70BA_u4F55_u6B63_u8CA0_u985B_u5012"><a href="#Linux_Etc/GWT__u6642_u5340_u70BA_u4F55_u6B63_u8CA0_u985B_u5012" class="headerlink" title="Linux Etc/GWT 時區為何正負顛倒"></a>Linux Etc/GWT 時區為何正負顛倒</h2><p>當你使用 Linux 設定時區時 ，若是選用 Etc 底下的 GWT 時區，可能會發現設定的結果與你預想的不同，當你想設定台北的時區 （GWT＋8) ，但設定完後，系統時間卻是 -8 的時區，和台北時間相差 16 小時，原因是因為 Etc 底下的 GWT 時區是以<code>格林威治</code>以西為正，以東為負，剛好與我們現實生活的認知相反</p>
+<p>而原因只是因為當初 Unix 多為西方人使用，便以西為正</p>
+<p>因此在設定的時候需要選擇正負相反的選項</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="http://lemonlatte.logdown.com/tags/tzdata" target="_blank" rel="external">http://lemonlatte.logdown.com/tags/tzdata</a></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/03/08/GWT-vs-UTC-差異，Linux-Etc-GWT-為何與現實時區相反/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    <div class="pagination-bar">
+    <ul class="pagination">
+        
+        
+        <li class="pagination-number">第 1 頁 共 1 頁</li>
+    </ul>
+</div>
+
+</section>
+
 
                 <footer id="footer" class="main-content-wrap">
     <span class="copyrights">
@@ -362,25 +346,6 @@
 <script src="/blog/assets/js/jquery.fancybox-thumbs.js" type="text/javascript"></script>
 <script src="/blog/assets/js/tranquilpeak.js" type="text/javascript"></script>
 <!--SCRIPTS END-->
-
-    
-        <script>
-             var disqus_config = function () {
-                 this.page.url = 'http://kyoyadmoon.github.io/blog/all-archives/index.html';
-                 
-                    this.page.identifier = 'all-archives/index.html';
-                                  
-             };
-            (function() {
-                var d = document, s = d.createElement('script');
-                var disqus_shortname = 'dmoonlaputa';
-                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-            })();
-        </script>
-    
 
 
 
