@@ -252,7 +252,7 @@
 <p>UTC：世界協調時間</p>
 </blockquote>
 <p>他們都是世界標準時間，而 UTC 的算法更為嚴謹，所以比 GWT 更為精準，不過兩者的差異是極小的，所以基本上時間是可以看作相同的</p>
-<h2 id="Linux_Etc/GWT__u6642_u5340_u70BA_u4F55_u6B63_u8CA0_u985B_u5012"><a href="#Linux_Etc/GWT__u6642_u5340_u70BA_u4F55_u6B63_u8CA0_u985B_u5012" class="headerlink" title="Linux Etc/GWT 時區為何正負顛倒"></a>Linux Etc/GWT 時區為何正負顛倒</h2><p>當你使用 Linux 設定時區時 ，若是選用 Etc 底下的 GWT 時區，可能會發現設定的結果與你預想的不同，當你想設定台北的時區 （GWT＋8) ，但設定完後，系統時間卻是 -8 的時區，和台北時間相差 16 小時，原因是因為 Etc 底下的 GWT 時區是以<code>格林威治</code>以西為正，以東為負，剛好與我們現實生活的認知相反</p>
+<h2 id="Linux_Etc/GWT__u6642_u5340_u70BA_u4F55_u6B63_u8CA0_u985B_u5012"><a href="#Linux_Etc/GWT__u6642_u5340_u70BA_u4F55_u6B63_u8CA0_u985B_u5012" class="headerlink" title="Linux Etc/GWT 時區為何正負顛倒"></a>Linux Etc/GWT 時區為何正負顛倒</h2><p>當你使用 Linux 設定時區時 ，若是選用 Etc 底下的 GWT 時區，可能會發現設定的結果與你預想的不同，當你想設定台北的時區 （GWT＋8) ，但設定完後，系統時間卻是 -8 的時區，和台北時間相差 16 小時，原因是因為 Etc 底下的 GWT 時區是以 <code>格林威治</code> 以西為正，以東為負，剛好與我們現實生活的認知相反</p>
 <p>而原因只是因為當初 Unix 多為西方人使用，便以西為正</p>
 <p>因此在設定的時候需要選擇正負相反的選項</p>
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="http://lemonlatte.logdown.com/tags/tzdata" target="_blank" rel="external">http://lemonlatte.logdown.com/tags/tzdata</a></p>
@@ -536,7 +536,7 @@
 <p>透過指令部署之前請先確定你有 github 的 SSH key</p>
 <p>沒有的話請參考 <a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/" target="_blank" rel="external">這篇</a></p>
 <p>然後就可以部署到 github 上了</p>
-<p>hexo d # hexo deploy</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">hexo</span> d <span class="comment"># hexo deploy</span></span><br></pre></td></tr></table></figure>
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://hexo.io/zh-tw/docs/" target="_blank" rel="external">Hexo offical docs</a></p>
 <p><a href="https://wwssllabcd.github.io/blog/2014/12/22/how-to-install-hexo-on-window/#安裝_Hexo_所需檔案" target="_blank" rel="external">Hexo 中文安裝教學</a></p>
 <p><a href="http://v123582.github.io/blog/2015/10/25/用-hexo-建立一個自己的部落格/" target="_blank" rel="external">http://v123582.github.io/blog/2015/10/25/用-hexo-建立一個自己的部落格/</a></p>
