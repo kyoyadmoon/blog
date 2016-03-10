@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://kyoyadmoon.github.io/blog/"/>
-  <updated>2016-03-10T09:08:23.000Z</updated>
+  <updated>2016-03-10T09:11:21.000Z</updated>
   <id>http://kyoyadmoon.github.io/blog/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://kyoyadmoon.github.io/blog/2016/03/08/GMT-vs-UTC-diff-and-Etc-GMT-reverse-timezone/"/>
     <id>http://kyoyadmoon.github.io/blog/2016/03/08/GMT-vs-UTC-diff-and-Etc-GMT-reverse-timezone/</id>
     <published>2016-03-08T13:22:03.000Z</published>
-    <updated>2016-03-10T09:08:23.000Z</updated>
+    <updated>2016-03-10T09:11:21.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;GMT__26amp_3B_UTC&quot;&gt;&lt;a href=&quot;#GMT__26amp_3B_UTC&quot; class=&quot;headerlink&quot; title=&quot;GMT &amp;amp; UTC&quot;&gt;&lt;/a&gt;GMT &amp;amp; UTC&lt;/h2&gt;&lt;p&gt;首先來說 GMT 和 UTC 是什麼有什麼差別&lt;/p&gt;
 &lt;blockquote&gt;
@@ -28,7 +28,7 @@
 &lt;p&gt;UTC：世界協調時間&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;他們都是世界標準時間，而 UTC 的算法更為嚴謹，所以比 GMT 更為精準，不過兩者的差異是極小的，所以基本上時間是可以看作相同的&lt;/p&gt;
-&lt;h2 id=&quot;Linux_Etc/GMT__u6642_u5340_u70BA_u4F55_u6B63_u8CA0_u985B_u5012&quot;&gt;&lt;a href=&quot;#Linux_Etc/GMT__u6642_u5340_u70BA_u4F55_u6B63_u8CA0_u985B_u5012&quot; class=&quot;headerlink&quot; title=&quot;Linux Etc/GMT 時區為何正負顛倒&quot;&gt;&lt;/a&gt;Linux Etc/GMT 時區為何正負顛倒&lt;/h2&gt;&lt;p&gt;當你使用 Linux 設定時區時 ，若是選用 Etc 底下的 GMT 時區，可能會發現設定的結果與你預想的不同，當你想設定台北的時區 （GMT＋8) ，但設定完後，系統時間卻是 -8 的時區，和台北時間相差 16 小時，原因是因為 Etc 底下的 GWT 時區是以 &lt;code&gt;格林威治&lt;/code&gt; 以西為正，以東為負，剛好與我們現實生活的認知相反&lt;/p&gt;
+&lt;h2 id=&quot;Linux_Etc/GMT__u6642_u5340_u70BA_u4F55_u6B63_u8CA0_u985B_u5012&quot;&gt;&lt;a href=&quot;#Linux_Etc/GMT__u6642_u5340_u70BA_u4F55_u6B63_u8CA0_u985B_u5012&quot; class=&quot;headerlink&quot; title=&quot;Linux Etc/GMT 時區為何正負顛倒&quot;&gt;&lt;/a&gt;Linux Etc/GMT 時區為何正負顛倒&lt;/h2&gt;&lt;p&gt;當你使用 Linux 設定時區時 ，若是選用 Etc 底下的 GMT 時區，可能會發現設定的結果與你預想的不同，當你想設定台北的時區 （GMT＋8) ，但設定完後，系統時間卻是 -8 的時區，和台北時間相差 16 小時，原因是因為 Etc 底下的 GMT 時區是以 &lt;code&gt;格林威治&lt;/code&gt; 以西為正，以東為負，剛好與我們現實生活的認知相反&lt;/p&gt;
 &lt;p&gt;而原因只是因為當初 Unix 多為西方人使用，便以西為正&lt;/p&gt;
 &lt;p&gt;因此在設定的時候需要選擇正負相反的選項&lt;/p&gt;
 &lt;h1 id=&quot;Reference&quot;&gt;&lt;a href=&quot;#Reference&quot; class=&quot;headerlink&quot; title=&quot;Reference&quot;&gt;&lt;/a&gt;Reference&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://lemonlatte.logdown.com/tags/tzdata&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://lemonlatte.logdown.com/tags/tzdata&lt;/a&gt;&lt;/p&gt;
