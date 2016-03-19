@@ -257,7 +257,7 @@
 <p>所以我改成這樣</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.use(convert(staticCache(path.join(__dirname, <span class="string">'public'</span>), &#123;</span><br><span class="line">  maxAge: <span class="number">365</span> * <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span></span><br><span class="line">&#125;)))</span><br></pre></td></tr></table></figure>
 <p>不過卻沒成功</p>
-<p>後來看了別人的 Sample 才知道 StaticCache 後，還需要 mount 到 route 上</p>
+<p>後來看了別人的 Sample 才知道 StaticCache 後，還需要 <a href="https://github.com/koajs/mount" target="_blank" rel="external">mount</a> 到 route 上</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(convert(mount(<span class="string">'/public/assets/js'</span>, staticCache(path.join(__dirname, <span class="string">'../public/assets/js/'</span>), &#123;maxAge: <span class="number">30</span> * <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span>&#125;))));</span><br></pre></td></tr></table></figure>
 <p>最後改成這樣終於成功啦！</p>
 
