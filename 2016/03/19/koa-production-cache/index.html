@@ -6,22 +6,36 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="DMoon&#39;s Laputa">
-    <title>所有文章: 2016/3 - DMoon&#39;s Laputa</title>
+    <title>koa production cache 設定 - koa-static-cache - DMoon&#39;s Laputa</title>
     <meta name="author" content="DMoon">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description">
+    <meta name="description" content="之前在設定 Koa 的 cache 時，有點小卡關，所以記錄一下
+我使用的 Koa 版本是 2.0.0
+搭配處理 cache 的套件 是 koa-static-cache
+官方 readme 上面的範例用法長這樣
+123app.use(staticCache(path.join(__dirname, &apos;public&apos;), &amp;#123;  maxAge: 365 * 24 * 60 * 60&amp;#12">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="DMoon's Laputa">
-<meta property="og:url" content="http://kyoyadmoon.github.io/blog/archives/2016/03/index.html">
+<meta property="og:title" content="koa production cache 設定 - koa-static-cache">
+<meta property="og:url" content="http://kyoyadmoon.github.io/blog/2016/03/19/koa-production-cache/index.html">
 <meta property="og:site_name" content="DMoon's Laputa">
-<meta property="og:description">
+<meta property="og:description" content="之前在設定 Koa 的 cache 時，有點小卡關，所以記錄一下
+我使用的 Koa 版本是 2.0.0
+搭配處理 cache 的套件 是 koa-static-cache
+官方 readme 上面的範例用法長這樣
+123app.use(staticCache(path.join(__dirname, &apos;public&apos;), &amp;#123;  maxAge: 365 * 24 * 60 * 60&amp;#12">
+<meta property="og:image" content="https://lh3.googleusercontent.com/ehH3I28TQSBMOxkYzQ_Yp2Z9kXlDYbX-v22jH8BRXZ5bUC8PYpShgwBQP42-PKZ77vx0bn1eRsz3yrr_gIaEaKqeA_4Mt7WGd_YGXT3B40haq311NgEkP2K98NJMoj7J1-gwvEVbBPnyNO53PEFazJAZT6XMcYdnf_VNZ3NqVbPq3dgmgR8LMi2PIzdCqK0F_RWMedcl1RLfTbqxBugRbNcr38oiQ82yr5eZGAC2Chcni09MCtYdhHINoIzl-3cVh8M-K8rTpAAa3YwHwXrjUgTf4ZRVqC8aQnpr8RbCb2kboVZ6AbcVLwv1dz1LeCjo8pVEXEAqCBbxi4I3hUzfq-BpWJPmSRIqq55KPyKgXJeU90H-Aqkj0Yg0qe8zYEhd-vL_6nyqcpE7jT83VyLKStI6dsaA_LA72KqbvTuDRO8ABONlYOuQrG2Qsvxjm0A6d9qVRyCci1iD7q1c1ZhQ_xKfNgSXhnrZynFMoMaWhBSsdPVkbj7Jk_1nTnirxofc5nJOJphRMD2pwbBrSY4B-2uNhv0l0qpa5eI5LB6AvBjc4pPeXEq-ozZO06deNMj0tRUO=w1585-h712-no">
+<meta property="og:updated_time" content="2016-03-19T02:50:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DMoon's Laputa">
-<meta name="twitter:description">
+<meta name="twitter:title" content="koa production cache 設定 - koa-static-cache">
+<meta name="twitter:description" content="之前在設定 Koa 的 cache 時，有點小卡關，所以記錄一下
+我使用的 Koa 版本是 2.0.0
+搭配處理 cache 的套件 是 koa-static-cache
+官方 readme 上面的範例用法長這樣
+123app.use(staticCache(path.join(__dirname, &apos;public&apos;), &amp;#123;  maxAge: 365 * 24 * 60 * 60&amp;#12">
     
     
         
@@ -64,7 +78,7 @@
         
     
 
-<header id="header" data-behavior="1">
+<header id="header" data-behavior="3">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <h1 class="header-title">
         <a class="header-title-link" href="/blog/ ">DMoon&#39;s Laputa</a>
@@ -88,7 +102,7 @@
         
     
 
-<nav id="sidebar" data-behavior="1">
+<nav id="sidebar" data-behavior="3">
     
         <div class="sidebar-profile">
             <a href="/#about">
@@ -208,28 +222,22 @@
 </nav>
 
             
-            <div id="main" data-behavior="1"
+            <div id="main" data-behavior="3"
                  class="
                         hasCoverMetaIn
                         
-                        transparent " >
+                         " >
                 
-    
-
-<section class="postShorten-group main-content-wrap bg-white main-section">
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
     
     
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/03/19/koa-production-cache/">
-                            koa production cache 設定 - koa-static-cache
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            koa production cache 設定 - koa-static-cache
+        </h1>
+    
+    <div class="post-meta">
     <time itemprop="datePublished" content="Sat Mar 19 2016 10:07:46 GMT+0800">
 	
 		    Mar 19, 2016
@@ -243,11 +251,11 @@
 
     
 </div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p><img src="https://lh3.googleusercontent.com/ehH3I28TQSBMOxkYzQ_Yp2Z9kXlDYbX-v22jH8BRXZ5bUC8PYpShgwBQP42-PKZ77vx0bn1eRsz3yrr_gIaEaKqeA_4Mt7WGd_YGXT3B40haq311NgEkP2K98NJMoj7J1-gwvEVbBPnyNO53PEFazJAZT6XMcYdnf_VNZ3NqVbPq3dgmgR8LMi2PIzdCqK0F_RWMedcl1RLfTbqxBugRbNcr38oiQ82yr5eZGAC2Chcni09MCtYdhHINoIzl-3cVh8M-K8rTpAAa3YwHwXrjUgTf4ZRVqC8aQnpr8RbCb2kboVZ6AbcVLwv1dz1LeCjo8pVEXEAqCBbxi4I3hUzfq-BpWJPmSRIqq55KPyKgXJeU90H-Aqkj0Yg0qe8zYEhd-vL_6nyqcpE7jT83VyLKStI6dsaA_LA72KqbvTuDRO8ABONlYOuQrG2Qsvxjm0A6d9qVRyCci1iD7q1c1ZhQ_xKfNgSXhnrZynFMoMaWhBSsdPVkbj7Jk_1nTnirxofc5nJOJphRMD2pwbBrSY4B-2uNhv0l0qpa5eI5LB6AvBjc4pPeXEq-ozZO06deNMj0tRUO=w1585-h712-no" alt="Koa.js"></p>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p><img src="https://lh3.googleusercontent.com/ehH3I28TQSBMOxkYzQ_Yp2Z9kXlDYbX-v22jH8BRXZ5bUC8PYpShgwBQP42-PKZ77vx0bn1eRsz3yrr_gIaEaKqeA_4Mt7WGd_YGXT3B40haq311NgEkP2K98NJMoj7J1-gwvEVbBPnyNO53PEFazJAZT6XMcYdnf_VNZ3NqVbPq3dgmgR8LMi2PIzdCqK0F_RWMedcl1RLfTbqxBugRbNcr38oiQ82yr5eZGAC2Chcni09MCtYdhHINoIzl-3cVh8M-K8rTpAAa3YwHwXrjUgTf4ZRVqC8aQnpr8RbCb2kboVZ6AbcVLwv1dz1LeCjo8pVEXEAqCBbxi4I3hUzfq-BpWJPmSRIqq55KPyKgXJeU90H-Aqkj0Yg0qe8zYEhd-vL_6nyqcpE7jT83VyLKStI6dsaA_LA72KqbvTuDRO8ABONlYOuQrG2Qsvxjm0A6d9qVRyCci1iD7q1c1ZhQ_xKfNgSXhnrZynFMoMaWhBSsdPVkbj7Jk_1nTnirxofc5nJOJphRMD2pwbBrSY4B-2uNhv0l0qpa5eI5LB6AvBjc4pPeXEq-ozZO06deNMj0tRUO=w1585-h712-no" alt="Koa.js"></p>
 <p>之前在設定 Koa 的 cache 時，有點小卡關，所以記錄一下</p>
 <p>我使用的 Koa 版本是 2.0.0</p>
 <p>搭配處理 cache 的套件 是 <a href="https://github.com/koajs/static-cache" target="_blank" rel="external">koa-static-cache</a></p>
@@ -261,89 +269,90 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(convert(mount(<span class="string">'/public/assets/js'</span>, staticCache(path.join(__dirname, <span class="string">'../public/assets/js/'</span>), &#123;maxAge: <span class="number">30</span> * <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span>&#125;))));</span><br></pre></td></tr></table></figure>
 <p>最後改成這樣終於成功啦！</p>
 
-                    
-                        
+            
+                
 
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/03/19/koa-production-cache/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
             
         </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
         
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/03/08/GWT-vs-UTC-diff-and-Etc-GWT-reverse-timezone/">
-                            GMT vs UTC 差異，Linux Etc/GMT 為何與現實時區相反
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Tue Mar 08 2016 21:22:03 GMT+0800">
-	
-		    Mar 08, 2016
-    	
-    </time>
-    
-        <span>分類 </span>
-        
-    <a class="category-link" href="/blog/categories/Linux/">Linux</a>
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">標籤</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/blog/tags/Koa/">Koa</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/Production/">Production</a>
 
-
-    
-</div>
             </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <h2 id="GMT__26amp_3B_UTC"><a href="#GMT__26amp_3B_UTC" class="headerlink" title="GMT &amp; UTC"></a>GMT &amp; UTC</h2><p>首先來說 GMT 和 UTC 是什麼，有什麼差別</p>
-<blockquote>
-<p>GMT：格林威治標準時間</p>
-<p>UTC：世界協調時間</p>
-</blockquote>
-<p>他們都是世界標準時間，而 UTC 的算法更為嚴謹，所以比 GMT 更為精準，不過兩者的差異是極小的，所以基本上時間是可以看作相同的</p>
-<h2 id="Linux_Etc/GMT__u6642_u5340_u70BA_u4F55_u6B63_u8CA0_u985B_u5012"><a href="#Linux_Etc/GMT__u6642_u5340_u70BA_u4F55_u6B63_u8CA0_u985B_u5012" class="headerlink" title="Linux Etc/GMT 時區為何正負顛倒"></a>Linux Etc/GMT 時區為何正負顛倒</h2><p>當你使用 Linux 設定時區時 ，若是選用 Etc 底下的 GMT 時區，可能會發現設定的結果與你預想的不同，當你想設定台北的時區 （GMT＋8) ，但設定完後，系統時間卻是 -8 的時區，和台北時間相差 16 小時，原因是因為 Etc 底下的 GMT 時區是以 <code>格林威治</code> 以西為正，以東為負，剛好與我們現實生活的認知相反</p>
-<p>而原因只是因為當初 Unix 多為西方人使用，便以西為正</p>
-<p>因此在設定的時候需要選擇正負相反的選項</p>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="http://lemonlatte.logdown.com/tags/tzdata" target="_blank" rel="external">http://lemonlatte.logdown.com/tags/tzdata</a></p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/03/08/GWT-vs-UTC-diff-and-Etc-GWT-reverse-timezone/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
         
-    </article>
-    
-    <div class="pagination-bar">
-    <ul class="pagination">
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/08/GWT-vs-UTC-diff-and-Etc-GWT-reverse-timezone/" data-tooltip="GMT vs UTC 差異，Linux Etc/GMT 為何與現實時區相反">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/03/19/koa-production-cache/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/03/19/koa-production-cache/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/03/19/koa-production-cache/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
         
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
         
-        <li class="pagination-number">第 1 頁 共 1 頁</li>
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
     </ul>
 </div>
 
-</section>
+
+        
+            
+                <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+            
+        
+    </div>
+</article>
 
 
 
@@ -354,6 +363,89 @@
 </footer>
 
             </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/08/GWT-vs-UTC-diff-and-Etc-GWT-reverse-timezone/" data-tooltip="GMT vs UTC 差異，Linux Etc/GMT 為何與現實時區相反">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/03/19/koa-production-cache/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/03/19/koa-production-cache/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/03/19/koa-production-cache/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/03/19/koa-production-cache/">
+                <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/03/19/koa-production-cache/">
+                <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/03/19/koa-production-cache/">
+                <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
             
         </div>
         
@@ -407,6 +499,25 @@
 <script src="/blog/assets/js/jquery.fancybox-thumbs.js" type="text/javascript"></script>
 <script src="/blog/assets/js/tranquilpeak.js" type="text/javascript"></script>
 <!--SCRIPTS END-->
+
+    
+        <script>
+             var disqus_config = function () {
+                 this.page.url = 'http://kyoyadmoon.github.io/blog/2016/03/19/koa-production-cache/';
+                 
+                    this.page.identifier = '2016/03/19/koa-production-cache/';
+                                  
+             };
+            (function() {
+                var d = document, s = d.createElement('script');
+                var disqus_shortname = 'dmoonlaputa';
+                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
 
 
 

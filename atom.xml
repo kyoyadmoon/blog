@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://kyoyadmoon.github.io/blog/"/>
-  <updated>2016-03-10T13:38:46.000Z</updated>
+  <updated>2016-03-19T02:50:50.000Z</updated>
   <id>http://kyoyadmoon.github.io/blog/</id>
   
   <author>
@@ -14,6 +14,43 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>koa production cache 設定 - koa-static-cache</title>
+    <link href="http://kyoyadmoon.github.io/blog/2016/03/19/koa-production-cache/"/>
+    <id>http://kyoyadmoon.github.io/blog/2016/03/19/koa-production-cache/</id>
+    <published>2016-03-19T02:07:46.000Z</published>
+    <updated>2016-03-19T02:50:50.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/ehH3I28TQSBMOxkYzQ_Yp2Z9kXlDYbX-v22jH8BRXZ5bUC8PYpShgwBQP42-PKZ77vx0bn1eRsz3yrr_gIaEaKqeA_4Mt7WGd_YGXT3B40haq311NgEkP2K98NJMoj7J1-gwvEVbBPnyNO53PEFazJAZT6XMcYdnf_VNZ3NqVbPq3dgmgR8LMi2PIzdCqK0F_RWMedcl1RLfTbqxBugRbNcr38oiQ82yr5eZGAC2Chcni09MCtYdhHINoIzl-3cVh8M-K8rTpAAa3YwHwXrjUgTf4ZRVqC8aQnpr8RbCb2kboVZ6AbcVLwv1dz1LeCjo8pVEXEAqCBbxi4I3hUzfq-BpWJPmSRIqq55KPyKgXJeU90H-Aqkj0Yg0qe8zYEhd-vL_6nyqcpE7jT83VyLKStI6dsaA_LA72KqbvTuDRO8ABONlYOuQrG2Qsvxjm0A6d9qVRyCci1iD7q1c1ZhQ_xKfNgSXhnrZynFMoMaWhBSsdPVkbj7Jk_1nTnirxofc5nJOJphRMD2pwbBrSY4B-2uNhv0l0qpa5eI5LB6AvBjc4pPeXEq-ozZO06deNMj0tRUO=w1585-h712-no&quot; alt=&quot;Koa.js&quot;&gt;&lt;/p&gt;
+&lt;p&gt;之前在設定 Koa 的 cache 時，有點小卡關，所以記錄一下&lt;/p&gt;
+&lt;p&gt;我使用的 Koa 版本是 2.0.0&lt;/p&gt;
+&lt;p&gt;搭配處理 cache 的套件 是 &lt;a href=&quot;https://github.com/koajs/static-cache&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;koa-static-cache&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;官方 readme 上面的範例用法長這樣&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;app.use(staticCache(path.join(__dirname, &lt;span class=&quot;string&quot;&gt;&#39;public&#39;&lt;/span&gt;), &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  maxAge: &lt;span class=&quot;number&quot;&gt;365&lt;/span&gt; * &lt;span class=&quot;number&quot;&gt;24&lt;/span&gt; * &lt;span class=&quot;number&quot;&gt;60&lt;/span&gt; * &lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;))&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;因為使用 Koa 2.0 的關係，需要 &lt;a href=&quot;https://github.com/koajs/convert&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;koa-convert&lt;/a&gt; 套件 convert 還沒更新支援 Koa 2.0 的套件，才能使用&lt;/p&gt;
+&lt;p&gt;所以我改成這樣&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;app.use(convert(staticCache(path.join(__dirname, &lt;span class=&quot;string&quot;&gt;&#39;public&#39;&lt;/span&gt;), &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  maxAge: &lt;span class=&quot;number&quot;&gt;365&lt;/span&gt; * &lt;span class=&quot;number&quot;&gt;24&lt;/span&gt; * &lt;span class=&quot;number&quot;&gt;60&lt;/span&gt; * &lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;)))&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;不過卻沒成功&lt;/p&gt;
+&lt;p&gt;後來看了別人的 Sample 才知道 StaticCache 後，還需要 mount 到 route 上&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;app.use(convert(mount(&lt;span class=&quot;string&quot;&gt;&#39;/public/assets/js&#39;&lt;/span&gt;, staticCache(path.join(__dirname, &lt;span class=&quot;string&quot;&gt;&#39;../public/assets/js/&#39;&lt;/span&gt;), &amp;#123;maxAge: &lt;span class=&quot;number&quot;&gt;30&lt;/span&gt; * &lt;span class=&quot;number&quot;&gt;24&lt;/span&gt; * &lt;span class=&quot;number&quot;&gt;60&lt;/span&gt; * &lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;&amp;#125;))));&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;最後改成這樣終於成功啦！&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/ehH3I28TQSBMOxkYzQ_Yp2Z9kXlDYbX-v22jH8BRXZ5bUC8PYpShgwBQP42-PKZ77vx0bn1eRsz3yrr_gIaEaKqeA_4Mt
+    
+    </summary>
+    
+      <category term="Node.js" scheme="http://kyoyadmoon.github.io/blog/categories/Node-js/"/>
+    
+    
+      <category term="Koa" scheme="http://kyoyadmoon.github.io/blog/tags/Koa/"/>
+    
+      <category term="Production" scheme="http://kyoyadmoon.github.io/blog/tags/Production/"/>
+    
+  </entry>
   
   <entry>
     <title>GMT vs UTC 差異，Linux Etc/GMT 為何與現實時區相反</title>

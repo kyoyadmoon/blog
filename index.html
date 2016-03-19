@@ -223,6 +223,66 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/03/19/koa-production-cache/">
+                            koa production cache 設定 - koa-static-cache
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Sat Mar 19 2016 10:07:46 GMT+0800">
+	
+		    Mar 19, 2016
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/blog/categories/Node-js/">Node.js</a>
+
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p><img src="https://lh3.googleusercontent.com/ehH3I28TQSBMOxkYzQ_Yp2Z9kXlDYbX-v22jH8BRXZ5bUC8PYpShgwBQP42-PKZ77vx0bn1eRsz3yrr_gIaEaKqeA_4Mt7WGd_YGXT3B40haq311NgEkP2K98NJMoj7J1-gwvEVbBPnyNO53PEFazJAZT6XMcYdnf_VNZ3NqVbPq3dgmgR8LMi2PIzdCqK0F_RWMedcl1RLfTbqxBugRbNcr38oiQ82yr5eZGAC2Chcni09MCtYdhHINoIzl-3cVh8M-K8rTpAAa3YwHwXrjUgTf4ZRVqC8aQnpr8RbCb2kboVZ6AbcVLwv1dz1LeCjo8pVEXEAqCBbxi4I3hUzfq-BpWJPmSRIqq55KPyKgXJeU90H-Aqkj0Yg0qe8zYEhd-vL_6nyqcpE7jT83VyLKStI6dsaA_LA72KqbvTuDRO8ABONlYOuQrG2Qsvxjm0A6d9qVRyCci1iD7q1c1ZhQ_xKfNgSXhnrZynFMoMaWhBSsdPVkbj7Jk_1nTnirxofc5nJOJphRMD2pwbBrSY4B-2uNhv0l0qpa5eI5LB6AvBjc4pPeXEq-ozZO06deNMj0tRUO=w1585-h712-no" alt="Koa.js"></p>
+<p>之前在設定 Koa 的 cache 時，有點小卡關，所以記錄一下</p>
+<p>我使用的 Koa 版本是 2.0.0</p>
+<p>搭配處理 cache 的套件 是 <a href="https://github.com/koajs/static-cache" target="_blank" rel="external">koa-static-cache</a></p>
+<p>官方 readme 上面的範例用法長這樣</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.use(staticCache(path.join(__dirname, <span class="string">'public'</span>), &#123;</span><br><span class="line">  maxAge: <span class="number">365</span> * <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span></span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure>
+<p>因為使用 Koa 2.0 的關係，需要 <a href="https://github.com/koajs/convert" target="_blank" rel="external">koa-convert</a> 套件 convert 還沒更新支援 Koa 2.0 的套件，才能使用</p>
+<p>所以我改成這樣</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.use(convert(staticCache(path.join(__dirname, <span class="string">'public'</span>), &#123;</span><br><span class="line">  maxAge: <span class="number">365</span> * <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span></span><br><span class="line">&#125;)))</span><br></pre></td></tr></table></figure>
+<p>不過卻沒成功</p>
+<p>後來看了別人的 Sample 才知道 StaticCache 後，還需要 mount 到 route 上</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(convert(mount(<span class="string">'/public/assets/js'</span>, staticCache(path.join(__dirname, <span class="string">'../public/assets/js/'</span>), &#123;maxAge: <span class="number">30</span> * <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span>&#125;))));</span><br></pre></td></tr></table></figure>
+<p>最後改成這樣終於成功啦！</p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/03/19/koa-production-cache/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/03/08/GWT-vs-UTC-diff-and-Etc-GWT-reverse-timezone/">
                             GMT vs UTC 差異，Linux Etc/GMT 為何與現實時區相反
                         </a>
