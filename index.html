@@ -257,9 +257,9 @@
 </blockquote>
 <p>安裝後可以利用指令 init  <code>.eslintrc.js</code></p>
 <blockquote>
-<p>eslint —init
-透過 .eslintrc.js 這個檔案可以編輯 eslint 的規則</p>
+<p>eslint —init</p>
 </blockquote>
+<p>透過 .eslintrc.js 這個檔案可以編輯 eslint 的規則</p>
 <p>加入 extends airbnb 和 react plugin 就可以了</p>
 <p>因為我有使用 es6 語法 所以需要多一個 babel 當 parser</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* .eslintrc.js */</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    <span class="string">"extends"</span>: <span class="string">"airbnb"</span>,</span><br><span class="line">    <span class="string">"plugins"</span>: [</span><br><span class="line">        <span class="string">"react"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="string">"parser"</span>: <span class="string">"babel-eslint"</span>,</span><br><span class="line">    <span class="string">"rules"</span>: &#123;</span><br><span class="line">      <span class="string">"strict"</span>: <span class="number">0</span></span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
