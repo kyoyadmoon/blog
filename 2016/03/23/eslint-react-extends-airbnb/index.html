@@ -13,19 +13,19 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="之前一直沒有嘗試過 JSHint、ESLint ，但隨著合作開發的人數越來越多，程式碼的風格和規範問題就更加明顯，加上最近看了神作 Clean Code ，覺得寫出乾淨的程式碼真的很重要，剛好爬文發現有人推薦 Airbnb 釋出的 ESLint config 來做 js 和 React.js 規範，所以就決定來嘗試看看！
+    <meta name="description" content="之前一直沒有嘗試過 JSHint、ESLint ，但隨著合作開發的人數越來越多，程式碼的風格和規範問題就更加明顯，加上最近看了聖經 Clean Code ，覺得寫出乾淨的程式碼真的很重要，剛好爬文發現有人推薦 Airbnb 釋出的 ESLint config 來做 js 和 React.js 規範，所以就決定來嘗試看看！
 首先我要推薦 eslint-plugin-react 這個套件，這套件除了規">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="ESLint React 心得 - extends Airbnb config">
-<meta property="og:url" content="http://kyoyadmoon.github.io/blog/2016/03/23/ESLint-React-心得/index.html">
+<meta property="og:url" content="http://kyoyadmoon.github.io/blog/2016/03/23/eslint-react-extends-airbnb/index.html">
 <meta property="og:site_name" content="DMoon's Laputa">
-<meta property="og:description" content="之前一直沒有嘗試過 JSHint、ESLint ，但隨著合作開發的人數越來越多，程式碼的風格和規範問題就更加明顯，加上最近看了神作 Clean Code ，覺得寫出乾淨的程式碼真的很重要，剛好爬文發現有人推薦 Airbnb 釋出的 ESLint config 來做 js 和 React.js 規範，所以就決定來嘗試看看！
+<meta property="og:description" content="之前一直沒有嘗試過 JSHint、ESLint ，但隨著合作開發的人數越來越多，程式碼的風格和規範問題就更加明顯，加上最近看了聖經 Clean Code ，覺得寫出乾淨的程式碼真的很重要，剛好爬文發現有人推薦 Airbnb 釋出的 ESLint config 來做 js 和 React.js 規範，所以就決定來嘗試看看！
 首先我要推薦 eslint-plugin-react 這個套件，這套件除了規">
 <meta property="og:image" content="https://lh3.googleusercontent.com/J_zhmNsFt-oz38WoPg-bJkojjA3bKvsJaU81PxDuTn2QeR934HoMKzk_RbNjIBmN2ZwgnDL3m99nKa7AzbqkV1ddjcMlPA2wfFKnfKFuoitT7X1DWsu07pXsvv6XkV4PvcG6F9nlGHTTLHmTwtx4fVWdXNEhMoRBXf3KbrfaFhxwhXtxxKNcCqbCZauemoBsNY8J4inI_JDzZiiUyQIASEhdFcexrL9DmeNH5_zTXea0yQmXJcnYulVCgmYjJN-aEMbBAJkA8P_G-6Izm53Zikw86lzlVughJxqjau_hp7-BDDjkB7fjPYN5PA4XazhVzQkLlFYGQX5l8hLbSlCzoeg8nIDpW3F8-16bCtxORmPWhCtnOlwYAmm-Ue2waRvoHW8CjaFCu3kNi0SIbP8wQ8WceNIWr9CR2wsMCqNzSLr6ZJQZWxs9njjqtTR39pSgjSEmHf_jWnbNIsTOVl91JLMTdxsAE487wXPkOCk5Hmrg1VU85PQAcsvt7JiJ4XmXoGewtdqg8Cu4-LIQzdTia01Yor--4yfpg9HfAWg-xmNsHWjZ9QDNyvctMRJ_culEfnYi=w1237-h320-no">
-<meta property="og:updated_time" content="2016-03-23T08:33:42.000Z">
+<meta property="og:updated_time" content="2016-03-23T09:38:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ESLint React 心得 - extends Airbnb config">
-<meta name="twitter:description" content="之前一直沒有嘗試過 JSHint、ESLint ，但隨著合作開發的人數越來越多，程式碼的風格和規範問題就更加明顯，加上最近看了神作 Clean Code ，覺得寫出乾淨的程式碼真的很重要，剛好爬文發現有人推薦 Airbnb 釋出的 ESLint config 來做 js 和 React.js 規範，所以就決定來嘗試看看！
+<meta name="twitter:description" content="之前一直沒有嘗試過 JSHint、ESLint ，但隨著合作開發的人數越來越多，程式碼的風格和規範問題就更加明顯，加上最近看了聖經 Clean Code ，覺得寫出乾淨的程式碼真的很重要，剛好爬文發現有人推薦 Airbnb 釋出的 ESLint config 來做 js 和 React.js 規範，所以就決定來嘗試看看！
 首先我要推薦 eslint-plugin-react 這個套件，這套件除了規">
     
     
@@ -247,7 +247,7 @@
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
             <p><img src="https://lh3.googleusercontent.com/J_zhmNsFt-oz38WoPg-bJkojjA3bKvsJaU81PxDuTn2QeR934HoMKzk_RbNjIBmN2ZwgnDL3m99nKa7AzbqkV1ddjcMlPA2wfFKnfKFuoitT7X1DWsu07pXsvv6XkV4PvcG6F9nlGHTTLHmTwtx4fVWdXNEhMoRBXf3KbrfaFhxwhXtxxKNcCqbCZauemoBsNY8J4inI_JDzZiiUyQIASEhdFcexrL9DmeNH5_zTXea0yQmXJcnYulVCgmYjJN-aEMbBAJkA8P_G-6Izm53Zikw86lzlVughJxqjau_hp7-BDDjkB7fjPYN5PA4XazhVzQkLlFYGQX5l8hLbSlCzoeg8nIDpW3F8-16bCtxORmPWhCtnOlwYAmm-Ue2waRvoHW8CjaFCu3kNi0SIbP8wQ8WceNIWr9CR2wsMCqNzSLr6ZJQZWxs9njjqtTR39pSgjSEmHf_jWnbNIsTOVl91JLMTdxsAE487wXPkOCk5Hmrg1VU85PQAcsvt7JiJ4XmXoGewtdqg8Cu4-LIQzdTia01Yor--4yfpg9HfAWg-xmNsHWjZ9QDNyvctMRJ_culEfnYi=w1237-h320-no" alt="ESLint"></p>
-<p>之前一直沒有嘗試過 JSHint、ESLint ，但隨著合作開發的人數越來越多，程式碼的風格和規範問題就更加明顯，加上最近看了神作 <code>Clean Code</code> ，覺得寫出乾淨的程式碼真的很重要，剛好爬文發現有人推薦 Airbnb 釋出的 ESLint config 來做 js 和 React.js 規範，所以就決定來嘗試看看！</p>
+<p>之前一直沒有嘗試過 JSHint、ESLint ，但隨著合作開發的人數越來越多，程式碼的風格和規範問題就更加明顯，加上最近看了聖經 <code>Clean Code</code> ，覺得寫出乾淨的程式碼真的很重要，剛好爬文發現有人推薦 Airbnb 釋出的 ESLint config 來做 js 和 React.js 規範，所以就決定來嘗試看看！</p>
 <p>首先我要推薦 <a href="https://github.com/yannickcr/eslint-plugin-react" target="_blank" rel="external">eslint-plugin-react</a> 這個套件，這套件除了規範 React 的一些寫法，重要的是他還有寫 rules 的文件，告訴你為什麼建議這樣寫，只要把 eslint 上出現的錯誤訊息，拿去 google 就會找到 github 上用 markdown 寫的相關說明，跟著寫就有種 Level Up 的感覺，實在受益匪淺！</p>
 <p>#Setup</p>
 <p>安裝方法很簡單</p>
@@ -306,17 +306,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/03/23/ESLint-React-心得/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/03/23/eslint-react-extends-airbnb/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/03/23/ESLint-React-心得/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/03/23/eslint-react-extends-airbnb/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/03/23/ESLint-React-心得/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/03/23/eslint-react-extends-airbnb/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -387,17 +387,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/03/23/ESLint-React-心得/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/03/23/eslint-react-extends-airbnb/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/03/23/ESLint-React-心得/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/03/23/eslint-react-extends-airbnb/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/03/23/ESLint-React-心得/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/03/23/eslint-react-extends-airbnb/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -423,17 +423,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/03/23/ESLint-React-心得/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/03/23/eslint-react-extends-airbnb/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/03/23/ESLint-React-心得/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/03/23/eslint-react-extends-airbnb/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/03/23/ESLint-React-心得/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/03/23/eslint-react-extends-airbnb/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
@@ -497,9 +497,9 @@
     
         <script>
              var disqus_config = function () {
-                 this.page.url = 'http://kyoyadmoon.github.io/blog/2016/03/23/ESLint-React-心得/';
+                 this.page.url = 'http://kyoyadmoon.github.io/blog/2016/03/23/eslint-react-extends-airbnb/';
                  
-                    this.page.identifier = '2016/03/23/ESLint-React-心得/';
+                    this.page.identifier = '2016/03/23/eslint-react-extends-airbnb/';
                                   
              };
             (function() {
