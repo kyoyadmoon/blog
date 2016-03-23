@@ -6,36 +6,26 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="DMoon&#39;s Laputa">
-    <title>koa production cache 設定 - koa-static-cache - DMoon&#39;s Laputa</title>
+    <title>ESLint React 心得 - extends Airbnb config - DMoon&#39;s Laputa</title>
     <meta name="author" content="DMoon">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="之前在設定 Koa 的 cache 時，有點小卡關，所以記錄一下
-我使用的 Koa 版本是 2.0.0
-搭配處理 cache 的套件 是 koa-static-cache
-官方 readme 上面的範例用法長這樣
-123app.use(staticCache(path.join(__dirname, &apos;public&apos;), &amp;#123;  maxAge: 365 * 24 * 60 * 60&amp;#12">
+    <meta name="description" content="之前一直沒有嘗試過 JSHint、ESLint ，但隨著合作開發的人數越來越多，程式碼的風格和規範問題就更加明顯，加上最近看了神作 Clean Code ，覺得寫出乾淨的程式碼真的很重要，剛好爬文發現有人推薦 Airbnb 釋出的 ESLint config 來做 js 和 React.js 規範，所以就決定來嘗試看看！
+首先我要推薦 eslint-plugin-react 這個套件，這套件除了規">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="koa production cache 設定 - koa-static-cache">
-<meta property="og:url" content="http://kyoyadmoon.github.io/blog/2016/03/19/koa-production-cache/index.html">
+<meta property="og:title" content="ESLint React 心得 - extends Airbnb config">
+<meta property="og:url" content="http://kyoyadmoon.github.io/blog/2016/03/23/ESLint-React-心得/index.html">
 <meta property="og:site_name" content="DMoon's Laputa">
-<meta property="og:description" content="之前在設定 Koa 的 cache 時，有點小卡關，所以記錄一下
-我使用的 Koa 版本是 2.0.0
-搭配處理 cache 的套件 是 koa-static-cache
-官方 readme 上面的範例用法長這樣
-123app.use(staticCache(path.join(__dirname, &apos;public&apos;), &amp;#123;  maxAge: 365 * 24 * 60 * 60&amp;#12">
-<meta property="og:image" content="https://lh3.googleusercontent.com/ehH3I28TQSBMOxkYzQ_Yp2Z9kXlDYbX-v22jH8BRXZ5bUC8PYpShgwBQP42-PKZ77vx0bn1eRsz3yrr_gIaEaKqeA_4Mt7WGd_YGXT3B40haq311NgEkP2K98NJMoj7J1-gwvEVbBPnyNO53PEFazJAZT6XMcYdnf_VNZ3NqVbPq3dgmgR8LMi2PIzdCqK0F_RWMedcl1RLfTbqxBugRbNcr38oiQ82yr5eZGAC2Chcni09MCtYdhHINoIzl-3cVh8M-K8rTpAAa3YwHwXrjUgTf4ZRVqC8aQnpr8RbCb2kboVZ6AbcVLwv1dz1LeCjo8pVEXEAqCBbxi4I3hUzfq-BpWJPmSRIqq55KPyKgXJeU90H-Aqkj0Yg0qe8zYEhd-vL_6nyqcpE7jT83VyLKStI6dsaA_LA72KqbvTuDRO8ABONlYOuQrG2Qsvxjm0A6d9qVRyCci1iD7q1c1ZhQ_xKfNgSXhnrZynFMoMaWhBSsdPVkbj7Jk_1nTnirxofc5nJOJphRMD2pwbBrSY4B-2uNhv0l0qpa5eI5LB6AvBjc4pPeXEq-ozZO06deNMj0tRUO=w1585-h712-no">
-<meta property="og:updated_time" content="2016-03-19T06:03:12.000Z">
+<meta property="og:description" content="之前一直沒有嘗試過 JSHint、ESLint ，但隨著合作開發的人數越來越多，程式碼的風格和規範問題就更加明顯，加上最近看了神作 Clean Code ，覺得寫出乾淨的程式碼真的很重要，剛好爬文發現有人推薦 Airbnb 釋出的 ESLint config 來做 js 和 React.js 規範，所以就決定來嘗試看看！
+首先我要推薦 eslint-plugin-react 這個套件，這套件除了規">
+<meta property="og:updated_time" content="2016-03-23T08:15:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="koa production cache 設定 - koa-static-cache">
-<meta name="twitter:description" content="之前在設定 Koa 的 cache 時，有點小卡關，所以記錄一下
-我使用的 Koa 版本是 2.0.0
-搭配處理 cache 的套件 是 koa-static-cache
-官方 readme 上面的範例用法長這樣
-123app.use(staticCache(path.join(__dirname, &apos;public&apos;), &amp;#123;  maxAge: 365 * 24 * 60 * 60&amp;#12">
+<meta name="twitter:title" content="ESLint React 心得 - extends Airbnb config">
+<meta name="twitter:description" content="之前一直沒有嘗試過 JSHint、ESLint ，但隨著合作開發的人數越來越多，程式碼的風格和規範問題就更加明顯，加上最近看了神作 Clean Code ，覺得寫出乾淨的程式碼真的很重要，剛好爬文發現有人推薦 Airbnb 釋出的 ESLint config 來做 js 和 React.js 規範，所以就決定來嘗試看看！
+首先我要推薦 eslint-plugin-react 這個套件，這套件除了規">
     
     
         
@@ -234,19 +224,19 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            koa production cache 設定 - koa-static-cache
+            ESLint React 心得 - extends Airbnb config
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Sat Mar 19 2016 10:07:46 GMT+0800">
+    <time itemprop="datePublished" content="Wed Mar 23 2016 12:54:43 GMT+0800">
 	
-		    Mar 19, 2016
+		    Mar 23, 2016
     	
     </time>
     
         <span>分類 </span>
         
-    <a class="category-link" href="/blog/categories/Node-js/">Node.js</a>
+    <a class="category-link" href="/blog/categories/DevTools/">DevTools</a>
 
 
     
@@ -255,20 +245,22 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p><img src="https://lh3.googleusercontent.com/ehH3I28TQSBMOxkYzQ_Yp2Z9kXlDYbX-v22jH8BRXZ5bUC8PYpShgwBQP42-PKZ77vx0bn1eRsz3yrr_gIaEaKqeA_4Mt7WGd_YGXT3B40haq311NgEkP2K98NJMoj7J1-gwvEVbBPnyNO53PEFazJAZT6XMcYdnf_VNZ3NqVbPq3dgmgR8LMi2PIzdCqK0F_RWMedcl1RLfTbqxBugRbNcr38oiQ82yr5eZGAC2Chcni09MCtYdhHINoIzl-3cVh8M-K8rTpAAa3YwHwXrjUgTf4ZRVqC8aQnpr8RbCb2kboVZ6AbcVLwv1dz1LeCjo8pVEXEAqCBbxi4I3hUzfq-BpWJPmSRIqq55KPyKgXJeU90H-Aqkj0Yg0qe8zYEhd-vL_6nyqcpE7jT83VyLKStI6dsaA_LA72KqbvTuDRO8ABONlYOuQrG2Qsvxjm0A6d9qVRyCci1iD7q1c1ZhQ_xKfNgSXhnrZynFMoMaWhBSsdPVkbj7Jk_1nTnirxofc5nJOJphRMD2pwbBrSY4B-2uNhv0l0qpa5eI5LB6AvBjc4pPeXEq-ozZO06deNMj0tRUO=w1585-h712-no" alt="Koa.js"></p>
-<p>之前在設定 Koa 的 cache 時，有點小卡關，所以記錄一下</p>
-<p>我使用的 Koa 版本是 2.0.0</p>
-<p>搭配處理 cache 的套件 是 <a href="https://github.com/koajs/static-cache" target="_blank" rel="external">koa-static-cache</a></p>
-<p>官方 readme 上面的範例用法長這樣</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.use(staticCache(path.join(__dirname, <span class="string">'public'</span>), &#123;</span><br><span class="line">  maxAge: <span class="number">365</span> * <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span></span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure>
-<p>因為使用 Koa 2.0 的關係，需要 <a href="https://github.com/koajs/convert" target="_blank" rel="external">koa-convert</a> 套件 convert 還沒更新支援 Koa 2.0 的套件，才能使用</p>
-<p>所以我改成這樣</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.use(convert(staticCache(path.join(__dirname, <span class="string">'public'</span>), &#123;</span><br><span class="line">  maxAge: <span class="number">365</span> * <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span></span><br><span class="line">&#125;)))</span><br></pre></td></tr></table></figure>
-<p>不過卻沒成功</p>
-<p>後來看了別人的 Sample 才知道 StaticCache 後，還需要 <a href="https://github.com/koajs/mount" target="_blank" rel="external">mount</a> 到 route 上</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(convert(mount(<span class="string">'/public/assets/js'</span>, staticCache(path.join(__dirname, <span class="string">'../public/assets/js/'</span>), &#123;maxAge: <span class="number">30</span> * <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span>&#125;))));</span><br></pre></td></tr></table></figure>
-<p>最後改成這樣終於成功啦！</p>
-
+            <p>之前一直沒有嘗試過 JSHint、ESLint ，但隨著合作開發的人數越來越多，程式碼的風格和規範問題就更加明顯，加上最近看了神作 <code>Clean Code</code> ，覺得寫出乾淨的程式碼真的很重要，剛好爬文發現有人推薦 Airbnb 釋出的 ESLint config 來做 js 和 React.js 規範，所以就決定來嘗試看看！</p>
+<p>首先我要推薦 <a href="https://github.com/yannickcr/eslint-plugin-react" target="_blank" rel="external">eslint-plugin-react</a> 這個套件，這套件除了規範 React 的一些寫法，重要的是他還有寫 rules 的文件，告訴你為什麼建議這樣寫，只要把 eslint 上出現的錯誤訊息，拿去 google 就會找到 github 上用 markdown 寫的相關說明，跟著寫就有種 Level Up 的感覺，實在受益匪淺！</p>
+<p>#Setup</p>
+<p>安裝方法很簡單</p>
+<p>先使用 npm 安裝 eslint 、 eslint-plugin-react、eslint-config-airbnb</p>
+<blockquote>
+<p>npm install --save-dev eslint eslint-plugin-react eslint-config-airbnb</p>
+</blockquote>
+<p>安裝後可以利用指令 init  <code>.eslintrc.js</code></p>
+<blockquote>
+<p>eslint —init
+透過 .eslintrc.js 這個檔案可以編輯 eslint 的規則</p>
+</blockquote>
+<p>加入 extends airbnb 和 react plugin 就可以了</p>
+<p>因為我有使用 es6 語法 所以需要多一個 babel 當 parser</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* .eslintrc.js */</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    <span class="string">"extends"</span>: <span class="string">"airbnb"</span>,</span><br><span class="line">    <span class="string">"plugins"</span>: [</span><br><span class="line">        <span class="string">"react"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="string">"parser"</span>: <span class="string">"babel-eslint"</span>,</span><br><span class="line">    <span class="string">"rules"</span>: &#123;</span><br><span class="line">      <span class="string">"strict"</span>: <span class="number">0</span></span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
             
                 
 
@@ -280,7 +272,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">標籤</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/Koa/">Koa</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/Production/">Production</a>
+    <a class="tag tag--primary tag--small t-link" href="/blog/tags/ESLint/">ESLint</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/React-js/">React.js</a>
 
             </div>
         
@@ -289,7 +281,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/23/ESLint-React-心得/"  data-tooltip="ESLint React 心得 - extends Airbnb config">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -297,7 +289,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/08/GWT-vs-UTC-diff-and-Etc-GWT-reverse-timezone/" data-tooltip="GMT vs UTC 差異，Linux Etc/GMT 為何與現實時區相反">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/19/koa-production-cache/" data-tooltip="koa production cache 設定 - koa-static-cache">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -312,17 +304,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/03/19/koa-production-cache/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/03/23/ESLint-React-心得/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/03/19/koa-production-cache/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/03/23/ESLint-React-心得/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/03/19/koa-production-cache/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/03/23/ESLint-React-心得/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -370,7 +362,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/23/ESLint-React-心得/"  data-tooltip="ESLint React 心得 - extends Airbnb config">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -378,7 +370,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/08/GWT-vs-UTC-diff-and-Etc-GWT-reverse-timezone/" data-tooltip="GMT vs UTC 差異，Linux Etc/GMT 為何與現實時區相反">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/19/koa-production-cache/" data-tooltip="koa production cache 設定 - koa-static-cache">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -393,17 +385,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/03/19/koa-production-cache/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/03/23/ESLint-React-心得/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/03/19/koa-production-cache/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/03/23/ESLint-React-心得/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/03/19/koa-production-cache/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/03/23/ESLint-React-心得/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -429,17 +421,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/03/19/koa-production-cache/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/03/23/ESLint-React-心得/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/03/19/koa-production-cache/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/03/23/ESLint-React-心得/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/03/19/koa-production-cache/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/03/23/ESLint-React-心得/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
@@ -503,9 +495,9 @@
     
         <script>
              var disqus_config = function () {
-                 this.page.url = 'http://kyoyadmoon.github.io/blog/2016/03/19/koa-production-cache/';
+                 this.page.url = 'http://kyoyadmoon.github.io/blog/2016/03/23/ESLint-React-心得/';
                  
-                    this.page.identifier = '2016/03/19/koa-production-cache/';
+                    this.page.identifier = '2016/03/23/ESLint-React-心得/';
                                   
              };
             (function() {
