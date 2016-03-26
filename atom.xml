@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://kyoyadmoon.github.io/blog/"/>
-  <updated>2016-03-26T03:19:14.000Z</updated>
+  <updated>2016-03-26T03:20:10.000Z</updated>
   <id>http://kyoyadmoon.github.io/blog/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>React Native with Socket.io - error: evaluting &#39;navigator.userAgent.match&#39;</title>
     <link href="http://kyoyadmoon.github.io/blog/2016/03/25/react-native-with-socketIO/"/>
     <id>http://kyoyadmoon.github.io/blog/2016/03/25/react-native-with-socketIO/</id>
     <published>2016-03-25T10:53:20.000Z</published>
-    <updated>2016-03-26T03:19:14.000Z</updated>
+    <updated>2016-03-26T03:20:10.000Z</updated>
     
     <content type="html">&lt;p&gt;昨天在處理為 React Native 加上 聊天室的功能，首先遇到的問題就是串接 Socket ，要在 RN 上使用 socket 需要安裝 &lt;a href=&quot;https://github.com/socketio/socket.io-client&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;socket.io-client&lt;/a&gt;，安裝之後 import socket.io-client/socket.io 時，遇到了這個 error &lt;/p&gt;
 &lt;p&gt;&lt;em&gt;undefined is not an object (evaluting &amp;#39;navigator.userAgent.match&amp;#39;)&lt;/em&gt;&lt;/p&gt;
