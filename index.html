@@ -223,6 +223,62 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/03/25/react-native-with-socketIO/">
+                            (無標題)
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Fri Mar 25 2016 18:53:20 GMT+0800">
+	
+		    Mar 25, 2016
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/blog/categories/React-Native/">React-Native</a>
+
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>昨天在處理為 React Native 加上 聊天室的功能，首先遇到的問題就是串接 Socket ，要在 RN 上使用 socket 需要安裝 <a href="https://github.com/socketio/socket.io-client" target="_blank" rel="external">socket.io-client</a>，安裝之後 import socket.io-client/socket.io 時，遇到了這個 error </p>
+<p><em>undefined is not an object (evaluting &#39;navigator.userAgent.match&#39;)</em></p>
+<p>找了一下解決方法
+發現這個套件不能用 import ，必需用 require
+另外需要 assign window.navigator.userAgent</p>
+<p>正確設定方法如下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.navigator.userAgent = <span class="string">'react-native'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> io = <span class="built_in">require</span>(<span class="string">'socket.io-client/socket.io'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> socket = io(<span class="string">'ws://'</span>, &#123; jsonp: <span class="literal">false</span> &#125;);</span><br></pre></td></tr></table></figure>
+<p>#Reference</p>
+<p><a href="http://browniefed.com/blog/2015/05/16/react-native-and-socket-dot-io/" target="_blank" rel="external">http://browniefed.com/blog/2015/05/16/react-native-and-socket-dot-io/</a></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/03/25/react-native-with-socketIO/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/03/23/eslint-react-extends-airbnb/">
                             ESLint React 心得 - extends Airbnb config
                         </a>

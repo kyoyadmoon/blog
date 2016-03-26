@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://kyoyadmoon.github.io/blog/2016/03/25/react-native-with-socketIO/</loc>
+    
+    <lastmod>2016-03-26T03:19:14.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://kyoyadmoon.github.io/blog/2016/03/23/eslint-react-extends-airbnb/</loc>
     
     <lastmod>2016-03-23T09:42:18.000Z</lastmod>

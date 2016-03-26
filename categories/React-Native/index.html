@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="DMoon&#39;s Laputa">
-    <title>所有文章: 2016/3 - DMoon&#39;s Laputa</title>
+    <title>分類: React-Native - DMoon&#39;s Laputa</title>
     <meta name="author" content="DMoon">
     
     
@@ -16,7 +16,7 @@
     <meta name="description">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="DMoon's Laputa">
-<meta property="og:url" content="http://kyoyadmoon.github.io/blog/archives/2016/03/index.html">
+<meta property="og:url" content="http://kyoyadmoon.github.io/blog/categories/React-Native/index.html">
 <meta property="og:site_name" content="DMoon's Laputa">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -264,186 +264,6 @@
                     
                         <p>
                             <a href="/blog/2016/03/25/react-native-with-socketIO/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/03/23/eslint-react-extends-airbnb/">
-                            ESLint React 心得 - extends Airbnb config
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Wed Mar 23 2016 12:54:43 GMT+0800">
-	
-		    Mar 23, 2016
-    	
-    </time>
-    
-        <span>分類 </span>
-        
-    <a class="category-link" href="/blog/categories/DevTools/">DevTools</a>
-
-
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p><img src="https://lh3.googleusercontent.com/KgEwDSPFlRq08oUvZD6yr_VHLTdP3E7YJp4M9CxiZ7jmyKbahUleLusWuoaq2fsdYiW71mhX5p-WnnRhqcvog-xWs-UpCEOj4X1Y-vZYE7pCfSY4nbLyuR69wTpFBFkgFZPJY7Q7Uzuxky5QjoF0rMO6_2bvtYqzNjZow_-mnQKk5tBG2MQtvQkWRXC_XrPsIX3KVbwTER0ZUYZTsAV4LMDpm5_WrEBZ6E0vRfIo6BYqcAi5tqmsKvwqKZSvwWUAPD6Bj2x7U4cjwzv9q7EgeRr4j47gYypVmGt3-9wO7_oCNGQCdyzFvHa__3J9d7zAfrgLnDJW65rZJy15He-BC9_2PkUaBMnS_BHZIeLhL3HIwwXQOmRe4WZBkRaCeF2X_g1QgZCQCyPEPojiXOTqHTPJGL-RUuK5pAriwWNRKe6wUVCDz5XZ0U3hFg7wJNFITPEqRoIcMx9tELrZmQfouTScjCa_KrdsSdE5-i7-oYUKyTV5iwtZW0-jAX7ZISy9itZnHDO3HT8jRk47gDyj_aOmdGfycgBYWFYvFP86NCmp4KbUHT4z6-FnISxzAnLp-3eE=w1237-h195-no" alt="ESLint"></p>
-<p>之前一直沒有嘗試過 JSHint、ESLint ，但隨著合作開發的人數越來越多，程式碼的風格和規範問題就更加明顯，加上最近看了聖經 <code>Clean Code</code> ，覺得寫出乾淨的程式碼真的很重要，剛好爬文發現有人推薦 Airbnb 釋出的 ESLint config 來做 js 和 React.js 規範，所以就決定來嘗試看看！</p>
-<p>首先我要推薦 <a href="https://github.com/yannickcr/eslint-plugin-react" target="_blank" rel="external">eslint-plugin-react</a> 這個套件，這套件除了規範 React 的一些寫法，重要的是他還有寫 rules 的文件，告訴你為什麼建議這樣寫，只要把 eslint 上出現的錯誤訊息，拿去 google 就會找到 github 上用 markdown 寫的相關說明，跟著寫就有種 Level Up 的感覺，實在受益匪淺！</p>
-<p>#Setup</p>
-<p>安裝方法很簡單</p>
-<p>先使用 npm 安裝 eslint 、 eslint-plugin-react、eslint-config-airbnb</p>
-<blockquote>
-<p>npm install --save-dev eslint eslint-plugin-react eslint-config-airbnb</p>
-</blockquote>
-<p>安裝後可以利用指令 init  <code>.eslintrc.js</code></p>
-<blockquote>
-<p>eslint —init</p>
-</blockquote>
-<p>透過 .eslintrc.js 這個檔案可以編輯 eslint 的規則</p>
-<p>加入 extends airbnb 和 react plugin 就可以了</p>
-<p>因為我有使用 es6 語法 所以需要多一個 babel 當 parser</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* .eslintrc.js */</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    <span class="string">"extends"</span>: <span class="string">"airbnb"</span>,</span><br><span class="line">    <span class="string">"plugins"</span>: [</span><br><span class="line">        <span class="string">"react"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="string">"parser"</span>: <span class="string">"babel-eslint"</span>,</span><br><span class="line">    <span class="string">"rules"</span>: &#123;</span><br><span class="line">      <span class="string">"strict"</span>: <span class="number">0</span></span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/03/23/eslint-react-extends-airbnb/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/03/19/koa-production-cache/">
-                            koa production cache 設定 - koa-static-cache
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Sat Mar 19 2016 10:07:46 GMT+0800">
-	
-		    Mar 19, 2016
-    	
-    </time>
-    
-        <span>分類 </span>
-        
-    <a class="category-link" href="/blog/categories/Node-js/">Node.js</a>
-
-
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p><img src="https://lh3.googleusercontent.com/ehH3I28TQSBMOxkYzQ_Yp2Z9kXlDYbX-v22jH8BRXZ5bUC8PYpShgwBQP42-PKZ77vx0bn1eRsz3yrr_gIaEaKqeA_4Mt7WGd_YGXT3B40haq311NgEkP2K98NJMoj7J1-gwvEVbBPnyNO53PEFazJAZT6XMcYdnf_VNZ3NqVbPq3dgmgR8LMi2PIzdCqK0F_RWMedcl1RLfTbqxBugRbNcr38oiQ82yr5eZGAC2Chcni09MCtYdhHINoIzl-3cVh8M-K8rTpAAa3YwHwXrjUgTf4ZRVqC8aQnpr8RbCb2kboVZ6AbcVLwv1dz1LeCjo8pVEXEAqCBbxi4I3hUzfq-BpWJPmSRIqq55KPyKgXJeU90H-Aqkj0Yg0qe8zYEhd-vL_6nyqcpE7jT83VyLKStI6dsaA_LA72KqbvTuDRO8ABONlYOuQrG2Qsvxjm0A6d9qVRyCci1iD7q1c1ZhQ_xKfNgSXhnrZynFMoMaWhBSsdPVkbj7Jk_1nTnirxofc5nJOJphRMD2pwbBrSY4B-2uNhv0l0qpa5eI5LB6AvBjc4pPeXEq-ozZO06deNMj0tRUO=w1585-h712-no" alt="Koa.js"></p>
-<p>之前在設定 Koa 的 cache 時，有點小卡關，所以記錄一下</p>
-<p>我使用的 Koa 版本是 2.0.0</p>
-<p>搭配處理 cache 的套件 是 <a href="https://github.com/koajs/static-cache" target="_blank" rel="external">koa-static-cache</a></p>
-<p>官方 readme 上面的範例用法長這樣</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.use(staticCache(path.join(__dirname, <span class="string">'public'</span>), &#123;</span><br><span class="line">  maxAge: <span class="number">365</span> * <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span></span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure>
-<p>因為使用 Koa 2.0 的關係，需要 <a href="https://github.com/koajs/convert" target="_blank" rel="external">koa-convert</a> 套件 convert 還沒更新支援 Koa 2.0 的套件，才能使用</p>
-<p>所以我改成這樣</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.use(convert(staticCache(path.join(__dirname, <span class="string">'public'</span>), &#123;</span><br><span class="line">  maxAge: <span class="number">365</span> * <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span></span><br><span class="line">&#125;)))</span><br></pre></td></tr></table></figure>
-<p>不過卻沒成功</p>
-<p>後來看了別人的 Sample 才知道 StaticCache 後，還需要 <a href="https://github.com/koajs/mount" target="_blank" rel="external">mount</a> 到 route 上</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(convert(mount(<span class="string">'/public/assets/js'</span>, staticCache(path.join(__dirname, <span class="string">'../public/assets/js/'</span>), &#123;maxAge: <span class="number">30</span> * <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span>&#125;))));</span><br></pre></td></tr></table></figure>
-<p>最後改成這樣終於成功啦！</p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/03/19/koa-production-cache/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/blog/2016/03/08/GWT-vs-UTC-diff-and-Etc-GWT-reverse-timezone/">
-                            GMT vs UTC 差異，Linux Etc/GMT 為何與現實時區相反
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Tue Mar 08 2016 21:22:03 GMT+0800">
-	
-		    Mar 08, 2016
-    	
-    </time>
-    
-        <span>分類 </span>
-        
-    <a class="category-link" href="/blog/categories/Linux/">Linux</a>
-
-
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <h2 id="GMT__26amp_3B_UTC"><a href="#GMT__26amp_3B_UTC" class="headerlink" title="GMT &amp; UTC"></a>GMT &amp; UTC</h2><p>首先來說 GMT 和 UTC 是什麼，有什麼差別</p>
-<blockquote>
-<p>GMT：格林威治標準時間</p>
-<p>UTC：世界協調時間</p>
-</blockquote>
-<p>他們都是世界標準時間，而 UTC 的算法更為嚴謹，所以比 GMT 更為精準，不過兩者的差異是極小的，所以基本上時間是可以看作相同的</p>
-<h2 id="Linux_Etc/GMT__u6642_u5340_u70BA_u4F55_u6B63_u8CA0_u985B_u5012"><a href="#Linux_Etc/GMT__u6642_u5340_u70BA_u4F55_u6B63_u8CA0_u985B_u5012" class="headerlink" title="Linux Etc/GMT 時區為何正負顛倒"></a>Linux Etc/GMT 時區為何正負顛倒</h2><p>當你使用 Linux 設定時區時 ，若是選用 Etc 底下的 GMT 時區，可能會發現設定的結果與你預想的不同，當你想設定台北的時區 （GMT＋8) ，但設定完後，系統時間卻是 -8 的時區，和台北時間相差 16 小時，原因是因為 Etc 底下的 GMT 時區是以 <code>格林威治</code> 以西為正，以東為負，剛好與我們現實生活的認知相反</p>
-<p>而原因只是因為當初 Unix 多為西方人使用，便以西為正</p>
-<p>因此在設定的時候需要選擇正負相反的選項</p>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="http://lemonlatte.logdown.com/tags/tzdata" target="_blank" rel="external">http://lemonlatte.logdown.com/tags/tzdata</a></p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/blog/2016/03/08/GWT-vs-UTC-diff-and-Etc-GWT-reverse-timezone/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>

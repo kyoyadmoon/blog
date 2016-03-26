@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://kyoyadmoon.github.io/blog/"/>
-  <updated>2016-03-23T09:42:18.000Z</updated>
+  <updated>2016-03-26T03:19:14.000Z</updated>
   <id>http://kyoyadmoon.github.io/blog/</id>
   
   <author>
@@ -14,6 +14,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://kyoyadmoon.github.io/blog/2016/03/25/react-native-with-socketIO/"/>
+    <id>http://kyoyadmoon.github.io/blog/2016/03/25/react-native-with-socketIO/</id>
+    <published>2016-03-25T10:53:20.000Z</published>
+    <updated>2016-03-26T03:19:14.000Z</updated>
+    
+    <content type="html">&lt;p&gt;昨天在處理為 React Native 加上 聊天室的功能，首先遇到的問題就是串接 Socket ，要在 RN 上使用 socket 需要安裝 &lt;a href=&quot;https://github.com/socketio/socket.io-client&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;socket.io-client&lt;/a&gt;，安裝之後 import socket.io-client/socket.io 時，遇到了這個 error &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;undefined is not an object (evaluting &amp;#39;navigator.userAgent.match&amp;#39;)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;找了一下解決方法
+發現這個套件不能用 import ，必需用 require
+另外需要 assign window.navigator.userAgent&lt;/p&gt;
+&lt;p&gt;正確設定方法如下&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; React, &amp;#123; Component &amp;#125; &lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;react-native&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.navigator.userAgent = &lt;span class=&quot;string&quot;&gt;&#39;react-native&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; io = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;socket.io-client/socket.io&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; socket = io(&lt;span class=&quot;string&quot;&gt;&#39;ws://&#39;&lt;/span&gt;, &amp;#123; jsonp: &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt; &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;#Reference&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://browniefed.com/blog/2015/05/16/react-native-and-socket-dot-io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://browniefed.com/blog/2015/05/16/react-native-and-socket-dot-io/&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;昨天在處理為 React Native 加上 聊天室的功能，首先遇到的問題就是串接 Socket ，要在 RN 上使用 socket 需要安裝 &lt;a href=&quot;https://github.com/socketio/socket.io-client&quot; target=&quot;_b
+    
+    </summary>
+    
+      <category term="React-Native" scheme="http://kyoyadmoon.github.io/blog/categories/React-Native/"/>
+    
+    
+      <category term="React-Native" scheme="http://kyoyadmoon.github.io/blog/tags/React-Native/"/>
+    
+      <category term="Socket.io" scheme="http://kyoyadmoon.github.io/blog/tags/Socket-io/"/>
+    
+  </entry>
   
   <entry>
     <title>ESLint React 心得 - extends Airbnb config</title>
