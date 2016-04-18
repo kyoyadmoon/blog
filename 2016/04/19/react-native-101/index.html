@@ -6,26 +6,26 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="DMoon&#39;s Laputa">
-    <title>React Native with Socket.io - error: evaluting &#39;navigator.userAgent.match&#39; - DMoon&#39;s Laputa</title>
+    <title>React Native 初心者攻略 (OS X) - DMoon&#39;s Laputa</title>
     <meta name="author" content="DMoon">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description" content="昨天在處理為 React Native 加上 聊天室的功能，首先遇到的問題就是串接 Socket ，要在 RN 上使用 socket 需要安裝 socket.io-client，安裝之後 import socket.io-client/socket.io 時，遇到了這個 error 
-undefined is not an object (evaluting &amp;#39;navigator.use">
+    <meta name="description" content="由於 React 的火熱程度，身邊許多朋友都開始接觸 React ，我也推薦他們玩玩看 React Native ，我覺得 React 的入門門檻有些其實和 React 本身無關，像是 Webpack, Babel 等等都多少在無形中增加了入門的難度，且有許多範例可能還使用了 ES6 語法，雖然不是必要，但可能會造成初學者混淆、失去信心，使學習過程更不順利。
+然而 React Native 完全">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="React Native with Socket.io - error: evaluting 'navigator.userAgent.match'">
-<meta property="og:url" content="http://kyoyadmoon.github.io/blog/2016/03/25/react-native-with-socketIO/index.html">
+<meta property="og:title" content="React Native 初心者攻略 (OS X)">
+<meta property="og:url" content="http://kyoyadmoon.github.io/blog/2016/04/19/react-native-101/index.html">
 <meta property="og:site_name" content="DMoon's Laputa">
-<meta property="og:description" content="昨天在處理為 React Native 加上 聊天室的功能，首先遇到的問題就是串接 Socket ，要在 RN 上使用 socket 需要安裝 socket.io-client，安裝之後 import socket.io-client/socket.io 時，遇到了這個 error 
-undefined is not an object (evaluting &amp;#39;navigator.use">
-<meta property="og:updated_time" content="2016-03-26T03:20:10.000Z">
+<meta property="og:description" content="由於 React 的火熱程度，身邊許多朋友都開始接觸 React ，我也推薦他們玩玩看 React Native ，我覺得 React 的入門門檻有些其實和 React 本身無關，像是 Webpack, Babel 等等都多少在無形中增加了入門的難度，且有許多範例可能還使用了 ES6 語法，雖然不是必要，但可能會造成初學者混淆、失去信心，使學習過程更不順利。
+然而 React Native 完全">
+<meta property="og:updated_time" content="2016-04-18T17:50:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React Native with Socket.io - error: evaluting 'navigator.userAgent.match'">
-<meta name="twitter:description" content="昨天在處理為 React Native 加上 聊天室的功能，首先遇到的問題就是串接 Socket ，要在 RN 上使用 socket 需要安裝 socket.io-client，安裝之後 import socket.io-client/socket.io 時，遇到了這個 error 
-undefined is not an object (evaluting &amp;#39;navigator.use">
+<meta name="twitter:title" content="React Native 初心者攻略 (OS X)">
+<meta name="twitter:description" content="由於 React 的火熱程度，身邊許多朋友都開始接觸 React ，我也推薦他們玩玩看 React Native ，我覺得 React 的入門門檻有些其實和 React 本身無關，像是 Webpack, Babel 等等都多少在無形中增加了入門的難度，且有許多範例可能還使用了 ES6 語法，雖然不是必要，但可能會造成初學者混淆、失去信心，使學習過程更不順利。
+然而 React Native 完全">
     
     
         
@@ -224,19 +224,19 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            React Native with Socket.io - error: evaluting &#39;navigator.userAgent.match&#39;
+            React Native 初心者攻略 (OS X)
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" content="Fri Mar 25 2016 18:53:20 GMT+0800">
+    <time itemprop="datePublished" content="Tue Apr 19 2016 00:05:03 GMT+0800">
 	
-		    Mar 25, 2016
+		    Apr 19, 2016
     	
     </time>
     
         <span>分類 </span>
         
-    <a class="category-link" href="/blog/categories/React-Native/">React-Native</a>
+    <a class="category-link" href="/blog/categories/React-Native/">React Native</a>
 
 
     
@@ -245,15 +245,54 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>昨天在處理為 React Native 加上 聊天室的功能，首先遇到的問題就是串接 Socket ，要在 RN 上使用 socket 需要安裝 <a href="https://github.com/socketio/socket.io-client" target="_blank" rel="external">socket.io-client</a>，安裝之後 import socket.io-client/socket.io 時，遇到了這個 error </p>
-<p><em>undefined is not an object (evaluting &#39;navigator.userAgent.match&#39;)</em></p>
-<p>找了一下解決方法
-發現這個套件不能用 import ，必需用 require
-另外需要 assign window.navigator.userAgent</p>
-<p>正確設定方法如下</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.navigator.userAgent = <span class="string">'react-native'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> io = <span class="built_in">require</span>(<span class="string">'socket.io-client/socket.io'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> socket = io(<span class="string">'ws://'</span>, &#123; jsonp: <span class="literal">false</span> &#125;);</span><br></pre></td></tr></table></figure>
-<p>#Reference</p>
-<p><a href="http://browniefed.com/blog/2015/05/16/react-native-and-socket-dot-io/" target="_blank" rel="external">http://browniefed.com/blog/2015/05/16/react-native-and-socket-dot-io/</a></p>
+            <p>由於 React 的火熱程度，身邊許多朋友都開始接觸 React ，我也推薦他們玩玩看 React Native ，我覺得 React 的入門門檻有些其實和 React 本身無關，像是 Webpack, Babel 等等都多少在無形中增加了入門的難度，且有許多範例可能還使用了 ES6 語法，雖然不是必要，但可能會造成初學者混淆、失去信心，使學習過程更不順利。</p>
+<p>然而 React Native 完全就是一個超棒的東西，只要跟著官網的教學就可以很簡單的開始使用 React 撰寫跨平台的 App，不僅內建支援 ES6 ，還有 Live Reload , Hot Reloading 等強大功能, 甚至能在 Chrome 中 debug ，這些React Native 統統幫你包好了，省去了原先我們在 web 專案開發需要自行加入 webpack, babel 等等的處理過程。</p>
+<h2 id="u74B0_u5883_u5EFA_u7ACB"><a href="#u74B0_u5883_u5EFA_u7ACB" class="headerlink" title="環境建立"></a>環境建立</h2><p>相關環境安裝的部分跟著 <a href="http://reactnative.cn/docs/0.23/getting-started.html#环境需求" target="_blank" rel="external"><strong>官網的詳細指示</strong> (別擔心這裡有中文版) </a>操作就可以了，這部分就不多敘述</p>
+<h2 id="u5EFA_u7ACBRN_u5C08_u6848"><a href="#u5EFA_u7ACBRN_u5C08_u6848" class="headerlink" title="建立RN專案"></a>建立RN專案</h2><pre><code>$ npm install -g react-native-cli
+$ react-native init AwesomeProject
+</code></pre><h1 id="iOS"><a href="#iOS" class="headerlink" title="iOS"></a>iOS</h1><h2 id="u74B0_u5883_u6E96_u5099"><a href="#u74B0_u5883_u6E96_u5099" class="headerlink" title="環境準備"></a>環境準備</h2><p>安裝 Xcode 即可</p>
+<h2 id="u5C08_u6848_u958B_u767C"><a href="#u5C08_u6848_u958B_u767C" class="headerlink" title="專案開發"></a>專案開發</h2><p>有兩種方法</p>
+<p>第一種是使用 Xcode ：</p>
+<blockquote>
+<p>開啟專案目錄下的 <code>/ios/AwesomeProject.xcodeproj</code> （應該會以 Xcode 開啟）, 按左上角的播放圖示按鈕就會自動開啟 iPhone 模擬器和 Packager server ，並把專案 build 成 App 到模擬器中。</p>
+</blockquote>
+<p>另一種是開啟 terminal 切換到專案目錄</p>
+<blockquote>
+<p><code>$ react-native run-iso</code></p>
+<p>這個指令可以不用開啟 Xcode 做和上面同樣的事情，一個指令解決，非常簡潔</p>
+</blockquote>
+<p>接著你就可以開始編輯專案目錄下的 <code>index.ios.js</code> 開始開發你的專案。</p>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>在模擬器的 RN App 中你可以用快捷鍵 <code>cmd+D</code> 打開開發 Menu，這邊可以設定 Debug in Chrome, Live Reload, Hot Reloading 等等功能。</p>
+<p>若需要手動刷新可以使用熱鍵 <code>cmd+R</code></p>
+<p>另外，如果你有實體 Apple 裝置的話，也能夠直接在實體裝置上測試、開發</p>
+<ol>
+<li><p>將 Apple 裝置用USB線連接到電腦，並和電腦連接同一個 wifi</p>
+</li>
+<li><p>將專案用 Xcode 開啟（上面的第一種方法）</p>
+</li>
+<li><p>在 Xcode 左上角播放圖示的右方應該可以看到 寫著 Apple 裝置的選項，點按後選到自己的實體裝置</p>
+</li>
+<li><p>打開 Xcode 左邊檔案管理的導覽列 Tree View，找到 <code>AwesomeProject/AppDelegate.m</code> 這個檔案打開來
+可以在裡面找到這段，相信看到註解大家應該都知道要怎麼做了，把 localhost 換成電腦的 ip 就可以了</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/**&#10;* To run on device, change `localhost` to the IP address of your computer&#10;* (you can get this by typing `ifconfig` into the terminal and selecting the&#10;* `inet` value under `en0:`) and make sure your computer and iOS device are&#10;* on the same Wi-Fi network.&#10;*/&#10;&#10;jsCodeLocation = [NSURL URLWithString:@&#34;http://localhost:8081/index.ios.bundle?platform=ios&#38;dev=true&#34;];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>按下 Xcode 左上角的播放鍵開始 Run 囉</p>
+</li>
+</ol>
+<h1 id="Android__u74B0_u5883_u6E96_u5099"><a href="#Android__u74B0_u5883_u6E96_u5099" class="headerlink" title="Android 環境準備"></a>Android 環境準備</h1><p>由於目前我主要都是在 iOS 上開發， Android 部分還沒有很了解，如果有漏掉什麼還請各位大大提醒</p>
+<p>Android 在 OS X 上的環境準備相對 iOS 來說稍微麻煩一點，但也不難
+細心按照官方指示應該就能成功囉</p>
+<p><a href="http://reactnative.cn/docs/0.23/android-setup.html#content" target="_blank" rel="external">參考這裡</a></p>
+<h2 id="u958B_u767C_u6E96_u5099"><a href="#u958B_u767C_u6E96_u5099" class="headerlink" title="開發準備"></a>開發準備</h2><p>安裝完 Android SDK 和 Genymotion 之後</p>
+<p>先打開 Genymotion 創建一個模擬器啟動</p>
+<p>接著開啟 terminal 切到專案目錄下</p>
+<p><code>$ react-native run-android</code></p>
+<p>然後就可以編輯 <code>index.android.js</code> 開始開發了</p>
+<p>在模擬器中按下 menu 按鈕可以打開開發 Menu ，這邊可以設定 Debug in Chrome, Live Reload, Hot Reloading 等等功能。</p>
+<h1 id="u5982_u4F55_u4F7F_u7528_u5225_u4EBA_u5BEB_u597D_u7684_library_2C_Package"><a href="#u5982_u4F55_u4F7F_u7528_u5225_u4EBA_u5BEB_u597D_u7684_library_2C_Package" class="headerlink" title="如何使用別人寫好的 library, Package"></a>如何使用別人寫好的 library, Package</h1><p>我的同事 yaode 寫了一篇詳細完整的教學文章
+大家可以參考看看</p>
+<p><a href="http://trunk-studio.com/blog/react-native-how-to-use-component/" target="_blank" rel="external">http://trunk-studio.com/blog/react-native-how-to-use-component/</a></p>
+<p>記得有用到文章內的方法 link library 的話，是需要重新 build App 到模擬器才能正常運作的喔！（run-ios / run-android）</p>
 
             
                 
@@ -266,7 +305,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">標籤</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/blog/tags/React-Native/">React-Native</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/Socket-io/">Socket.io</a>
+    <a class="tag tag--primary tag--small t-link" href="/blog/tags/Android/">Android</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/React/">React</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/React-Native/">React Native</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/iOS/">iOS</a>
 
             </div>
         
@@ -275,7 +314,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/19/react-native-101/"  data-tooltip="React Native 初心者攻略 (OS X)">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -283,7 +322,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/23/eslint-react-extends-airbnb/" data-tooltip="ESLint React 心得 - extends Airbnb config">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/25/react-native-with-socketIO/" data-tooltip="React Native with Socket.io - error: evaluting &#39;navigator.userAgent.match&#39;">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -298,17 +337,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/03/25/react-native-with-socketIO/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/04/19/react-native-101/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/03/25/react-native-with-socketIO/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/04/19/react-native-101/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/03/25/react-native-with-socketIO/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/04/19/react-native-101/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -356,7 +395,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/19/react-native-101/"  data-tooltip="React Native 初心者攻略 (OS X)">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -364,7 +403,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/23/eslint-react-extends-airbnb/" data-tooltip="ESLint React 心得 - extends Airbnb config">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/25/react-native-with-socketIO/" data-tooltip="React Native with Socket.io - error: evaluting &#39;navigator.userAgent.match&#39;">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -379,17 +418,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/03/25/react-native-with-socketIO/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/04/19/react-native-101/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/03/25/react-native-with-socketIO/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/04/19/react-native-101/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/03/25/react-native-with-socketIO/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/04/19/react-native-101/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -415,17 +454,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/03/25/react-native-with-socketIO/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/04/19/react-native-101/">
                 <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/03/25/react-native-with-socketIO/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/04/19/react-native-101/">
                 <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/03/25/react-native-with-socketIO/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/04/19/react-native-101/">
                 <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
             </a>
         </li>
@@ -489,9 +528,9 @@
     
         <script>
              var disqus_config = function () {
-                 this.page.url = 'http://kyoyadmoon.github.io/blog/2016/03/25/react-native-with-socketIO/';
+                 this.page.url = 'http://kyoyadmoon.github.io/blog/2016/04/19/react-native-101/';
                  
-                    this.page.identifier = '2016/03/25/react-native-with-socketIO/';
+                    this.page.identifier = '2016/04/19/react-native-101/';
                                   
              };
             (function() {
