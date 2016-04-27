@@ -223,6 +223,100 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/blog/2016/04/27/react-native-auto-ip-configuration/">
+                            React Native 進階開發配置-自動設定 ip
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Wed Apr 27 2016 20:57:40 GMT+0800">
+	
+		    Apr 27, 2016
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/blog/categories/React-Native/">React Native</a>
+
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>在上一篇 <a href="http://kyoyadmoon.github.io/blog/2016/04/19/react-native-101/">React Native 初心者攻略</a> 中有說明如何在實體 iPhone 上開發</p>
+<p>透過 <code>AppDelegate.m</code> 這個檔案我們可以將 localhost 手動更改成電腦 ip 來達到實機測試的目的</p>
+<p>但是這樣的開發方式有幾個缺點</p>
+<blockquote>
+<ol>
+<li>需要經常手動去做更改，尤其當你是使用筆電，甚至是和其他人共同開發的狀況，就會常常在 merge 時衝突，除非團隊都使用 localhost 以 simulator 進行開發</li>
+<li>沒辦法在實體機器上 Debug in Chrome</li>
+</ol>
+</blockquote>
+<p>在開發一段時間後，實在受不了，好在找到了自動設定的方法</p>
+<p><code>透過 shell script 動態抓取電腦的 IP</code></p>
+<h1 id="u8A2D_u7F6E_u65B9_u6CD5"><a href="#u8A2D_u7F6E_u65B9_u6CD5" class="headerlink" title="設置方法"></a>設置方法</h1><h2 id="u6293_u53D6_u96FB_u8166_IP"><a href="#u6293_u53D6_u96FB_u8166_IP" class="headerlink" title="抓取電腦 IP"></a>抓取電腦 IP</h2><p>我們需要先寫出能夠抓取電腦 IP 的 command</p>
+<p>網路上大多使用這個指令，可以先填到 terminal 執行看看，確認 IP 是否正確</p>
+<blockquote>
+<p><code>ifconfig | grep inet\ | tail -1 | cut -d &quot; &quot; -f 2</code></p>
+</blockquote>
+<p>但是因為我們專案後端 server 有使用到 docker ，使用上面 command 抓到的是錯誤的 IP</p>
+<p>所以我需要改成這樣</p>
+<blockquote>
+<p><code>ifconfig | grep -Eo &#39;inet (addr:)?([0-9]*\.){3}[0-9]*&#39; | grep -Eo &#39;([0-9]*\.){3}[0-9]*&#39; | grep -v &#39;127.0.0.1&#39; | head -1</code></p>
+</blockquote>
+<p>OK 我們現在能夠拿到正確的 IP 了</p>
+<h2 id="Add_Run_Script"><a href="#Add_Run_Script" class="headerlink" title="Add Run Script"></a>Add Run Script</h2><p>再來我們需要設定在專案執行時執行一段 shell script 去抓取 IP 寫入到專案中</p>
+<p>照著圖中藍色 focus 的地方找到 <code>Build Phases</code></p>
+<img src="/blog/2016/04/27/react-native-auto-ip-configuration/addScript.png" alt="addScript.png" title="">
+<p>新增一個 Run Script 後的畫面</p>
+<img src="/blog/2016/04/27/react-native-auto-ip-configuration/editScript.png" alt="editScript.png" title="">
+<p>接下來就是填入主角 script  了</p>
+<p>下面的 script 會在專案的 INFOPLIST 裡新增一個 SERVER_IP 的欄位，並把 IP 寫入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">INFOPLIST=<span class="string">"<span class="variable">$&#123;TARGET_BUILD_DIR&#125;</span>/<span class="variable">$&#123;INFOPLIST_PATH&#125;</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"writing to <span class="variable">$INFOPLIST</span>"</span></span><br><span class="line">PLISTCMD=<span class="string">"Add :SERVER_IP string <span class="variable">$(ifconfig | grep -Eo 'inet (addr:)</span>?([0-9]*\.)&#123;3&#125;[0-9]*' | grep -Eo '([0-9]*\.)&#123;3&#125;[0-9]*' | grep -v '127.0.0.1' | head -1)"</span></span><br><span class="line"><span class="built_in">echo</span> -n <span class="string">"<span class="variable">$INFOPLIST</span>"</span> | xargs -<span class="number">0</span> /usr/libexec/PlistBuddy -c <span class="string">"<span class="variable">$PLISTCMD</span>"</span> || <span class="literal">true</span></span><br><span class="line">PLISTCMD=<span class="string">"Set :SERVER_IP <span class="variable">$(ifconfig | grep -Eo 'inet (addr:)</span>?([0-9]*\.)&#123;3&#125;[0-9]*' | grep -Eo '([0-9]*\.)&#123;3&#125;[0-9]*' | grep -v '127.0.0.1' | head -1)"</span></span><br><span class="line"><span class="built_in">echo</span> -n <span class="string">"<span class="variable">$INFOPLIST</span>"</span> | xargs -<span class="number">0</span> /usr/libexec/PlistBuddy -c <span class="string">"<span class="variable">$PLISTCMD</span>"</span> || <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>填好之後會像這樣</p>
+<img src="/blog/2016/04/27/react-native-auto-ip-configuration/addedScript.png" alt="addedScript.png" title="">
+<h2 id="u5728_AppDelegate-m__u8B80_u53D6_SERVER_IP"><a href="#u5728_AppDelegate-m__u8B80_u53D6_SERVER_IP" class="headerlink" title="在 AppDelegate.m 讀取 SERVER_IP"></a>在 <code>AppDelegate.m</code> 讀取 SERVER_IP</h2><p>打開 <code>AppDelegate.m</code> </p>
+<p>將原本</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jsCodeLocation = [NSURL <span class="string">URLWithString:</span>@<span class="string">"http://localhost:8081/index.ios.bundle?platform=ios&amp;dev=true"</span>];</span><br></pre></td></tr></table></figure>
+<p>替換成能夠動態改變 SERVER_IP 的 code</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *serverIP = [[<span class="built_in">NSBundle</span> mainBundle] objectForInfoDictionaryKey:<span class="string">@"SERVER_IP"</span>];</span><br><span class="line"><span class="built_in">NSString</span> *jsCodeUrlString = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"http://%@:8081/index.ios.bundle?platform=ios&amp;dev=true"</span>, serverIP];</span><br><span class="line"><span class="built_in">NSString</span> *jsBundleUrlString = [jsCodeUrlString stringByAddingPercentEscapesUsingEncoding:<span class="built_in">NSUTF8StringEncoding</span>];</span><br><span class="line">jsCodeLocation = [<span class="built_in">NSURL</span> URLWithString:jsBundleUrlString];</span><br></pre></td></tr></table></figure>
+<img src="/blog/2016/04/27/react-native-auto-ip-configuration/AppDelegate.png" alt="AppDelegate.png" title="">
+<p>這時候你可以測試看看 simulator 和 real device 上是不是都能正常運作，可以的話就成功囉！</p>
+<h2 id="Debug_in_Chrome_on_Real_Device"><a href="#Debug_in_Chrome_on_Real_Device" class="headerlink" title="Debug in Chrome on Real Device"></a>Debug in Chrome on Real Device</h2><p>找到 <code>RCTWebSocketExecutor.ｍ</code> 的 setUp</p>
+<img src="/blog/2016/04/27/react-native-auto-ip-configuration/RCTWebSocketExecutor.png" alt="RCTWebSocketExecutor.png" title="">
+<p>將這行</p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">NSString</span> *<span class="type">URLString</span> = [<span class="type">NSString</span> stringWithFormat:@<span class="string">"http://localhost:%zd/debugger-proxy?role=client"</span>, <span class="foreign"><span class="keyword">port</span>];</span></span><br></pre></td></tr></table></figure>
+<p>替換成</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *serverIP = [[<span class="built_in">NSBundle</span> mainBundle] objectForInfoDictionaryKey:<span class="string">@"SERVER_IP"</span>];</span><br><span class="line"><span class="built_in">NSString</span> *URLString = [<span class="built_in">NSString</span> stringWithFormat:<span class="string">@"http://%@:%zd/debugger-proxy?role=client"</span>, serverIP, port];</span><br></pre></td></tr></table></figure>
+<p>這邊一樣是將 localhost 改成 SERVER_IP</p>
+<p>實體裝置就能透過 wifi 在電腦的 chrome 上進行 debug 了，趕快試試看！</p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/blog/2016/04/27/react-native-auto-ip-configuration/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/blog/2016/04/19/react-native-101/">
                             React Native 初心者攻略 (OS X)
                         </a>
