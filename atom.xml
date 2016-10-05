@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://kyoyadmoon.github.io/blog/"/>
-  <updated>2016-04-28T01:47:43.000Z</updated>
+  <updated>2016-10-05T09:18:29.000Z</updated>
   <id>http://kyoyadmoon.github.io/blog/</id>
   
   <author>
@@ -16,62 +16,98 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Retina-Display-AntiReflective-Coating-Damage</title>
+    <link href="http://kyoyadmoon.github.io/blog/2016/10/05/Retina-Display-AntiReflective-Coating-Damage/"/>
+    <id>http://kyoyadmoon.github.io/blog/2016/10/05/Retina-Display-AntiReflective-Coating-Damage/</id>
+    <published>2016-10-05T08:16:41.000Z</published>
+    <updated>2016-10-05T09:18:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>我是 2015 年初購買的 MacBook Pro (Retina, 13-inch, Mid 2014)，使用上體驗真的很棒，覺得非常值得，但用了大約半年後，從中間開始出現輕微的鍍膜剝落情形，立馬上網 Google，發現全球災情不少，但即使是保固內，仍有多例在官方評估後認為是人為損害，無法免費維修。引起網友連署希望官方處理，當時看完也是心涼了一截，花了許多錢才買的電腦沒想到半年就出了狀況。之後一邊 follow 相關消息，剝落狀況也漸漸擴散，明顯可以看出鍵盤按鍵的輪廓痕跡，合理推測是螢幕闔上時，和鍵盤接觸導致的鍍膜剝落，心想這應該是設計上的問題，如果真的不處理，對於蘋果實在相當失望。</p>
+<p>最後在 2015 年底的時候，在 <a href="http://www.macuknow.com/node/73531" target="_blank" rel="external">MACUKNOW</a> 上面看到官方將會針對鍍膜剝落的 Retina MacBook 提供免費維修服務，心裡的大石頭才放下了些，雖然去年十一月就看到了消息，不過因為實習的工作需要，也沒辦法將筆電送修一個禮拜之久，於是一直拖到兩個禮拜前才送修。</p>
+<h2 id="送修過程"><a href="#送修過程" class="headerlink" title="送修過程"></a>送修過程</h2><p>由於台灣並沒有 Apple 直營的維修中心，只有<code>授權</code>維修中心，於是爬了一些網路上的文章，覺得 STUDIO A 相對好評較多，維修門市本就較少，也不是所有維修門市業務內容都包含 MacBook，最後選擇到<code>大安門市</code>送修（有提供線上預約），只需要帶著 MacBook 過去就可以了
+<code>幾點注意事項：</code></p>
+<blockquote>
+<ol>
+<li>建議先做好備份 (雖然理論上只會更換螢幕，還是以防萬一)</li>
+<li>或許你也有貼貼紙的習慣，如果順利更換營幕的話，貼紙是拿不回來的</li>
+<li>不需要攜帶配件，填寫維修單後，他們會將電腦代送給 Apple 評估是否能免費維修。</li>
+</ol>
+</blockquote>
+<p>果然一週後就接到電話通知，能夠到維修門市領取啦。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我是 2015 年初購買的 MacBook Pro (Retina, 13-inch, Mid 2014)，使用上體驗真的很棒，覺得非常值得，但用了大約半年後，從中間開始出現輕微的鍍膜剝落情形，立馬上網 Google，發現全球災情不少，但即使是保固內，仍有多例在官方評估後認
+    
+    </summary>
+    
+      <category term="MacBook" scheme="http://kyoyadmoon.github.io/blog/categories/MacBook/"/>
+    
+    
+      <category term="Macbook" scheme="http://kyoyadmoon.github.io/blog/tags/Macbook/"/>
+    
+      <category term="Retina" scheme="http://kyoyadmoon.github.io/blog/tags/Retina/"/>
+    
+  </entry>
+  
+  <entry>
     <title>React Native 進階開發配置-自動設定 IP</title>
     <link href="http://kyoyadmoon.github.io/blog/2016/04/27/react-native-auto-ip-configuration/"/>
     <id>http://kyoyadmoon.github.io/blog/2016/04/27/react-native-auto-ip-configuration/</id>
     <published>2016-04-27T12:57:40.000Z</published>
     <updated>2016-04-28T01:47:43.000Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;img src=&quot;https://softnshare.files.wordpress.com/2016/04/corporate-image-1.png?w=1000&amp;amp;h=545&amp;amp;crop=1&quot; alt=&quot;React Native&quot;&gt;&lt;/p&gt;
-&lt;p&gt;在上一篇 &lt;a href=&quot;http://kyoyadmoon.github.io/blog/2016/04/19/react-native-101/&quot;&gt;React Native 初心者攻略&lt;/a&gt; 中有說明如何在實體 iPhone 上開發&lt;/p&gt;
-&lt;p&gt;透過 &lt;code&gt;AppDelegate.m&lt;/code&gt; 這個檔案我們可以將 localhost 手動更改成電腦 ip 來達到實機測試的目的&lt;/p&gt;
-&lt;p&gt;但是這樣的開發方式有幾個缺點&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;需要經常手動去做更改，尤其當你是使用筆電，甚至是和其他人共同開發的狀況，就會常常在 merge 時衝突，除非團隊都使用 localhost 以 simulator 進行開發&lt;/li&gt;
-&lt;li&gt;沒辦法在實體機器上 Debug in Chrome&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;在開發一段時間後，實在受不了，好在找到了自動設定的方法&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;透過 shell script 抓取電腦的 IP 後，寫入到專案&lt;/code&gt;&lt;/p&gt;
-&lt;h1 id=&quot;u8A2D_u7F6E_u65B9_u6CD5&quot;&gt;&lt;a href=&quot;#u8A2D_u7F6E_u65B9_u6CD5&quot; class=&quot;headerlink&quot; title=&quot;設置方法&quot;&gt;&lt;/a&gt;設置方法&lt;/h1&gt;&lt;h2 id=&quot;u6293_u53D6_u96FB_u8166_IP&quot;&gt;&lt;a href=&quot;#u6293_u53D6_u96FB_u8166_IP&quot; class=&quot;headerlink&quot; title=&quot;抓取電腦 IP&quot;&gt;&lt;/a&gt;抓取電腦 IP&lt;/h2&gt;&lt;p&gt;我們需要先寫出能夠抓取電腦 IP 的指令&lt;/p&gt;
-&lt;p&gt;網路上大多使用這個指令，可以先填到 terminal 執行看看，確認 IP 是否正確&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;ifconfig | grep inet\ | tail -1 | cut -d &amp;quot; &amp;quot; -f 2&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;但是因為我們專案後端 server 有使用到 docker ，使用上面 command 抓到的是錯誤的 IP&lt;/p&gt;
-&lt;p&gt;所以我需要改成這樣&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;ifconfig | grep -Eo &amp;#39;inet (addr:)?([0-9]*\.){3}[0-9]*&amp;#39; | grep -Eo &amp;#39;([0-9]*\.){3}[0-9]*&amp;#39; | grep -v &amp;#39;127.0.0.1&amp;#39; | head -1&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;OK 我們現在能夠拿到正確的 IP 了&lt;/p&gt;
-&lt;h2 id=&quot;Add_Run_Script&quot;&gt;&lt;a href=&quot;#Add_Run_Script&quot; class=&quot;headerlink&quot; title=&quot;Add Run Script&quot;&gt;&lt;/a&gt;Add Run Script&lt;/h2&gt;&lt;p&gt;再來我們需要設定在專案執行時執行一段 shell script 去抓取 IP 寫入到專案中&lt;/p&gt;
-&lt;p&gt;照著圖中藍色 focus 的地方找到 &lt;code&gt;Build Phases&lt;/code&gt;&lt;/p&gt;
-&lt;img src=&quot;/blog/2016/04/27/react-native-auto-ip-configuration/addScript.png&quot; alt=&quot;addScript.png&quot; title=&quot;&quot;&gt;
-&lt;p&gt;新增一個 Run Script 後的畫面&lt;/p&gt;
-&lt;img src=&quot;/blog/2016/04/27/react-native-auto-ip-configuration/editScript.png&quot; alt=&quot;editScript.png&quot; title=&quot;&quot;&gt;
-&lt;p&gt;接下來就是填入主角 script  了&lt;/p&gt;
-&lt;p&gt;下面的 script 會在專案的 INFOPLIST 裡新增一個 SERVER_IP 的欄位，並把 IP 寫入&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;INFOPLIST=&lt;span class=&quot;string&quot;&gt;&quot;&lt;span class=&quot;variable&quot;&gt;$&amp;#123;TARGET_BUILD_DIR&amp;#125;&lt;/span&gt;/&lt;span class=&quot;variable&quot;&gt;$&amp;#123;INFOPLIST_PATH&amp;#125;&lt;/span&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;writing to &lt;span class=&quot;variable&quot;&gt;$INFOPLIST&lt;/span&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;PLISTCMD=&lt;span class=&quot;string&quot;&gt;&quot;Add :SERVER_IP string &lt;span class=&quot;variable&quot;&gt;$(ifconfig | grep -Eo &#39;inet (addr:)&lt;/span&gt;?([0-9]*\.)&amp;#123;3&amp;#125;[0-9]*&#39; | grep -Eo &#39;([0-9]*\.)&amp;#123;3&amp;#125;[0-9]*&#39; | grep -v &#39;127.0.0.1&#39; | head -1)&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;echo&lt;/span&gt; -n &lt;span class=&quot;string&quot;&gt;&quot;&lt;span class=&quot;variable&quot;&gt;$INFOPLIST&lt;/span&gt;&quot;&lt;/span&gt; | xargs -&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; /usr/libexec/PlistBuddy -c &lt;span class=&quot;string&quot;&gt;&quot;&lt;span class=&quot;variable&quot;&gt;$PLISTCMD&lt;/span&gt;&quot;&lt;/span&gt; || &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;PLISTCMD=&lt;span class=&quot;string&quot;&gt;&quot;Set :SERVER_IP &lt;span class=&quot;variable&quot;&gt;$(ifconfig | grep -Eo &#39;inet (addr:)&lt;/span&gt;?([0-9]*\.)&amp;#123;3&amp;#125;[0-9]*&#39; | grep -Eo &#39;([0-9]*\.)&amp;#123;3&amp;#125;[0-9]*&#39; | grep -v &#39;127.0.0.1&#39; | head -1)&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;echo&lt;/span&gt; -n &lt;span class=&quot;string&quot;&gt;&quot;&lt;span class=&quot;variable&quot;&gt;$INFOPLIST&lt;/span&gt;&quot;&lt;/span&gt; | xargs -&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; /usr/libexec/PlistBuddy -c &lt;span class=&quot;string&quot;&gt;&quot;&lt;span class=&quot;variable&quot;&gt;$PLISTCMD&lt;/span&gt;&quot;&lt;/span&gt; || &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;填好之後會像這樣&lt;/p&gt;
-&lt;img src=&quot;/blog/2016/04/27/react-native-auto-ip-configuration/addedScript.png&quot; alt=&quot;addedScript.png&quot; title=&quot;&quot;&gt;
-&lt;h2 id=&quot;u5728_AppDelegate-m__u8B80_u53D6_SERVER_IP&quot;&gt;&lt;a href=&quot;#u5728_AppDelegate-m__u8B80_u53D6_SERVER_IP&quot; class=&quot;headerlink&quot; title=&quot;在 AppDelegate.m 讀取 SERVER_IP&quot;&gt;&lt;/a&gt;在 &lt;code&gt;AppDelegate.m&lt;/code&gt; 讀取 SERVER_IP&lt;/h2&gt;&lt;p&gt;打開 &lt;code&gt;AppDelegate.m&lt;/code&gt; &lt;/p&gt;
-&lt;p&gt;將原本&lt;/p&gt;
-&lt;figure class=&quot;highlight groovy&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;jsCodeLocation = [NSURL &lt;span class=&quot;string&quot;&gt;URLWithString:&lt;/span&gt;@&lt;span class=&quot;string&quot;&gt;&quot;http://localhost:8081/index.ios.bundle?platform=ios&amp;amp;dev=true&quot;&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;替換成能夠動態改變 SERVER_IP 的 code&lt;/p&gt;
-&lt;figure class=&quot;highlight objectivec&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;NSString&lt;/span&gt; *serverIP = [[&lt;span class=&quot;built_in&quot;&gt;NSBundle&lt;/span&gt; mainBundle] objectForInfoDictionaryKey:&lt;span class=&quot;string&quot;&gt;@&quot;SERVER_IP&quot;&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;NSString&lt;/span&gt; *jsCodeUrlString = [&lt;span class=&quot;built_in&quot;&gt;NSString&lt;/span&gt; stringWithFormat:&lt;span class=&quot;string&quot;&gt;@&quot;http://%@:8081/index.ios.bundle?platform=ios&amp;amp;dev=true&quot;&lt;/span&gt;, serverIP];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;NSString&lt;/span&gt; *jsBundleUrlString = [jsCodeUrlString stringByAddingPercentEscapesUsingEncoding:&lt;span class=&quot;built_in&quot;&gt;NSUTF8StringEncoding&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;jsCodeLocation = [&lt;span class=&quot;built_in&quot;&gt;NSURL&lt;/span&gt; URLWithString:jsBundleUrlString];&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;img src=&quot;/blog/2016/04/27/react-native-auto-ip-configuration/AppDelegate.png&quot; alt=&quot;AppDelegate.png&quot; title=&quot;&quot;&gt;
-&lt;p&gt;這時候你可以測試看看 simulator 和 real device 上是不是都能正常運作，可以的話就成功囉！&lt;/p&gt;
-&lt;h2 id=&quot;Debug_in_Chrome_on_Real_Device&quot;&gt;&lt;a href=&quot;#Debug_in_Chrome_on_Real_Device&quot; class=&quot;headerlink&quot; title=&quot;Debug in Chrome on Real Device&quot;&gt;&lt;/a&gt;Debug in Chrome on Real Device&lt;/h2&gt;&lt;p&gt;找到 &lt;code&gt;RCTWebSocketExecutor.ｍ&lt;/code&gt; 的 setUp&lt;/p&gt;
-&lt;img src=&quot;/blog/2016/04/27/react-native-auto-ip-configuration/RCTWebSocketExecutor.png&quot; alt=&quot;RCTWebSocketExecutor.png&quot; title=&quot;&quot;&gt;
-&lt;p&gt;將這行&lt;/p&gt;
-&lt;figure class=&quot;highlight elm&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;type&quot;&gt;NSString&lt;/span&gt; *&lt;span class=&quot;type&quot;&gt;URLString&lt;/span&gt; = [&lt;span class=&quot;type&quot;&gt;NSString&lt;/span&gt; stringWithFormat:@&lt;span class=&quot;string&quot;&gt;&quot;http://localhost:%zd/debugger-proxy?role=client&quot;&lt;/span&gt;, &lt;span class=&quot;foreign&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;port&lt;/span&gt;];&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;替換成&lt;/p&gt;
-&lt;figure class=&quot;highlight objectivec&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;NSString&lt;/span&gt; *serverIP = [[&lt;span class=&quot;built_in&quot;&gt;NSBundle&lt;/span&gt; mainBundle] objectForInfoDictionaryKey:&lt;span class=&quot;string&quot;&gt;@&quot;SERVER_IP&quot;&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;NSString&lt;/span&gt; *URLString = [&lt;span class=&quot;built_in&quot;&gt;NSString&lt;/span&gt; stringWithFormat:&lt;span class=&quot;string&quot;&gt;@&quot;http://%@:%zd/debugger-proxy?role=client&quot;&lt;/span&gt;, serverIP, port];&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;這邊一樣是將 localhost 改成 SERVER_IP&lt;/p&gt;
-&lt;p&gt;實體裝置就能透過 wifi 在電腦的 chrome 上進行 debug 了，趕快試試看！&lt;/p&gt;
-&lt;h2 id=&quot;Reference&quot;&gt;&lt;a href=&quot;#Reference&quot; class=&quot;headerlink&quot; title=&quot;Reference&quot;&gt;&lt;/a&gt;Reference&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://moduscreate.com/automated-ip-configuration-for-react-native-development/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://moduscreate.com/automated-ip-configuration-for-react-native-development/&lt;/a&gt;&lt;/p&gt;
-</content>
+    <content type="html"><![CDATA[<p><img src="https://softnshare.files.wordpress.com/2016/04/corporate-image-1.png?w=1000&amp;h=545&amp;crop=1" alt="React Native"></p>
+<p>在上一篇 <a href="http://kyoyadmoon.github.io/blog/2016/04/19/react-native-101/">React Native 初心者攻略</a> 中有說明如何在實體 iPhone 上開發</p>
+<p>透過 <code>AppDelegate.m</code> 這個檔案我們可以將 localhost 手動更改成電腦 ip 來達到實機測試的目的</p>
+<p>但是這樣的開發方式有幾個缺點</p>
+<blockquote>
+<ol>
+<li>需要經常手動去做更改，尤其當你是使用筆電，甚至是和其他人共同開發的狀況，就會常常在 merge 時衝突，除非團隊都使用 localhost 以 simulator 進行開發</li>
+<li>沒辦法在實體機器上 Debug in Chrome</li>
+</ol>
+</blockquote>
+<p>在開發一段時間後，實在受不了，好在找到了自動設定的方法</p>
+<p><code>透過 shell script 抓取電腦的 IP 後，寫入到專案</code></p>
+<h1 id="設置方法"><a href="#設置方法" class="headerlink" title="設置方法"></a>設置方法</h1><h2 id="抓取電腦-IP"><a href="#抓取電腦-IP" class="headerlink" title="抓取電腦 IP"></a>抓取電腦 IP</h2><p>我們需要先寫出能夠抓取電腦 IP 的指令</p>
+<p>網路上大多使用這個指令，可以先填到 terminal 執行看看，確認 IP 是否正確</p>
+<blockquote>
+<p><code>ifconfig | grep inet\ | tail -1 | cut -d &quot; &quot; -f 2</code></p>
+</blockquote>
+<p>但是因為我們專案後端 server 有使用到 docker ，使用上面 command 抓到的是錯誤的 IP</p>
+<p>所以我需要改成這樣</p>
+<blockquote>
+<p><code>ifconfig | grep -Eo &#39;inet (addr:)?([0-9]*\.){3}[0-9]*&#39; | grep -Eo &#39;([0-9]*\.){3}[0-9]*&#39; | grep -v &#39;127.0.0.1&#39; | head -1</code></p>
+</blockquote>
+<p>OK 我們現在能夠拿到正確的 IP 了</p>
+<h2 id="Add-Run-Script"><a href="#Add-Run-Script" class="headerlink" title="Add Run Script"></a>Add Run Script</h2><p>再來我們需要設定在專案執行時執行一段 shell script 去抓取 IP 寫入到專案中</p>
+<p>照著圖中藍色 focus 的地方找到 <code>Build Phases</code></p>
+<img src="/blog/2016/04/27/react-native-auto-ip-configuration/addScript.png" alt="addScript.png" title="">
+<p>新增一個 Run Script 後的畫面</p>
+<img src="/blog/2016/04/27/react-native-auto-ip-configuration/editScript.png" alt="editScript.png" title="">
+<p>接下來就是填入主角 script  了</p>
+<p>下面的 script 會在專案的 INFOPLIST 裡新增一個 SERVER_IP 的欄位，並把 IP 寫入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">INFOPLIST=&quot;$&#123;TARGET_BUILD_DIR&#125;/$&#123;INFOPLIST_PATH&#125;&quot;</div><div class="line">echo &quot;writing to $INFOPLIST&quot;</div><div class="line">PLISTCMD=&quot;Add :SERVER_IP string $(ifconfig | grep -Eo &apos;inet (addr:)?([0-9]*\.)&#123;3&#125;[0-9]*&apos; | grep -Eo &apos;([0-9]*\.)&#123;3&#125;[0-9]*&apos; | grep -v &apos;127.0.0.1&apos; | head -1)&quot;</div><div class="line">echo -n &quot;$INFOPLIST&quot; | xargs -0 /usr/libexec/PlistBuddy -c &quot;$PLISTCMD&quot; || true</div><div class="line">PLISTCMD=&quot;Set :SERVER_IP $(ifconfig | grep -Eo &apos;inet (addr:)?([0-9]*\.)&#123;3&#125;[0-9]*&apos; | grep -Eo &apos;([0-9]*\.)&#123;3&#125;[0-9]*&apos; | grep -v &apos;127.0.0.1&apos; | head -1)&quot;</div><div class="line">echo -n &quot;$INFOPLIST&quot; | xargs -0 /usr/libexec/PlistBuddy -c &quot;$PLISTCMD&quot; || true</div></pre></td></tr></table></figure>
+<p>填好之後會像這樣</p>
+<img src="/blog/2016/04/27/react-native-auto-ip-configuration/addedScript.png" alt="addedScript.png" title="">
+<h2 id="在-AppDelegate-m-讀取-SERVER-IP"><a href="#在-AppDelegate-m-讀取-SERVER-IP" class="headerlink" title="在 AppDelegate.m 讀取 SERVER_IP"></a>在 <code>AppDelegate.m</code> 讀取 SERVER_IP</h2><p>打開 <code>AppDelegate.m</code> </p>
+<p>將原本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jsCodeLocation = [NSURL URLWithString:@&quot;http://localhost:8081/index.ios.bundle?platform=ios&amp;dev=true&quot;];</div></pre></td></tr></table></figure>
+<p>替換成能夠動態改變 SERVER_IP 的 code</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">NSString *serverIP = [[NSBundle mainBundle] objectForInfoDictionaryKey:@&quot;SERVER_IP&quot;];</div><div class="line">NSString *jsCodeUrlString = [NSString stringWithFormat:@&quot;http://%@:8081/index.ios.bundle?platform=ios&amp;dev=true&quot;, serverIP];</div><div class="line">NSString *jsBundleUrlString = [jsCodeUrlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];</div><div class="line">jsCodeLocation = [NSURL URLWithString:jsBundleUrlString];</div></pre></td></tr></table></figure>
+<img src="/blog/2016/04/27/react-native-auto-ip-configuration/AppDelegate.png" alt="AppDelegate.png" title="">
+<p>這時候你可以測試看看 simulator 和 real device 上是不是都能正常運作，可以的話就成功囉！</p>
+<h2 id="Debug-in-Chrome-on-Real-Device"><a href="#Debug-in-Chrome-on-Real-Device" class="headerlink" title="Debug in Chrome on Real Device"></a>Debug in Chrome on Real Device</h2><p>找到 <code>RCTWebSocketExecutor.ｍ</code> 的 setUp</p>
+<img src="/blog/2016/04/27/react-native-auto-ip-configuration/RCTWebSocketExecutor.png" alt="RCTWebSocketExecutor.png" title="">
+<p>將這行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">NSString *URLString = [NSString stringWithFormat:@&quot;http://localhost:%zd/debugger-proxy?role=client&quot;, port];</div></pre></td></tr></table></figure>
+<p>替換成</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">NSString *serverIP = [[NSBundle mainBundle] objectForInfoDictionaryKey:@&quot;SERVER_IP&quot;];</div><div class="line">NSString *URLString = [NSString stringWithFormat:@&quot;http://%@:%zd/debugger-proxy?role=client&quot;, serverIP, port];</div></pre></td></tr></table></figure>
+<p>這邊一樣是將 localhost 改成 SERVER_IP</p>
+<p>實體裝置就能透過 wifi 在電腦的 chrome 上進行 debug 了，趕快試試看！</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://moduscreate.com/automated-ip-configuration-for-react-native-development/" target="_blank" rel="external">http://moduscreate.com/automated-ip-configuration-for-react-native-development/</a></p>
+]]></content>
     
     <summary type="html">
     
@@ -96,56 +132,56 @@
     <published>2016-04-18T16:05:03.000Z</published>
     <updated>2016-04-21T09:34:08.000Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/dnaYgtL.png&quot; alt=&quot;React Native&quot;&gt;&lt;/p&gt;
-&lt;p&gt;由於 React 的火熱程度，身邊許多朋友都開始接觸 React ，我也推薦他們玩玩看 React Native ，我覺得 React 的入門門檻有些其實和 React 本身無關，像是 Webpack, Babel 等等都多少在無形中增加了入門的難度，且有許多範例可能還使用了 ES6 語法，雖然不是必要，但可能會造成初學者混淆、失去信心，使學習過程更不順利。&lt;/p&gt;
-&lt;p&gt;然而 React Native 完全就是一個超棒的東西，只要跟著官網的教學就可以很簡單的開始使用 React 撰寫跨平台的 App，不僅內建支援 ES6 ，還有 Live Reload , Hot Reloading 等強大功能, 甚至能在 Chrome 中 debug ，這些React Native 統統幫你包好了，省去了原先我們在 web 專案開發需要自行加入 webpack, babel 等等的處理過程。&lt;/p&gt;
-&lt;h2 id=&quot;u74B0_u5883_u5EFA_u7ACB&quot;&gt;&lt;a href=&quot;#u74B0_u5883_u5EFA_u7ACB&quot; class=&quot;headerlink&quot; title=&quot;環境建立&quot;&gt;&lt;/a&gt;環境建立&lt;/h2&gt;&lt;p&gt;相關環境安裝的部分跟著 &lt;a href=&quot;http://reactnative.cn/docs/0.23/getting-started.html#环境需求&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;官網的詳細指示&lt;/strong&gt; (別擔心這裡有中文版) &lt;/a&gt;操作就可以了，這部分就不多敘述&lt;/p&gt;
-&lt;h2 id=&quot;u5EFA_u7ACBRN_u5C08_u6848&quot;&gt;&lt;a href=&quot;#u5EFA_u7ACBRN_u5C08_u6848&quot; class=&quot;headerlink&quot; title=&quot;建立RN專案&quot;&gt;&lt;/a&gt;建立RN專案&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;$ npm install -g react-native-cli
+    <content type="html"><![CDATA[<p><img src="http://i.imgur.com/dnaYgtL.png" alt="React Native"></p>
+<p>由於 React 的火熱程度，身邊許多朋友都開始接觸 React ，我也推薦他們玩玩看 React Native ，我覺得 React 的入門門檻有些其實和 React 本身無關，像是 Webpack, Babel 等等都多少在無形中增加了入門的難度，且有許多範例可能還使用了 ES6 語法，雖然不是必要，但可能會造成初學者混淆、失去信心，使學習過程更不順利。</p>
+<p>然而 React Native 完全就是一個超棒的東西，只要跟著官網的教學就可以很簡單的開始使用 React 撰寫跨平台的 App，不僅內建支援 ES6 ，還有 Live Reload , Hot Reloading 等強大功能, 甚至能在 Chrome 中 debug ，這些React Native 統統幫你包好了，省去了原先我們在 web 專案開發需要自行加入 webpack, babel 等等的處理過程。</p>
+<h2 id="環境建立"><a href="#環境建立" class="headerlink" title="環境建立"></a>環境建立</h2><p>相關環境安裝的部分跟著 <a href="http://reactnative.cn/docs/0.23/getting-started.html#环境需求" target="_blank" rel="external"><strong>官網的詳細指示</strong> (別擔心這裡有中文版) </a>操作就可以了，這部分就不多敘述</p>
+<h2 id="建立RN專案"><a href="#建立RN專案" class="headerlink" title="建立RN專案"></a>建立RN專案</h2><pre><code>$ npm install -g react-native-cli
 $ react-native init AwesomeProject
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;iOS&quot;&gt;&lt;a href=&quot;#iOS&quot; class=&quot;headerlink&quot; title=&quot;iOS&quot;&gt;&lt;/a&gt;iOS&lt;/h1&gt;&lt;h2 id=&quot;u74B0_u5883_u6E96_u5099&quot;&gt;&lt;a href=&quot;#u74B0_u5883_u6E96_u5099&quot; class=&quot;headerlink&quot; title=&quot;環境準備&quot;&gt;&lt;/a&gt;環境準備&lt;/h2&gt;&lt;p&gt;安裝 Xcode 即可&lt;/p&gt;
-&lt;h2 id=&quot;u5C08_u6848_u958B_u767C&quot;&gt;&lt;a href=&quot;#u5C08_u6848_u958B_u767C&quot; class=&quot;headerlink&quot; title=&quot;專案開發&quot;&gt;&lt;/a&gt;專案開發&lt;/h2&gt;&lt;p&gt;有兩種方法&lt;/p&gt;
-&lt;p&gt;第一種是使用 Xcode ：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;開啟專案目錄下的 &lt;code&gt;/ios/AwesomeProject.xcodeproj&lt;/code&gt; （應該會以 Xcode 開啟）, 按左上角的播放圖示按鈕就會自動開啟 iPhone 模擬器和 Packager server ，並把專案 build 成 App 到模擬器中。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;另一種是開啟 terminal 切換到專案目錄&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;$ react-native run-ios&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;這個指令可以不用開啟 Xcode 做和上面同樣的事情，一個指令解決，非常簡潔&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;接著你就可以開始編輯專案目錄下的 &lt;code&gt;index.ios.js&lt;/code&gt; 開始開發你的專案。&lt;/p&gt;
-&lt;h2 id=&quot;Tips&quot;&gt;&lt;a href=&quot;#Tips&quot; class=&quot;headerlink&quot; title=&quot;Tips&quot;&gt;&lt;/a&gt;Tips&lt;/h2&gt;&lt;p&gt;在模擬器的 RN App 中你可以用快捷鍵 &lt;code&gt;cmd+D&lt;/code&gt; 打開開發 Menu，這邊可以設定 Debug in Chrome, Live Reload, Hot Reloading 等等功能。&lt;/p&gt;
-&lt;p&gt;若需要手動刷新可以使用熱鍵 &lt;code&gt;cmd+R&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;另外，如果你有實體 Apple 裝置的話，也能夠直接在實體裝置上測試、開發&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;將 Apple 裝置用USB線連接到電腦，並和電腦連接同一個 wifi&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;將專案用 Xcode 開啟（上面的第一種方法）&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;在 Xcode 左上角播放圖示的右方應該可以看到 寫著 Apple 裝置的選項，點按後選到自己的實體裝置&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;打開 Xcode 左邊檔案管理的導覽列 Tree View，找到 &lt;code&gt;AwesomeProject/AppDelegate.m&lt;/code&gt; 這個檔案打開來
-可以在裡面找到這段，相信看到註解大家應該都知道要怎麼做了，把 localhost 換成電腦的 ip 就可以了&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;/**&amp;#10;* To run on device, change `localhost` to the IP address of your computer&amp;#10;* (you can get this by typing `ifconfig` into the terminal and selecting the&amp;#10;* `inet` value under `en0:`) and make sure your computer and iOS device are&amp;#10;* on the same Wi-Fi network.&amp;#10;*/&amp;#10;&amp;#10;jsCodeLocation = [NSURL URLWithString:@&amp;#34;http://localhost:8081/index.ios.bundle?platform=ios&amp;#38;dev=true&amp;#34;];&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;按下 Xcode 左上角的播放鍵開始 Run 囉&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1 id=&quot;Android__u74B0_u5883_u6E96_u5099&quot;&gt;&lt;a href=&quot;#Android__u74B0_u5883_u6E96_u5099&quot; class=&quot;headerlink&quot; title=&quot;Android 環境準備&quot;&gt;&lt;/a&gt;Android 環境準備&lt;/h1&gt;&lt;p&gt;由於目前我主要都是在 iOS 上開發， Android 部分還沒有很了解，如果有漏掉什麼還請各位大大提醒&lt;/p&gt;
-&lt;p&gt;Android 在 OS X 上的環境準備相對 iOS 來說稍微麻煩一點，但也不難
-細心按照官方指示應該就能成功囉&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://reactnative.cn/docs/0.23/android-setup.html#content&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;參考這裡&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;u958B_u767C_u6E96_u5099&quot;&gt;&lt;a href=&quot;#u958B_u767C_u6E96_u5099&quot; class=&quot;headerlink&quot; title=&quot;開發準備&quot;&gt;&lt;/a&gt;開發準備&lt;/h2&gt;&lt;p&gt;安裝完 Android SDK 和 Genymotion 之後&lt;/p&gt;
-&lt;p&gt;先打開 Genymotion 創建一個模擬器啟動&lt;/p&gt;
-&lt;p&gt;接著開啟 terminal 切到專案目錄下&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;$ react-native run-android&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;然後就可以編輯 &lt;code&gt;index.android.js&lt;/code&gt; 開始開發了&lt;/p&gt;
-&lt;p&gt;在模擬器中按下 menu 按鈕可以打開開發 Menu ，這邊可以設定 Debug in Chrome, Live Reload, Hot Reloading 等等功能。&lt;/p&gt;
-&lt;h1 id=&quot;u5982_u4F55_u4F7F_u7528_u5225_u4EBA_u5BEB_u597D_u7684_library_2C_Package&quot;&gt;&lt;a href=&quot;#u5982_u4F55_u4F7F_u7528_u5225_u4EBA_u5BEB_u597D_u7684_library_2C_Package&quot; class=&quot;headerlink&quot; title=&quot;如何使用別人寫好的 library, Package&quot;&gt;&lt;/a&gt;如何使用別人寫好的 library, Package&lt;/h1&gt;&lt;p&gt;我的同事 yaode 寫了一篇詳細完整的教學文章
-大家可以參考看看&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://trunk-studio.com/blog/react-native-how-to-use-component/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://trunk-studio.com/blog/react-native-how-to-use-component/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;記得有用到文章內的方法 link library 的話，是需要重新 build App 到模擬器才能正常運作的喔！（run-ios / run-android）&lt;/p&gt;
-</content>
+</code></pre><h1 id="iOS"><a href="#iOS" class="headerlink" title="iOS"></a>iOS</h1><h2 id="環境準備"><a href="#環境準備" class="headerlink" title="環境準備"></a>環境準備</h2><p>安裝 Xcode 即可</p>
+<h2 id="專案開發"><a href="#專案開發" class="headerlink" title="專案開發"></a>專案開發</h2><p>有兩種方法</p>
+<p>第一種是使用 Xcode ：</p>
+<blockquote>
+<p>開啟專案目錄下的 <code>/ios/AwesomeProject.xcodeproj</code> （應該會以 Xcode 開啟）, 按左上角的播放圖示按鈕就會自動開啟 iPhone 模擬器和 Packager server ，並把專案 build 成 App 到模擬器中。</p>
+</blockquote>
+<p>另一種是開啟 terminal 切換到專案目錄</p>
+<blockquote>
+<p><code>$ react-native run-ios</code></p>
+<p>這個指令可以不用開啟 Xcode 做和上面同樣的事情，一個指令解決，非常簡潔</p>
+</blockquote>
+<p>接著你就可以開始編輯專案目錄下的 <code>index.ios.js</code> 開始開發你的專案。</p>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>在模擬器的 RN App 中你可以用快捷鍵 <code>cmd+D</code> 打開開發 Menu，這邊可以設定 Debug in Chrome, Live Reload, Hot Reloading 等等功能。</p>
+<p>若需要手動刷新可以使用熱鍵 <code>cmd+R</code></p>
+<p>另外，如果你有實體 Apple 裝置的話，也能夠直接在實體裝置上測試、開發</p>
+<ol>
+<li><p>將 Apple 裝置用USB線連接到電腦，並和電腦連接同一個 wifi</p>
+</li>
+<li><p>將專案用 Xcode 開啟（上面的第一種方法）</p>
+</li>
+<li><p>在 Xcode 左上角播放圖示的右方應該可以看到 寫著 Apple 裝置的選項，點按後選到自己的實體裝置</p>
+</li>
+<li><p>打開 Xcode 左邊檔案管理的導覽列 Tree View，找到 <code>AwesomeProject/AppDelegate.m</code> 這個檔案打開來
+可以在裡面找到這段，相信看到註解大家應該都知道要怎麼做了，把 localhost 換成電腦的 ip 就可以了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">* To run on device, change `localhost` to the IP address of your computer</div><div class="line">* (you can get this by typing `ifconfig` into the terminal and selecting the</div><div class="line">* `inet` value under `en0:`) and make sure your computer and iOS device are</div><div class="line">* on the same Wi-Fi network.</div><div class="line">*/</div><div class="line"></div><div class="line">jsCodeLocation = [NSURL URLWithString:@&quot;http://localhost:8081/index.ios.bundle?platform=ios&amp;dev=true&quot;];</div></pre></td></tr></table></figure>
+</li>
+<li><p>按下 Xcode 左上角的播放鍵開始 Run 囉</p>
+</li>
+</ol>
+<h1 id="Android-環境準備"><a href="#Android-環境準備" class="headerlink" title="Android 環境準備"></a>Android 環境準備</h1><p>由於目前我主要都是在 iOS 上開發， Android 部分還沒有很了解，如果有漏掉什麼還請各位大大提醒</p>
+<p>Android 在 OS X 上的環境準備相對 iOS 來說稍微麻煩一點，但也不難
+細心按照官方指示應該就能成功囉</p>
+<p><a href="http://reactnative.cn/docs/0.23/android-setup.html#content" target="_blank" rel="external">參考這裡</a></p>
+<h2 id="開發準備"><a href="#開發準備" class="headerlink" title="開發準備"></a>開發準備</h2><p>安裝完 Android SDK 和 Genymotion 之後</p>
+<p>先打開 Genymotion 創建一個模擬器啟動</p>
+<p>接著開啟 terminal 切到專案目錄下</p>
+<p><code>$ react-native run-android</code></p>
+<p>然後就可以編輯 <code>index.android.js</code> 開始開發了</p>
+<p>在模擬器中按下 menu 按鈕可以打開開發 Menu ，這邊可以設定 Debug in Chrome, Live Reload, Hot Reloading 等等功能。</p>
+<h1 id="如何使用別人寫好的-library-Package"><a href="#如何使用別人寫好的-library-Package" class="headerlink" title="如何使用別人寫好的 library, Package"></a>如何使用別人寫好的 library, Package</h1><p>我的同事 yaode 寫了一篇詳細完整的教學文章
+大家可以參考看看</p>
+<p><a href="http://trunk-studio.com/blog/react-native-how-to-use-component/" target="_blank" rel="external">http://trunk-studio.com/blog/react-native-how-to-use-component/</a></p>
+<p>記得有用到文章內的方法 link library 的話，是需要重新 build App 到模擬器才能正常運作的喔！（run-ios / run-android）</p>
+]]></content>
     
     <summary type="html">
     
@@ -157,13 +193,13 @@ $ react-native init AwesomeProject
       <category term="React Native" scheme="http://kyoyadmoon.github.io/blog/categories/React-Native/"/>
     
     
-      <category term="Android" scheme="http://kyoyadmoon.github.io/blog/tags/Android/"/>
-    
-      <category term="React" scheme="http://kyoyadmoon.github.io/blog/tags/React/"/>
-    
       <category term="React Native" scheme="http://kyoyadmoon.github.io/blog/tags/React-Native/"/>
     
       <category term="iOS" scheme="http://kyoyadmoon.github.io/blog/tags/iOS/"/>
+    
+      <category term="Android" scheme="http://kyoyadmoon.github.io/blog/tags/Android/"/>
+    
+      <category term="React" scheme="http://kyoyadmoon.github.io/blog/tags/React/"/>
     
   </entry>
   
@@ -174,16 +210,16 @@ $ react-native init AwesomeProject
     <published>2016-03-25T10:53:20.000Z</published>
     <updated>2016-03-26T03:20:10.000Z</updated>
     
-    <content type="html">&lt;p&gt;昨天在處理為 React Native 加上 聊天室的功能，首先遇到的問題就是串接 Socket ，要在 RN 上使用 socket 需要安裝 &lt;a href=&quot;https://github.com/socketio/socket.io-client&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;socket.io-client&lt;/a&gt;，安裝之後 import socket.io-client/socket.io 時，遇到了這個 error &lt;/p&gt;
-&lt;p&gt;&lt;em&gt;undefined is not an object (evaluting &amp;#39;navigator.userAgent.match&amp;#39;)&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;找了一下解決方法
+    <content type="html"><![CDATA[<p>昨天在處理為 React Native 加上 聊天室的功能，首先遇到的問題就是串接 Socket ，要在 RN 上使用 socket 需要安裝 <a href="https://github.com/socketio/socket.io-client" target="_blank" rel="external">socket.io-client</a>，安裝之後 import socket.io-client/socket.io 時，遇到了這個 error </p>
+<p><em>undefined is not an object (evaluting &#39;navigator.userAgent.match&#39;)</em></p>
+<p>找了一下解決方法
 發現這個套件不能用 import ，必需用 require
-另外需要 assign window.navigator.userAgent&lt;/p&gt;
-&lt;p&gt;正確設定方法如下&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; React, &amp;#123; Component &amp;#125; &lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;react-native&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.navigator.userAgent = &lt;span class=&quot;string&quot;&gt;&#39;react-native&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; io = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;socket.io-client/socket.io&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; socket = io(&lt;span class=&quot;string&quot;&gt;&#39;ws://&#39;&lt;/span&gt;, &amp;#123; jsonp: &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt; &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;#Reference&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://browniefed.com/blog/2015/05/16/react-native-and-socket-dot-io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://browniefed.com/blog/2015/05/16/react-native-and-socket-dot-io/&lt;/a&gt;&lt;/p&gt;
-</content>
+另外需要 assign window.navigator.userAgent</p>
+<p>正確設定方法如下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</div><div class="line"></div><div class="line"><span class="built_in">window</span>.navigator.userAgent = <span class="string">'react-native'</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> io = <span class="built_in">require</span>(<span class="string">'socket.io-client/socket.io'</span>);</div><div class="line"></div><div class="line"><span class="keyword">const</span> socket = io(<span class="string">'ws://'</span>, &#123; <span class="attr">jsonp</span>: <span class="literal">false</span> &#125;);</div></pre></td></tr></table></figure>
+<p>#Reference</p>
+<p><a href="http://browniefed.com/blog/2015/05/16/react-native-and-socket-dot-io/" target="_blank" rel="external">http://browniefed.com/blog/2015/05/16/react-native-and-socket-dot-io/</a></p>
+]]></content>
     
     <summary type="html">
     
@@ -207,23 +243,23 @@ $ react-native init AwesomeProject
     <published>2016-03-23T04:54:43.000Z</published>
     <updated>2016-03-23T09:42:18.000Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/KgEwDSPFlRq08oUvZD6yr_VHLTdP3E7YJp4M9CxiZ7jmyKbahUleLusWuoaq2fsdYiW71mhX5p-WnnRhqcvog-xWs-UpCEOj4X1Y-vZYE7pCfSY4nbLyuR69wTpFBFkgFZPJY7Q7Uzuxky5QjoF0rMO6_2bvtYqzNjZow_-mnQKk5tBG2MQtvQkWRXC_XrPsIX3KVbwTER0ZUYZTsAV4LMDpm5_WrEBZ6E0vRfIo6BYqcAi5tqmsKvwqKZSvwWUAPD6Bj2x7U4cjwzv9q7EgeRr4j47gYypVmGt3-9wO7_oCNGQCdyzFvHa__3J9d7zAfrgLnDJW65rZJy15He-BC9_2PkUaBMnS_BHZIeLhL3HIwwXQOmRe4WZBkRaCeF2X_g1QgZCQCyPEPojiXOTqHTPJGL-RUuK5pAriwWNRKe6wUVCDz5XZ0U3hFg7wJNFITPEqRoIcMx9tELrZmQfouTScjCa_KrdsSdE5-i7-oYUKyTV5iwtZW0-jAX7ZISy9itZnHDO3HT8jRk47gDyj_aOmdGfycgBYWFYvFP86NCmp4KbUHT4z6-FnISxzAnLp-3eE=w1237-h195-no&quot; alt=&quot;ESLint&quot;&gt;&lt;/p&gt;
-&lt;p&gt;之前一直沒有嘗試過 JSHint、ESLint ，但隨著合作開發的人數越來越多，程式碼的風格和規範問題就更加明顯，加上最近看了聖經 &lt;code&gt;Clean Code&lt;/code&gt; ，覺得寫出乾淨的程式碼真的很重要，剛好爬文發現有人推薦 Airbnb 釋出的 ESLint config 來做 js 和 React.js 規範，所以就決定來嘗試看看！&lt;/p&gt;
-&lt;p&gt;首先我要推薦 &lt;a href=&quot;https://github.com/yannickcr/eslint-plugin-react&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;eslint-plugin-react&lt;/a&gt; 這個套件，這套件除了規範 React 的一些寫法，重要的是他還有寫 rules 的文件，告訴你為什麼建議這樣寫，只要把 eslint 上出現的錯誤訊息，拿去 google 就會找到 github 上用 markdown 寫的相關說明，跟著寫就有種 Level Up 的感覺，實在受益匪淺！&lt;/p&gt;
-&lt;p&gt;#Setup&lt;/p&gt;
-&lt;p&gt;安裝方法很簡單&lt;/p&gt;
-&lt;p&gt;先使用 npm 安裝 eslint 、 eslint-plugin-react、eslint-config-airbnb&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;npm install --save-dev eslint eslint-plugin-react eslint-config-airbnb&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;安裝後可以利用指令 init  &lt;code&gt;.eslintrc.js&lt;/code&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;eslint —init&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;透過 .eslintrc.js 這個檔案可以編輯 eslint 的規則&lt;/p&gt;
-&lt;p&gt;加入 extends airbnb 和 react plugin 就可以了&lt;/p&gt;
-&lt;p&gt;因為我有使用 es6 語法 所以需要多一個 babel 當 parser&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/* .eslintrc.js */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;module&lt;/span&gt;.exports = &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&quot;extends&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;airbnb&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&quot;plugins&quot;&lt;/span&gt;: [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;string&quot;&gt;&quot;react&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&quot;parser&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;babel-eslint&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&quot;rules&quot;&lt;/span&gt;: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;string&quot;&gt;&quot;strict&quot;&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
+    <content type="html"><![CDATA[<p><img src="https://lh3.googleusercontent.com/KgEwDSPFlRq08oUvZD6yr_VHLTdP3E7YJp4M9CxiZ7jmyKbahUleLusWuoaq2fsdYiW71mhX5p-WnnRhqcvog-xWs-UpCEOj4X1Y-vZYE7pCfSY4nbLyuR69wTpFBFkgFZPJY7Q7Uzuxky5QjoF0rMO6_2bvtYqzNjZow_-mnQKk5tBG2MQtvQkWRXC_XrPsIX3KVbwTER0ZUYZTsAV4LMDpm5_WrEBZ6E0vRfIo6BYqcAi5tqmsKvwqKZSvwWUAPD6Bj2x7U4cjwzv9q7EgeRr4j47gYypVmGt3-9wO7_oCNGQCdyzFvHa__3J9d7zAfrgLnDJW65rZJy15He-BC9_2PkUaBMnS_BHZIeLhL3HIwwXQOmRe4WZBkRaCeF2X_g1QgZCQCyPEPojiXOTqHTPJGL-RUuK5pAriwWNRKe6wUVCDz5XZ0U3hFg7wJNFITPEqRoIcMx9tELrZmQfouTScjCa_KrdsSdE5-i7-oYUKyTV5iwtZW0-jAX7ZISy9itZnHDO3HT8jRk47gDyj_aOmdGfycgBYWFYvFP86NCmp4KbUHT4z6-FnISxzAnLp-3eE=w1237-h195-no" alt="ESLint"></p>
+<p>之前一直沒有嘗試過 JSHint、ESLint ，但隨著合作開發的人數越來越多，程式碼的風格和規範問題就更加明顯，加上最近看了聖經 <code>Clean Code</code> ，覺得寫出乾淨的程式碼真的很重要，剛好爬文發現有人推薦 Airbnb 釋出的 ESLint config 來做 js 和 React.js 規範，所以就決定來嘗試看看！</p>
+<p>首先我要推薦 <a href="https://github.com/yannickcr/eslint-plugin-react" target="_blank" rel="external">eslint-plugin-react</a> 這個套件，這套件除了規範 React 的一些寫法，重要的是他還有寫 rules 的文件，告訴你為什麼建議這樣寫，只要把 eslint 上出現的錯誤訊息，拿去 google 就會找到 github 上用 markdown 寫的相關說明，跟著寫就有種 Level Up 的感覺，實在受益匪淺！</p>
+<p>#Setup</p>
+<p>安裝方法很簡單</p>
+<p>先使用 npm 安裝 eslint 、 eslint-plugin-react、eslint-config-airbnb</p>
+<blockquote>
+<p>npm install --save-dev eslint eslint-plugin-react eslint-config-airbnb</p>
+</blockquote>
+<p>安裝後可以利用指令 init  <code>.eslintrc.js</code></p>
+<blockquote>
+<p>eslint —init</p>
+</blockquote>
+<p>透過 .eslintrc.js 這個檔案可以編輯 eslint 的規則</p>
+<p>加入 extends airbnb 和 react plugin 就可以了</p>
+<p>因為我有使用 es6 語法 所以需要多一個 babel 當 parser</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* .eslintrc.js */</span></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="string">"extends"</span>: <span class="string">"airbnb"</span>,</div><div class="line">    <span class="string">"plugins"</span>: [</div><div class="line">        <span class="string">"react"</span></div><div class="line">    ],</div><div class="line">    <span class="string">"parser"</span>: <span class="string">"babel-eslint"</span>,</div><div class="line">    <span class="string">"rules"</span>: &#123;</div><div class="line">      <span class="string">"strict"</span>: <span class="number">0</span></div><div class="line">    &#125;,</div><div class="line">&#125;;</div></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
@@ -247,20 +283,20 @@ $ react-native init AwesomeProject
     <published>2016-03-19T02:07:46.000Z</published>
     <updated>2016-03-19T06:03:12.000Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/ehH3I28TQSBMOxkYzQ_Yp2Z9kXlDYbX-v22jH8BRXZ5bUC8PYpShgwBQP42-PKZ77vx0bn1eRsz3yrr_gIaEaKqeA_4Mt7WGd_YGXT3B40haq311NgEkP2K98NJMoj7J1-gwvEVbBPnyNO53PEFazJAZT6XMcYdnf_VNZ3NqVbPq3dgmgR8LMi2PIzdCqK0F_RWMedcl1RLfTbqxBugRbNcr38oiQ82yr5eZGAC2Chcni09MCtYdhHINoIzl-3cVh8M-K8rTpAAa3YwHwXrjUgTf4ZRVqC8aQnpr8RbCb2kboVZ6AbcVLwv1dz1LeCjo8pVEXEAqCBbxi4I3hUzfq-BpWJPmSRIqq55KPyKgXJeU90H-Aqkj0Yg0qe8zYEhd-vL_6nyqcpE7jT83VyLKStI6dsaA_LA72KqbvTuDRO8ABONlYOuQrG2Qsvxjm0A6d9qVRyCci1iD7q1c1ZhQ_xKfNgSXhnrZynFMoMaWhBSsdPVkbj7Jk_1nTnirxofc5nJOJphRMD2pwbBrSY4B-2uNhv0l0qpa5eI5LB6AvBjc4pPeXEq-ozZO06deNMj0tRUO=w1585-h712-no&quot; alt=&quot;Koa.js&quot;&gt;&lt;/p&gt;
-&lt;p&gt;之前在設定 Koa 的 cache 時，有點小卡關，所以記錄一下&lt;/p&gt;
-&lt;p&gt;我使用的 Koa 版本是 2.0.0&lt;/p&gt;
-&lt;p&gt;搭配處理 cache 的套件 是 &lt;a href=&quot;https://github.com/koajs/static-cache&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;koa-static-cache&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;官方 readme 上面的範例用法長這樣&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;app.use(staticCache(path.join(__dirname, &lt;span class=&quot;string&quot;&gt;&#39;public&#39;&lt;/span&gt;), &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  maxAge: &lt;span class=&quot;number&quot;&gt;365&lt;/span&gt; * &lt;span class=&quot;number&quot;&gt;24&lt;/span&gt; * &lt;span class=&quot;number&quot;&gt;60&lt;/span&gt; * &lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;))&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;因為使用 Koa 2.0 的關係，需要 &lt;a href=&quot;https://github.com/koajs/convert&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;koa-convert&lt;/a&gt; 套件 convert 還沒更新支援 Koa 2.0 的套件，才能使用&lt;/p&gt;
-&lt;p&gt;所以我改成這樣&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;app.use(convert(staticCache(path.join(__dirname, &lt;span class=&quot;string&quot;&gt;&#39;public&#39;&lt;/span&gt;), &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  maxAge: &lt;span class=&quot;number&quot;&gt;365&lt;/span&gt; * &lt;span class=&quot;number&quot;&gt;24&lt;/span&gt; * &lt;span class=&quot;number&quot;&gt;60&lt;/span&gt; * &lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;)))&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;不過卻沒成功&lt;/p&gt;
-&lt;p&gt;後來看了別人的 Sample 才知道 StaticCache 後，還需要 &lt;a href=&quot;https://github.com/koajs/mount&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;mount&lt;/a&gt; 到 route 上&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;app.use(convert(mount(&lt;span class=&quot;string&quot;&gt;&#39;/public/assets/js&#39;&lt;/span&gt;, staticCache(path.join(__dirname, &lt;span class=&quot;string&quot;&gt;&#39;../public/assets/js/&#39;&lt;/span&gt;), &amp;#123;maxAge: &lt;span class=&quot;number&quot;&gt;30&lt;/span&gt; * &lt;span class=&quot;number&quot;&gt;24&lt;/span&gt; * &lt;span class=&quot;number&quot;&gt;60&lt;/span&gt; * &lt;span class=&quot;number&quot;&gt;60&lt;/span&gt;&amp;#125;))));&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;最後改成這樣終於成功啦！&lt;/p&gt;
-</content>
+    <content type="html"><![CDATA[<p><img src="https://lh3.googleusercontent.com/ehH3I28TQSBMOxkYzQ_Yp2Z9kXlDYbX-v22jH8BRXZ5bUC8PYpShgwBQP42-PKZ77vx0bn1eRsz3yrr_gIaEaKqeA_4Mt7WGd_YGXT3B40haq311NgEkP2K98NJMoj7J1-gwvEVbBPnyNO53PEFazJAZT6XMcYdnf_VNZ3NqVbPq3dgmgR8LMi2PIzdCqK0F_RWMedcl1RLfTbqxBugRbNcr38oiQ82yr5eZGAC2Chcni09MCtYdhHINoIzl-3cVh8M-K8rTpAAa3YwHwXrjUgTf4ZRVqC8aQnpr8RbCb2kboVZ6AbcVLwv1dz1LeCjo8pVEXEAqCBbxi4I3hUzfq-BpWJPmSRIqq55KPyKgXJeU90H-Aqkj0Yg0qe8zYEhd-vL_6nyqcpE7jT83VyLKStI6dsaA_LA72KqbvTuDRO8ABONlYOuQrG2Qsvxjm0A6d9qVRyCci1iD7q1c1ZhQ_xKfNgSXhnrZynFMoMaWhBSsdPVkbj7Jk_1nTnirxofc5nJOJphRMD2pwbBrSY4B-2uNhv0l0qpa5eI5LB6AvBjc4pPeXEq-ozZO06deNMj0tRUO=w1585-h712-no" alt="Koa.js"></p>
+<p>之前在設定 Koa 的 cache 時，有點小卡關，所以記錄一下</p>
+<p>我使用的 Koa 版本是 2.0.0</p>
+<p>搭配處理 cache 的套件 是 <a href="https://github.com/koajs/static-cache" target="_blank" rel="external">koa-static-cache</a></p>
+<p>官方 readme 上面的範例用法長這樣</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">app.use(staticCache(path.join(__dirname, <span class="string">'public'</span>), &#123;</div><div class="line">  <span class="attr">maxAge</span>: <span class="number">365</span> * <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span></div><div class="line">&#125;))</div></pre></td></tr></table></figure>
+<p>因為使用 Koa 2.0 的關係，需要 <a href="https://github.com/koajs/convert" target="_blank" rel="external">koa-convert</a> 套件 convert 還沒更新支援 Koa 2.0 的套件，才能使用</p>
+<p>所以我改成這樣</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">app.use(convert(staticCache(path.join(__dirname, <span class="string">'public'</span>), &#123;</div><div class="line">  <span class="attr">maxAge</span>: <span class="number">365</span> * <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span></div><div class="line">&#125;)))</div></pre></td></tr></table></figure>
+<p>不過卻沒成功</p>
+<p>後來看了別人的 Sample 才知道 StaticCache 後，還需要 <a href="https://github.com/koajs/mount" target="_blank" rel="external">mount</a> 到 route 上</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">app.use(convert(mount(<span class="string">'/public/assets/js'</span>, staticCache(path.join(__dirname, <span class="string">'../public/assets/js/'</span>), &#123;<span class="attr">maxAge</span>: <span class="number">30</span> * <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span>&#125;))));</div></pre></td></tr></table></figure>
+<p>最後改成這樣終於成功啦！</p>
+]]></content>
     
     <summary type="html">
     
@@ -284,32 +320,33 @@ $ react-native init AwesomeProject
     <published>2016-03-08T13:22:03.000Z</published>
     <updated>2016-03-10T13:38:46.000Z</updated>
     
-    <content type="html">&lt;h2 id=&quot;GMT__26amp_3B_UTC&quot;&gt;&lt;a href=&quot;#GMT__26amp_3B_UTC&quot; class=&quot;headerlink&quot; title=&quot;GMT &amp;amp; UTC&quot;&gt;&lt;/a&gt;GMT &amp;amp; UTC&lt;/h2&gt;&lt;p&gt;首先來說 GMT 和 UTC 是什麼，有什麼差別&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;GMT：格林威治標準時間&lt;/p&gt;
-&lt;p&gt;UTC：世界協調時間&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;他們都是世界標準時間，而 UTC 的算法更為嚴謹，所以比 GMT 更為精準，不過兩者的差異是極小的，所以基本上時間是可以看作相同的&lt;/p&gt;
-&lt;h2 id=&quot;Linux_Etc/GMT__u6642_u5340_u70BA_u4F55_u6B63_u8CA0_u985B_u5012&quot;&gt;&lt;a href=&quot;#Linux_Etc/GMT__u6642_u5340_u70BA_u4F55_u6B63_u8CA0_u985B_u5012&quot; class=&quot;headerlink&quot; title=&quot;Linux Etc/GMT 時區為何正負顛倒&quot;&gt;&lt;/a&gt;Linux Etc/GMT 時區為何正負顛倒&lt;/h2&gt;&lt;p&gt;當你使用 Linux 設定時區時 ，若是選用 Etc 底下的 GMT 時區，可能會發現設定的結果與你預想的不同，當你想設定台北的時區 （GMT＋8) ，但設定完後，系統時間卻是 -8 的時區，和台北時間相差 16 小時，原因是因為 Etc 底下的 GMT 時區是以 &lt;code&gt;格林威治&lt;/code&gt; 以西為正，以東為負，剛好與我們現實生活的認知相反&lt;/p&gt;
-&lt;p&gt;而原因只是因為當初 Unix 多為西方人使用，便以西為正&lt;/p&gt;
-&lt;p&gt;因此在設定的時候需要選擇正負相反的選項&lt;/p&gt;
-&lt;h1 id=&quot;Reference&quot;&gt;&lt;a href=&quot;#Reference&quot; class=&quot;headerlink&quot; title=&quot;Reference&quot;&gt;&lt;/a&gt;Reference&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://lemonlatte.logdown.com/tags/tzdata&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://lemonlatte.logdown.com/tags/tzdata&lt;/a&gt;&lt;/p&gt;
-</content>
+    <content type="html"><![CDATA[<h2 id="GMT-amp-UTC"><a href="#GMT-amp-UTC" class="headerlink" title="GMT &amp; UTC"></a>GMT &amp; UTC</h2><p>首先來說 GMT 和 UTC 是什麼，有什麼差別</p>
+<blockquote>
+<p>GMT：格林威治標準時間</p>
+<p>UTC：世界協調時間</p>
+</blockquote>
+<p>他們都是世界標準時間，而 UTC 的算法更為嚴謹，所以比 GMT 更為精準，不過兩者的差異是極小的，所以基本上時間是可以看作相同的</p>
+<h2 id="Linux-Etc-GMT-時區為何正負顛倒"><a href="#Linux-Etc-GMT-時區為何正負顛倒" class="headerlink" title="Linux Etc/GMT 時區為何正負顛倒"></a>Linux Etc/GMT 時區為何正負顛倒</h2><p>當你使用 Linux 設定時區時 ，若是選用 Etc 底下的 GMT 時區，可能會發現設定的結果與你預想的不同，當你想設定台北的時區 （GMT＋8) ，但設定完後，系統時間卻是 -8 的時區，和台北時間相差 16 小時，原因是因為 Etc 底下的 GMT 時區是以 <code>格林威治</code> 以西為正，以東為負，剛好與我們現實生活的認知相反</p>
+<p>而原因只是因為當初 Unix 多為西方人使用，便以西為正</p>
+<p>因此在設定的時候需要選擇正負相反的選項</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="http://lemonlatte.logdown.com/tags/tzdata" target="_blank" rel="external">http://lemonlatte.logdown.com/tags/tzdata</a></p>
+]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;GMT__26amp_3B_UTC&quot;&gt;&lt;a href=&quot;#GMT__26amp_3B_UTC&quot; class=&quot;headerlink&quot; title=&quot;GMT &amp;amp; UTC&quot;&gt;&lt;/a&gt;GMT &amp;amp; UTC&lt;/h2&gt;&lt;p&gt;首先來說 GMT 和 UTC 是什麼
+      &lt;h2 id=&quot;GMT-amp-UTC&quot;&gt;&lt;a href=&quot;#GMT-amp-UTC&quot; class=&quot;headerlink&quot; title=&quot;GMT &amp;amp; UTC&quot;&gt;&lt;/a&gt;GMT &amp;amp; UTC&lt;/h2&gt;&lt;p&gt;首先來說 GMT 和 UTC 是什麼，有什麼差別&lt;/p&gt;
+&lt;
     
     </summary>
     
       <category term="Linux" scheme="http://kyoyadmoon.github.io/blog/categories/Linux/"/>
     
     
-      <category term="GMT" scheme="http://kyoyadmoon.github.io/blog/tags/GMT/"/>
-    
       <category term="Linux" scheme="http://kyoyadmoon.github.io/blog/tags/Linux/"/>
     
       <category term="Timezone" scheme="http://kyoyadmoon.github.io/blog/tags/Timezone/"/>
+    
+      <category term="GMT" scheme="http://kyoyadmoon.github.io/blog/tags/GMT/"/>
     
   </entry>
   
@@ -320,34 +357,34 @@ $ react-native init AwesomeProject
     <published>2016-02-28T16:50:21.000Z</published>
     <updated>2016-03-08T17:39:07.000Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/7UgD5xli6K2rYKoprrlVPKU1w-OIZoiSJVR3CApp97IKGPtgGr952C6v29JWbIVEQelN3_enMvypP_pJkmGHwwEwql32tk_G8ARvt5SaNS9zrQUCyqXyyWhXyENCG9usX2o1jQLFTj6vYGSKYSrbN4beQ6ixiSS2qcIVR0v1Hw9v84GbEQAp5pW8tggzKYId-Lh4HFrdPthaOu9txYmOAcFQaDyD5IONCV1BBTuD9pSAHwMiThMzVTxCKWnBRl4HfEgmBE_U7ZT1cPzRhOaKjGHB0BWnqCIl8LuUkaXCS8GQ14gS68U3xay4SQBT60pne0sbpPQq5jQqZHeAZaJzSK4HjrVg5lxvgzjinCLBUbpdBbEw8qNYSsBXbg_y0BQvyCviLe785jQO7HT-GTb0up5B3hIWAxJACNfh2GmHhsdLy-g53oF9zD2bc_97GRh3VvJ1pJHWecwaXuulNa4przEf6lpVyBi4qXyhKBTBgJ4sqk0dpyyFOFlSqW1hXgLYcr0d8WSRMwlwuG-lyLHD1sIKkuBbEJh24Ek_ROOI-L6bJEBNn06KbJu57FwJxqfO4M8S=s1024-no&quot; alt=&quot;Chromecast Audio&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.google.com/chromecast/speakers/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;Chromecast Audio&lt;/strong&gt;&lt;/a&gt; 去年發表的時候就很想買了 沒想到台灣遲遲沒有開賣&lt;/p&gt;
-&lt;p&gt;感謝好朋友幫我從美國帶回來，可以提前嘗鮮！&lt;/p&gt;
-&lt;p&gt;總共有兩個接口&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;3.5mm 音源 output： 用來連接音響的&lt;/li&gt;
-&lt;li&gt;micro USB：電源 （有附線材和充電器）&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;u8A2D_u7F6E&quot;&gt;&lt;a href=&quot;#u8A2D_u7F6E&quot; class=&quot;headerlink&quot; title=&quot;設置&quot;&gt;&lt;/a&gt;設置&lt;/h1&gt;&lt;p&gt;安裝方法和 Chromecast 應該是一樣的&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;使用手機或平版到 App Store 搜尋下載官方的 Chromecast App ，打開後就可以開始設定裝置&lt;/li&gt;
-&lt;li&gt;幫 Chromecast Audio 命名 （建議不要包含特殊字元或空白，純英數佳）&lt;/li&gt;
-&lt;li&gt;填入家中 WiFi 帳號密碼 （讓Chromecast 能夠連上加中的 WiFi ， 之後就可以透過裝置連接家中 WiFi 來播放&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;u4F7F_u7528&quot;&gt;&lt;a href=&quot;#u4F7F_u7528&quot; class=&quot;headerlink&quot; title=&quot;使用&quot;&gt;&lt;/a&gt;使用&lt;/h1&gt;&lt;p&gt;Spotify 有支援能夠在 App 內選擇要在哪個裝置上播放，相信有用 Spotify 的人都知道，只要連接到 Chromecast Audio 的相同 Wifi 上，在播放裝置列表就能看見 Chromecast Audio 了&lt;/p&gt;
-&lt;h1 id=&quot;Mac__26amp_3B_Windows__u6295_u653E&quot;&gt;&lt;a href=&quot;#Mac__26amp_3B_Windows__u6295_u653E&quot; class=&quot;headerlink&quot; title=&quot;Mac &amp;amp; Windows 投放&quot;&gt;&lt;/a&gt;Mac &amp;amp; Windows 投放&lt;/h1&gt;&lt;p&gt;當然只在手機上使用是絕對不夠方便的，如果用電腦到一半還要去操作手機就太 low 了，好在有廣大的開發者，提供了開源的桌面應用程式&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;OS X: &lt;a href=&quot;https://github.com/andresgottlieb/soundcast&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;soundcast github repo&lt;/a&gt;  如果 chromecast 名稱含有空白或特殊字元可能搜尋不到&lt;/li&gt;
-&lt;li&gt;Windows: &lt;a href=&quot;https://github.com/acidhax/chromecast-audio-stream&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;chromecast-audio-stream github repo&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;感恩開源，讚嘆開源&lt;/p&gt;
-</content>
+    <content type="html"><![CDATA[<p><img src="https://lh3.googleusercontent.com/7UgD5xli6K2rYKoprrlVPKU1w-OIZoiSJVR3CApp97IKGPtgGr952C6v29JWbIVEQelN3_enMvypP_pJkmGHwwEwql32tk_G8ARvt5SaNS9zrQUCyqXyyWhXyENCG9usX2o1jQLFTj6vYGSKYSrbN4beQ6ixiSS2qcIVR0v1Hw9v84GbEQAp5pW8tggzKYId-Lh4HFrdPthaOu9txYmOAcFQaDyD5IONCV1BBTuD9pSAHwMiThMzVTxCKWnBRl4HfEgmBE_U7ZT1cPzRhOaKjGHB0BWnqCIl8LuUkaXCS8GQ14gS68U3xay4SQBT60pne0sbpPQq5jQqZHeAZaJzSK4HjrVg5lxvgzjinCLBUbpdBbEw8qNYSsBXbg_y0BQvyCviLe785jQO7HT-GTb0up5B3hIWAxJACNfh2GmHhsdLy-g53oF9zD2bc_97GRh3VvJ1pJHWecwaXuulNa4przEf6lpVyBi4qXyhKBTBgJ4sqk0dpyyFOFlSqW1hXgLYcr0d8WSRMwlwuG-lyLHD1sIKkuBbEJh24Ek_ROOI-L6bJEBNn06KbJu57FwJxqfO4M8S=s1024-no" alt="Chromecast Audio"></p>
+<p><a href="https://www.google.com/chromecast/speakers/" target="_blank" rel="external"><strong>Chromecast Audio</strong></a> 去年發表的時候就很想買了 沒想到台灣遲遲沒有開賣</p>
+<p>感謝好朋友幫我從美國帶回來，可以提前嘗鮮！</p>
+<p>總共有兩個接口</p>
+<blockquote>
+<ol>
+<li>3.5mm 音源 output： 用來連接音響的</li>
+<li>micro USB：電源 （有附線材和充電器）</li>
+</ol>
+</blockquote>
+<h1 id="設置"><a href="#設置" class="headerlink" title="設置"></a>設置</h1><p>安裝方法和 Chromecast 應該是一樣的</p>
+<blockquote>
+<ol>
+<li>使用手機或平版到 App Store 搜尋下載官方的 Chromecast App ，打開後就可以開始設定裝置</li>
+<li>幫 Chromecast Audio 命名 （建議不要包含特殊字元或空白，純英數佳）</li>
+<li>填入家中 WiFi 帳號密碼 （讓Chromecast 能夠連上加中的 WiFi ， 之後就可以透過裝置連接家中 WiFi 來播放</li>
+</ol>
+</blockquote>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>Spotify 有支援能夠在 App 內選擇要在哪個裝置上播放，相信有用 Spotify 的人都知道，只要連接到 Chromecast Audio 的相同 Wifi 上，在播放裝置列表就能看見 Chromecast Audio 了</p>
+<h1 id="Mac-amp-Windows-投放"><a href="#Mac-amp-Windows-投放" class="headerlink" title="Mac &amp; Windows 投放"></a>Mac &amp; Windows 投放</h1><p>當然只在手機上使用是絕對不夠方便的，如果用電腦到一半還要去操作手機就太 low 了，好在有廣大的開發者，提供了開源的桌面應用程式</p>
+<blockquote>
+<ul>
+<li>OS X: <a href="https://github.com/andresgottlieb/soundcast" target="_blank" rel="external">soundcast github repo</a>  如果 chromecast 名稱含有空白或特殊字元可能搜尋不到</li>
+<li>Windows: <a href="https://github.com/acidhax/chromecast-audio-stream" target="_blank" rel="external">chromecast-audio-stream github repo</a></li>
+</ul>
+</blockquote>
+<p>感恩開源，讚嘆開源</p>
+]]></content>
     
     <summary type="html">
     
@@ -369,20 +406,20 @@ $ react-native init AwesomeProject
     <published>2016-02-22T16:35:32.000Z</published>
     <updated>2016-03-08T17:37:12.000Z</updated>
     
-    <content type="html">&lt;hr&gt;
-&lt;p&gt;從前可能需要每個檔案都自己人工 import jquery、react&lt;/p&gt;
-&lt;p&gt;現在透過 webpack 的 ProvidePlugin 可以幫你將 dependency 自動 import&lt;/p&gt;
-&lt;p&gt;不只是 react , jquery  或其他 lib 都可以使用&lt;/p&gt;
-&lt;h1 id=&quot;u4F7F_u7528_u65B9_u6CD5&quot;&gt;&lt;a href=&quot;#u4F7F_u7528_u65B9_u6CD5&quot; class=&quot;headerlink&quot; title=&quot;使用方法&quot;&gt;&lt;/a&gt;使用方法&lt;/h1&gt;&lt;p&gt;把 ProvidePlugin 加到 webpack.config.js 的 plugins&lt;/p&gt;
-&lt;p&gt;example&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; webpack.ProvidePlugin(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;React&#39;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&#39;react&#39;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;          $: &lt;span class=&quot;string&quot;&gt;&quot;jquery&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;原理是 webpack 在 build bundle.js 時，如果發現 &amp;#39;React&amp;#39; 、 $ ，就會自動去 import 設定中對應的 dependency&lt;/p&gt;
-&lt;p&gt;例如 使用 React 時&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;React.createClass()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;就會自動去 import react&lt;/p&gt;
-&lt;h1 id=&quot;Reference&quot;&gt;&lt;a href=&quot;#Reference&quot; class=&quot;headerlink&quot; title=&quot;Reference&quot;&gt;&lt;/a&gt;Reference&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://webpack.github.io/docs/list-of-plugins.html#provideplugin&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官方文件&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://medium.com/@thejenniekim/never-import-react-from-react-again-thanks-to-webpack-s-provideplugin-69e7feb69e#.o6x19nno8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://medium.com/@thejenniekim/never-import-react-from-react-again-thanks-to-webpack-s-provideplugin-69e7feb69e#.o6x19nno8&lt;/a&gt;&lt;/p&gt;
-</content>
+    <content type="html"><![CDATA[<hr>
+<p>從前可能需要每個檔案都自己人工 import jquery、react</p>
+<p>現在透過 webpack 的 ProvidePlugin 可以幫你將 dependency 自動 import</p>
+<p>不只是 react , jquery  或其他 lib 都可以使用</p>
+<h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><p>把 ProvidePlugin 加到 webpack.config.js 的 plugins</p>
+<p>example</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> webpack.ProvidePlugin(&#123;</div><div class="line">    <span class="string">'React'</span>: <span class="string">'react'</span>,</div><div class="line">          <span class="attr">$</span>: <span class="string">"jquery"</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>原理是 webpack 在 build bundle.js 時，如果發現 &#39;React&#39; 、 $ ，就會自動去 import 設定中對應的 dependency</p>
+<p>例如 使用 React 時</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">React.createClass()</div></pre></td></tr></table></figure>
+<p>就會自動去 import react</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://webpack.github.io/docs/list-of-plugins.html#provideplugin" target="_blank" rel="external">官方文件</a></p>
+<p><a href="https://medium.com/@thejenniekim/never-import-react-from-react-again-thanks-to-webpack-s-provideplugin-69e7feb69e#.o6x19nno8" target="_blank" rel="external">https://medium.com/@thejenniekim/never-import-react-from-react-again-thanks-to-webpack-s-provideplugin-69e7feb69e#.o6x19nno8</a></p>
+]]></content>
     
     <summary type="html">
     
@@ -407,17 +444,17 @@ $ react-native init AwesomeProject
     <published>2016-02-22T16:05:03.000Z</published>
     <updated>2016-04-18T17:42:29.000Z</updated>
     
-    <content type="html">&lt;p&gt;這幾天在幫公司處理 iOS APP 上架的事情，整個流程需要一堆簽章，真的很麻煩&lt;/p&gt;
-&lt;p&gt;其中最雷的就是這篇要講的證書的簽發者無效，是什麼證書的簽發者無效呢？&lt;/p&gt;
-&lt;p&gt;我所有的 Apple 開發相關憑證上面全部都寫簽發者過期....&lt;/p&gt;
-&lt;p&gt;查了才知道是 Apple 之前給開發者的憑證 ( Apple World Wide Developer Relation Certification Authority ) 有效期限到 2016.2.14 ，也就是說這是一個熱騰騰的雷阿!&lt;/p&gt;
-&lt;h1 id=&quot;u89E3_u6C7A_u65B9_u6CD5_uFF1A&quot;&gt;&lt;a href=&quot;#u89E3_u6C7A_u65B9_u6CD5_uFF1A&quot; class=&quot;headerlink&quot; title=&quot;解決方法：&quot;&gt;&lt;/a&gt;解決方法：&lt;/h1&gt;&lt;ol&gt;
-&lt;li&gt;打開 Keychain 在登陸和系統中刪除過期的這一個 Apple World Wide Developer Relation Certification Authority&lt;/li&gt;
-&lt;li&gt;下載並安裝這個新的憑證 &lt;a href=&quot;https://developer.apple.com/certificationauthority/AppleWWDRCA.cer&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;WWDR intermediate certificate&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;安裝之後再回去看一下Keychain應該就不會出現簽發者過期了，新的有效期限是 2023.2.8&lt;/p&gt;
-&lt;h1 id=&quot;Reference&quot;&gt;&lt;a href=&quot;#Reference&quot; class=&quot;headerlink&quot; title=&quot;Reference&quot;&gt;&lt;/a&gt;Reference&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://blog.leanote.com/post/kilig/Failed-to-locate-or-generate-matching-signing-assets&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.leanote.com/post/kilig/Failed-to-locate-or-generate-matching-signing-assets&lt;/a&gt;&lt;/p&gt;
-</content>
+    <content type="html"><![CDATA[<p>這幾天在幫公司處理 iOS APP 上架的事情，整個流程需要一堆簽章，真的很麻煩</p>
+<p>其中最雷的就是這篇要講的證書的簽發者無效，是什麼證書的簽發者無效呢？</p>
+<p>我所有的 Apple 開發相關憑證上面全部都寫簽發者過期....</p>
+<p>查了才知道是 Apple 之前給開發者的憑證 ( Apple World Wide Developer Relation Certification Authority ) 有效期限到 2016.2.14 ，也就是說這是一個熱騰騰的雷阿!</p>
+<h1 id="解決方法："><a href="#解決方法：" class="headerlink" title="解決方法："></a>解決方法：</h1><ol>
+<li>打開 Keychain 在登陸和系統中刪除過期的這一個 Apple World Wide Developer Relation Certification Authority</li>
+<li>下載並安裝這個新的憑證 <a href="https://developer.apple.com/certificationauthority/AppleWWDRCA.cer" target="_blank" rel="external">WWDR intermediate certificate</a></li>
+</ol>
+<p>安裝之後再回去看一下Keychain應該就不會出現簽發者過期了，新的有效期限是 2023.2.8</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="http://blog.leanote.com/post/kilig/Failed-to-locate-or-generate-matching-signing-assets" target="_blank" rel="external">http://blog.leanote.com/post/kilig/Failed-to-locate-or-generate-matching-signing-assets</a></p>
+]]></content>
     
     <summary type="html">
     
@@ -431,9 +468,9 @@ $ react-native init AwesomeProject
       <category term="iOS" scheme="http://kyoyadmoon.github.io/blog/categories/iOS/"/>
     
     
-      <category term="Deploy" scheme="http://kyoyadmoon.github.io/blog/tags/Deploy/"/>
-    
       <category term="iOS" scheme="http://kyoyadmoon.github.io/blog/tags/iOS/"/>
+    
+      <category term="Deploy" scheme="http://kyoyadmoon.github.io/blog/tags/Deploy/"/>
     
   </entry>
   
@@ -444,53 +481,53 @@ $ react-native init AwesomeProject
     <published>2016-02-21T10:22:32.000Z</published>
     <updated>2016-03-09T03:16:21.000Z</updated>
     
-    <content type="html">&lt;p&gt;最近在爬文學習前端技術時，發現不少網誌都是用 github 的靜態網站來當 blog，覺得很酷，而且也不必煩惱主機的事，便搜尋了一下建立的方法，發現有滿多語言框架可以快速建立&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;JavaScript : Hexo  &lt;/li&gt;
-&lt;li&gt;Ruby : Jekyll  &lt;/li&gt;
-&lt;li&gt;Python : Hyde  &lt;/li&gt;
-&lt;li&gt;PHP : Phrozn&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;因為對於 js 較為熟悉所以選了 Hexo 來嘗試看看，先說心得好了， Hexo 框架真的很強大，blog 大多功能幾乎都包含在裡面了，而且只需透過編輯 _config.yml ，就能完成架構及功能設定，有些功能雖然是需要另外安裝 plugin 的，使用方法都相當簡單，程式碼都埋好了，只需申請服務後，填入 id 到設定檔就可以了&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;Sitemap&lt;/li&gt;
-&lt;li&gt;RSS Feed&lt;/li&gt;
-&lt;li&gt;Google Analytics&lt;/li&gt;
-&lt;li&gt;Comment: Disqus&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&quot;Setup&quot;&gt;&lt;a href=&quot;#Setup&quot; class=&quot;headerlink&quot; title=&quot;Setup&quot;&gt;&lt;/a&gt;Setup&lt;/h1&gt;&lt;p&gt;instal Node.js &amp;amp; Hexo&lt;/p&gt;
-&lt;p&gt;已經有 Node.js 環境可以直接安裝 Hexo&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;$ npm install hexo -g&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;詳細可以參考這裡 &lt;a href=&quot;https://wwssllabcd.github.io/blog/2014/12/22/how-to-install-hexo-on-window/#安裝_Hexo&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;安裝 Hexo&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;Init_Your_Blog&quot;&gt;&lt;a href=&quot;#Init_Your_Blog&quot; class=&quot;headerlink&quot; title=&quot;Init Your Blog&quot;&gt;&lt;/a&gt;Init Your Blog&lt;/h1&gt;&lt;p&gt;&lt;code&gt;hexo init &amp;lt;blog_name&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;cd &amp;lt;blog_name&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;npm i&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;再加裝一些 plugin&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;npm i hexo-deployer-git hexo-renderer-ejs hexo-renderer-marked hexo-renderer-stylus --save&lt;/code&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;hexo-deployer-git:  deploy to github&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;hexo g  # 產生 blog&lt;/p&gt;
-&lt;p&gt;hexo new &lt;post_title&gt; # 建立一個新的文章&lt;/post_title&gt;&lt;/p&gt;
-&lt;p&gt;hexo s  # hexo server 讓 blog 可以在 local 端檢視 &lt;a href=&quot;http://localhost:4000&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost:4000&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;Blog_Setting&quot;&gt;&lt;a href=&quot;#Blog_Setting&quot; class=&quot;headerlink&quot; title=&quot;Blog Setting&quot;&gt;&lt;/a&gt;Blog Setting&lt;/h1&gt;&lt;p&gt;前面有說過只需要透過設定 _config.yml 就可以完成，這邊需要注意的是， _config.yml 有兩個，一個在專案根目錄，另一個在 theme 資料夾裡&lt;/p&gt;
-&lt;h1 id=&quot;Blog_Deploy&quot;&gt;&lt;a href=&quot;#Blog_Deploy&quot; class=&quot;headerlink&quot; title=&quot;Blog Deploy&quot;&gt;&lt;/a&gt;Blog Deploy&lt;/h1&gt;&lt;p&gt;deploy 到 github 前需要先到 github 開一個 repo&lt;/p&gt;
-&lt;p&gt;接著將 repo 的資訊填寫到 _config.yml 的 deploy 部分&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;deploy:&amp;#10;    type: git&amp;#10;    repository: git@github.com:yourname/yourRepo.git&amp;#10;    branch: gh-pages&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;url 的部分也需要調整一下，下面是範例&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;url: http://xxx.github.io/Blog&amp;#10;root: /Blog/&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;透過指令部署之前請先確定你有 github 的 SSH key&lt;/p&gt;
-&lt;p&gt;沒有的話請參考 &lt;a href=&quot;https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;這篇&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;然後就可以部署到 github 上了&lt;/p&gt;
-&lt;figure class=&quot;highlight nginx&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;title&quot;&gt;hexo&lt;/span&gt; d &lt;span class=&quot;comment&quot;&gt;# hexo deploy&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h1 id=&quot;Reference&quot;&gt;&lt;a href=&quot;#Reference&quot; class=&quot;headerlink&quot; title=&quot;Reference&quot;&gt;&lt;/a&gt;Reference&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://hexo.io/zh-tw/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo offical docs&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://wwssllabcd.github.io/blog/2014/12/22/how-to-install-hexo-on-window/#安裝_Hexo_所需檔案&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo 中文安裝教學&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://v123582.github.io/blog/2015/10/25/用-hexo-建立一個自己的部落格/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://v123582.github.io/blog/2015/10/25/用-hexo-建立一個自己的部落格/&lt;/a&gt;&lt;/p&gt;
-</content>
+    <content type="html"><![CDATA[<p>最近在爬文學習前端技術時，發現不少網誌都是用 github 的靜態網站來當 blog，覺得很酷，而且也不必煩惱主機的事，便搜尋了一下建立的方法，發現有滿多語言框架可以快速建立</p>
+<blockquote>
+<ul>
+<li>JavaScript : Hexo  </li>
+<li>Ruby : Jekyll  </li>
+<li>Python : Hyde  </li>
+<li>PHP : Phrozn</li>
+</ul>
+</blockquote>
+<p>因為對於 js 較為熟悉所以選了 Hexo 來嘗試看看，先說心得好了， Hexo 框架真的很強大，blog 大多功能幾乎都包含在裡面了，而且只需透過編輯 _config.yml ，就能完成架構及功能設定，有些功能雖然是需要另外安裝 plugin 的，使用方法都相當簡單，程式碼都埋好了，只需申請服務後，填入 id 到設定檔就可以了</p>
+<blockquote>
+<ul>
+<li>Sitemap</li>
+<li>RSS Feed</li>
+<li>Google Analytics</li>
+<li>Comment: Disqus</li>
+</ul>
+</blockquote>
+<h1 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h1><p>instal Node.js &amp; Hexo</p>
+<p>已經有 Node.js 環境可以直接安裝 Hexo</p>
+<p><code>$ npm install hexo -g</code></p>
+<p>詳細可以參考這裡 <a href="https://wwssllabcd.github.io/blog/2014/12/22/how-to-install-hexo-on-window/#安裝_Hexo" target="_blank" rel="external">安裝 Hexo</a></p>
+<h1 id="Init-Your-Blog"><a href="#Init-Your-Blog" class="headerlink" title="Init Your Blog"></a>Init Your Blog</h1><p><code>hexo init &lt;blog_name&gt;</code></p>
+<p><code>cd &lt;blog_name&gt;</code></p>
+<p><code>npm i</code></p>
+<p>再加裝一些 plugin</p>
+<p><code>npm i hexo-deployer-git hexo-renderer-ejs hexo-renderer-marked hexo-renderer-stylus --save</code></p>
+<blockquote>
+<p>hexo-deployer-git:  deploy to github</p>
+</blockquote>
+<p>hexo g  # 產生 blog</p>
+<p>hexo new <post_title> # 建立一個新的文章</post_title></p>
+<p>hexo s  # hexo server 讓 blog 可以在 local 端檢視 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a></p>
+<h1 id="Blog-Setting"><a href="#Blog-Setting" class="headerlink" title="Blog Setting"></a>Blog Setting</h1><p>前面有說過只需要透過設定 _config.yml 就可以完成，這邊需要注意的是， _config.yml 有兩個，一個在專案根目錄，另一個在 theme 資料夾裡</p>
+<h1 id="Blog-Deploy"><a href="#Blog-Deploy" class="headerlink" title="Blog Deploy"></a>Blog Deploy</h1><p>deploy 到 github 前需要先到 github 開一個 repo</p>
+<p>接著將 repo 的資訊填寫到 _config.yml 的 deploy 部分</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">    type:</span> git</div><div class="line"><span class="attr">    repository:</span> git@github.com:yourname/yourRepo.git</div><div class="line"><span class="attr">    branch:</span> gh-pages</div></pre></td></tr></table></figure>
+<p>url 的部分也需要調整一下，下面是範例</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attr">url:</span> http://xxx.github.io/Blog</div><div class="line"><span class="attr">root:</span> /Blog/</div></pre></td></tr></table></figure>
+<p>透過指令部署之前請先確定你有 github 的 SSH key</p>
+<p>沒有的話請參考 <a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/" target="_blank" rel="external">這篇</a></p>
+<p>然後就可以部署到 github 上了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo d # hexo deploy</div></pre></td></tr></table></figure>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://hexo.io/zh-tw/docs/" target="_blank" rel="external">Hexo offical docs</a></p>
+<p><a href="https://wwssllabcd.github.io/blog/2014/12/22/how-to-install-hexo-on-window/#安裝_Hexo_所需檔案" target="_blank" rel="external">Hexo 中文安裝教學</a></p>
+<p><a href="http://v123582.github.io/blog/2015/10/25/用-hexo-建立一個自己的部落格/" target="_blank" rel="external">http://v123582.github.io/blog/2015/10/25/用-hexo-建立一個自己的部落格/</a></p>
+]]></content>
     
     <summary type="html">
     
@@ -504,11 +541,11 @@ $ react-native init AwesomeProject
       <category term="Blog" scheme="http://kyoyadmoon.github.io/blog/categories/Blog/"/>
     
     
+      <category term="Node.js" scheme="http://kyoyadmoon.github.io/blog/tags/Node-js/"/>
+    
       <category term="Github" scheme="http://kyoyadmoon.github.io/blog/tags/Github/"/>
     
       <category term="Hexo" scheme="http://kyoyadmoon.github.io/blog/tags/Hexo/"/>
-    
-      <category term="Node.js" scheme="http://kyoyadmoon.github.io/blog/tags/Node-js/"/>
     
   </entry>
   

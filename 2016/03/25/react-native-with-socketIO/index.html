@@ -40,7 +40,10 @@
 
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/blog/assets/css/style-pgi1uemzsqztllf5tc5ru0lweligv3sj7sb72xlnjwg47viwrnxwaixr8bn6.min.css" type="text/css">
+    <link rel="stylesheet" href="/blog/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox-thumbs.css">
+    <link rel="stylesheet" href="/blog/assets/css/tranquilpeak.css">
     <!--STYLES END-->
     
     <script type="text/javascript">
@@ -76,7 +79,7 @@
     
         
             <a  class="header-right-picture "
-                href="/blog/#about">
+                href="#about">
         
         
             <img class="header-picture" src="https://lh3.googleusercontent.com/88FDhLBFjY4kGdPJPmbJZYbKoa-A0CFRWA8CJFa2h49QCigrrjgr64NKKXl4X3Kmkiwhrj71bgNhX27ktYo3r_gyHBnxgEuPBEFlsjLl4JhvNBuHkQCryECYESdFcU5EaYq-01bDZbk0wu_F5FE3zlPp0TpCE9j9vAKgs6C8xyqnCWzS29DFSGWfxs7PO5nl2zoRON-NfFjgzcXk1yuP9TyEsvvkce58H3DRdww5X1xwWHhiCCfwkuxaeWBsU6C3bXQ9mtTzNjn02G7q1w-KFxgkhgwvkDNGKvJgzOIHOZsWQ2kPWU1J9miaxM5ekL9tYaI1I3H-zGob8GPrA3JQnB09yPB9YJrOh9NawhJ4mjDsjMysJFa-O-sQRojBN-mn8q5OBNPrstayomy1K0EtsR8k3qdttlfe8l1a26yib2kCEwHD_ovZP_menbKffaHMnVN2VNT3Ivf-I9Hl9s34PUr9IwHFkhKxLzuwqO5_Awk5P7Ye5pJO7C4FrdDhBUunuwI3WtKsftG-X-U8e5XDjsPym4YZSQA_PvP43eDPIb8ZdZsQbOkQ255ZI2HrCiafI18C=s874-no"/>
@@ -95,7 +98,7 @@
 <nav id="sidebar" data-behavior="3">
     
         <div class="sidebar-profile">
-            <a href="/#about">
+            <a href="/blog/#about">
                     <img class="sidebar-profile-picture" src="https://lh3.googleusercontent.com/88FDhLBFjY4kGdPJPmbJZYbKoa-A0CFRWA8CJFa2h49QCigrrjgr64NKKXl4X3Kmkiwhrj71bgNhX27ktYo3r_gyHBnxgEuPBEFlsjLl4JhvNBuHkQCryECYESdFcU5EaYq-01bDZbk0wu_F5FE3zlPp0TpCE9j9vAKgs6C8xyqnCWzS29DFSGWfxs7PO5nl2zoRON-NfFjgzcXk1yuP9TyEsvvkce58H3DRdww5X1xwWHhiCCfwkuxaeWBsU6C3bXQ9mtTzNjn02G7q1w-KFxgkhgwvkDNGKvJgzOIHOZsWQ2kPWU1J9miaxM5ekL9tYaI1I3H-zGob8GPrA3JQnB09yPB9YJrOh9NawhJ4mjDsjMysJFa-O-sQRojBN-mn8q5OBNPrstayomy1K0EtsR8k3qdttlfe8l1a26yib2kCEwHD_ovZP_menbKffaHMnVN2VNT3Ivf-I9Hl9s34PUr9IwHFkhKxLzuwqO5_Awk5P7Ye5pJO7C4FrdDhBUunuwI3WtKsftG-X-U8e5XDjsPym4YZSQA_PvP43eDPIb8ZdZsQbOkQ255ZI2HrCiafI18C=s874-no"/>
             </a>
             <span class="sidebar-profile-name">DMoon</span>
@@ -113,7 +116,7 @@
                   >
               
                   <i class="sidebar-button-icon fa fa-lg fa-home"></i>
-                  <span class="sidebar-button-desc">首頁</span>
+                  <span class="sidebar-button-desc">Home</span>
                   </a>
             </li>
           
@@ -125,7 +128,7 @@
                   >
               
                   <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
-                  <span class="sidebar-button-desc">分類</span>
+                  <span class="sidebar-button-desc">Categories</span>
                   </a>
             </li>
           
@@ -137,7 +140,7 @@
                   >
               
                   <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
-                  <span class="sidebar-button-desc">標籤</span>
+                  <span class="sidebar-button-desc">Tags</span>
                   </a>
             </li>
           
@@ -149,19 +152,19 @@
                   >
               
                   <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                  <span class="sidebar-button-desc">所有文章</span>
+                  <span class="sidebar-button-desc">Archives</span>
                   </a>
             </li>
           
             <li class="sidebar-button">
               
                   <a  class="sidebar-button-link "
-                       href="/blog/#about"
+                       href="#about"
                       
                   >
               
                   <i class="sidebar-button-icon fa fa-lg fa-question"></i>
-                  <span class="sidebar-button-desc">關於</span>
+                  <span class="sidebar-button-desc">About</span>
                   </a>
             </li>
           
@@ -234,7 +237,7 @@
     	
     </time>
     
-        <span>分類 </span>
+        <span>in </span>
         
     <a class="category-link" href="/blog/categories/React-Native/">React-Native</a>
 
@@ -251,7 +254,7 @@
 發現這個套件不能用 import ，必需用 require
 另外需要 assign window.navigator.userAgent</p>
 <p>正確設定方法如下</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.navigator.userAgent = <span class="string">'react-native'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> io = <span class="built_in">require</span>(<span class="string">'socket.io-client/socket.io'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> socket = io(<span class="string">'ws://'</span>, &#123; jsonp: <span class="literal">false</span> &#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</div><div class="line"></div><div class="line"><span class="built_in">window</span>.navigator.userAgent = <span class="string">'react-native'</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> io = <span class="built_in">require</span>(<span class="string">'socket.io-client/socket.io'</span>);</div><div class="line"></div><div class="line"><span class="keyword">const</span> socket = io(<span class="string">'ws://'</span>, &#123; <span class="attr">jsonp</span>: <span class="literal">false</span> &#125;);</div></pre></td></tr></table></figure>
 <p>#Reference</p>
 <p><a href="http://browniefed.com/blog/2015/05/16/react-native-and-socket-dot-io/" target="_blank" rel="external">http://browniefed.com/blog/2015/05/16/react-native-and-socket-dot-io/</a></p>
 
@@ -264,7 +267,7 @@
     <div id="post-footer" class="post-footer main-content-wrap">
         
             <div class="post-footer-tags">
-                <span class="text-color-light text-small">標籤</span><br/>
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
                 
     <a class="tag tag--primary tag--small t-link" href="/blog/tags/React-Native/">React-Native</a> <a class="tag tag--primary tag--small t-link" href="/blog/tags/Socket-io/">Socket.io</a>
 
@@ -278,14 +281,14 @@
                     <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/19/react-native-101/"  data-tooltip="React Native 初心者攻略 (OS X)">
                 
                     <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
                 </a>
             </li>
             <li class="post-action">
                 
                     <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/23/eslint-react-extends-airbnb/" data-tooltip="ESLint React 心得 - extends Airbnb config">
                 
-                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
                 </a>
             </li>
@@ -298,17 +301,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/03/25/react-native-with-socketIO/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/blog/2016/03/25/react-native-with-socketIO/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/03/25/react-native-with-socketIO/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/blog/2016/03/25/react-native-with-socketIO/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/03/25/react-native-with-socketIO/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/blog/2016/03/25/react-native-with-socketIO/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -359,14 +362,14 @@
                     <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/04/19/react-native-101/"  data-tooltip="React Native 初心者攻略 (OS X)">
                 
                     <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
                 </a>
             </li>
             <li class="post-action">
                 
                     <a class="post-action-btn btn btn--default tooltip--top" href="/blog/2016/03/23/eslint-react-extends-airbnb/" data-tooltip="ESLint React 心得 - extends Airbnb config">
                 
-                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
                 </a>
             </li>
@@ -379,17 +382,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/03/25/react-native-with-socketIO/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/blog/2016/03/25/react-native-with-socketIO/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/03/25/react-native-with-socketIO/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/blog/2016/03/25/react-native-with-socketIO/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/03/25/react-native-with-socketIO/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/blog/2016/03/25/react-native-with-socketIO/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -415,18 +418,18 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/2016/03/25/react-native-with-socketIO/">
-                <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://kyoyadmoon.github.io/blog/blog/2016/03/25/react-native-with-socketIO/">
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/2016/03/25/react-native-with-socketIO/">
-                <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://kyoyadmoon.github.io/blog/blog/2016/03/25/react-native-with-socketIO/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/2016/03/25/react-native-with-socketIO/">
-                <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://kyoyadmoon.github.io/blog/blog/2016/03/25/react-native-with-socketIO/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
             </a>
         </li>
     </ul>
@@ -452,16 +455,14 @@
           
               <h4 id="about-card-name">DMoon</h4>
           
-              <h5 id="about-card-bio"><p>熱愛科技的資工系學生，喜歡學習新的技術</p>
-<p>目前主要開發 Web APP</p>
-<p>較熟悉的技術是 Node.JS / React.JS</p>
+              <h5 id="about-card-bio"><p>author.bio</p>
 </h5>
           
           
               <h5 id="about-card-job">
                   <i class="fa fa-briefcase"></i>
                   <br/>
-                  <p>學生 / 創科資訊實習生</p>
+                  <p>author.job</p>
 
               </h5>
           
@@ -477,16 +478,19 @@
 </div>
 
         
-<div id="cover" style="background-image:url('https://images.unsplash.com/photo-1439694458393-78ecf14da7f9');"></div>
+<div id="cover" style="background-image:url('/blog/assets/images/cover3.jpeg');"></div>
     </body>
     <!--SCRIPTS-->
-<script src="/blog/assets/js/scrip-ekodsf52iwm1qbscpm40i7gut8eafdpej0qx0bfakltg5lmpvtfzmixpw7tg.min.js" type="text/javascript"></script>
+<script src="/blog/assets/js/jquery.js"></script>
+<script src="/blog/assets/js/jquery.fancybox.js"></script>
+<script src="/blog/assets/js/jquery.fancybox-thumbs.js"></script>
+<script src="/blog/assets/js/tranquilpeak.js"></script>
 <!--SCRIPTS END-->
 
     
         <script>
              var disqus_config = function () {
-                 this.page.url = 'http://kyoyadmoon.github.io/blog/2016/03/25/react-native-with-socketIO/';
+                 this.page.url = 'http://kyoyadmoon.github.io/blog/blog/2016/03/25/react-native-with-socketIO/';
                  
                     this.page.identifier = '2016/03/25/react-native-with-socketIO/';
                                   

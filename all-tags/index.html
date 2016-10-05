@@ -13,16 +13,13 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/blog/atom.xml">
     
-    <meta name="description">
-<meta property="og:type" content="blog">
+    <meta property="og:type" content="blog">
 <meta property="og:title" content="tags">
 <meta property="og:url" content="http://kyoyadmoon.github.io/blog/all-tags/index.html">
 <meta property="og:site_name" content="DMoon's Laputa">
-<meta property="og:description">
 <meta property="og:updated_time" content="2016-02-20T19:43:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="tags">
-<meta name="twitter:description">
     
     
         
@@ -37,7 +34,10 @@
 
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/blog/assets/css/style-pgi1uemzsqztllf5tc5ru0lweligv3sj7sb72xlnjwg47viwrnxwaixr8bn6.min.css" type="text/css">
+    <link rel="stylesheet" href="/blog/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/blog/assets/css/jquery.fancybox-thumbs.css">
+    <link rel="stylesheet" href="/blog/assets/css/tranquilpeak.css">
     <!--STYLES END-->
     
     <script type="text/javascript">
@@ -73,7 +73,7 @@
     
         
             <a  class="header-right-picture "
-                href="/blog/#about">
+                href="#about">
         
         
             <img class="header-picture" src="https://lh3.googleusercontent.com/88FDhLBFjY4kGdPJPmbJZYbKoa-A0CFRWA8CJFa2h49QCigrrjgr64NKKXl4X3Kmkiwhrj71bgNhX27ktYo3r_gyHBnxgEuPBEFlsjLl4JhvNBuHkQCryECYESdFcU5EaYq-01bDZbk0wu_F5FE3zlPp0TpCE9j9vAKgs6C8xyqnCWzS29DFSGWfxs7PO5nl2zoRON-NfFjgzcXk1yuP9TyEsvvkce58H3DRdww5X1xwWHhiCCfwkuxaeWBsU6C3bXQ9mtTzNjn02G7q1w-KFxgkhgwvkDNGKvJgzOIHOZsWQ2kPWU1J9miaxM5ekL9tYaI1I3H-zGob8GPrA3JQnB09yPB9YJrOh9NawhJ4mjDsjMysJFa-O-sQRojBN-mn8q5OBNPrstayomy1K0EtsR8k3qdttlfe8l1a26yib2kCEwHD_ovZP_menbKffaHMnVN2VNT3Ivf-I9Hl9s34PUr9IwHFkhKxLzuwqO5_Awk5P7Ye5pJO7C4FrdDhBUunuwI3WtKsftG-X-U8e5XDjsPym4YZSQA_PvP43eDPIb8ZdZsQbOkQ255ZI2HrCiafI18C=s874-no"/>
@@ -92,7 +92,7 @@
 <nav id="sidebar" data-behavior="1">
     
         <div class="sidebar-profile">
-            <a href="/#about">
+            <a href="/blog/#about">
                     <img class="sidebar-profile-picture" src="https://lh3.googleusercontent.com/88FDhLBFjY4kGdPJPmbJZYbKoa-A0CFRWA8CJFa2h49QCigrrjgr64NKKXl4X3Kmkiwhrj71bgNhX27ktYo3r_gyHBnxgEuPBEFlsjLl4JhvNBuHkQCryECYESdFcU5EaYq-01bDZbk0wu_F5FE3zlPp0TpCE9j9vAKgs6C8xyqnCWzS29DFSGWfxs7PO5nl2zoRON-NfFjgzcXk1yuP9TyEsvvkce58H3DRdww5X1xwWHhiCCfwkuxaeWBsU6C3bXQ9mtTzNjn02G7q1w-KFxgkhgwvkDNGKvJgzOIHOZsWQ2kPWU1J9miaxM5ekL9tYaI1I3H-zGob8GPrA3JQnB09yPB9YJrOh9NawhJ4mjDsjMysJFa-O-sQRojBN-mn8q5OBNPrstayomy1K0EtsR8k3qdttlfe8l1a26yib2kCEwHD_ovZP_menbKffaHMnVN2VNT3Ivf-I9Hl9s34PUr9IwHFkhKxLzuwqO5_Awk5P7Ye5pJO7C4FrdDhBUunuwI3WtKsftG-X-U8e5XDjsPym4YZSQA_PvP43eDPIb8ZdZsQbOkQ255ZI2HrCiafI18C=s874-no"/>
             </a>
             <span class="sidebar-profile-name">DMoon</span>
@@ -110,7 +110,7 @@
                   >
               
                   <i class="sidebar-button-icon fa fa-lg fa-home"></i>
-                  <span class="sidebar-button-desc">首頁</span>
+                  <span class="sidebar-button-desc">Home</span>
                   </a>
             </li>
           
@@ -122,7 +122,7 @@
                   >
               
                   <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
-                  <span class="sidebar-button-desc">分類</span>
+                  <span class="sidebar-button-desc">Categories</span>
                   </a>
             </li>
           
@@ -134,7 +134,7 @@
                   >
               
                   <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
-                  <span class="sidebar-button-desc">標籤</span>
+                  <span class="sidebar-button-desc">Tags</span>
                   </a>
             </li>
           
@@ -146,19 +146,19 @@
                   >
               
                   <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                  <span class="sidebar-button-desc">所有文章</span>
+                  <span class="sidebar-button-desc">Archives</span>
                   </a>
             </li>
           
             <li class="sidebar-button">
               
                   <a  class="sidebar-button-link "
-                       href="/blog/#about"
+                       href="#about"
                       
                   >
               
                   <i class="sidebar-button-icon fa fa-lg fa-question"></i>
-                  <span class="sidebar-button-desc">關於</span>
+                  <span class="sidebar-button-desc">About</span>
                   </a>
             </li>
           
@@ -216,7 +216,7 @@
                         transparent " >
                 <div id="tags-archives" class="main-content-wrap main-section">
     <form id="filter-form" action="#">
-        <input name="tag" type="text" class="form-control input--xlarge" placeholder="搜尋標籤" autofocus="autofocus">
+        <input name="tag" type="text" class="form-control input--xlarge" placeholder="Search tag" autofocus="autofocus">
     </form>
     <h4 class="archive-result text-color-base text-xlarge"></h4>
     <section>
@@ -257,6 +257,10 @@
                 Linux
             </a>
         
+            <a class="tag tag--primary tag--small" href="#Macbook-list" data-tag="macbook">
+                Macbook
+            </a>
+        
             <a class="tag tag--primary tag--small" href="#Node.js-list" data-tag="node.js">
                 Node.js
             </a>
@@ -279,6 +283,10 @@
         
             <a class="tag tag--primary tag--small" href="#React.js-list" data-tag="react.js">
                 React.js
+            </a>
+        
+            <a class="tag tag--primary tag--small" href="#Retina-list" data-tag="retina">
+                Retina
             </a>
         
             <a class="tag tag--primary tag--small" href="#Socket.io-list" data-tag="socket.io">
@@ -480,6 +488,26 @@
                 </ul>
             </div>
         
+            <div id="Macbook-list" class="archive box" data-tag="macbook">
+                <h4 class="archive-title">
+                    <a class="link-unstyled" href="/blog/tags/Macbook">
+                        Macbook (1)
+                    </a>
+                </h4>
+                <ul class="archive-posts">
+                    
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/blog/2016/10/05/Retina-Display-AntiReflective-Coating-Damage/">
+                                Retina-Display-AntiReflective-Coating-Damage
+                            </a>
+                            <span class="archive-post-date">
+                                 - oct 05, 2016
+                            </span>
+                        </li>
+                    
+                </ul>
+            </div>
+        
             <div id="Node.js-list" class="archive box" data-tag="node.js">
                 <h4 class="archive-title">
                     <a class="link-unstyled" href="/blog/tags/Node-js">
@@ -609,6 +637,26 @@
                 </ul>
             </div>
         
+            <div id="Retina-list" class="archive box" data-tag="retina">
+                <h4 class="archive-title">
+                    <a class="link-unstyled" href="/blog/tags/Retina">
+                        Retina (1)
+                    </a>
+                </h4>
+                <ul class="archive-posts">
+                    
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/blog/2016/10/05/Retina-Display-AntiReflective-Coating-Damage/">
+                                Retina-Display-AntiReflective-Coating-Damage
+                            </a>
+                            <span class="archive-post-date">
+                                 - oct 05, 2016
+                            </span>
+                        </li>
+                    
+                </ul>
+            </div>
+        
             <div id="Socket.io-list" class="archive box" data-tag="socket.io">
                 <h4 class="archive-title">
                     <a class="link-unstyled" href="/blog/tags/Socket-io">
@@ -658,20 +706,20 @@
                 <ul class="archive-posts">
                     
                         <li class="archive-post">
-                            <a class="archive-post-title" href="/blog/2016/02/23/iOS-App-Deploy-Signing-Failed/">
-                                iOS Deploy 證書簽發者無效 Failed to locate or generate matching signing assets
-                            </a>
-                            <span class="archive-post-date">
-                                 - feb 23, 2016
-                            </span>
-                        </li>
-                    
-                        <li class="archive-post">
                             <a class="archive-post-title" href="/blog/2016/04/27/react-native-auto-ip-configuration/">
                                 React Native 進階開發配置-自動設定 IP
                             </a>
                             <span class="archive-post-date">
                                  - apr 27, 2016
+                            </span>
+                        </li>
+                    
+                        <li class="archive-post">
+                            <a class="archive-post-title" href="/blog/2016/02/23/iOS-App-Deploy-Signing-Failed/">
+                                iOS Deploy 證書簽發者無效 Failed to locate or generate matching signing assets
+                            </a>
+                            <span class="archive-post-date">
+                                 - feb 23, 2016
                             </span>
                         </li>
                     
@@ -737,16 +785,14 @@
           
               <h4 id="about-card-name">DMoon</h4>
           
-              <h5 id="about-card-bio"><p>熱愛科技的資工系學生，喜歡學習新的技術</p>
-<p>目前主要開發 Web APP</p>
-<p>較熟悉的技術是 Node.JS / React.JS</p>
+              <h5 id="about-card-bio"><p>author.bio</p>
 </h5>
           
           
               <h5 id="about-card-job">
                   <i class="fa fa-briefcase"></i>
                   <br/>
-                  <p>學生 / 創科資訊實習生</p>
+                  <p>author.job</p>
 
               </h5>
           
@@ -762,10 +808,13 @@
 </div>
 
         
-<div id="cover" style="background-image:url('https://images.unsplash.com/photo-1439694458393-78ecf14da7f9');"></div>
+<div id="cover" style="background-image:url('/blog/assets/images/cover3.jpeg');"></div>
     </body>
     <!--SCRIPTS-->
-<script src="/blog/assets/js/scrip-ekodsf52iwm1qbscpm40i7gut8eafdpej0qx0bfakltg5lmpvtfzmixpw7tg.min.js" type="text/javascript"></script>
+<script src="/blog/assets/js/jquery.js"></script>
+<script src="/blog/assets/js/jquery.fancybox.js"></script>
+<script src="/blog/assets/js/jquery.fancybox-thumbs.js"></script>
+<script src="/blog/assets/js/tranquilpeak.js"></script>
 <!--SCRIPTS END-->
 
     
