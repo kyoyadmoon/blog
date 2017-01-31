@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.dmoon.space/2016/04/19/react-native-101/</loc>
+    
+    <lastmod>2017-01-31T01:17:30.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.dmoon.space/2016/10/05/Retina-Display-AntiReflective-Coating-Damage/</loc>
     
     <lastmod>2016-10-05T09:57:38.000Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://blog.dmoon.space/2016/04/27/react-native-auto-ip-configuration/</loc>
     
     <lastmod>2016-04-28T01:47:43.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.dmoon.space/2016/04/19/react-native-101/</loc>
-    
-    <lastmod>2016-04-21T09:34:08.000Z</lastmod>
     
   </url>
   
