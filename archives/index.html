@@ -221,6 +221,85 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/2017/01/31/https-github-pages-with-custom-domain-and-free-ssl/">
+                            Github Pages 自訂域名, 免費 ssl 設定  輕鬆擁有 https 綠鎖頭 (1)
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Tue Jan 31 2017 16:15:33 GMT+0800">
+	
+		    1月 31, 2017
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/categories/Hexo/">Hexo</a>
+
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>最近看到好多人的github pages都有了自己的域名和https，剛好在 <a href="https://www.gandi.net/" target="_blank" rel="external">gandi</a> 上看到 space 的 domain 好便宜，心血來潮於是就買了一個來玩，之前其實沒有碰過 domain 相關的設定，原先想說可能會有點麻煩，沒想到比預期還要容易許多，簡單做個筆記記錄一下，整個過程需要對 Github Pages, Gandi, CloudFlare (SSL) 做一些設定。</p>
+<p>我們先從 custom domain 開始吧</p>
+<h2 id="Set-Custom-Domain"><a href="#Set-Custom-Domain" class="headerlink" title="Set Custom Domain"></a>Set Custom Domain</h2><ol>
+<li><h3 id="購買域名"><a href="#購買域名" class="headerlink" title="購買域名"></a>購買域名</h3><p>我是在 <a href="https://www.gandi.net/" target="_blank" rel="external">gandi</a> 購買的，大家可以到各域名商的網站上搜尋喜歡的域名進行購買，租期到了要記得續訂，才不會發生慘劇。</p>
+</li>
+<li><h3 id="設定-區域檔"><a href="#設定-區域檔" class="headerlink" title="設定 區域檔"></a>設定 區域檔</h3><p>在 gandi 購買完後，進入 domain 的 管理頁面找到 <code>編輯區域檔</code> 的連結，進入區域檔的編輯頁面，( gandi 無法更改現正套用的設定檔，所以需要先新增一個來編輯，編輯好再選擇套用) ，總之最後設定的結果應該要長這樣</p>
+<img src="/2017/01/31/https-github-pages-with-custom-domain-and-free-ssl/gandi-zone-configure.png" alt="gandi-zone-configure.png" title="">
+<p>192.30.252.153, 192.30.252.154 是 Github 的位址
+第三個 CNAME 的設定，name 的地方可以填你想要的子網域(subDomain)，value則是填寫你的 github io 網址（最後記得加上一個 <code>.　ex: kyoyadmoon.github.io.</code>）</p>
+<p>需要畫面截圖參考，<a href="http://spector.io/how-to-set-up-github-pages-with-a-custom-domain-on-gandi/" target="_blank" rel="external">請點這裡</a></p>
+<p><code>記得使用新編輯的設定!</code></p>
+<p><code>記得使用新編輯的設定!</code></p>
+<p><code>記得使用新編輯的設定!</code></p>
+</li>
+<li><h3 id="等待-amp-設定-Github-Page-CNAME"><a href="#等待-amp-設定-Github-Page-CNAME" class="headerlink" title="等待 &amp; 設定 Github Page CNAME　"></a>等待 &amp; 設定 Github Page CNAME　</h3><p>等待設定更新需要一些時間，多久不一定，可能幾分鐘也可能幾小時</p>
+<p>如果你在瀏覽器輸入你設定的子域名能夠看到 Github 的頁面（這時應該是 Github 404 頁面）表示更新生效了</p>
+<p>在等待的時間我們可以先來設定 Github CNAME</p>
+<p>能夠讓輸入原本 Github Pages url 時，自動導向到你的域名底下</p>
+<blockquote>
+<h4 id="demo"><a href="#demo" class="headerlink" title="demo:"></a>demo:</h4><p>試著開啟我的 Github Page 網址：<a href="https://kyoyadmoon.github.io/blog/" target="_blank" rel="external">https://kyoyadmoon.github.io/blog/</a></p>
+<p>會看到自動導向到 <a href="https://blog.dmoon.space">https://blog.dmoon.space</a> 底下</p>
+</blockquote>
+<h4 id="Github-Page-CNAME"><a href="#Github-Page-CNAME" class="headerlink" title="Github Page CNAME"></a>Github Page CNAME</h4><p>設定方法是在跟目錄底下新增一個 <code>CNAME</code> 檔案</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">blog.dmoon.space</div></pre></td></tr></table></figure>
+<p>裡面填寫你設定的域名就可以了</p>
+<p>和我一樣是 Hexo 的使用者請看這裡！</p>
+<p>如果直接透過 git 添加到 github 上的話，下次 hexo generate, hexo deploy 時就會被覆蓋掉</p>
+<p>請把 CNMAE 檔案放到 /source/ 底下</p>
+<p>hexo g 就會產生對應的檔案囉</p>
+<p>再用 hexo d 就能 deploy 設定上去了</p>
+</li>
+</ol>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2017/01/31/https-github-pages-with-custom-domain-and-free-ssl/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/2016/10/05/Retina-Display-AntiReflective-Coating-Damage/">
                             Macbook Pro Retina 螢幕鍍膜剝落送修心得
                         </a>
@@ -826,63 +905,6 @@ $ react-native init AwesomeProject
                     
                         <p>
                             <a href="/2016/02/23/free-to-import-react/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2016/02/23/iOS-App-Deploy-Signing-Failed/">
-                            iOS Deploy 證書簽發者無效 Failed to locate or generate matching signing assets
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Tue Feb 23 2016 00:05:03 GMT+0800">
-	
-		    2月 23, 2016
-    	
-    </time>
-    
-        <span>分類 </span>
-        
-    <a class="category-link" href="/categories/iOS/">iOS</a>
-
-
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>這幾天在幫公司處理 iOS APP 上架的事情，整個流程需要一堆簽章，真的很麻煩</p>
-<p>其中最雷的就是這篇要講的證書的簽發者無效，是什麼證書的簽發者無效呢？</p>
-<p>我所有的 Apple 開發相關憑證上面全部都寫簽發者過期....</p>
-<p>查了才知道是 Apple 之前給開發者的憑證 ( Apple World Wide Developer Relation Certification Authority ) 有效期限到 2016.2.14 ，也就是說這是一個熱騰騰的雷阿!</p>
-<h1 id="解決方法："><a href="#解決方法：" class="headerlink" title="解決方法："></a>解決方法：</h1><ol>
-<li>打開 Keychain 在登陸和系統中刪除過期的這一個 Apple World Wide Developer Relation Certification Authority</li>
-<li>下載並安裝這個新的憑證 <a href="https://developer.apple.com/certificationauthority/AppleWWDRCA.cer" target="_blank" rel="external">WWDR intermediate certificate</a></li>
-</ol>
-<p>安裝之後再回去看一下Keychain應該就不會出現簽發者過期了，新的有效期限是 2023.2.8</p>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="http://blog.leanote.com/post/kilig/Failed-to-locate-or-generate-matching-signing-assets" target="_blank" rel="external">http://blog.leanote.com/post/kilig/Failed-to-locate-or-generate-matching-signing-assets</a></p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2016/02/23/iOS-App-Deploy-Signing-Failed/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>

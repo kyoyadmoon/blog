@@ -220,6 +220,63 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/2016/02/23/iOS-App-Deploy-Signing-Failed/">
+                            iOS Deploy 證書簽發者無效 Failed to locate or generate matching signing assets
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Tue Feb 23 2016 00:05:03 GMT+0800">
+	
+		    2月 23, 2016
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/categories/iOS/">iOS</a>
+
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>這幾天在幫公司處理 iOS APP 上架的事情，整個流程需要一堆簽章，真的很麻煩</p>
+<p>其中最雷的就是這篇要講的證書的簽發者無效，是什麼證書的簽發者無效呢？</p>
+<p>我所有的 Apple 開發相關憑證上面全部都寫簽發者過期....</p>
+<p>查了才知道是 Apple 之前給開發者的憑證 ( Apple World Wide Developer Relation Certification Authority ) 有效期限到 2016.2.14 ，也就是說這是一個熱騰騰的雷阿!</p>
+<h1 id="解決方法："><a href="#解決方法：" class="headerlink" title="解決方法："></a>解決方法：</h1><ol>
+<li>打開 Keychain 在登陸和系統中刪除過期的這一個 Apple World Wide Developer Relation Certification Authority</li>
+<li>下載並安裝這個新的憑證 <a href="https://developer.apple.com/certificationauthority/AppleWWDRCA.cer" target="_blank" rel="external">WWDR intermediate certificate</a></li>
+</ol>
+<p>安裝之後再回去看一下Keychain應該就不會出現簽發者過期了，新的有效期限是 2023.2.8</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="http://blog.leanote.com/post/kilig/Failed-to-locate-or-generate-matching-signing-assets" target="_blank" rel="external">http://blog.leanote.com/post/kilig/Failed-to-locate-or-generate-matching-signing-assets</a></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/2016/02/23/iOS-App-Deploy-Signing-Failed/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/2016/02/21/github-blog-build-with-hexo/">
                             Github Blog 架設 - Hexo
                         </a>
