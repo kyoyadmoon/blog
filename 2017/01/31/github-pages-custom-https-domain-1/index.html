@@ -22,7 +22,7 @@
 <meta property="og:description" content="最近看到好多人的 Github Pages 都有了自己的域名和 https，剛好在 gandi 上看到 space 的 domain 好便宜，心血來潮於是就買了一個來玩，之前其實沒有碰過 domain 相關的設定，原先想說可能會有點麻煩，沒想到比預期還要容易許多，簡單做個筆記記錄一下，整個過程需要對 Github Pages, Gandi, CloudFlare (SSL) 做一些設定。
 我們先">
 <meta property="og:image" content="https://blog.dmoon.space/2017/01/31/github-pages-custom-https-domain-1/gandi-zone-configure.png">
-<meta property="og:updated_time" content="2017-01-31T13:03:08.000Z">
+<meta property="og:updated_time" content="2017-01-31T13:04:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Github Pages 自訂域名, 免費 ssl 設定  輕鬆擁有 https 綠鎖頭 (1)">
 <meta name="twitter:description" content="最近看到好多人的 Github Pages 都有了自己的域名和 https，剛好在 gandi 上看到 space 的 domain 好便宜，心血來潮於是就買了一個來玩，之前其實沒有碰過 domain 相關的設定，原先想說可能會有點麻煩，沒想到比預期還要容易許多，簡單做個筆記記錄一下，整個過程需要對 Github Pages, Gandi, CloudFlare (SSL) 做一些設定。
@@ -260,8 +260,8 @@
 </li>
 <li><h3 id="設定-區域檔"><a href="#設定-區域檔" class="headerlink" title="設定 區域檔"></a>設定 區域檔</h3><p>在 gandi 購買完後，進入 domain 的 管理頁面找到 <code>編輯區域檔</code> 的連結，進入區域檔的編輯頁面，( gandi 無法更改現正套用的設定檔，所以需要先新增一個來編輯，編輯好再選擇套用) ，總之最後設定的結果應該要長這樣</p>
 <img src="/2017/01/31/github-pages-custom-https-domain-1/gandi-zone-configure.png" alt="gandi-zone-configure.png" title="">
-<p>192.30.252.153, 192.30.252.154 是 Github 的位址
-第三個 CNAME 的設定，name 的地方可以填你想要的子網域(subDomain)，value則是填寫你的 github io 網址（最後記得加上一個 <code>.　ex: kyoyadmoon.github.io.</code>）</p>
+<p><code>192.30.252.153</code> , <code>192.30.252.154</code> 是 Github 的位址
+第三個 CNAME 的設定，name 的地方可以填你想要的子網域(subDomain)，value 則是填寫你的 github.io 網址（最後記得加上一個 <code>.　ex: kyoyadmoon.github.io.</code>）</p>
 <p>需要畫面截圖參考，<a href="http://spector.io/how-to-set-up-github-pages-with-a-custom-domain-on-gandi/" target="_blank" rel="external">請點這裡</a></p>
 <p><code>記得使用新編輯的設定!</code></p>
 <p><code>記得使用新編輯的設定!</code></p>
