@@ -6,19 +6,28 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="DMoon&#39;s Laputa">
-    <title>標籤: Github Pages - DMoon&#39;s Laputa</title>
+    <title>Github Pages 自訂域名, 免費 ssl 設定  輕鬆擁有 https 綠鎖頭 (1) - DMoon&#39;s Laputa</title>
     <meta name="author" content="DMoon">
     
     
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta property="og:type" content="blog">
-<meta property="og:title" content="DMoon's Laputa">
-<meta property="og:url" content="https://blog.dmoon.space/tags/Github-Pages/index.html">
+    <meta name="description" content="最近看到好多人的 Github Pages 都有了自己的域名和 https，剛好在 gandi 上看到 space 的 domain 好便宜，心血來潮於是就買了一個來玩，之前其實沒有碰過 domain 相關的設定，原先想說可能會有點麻煩，沒想到比預期還要容易許多，簡單做個筆記記錄一下，整個過程需要對 Github Pages, Gandi, CloudFlare (SSL) 做一些設定。
+我們先">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Github Pages 自訂域名, 免費 ssl 設定  輕鬆擁有 https 綠鎖頭 (1)">
+<meta property="og:url" content="https://blog.dmoon.space/2017/01/31/github-pages-custom-https-domain-1/index.html">
 <meta property="og:site_name" content="DMoon's Laputa">
+<meta property="og:description" content="最近看到好多人的 Github Pages 都有了自己的域名和 https，剛好在 gandi 上看到 space 的 domain 好便宜，心血來潮於是就買了一個來玩，之前其實沒有碰過 domain 相關的設定，原先想說可能會有點麻煩，沒想到比預期還要容易許多，簡單做個筆記記錄一下，整個過程需要對 Github Pages, Gandi, CloudFlare (SSL) 做一些設定。
+我們先">
+<meta property="og:image" content="https://blog.dmoon.space/2017/01/31/github-pages-custom-https-domain-1/gandi-zone-configure.png">
+<meta property="og:updated_time" content="2017-01-31T13:03:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DMoon's Laputa">
+<meta name="twitter:title" content="Github Pages 自訂域名, 免費 ssl 設定  輕鬆擁有 https 綠鎖頭 (1)">
+<meta name="twitter:description" content="最近看到好多人的 Github Pages 都有了自己的域名和 https，剛好在 gandi 上看到 space 的 domain 好便宜，心血來潮於是就買了一個來玩，之前其實沒有碰過 domain 相關的設定，原先想說可能會有點麻煩，沒想到比預期還要容易許多，簡單做個筆記記錄一下，整個過程需要對 Github Pages, Gandi, CloudFlare (SSL) 做一些設定。
+我們先">
+<meta name="twitter:image" content="https://blog.dmoon.space/2017/01/31/github-pages-custom-https-domain-1/gandi-zone-configure.png">
     
     
         
@@ -67,7 +76,7 @@
         
     
 
-<header id="header" data-behavior="1">
+<header id="header" data-behavior="3">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <h1 class="header-title">
         <a class="header-title-link" href="/ ">DMoon&#39;s Laputa</a>
@@ -91,7 +100,7 @@
         
     
 
-<nav id="sidebar" data-behavior="1">
+<nav id="sidebar" data-behavior="3">
     
         <div class="sidebar-profile">
             <a href="/#about">
@@ -211,28 +220,22 @@
 </nav>
 
             
-            <div id="main" data-behavior="1"
+            <div id="main" data-behavior="3"
                  class="
                         hasCoverMetaIn
                         
-                        transparent " >
+                         " >
                 
-    
-
-<section class="postShorten-group main-content-wrap bg-white main-section">
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
     
     
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/01/31/github-pages-custom-https-domain-1/">
-                            Github Pages 自訂域名, 免費 ssl 設定  輕鬆擁有 https 綠鎖頭 (1)
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            Github Pages 自訂域名, 免費 ssl 設定  輕鬆擁有 https 綠鎖頭 (1)
+        </h1>
+    
+    <div class="post-meta">
     <time itemprop="datePublished" content="Tue Jan 31 2017 16:15:33 GMT+0800">
 	
 		    1月 31, 2017
@@ -246,11 +249,11 @@
 
     
 </div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>最近看到好多人的 Github Pages 都有了自己的域名和 https，剛好在 <a href="https://www.gandi.net/" target="_blank" rel="external">gandi</a> 上看到 space 的 domain 好便宜，心血來潮於是就買了一個來玩，之前其實沒有碰過 domain 相關的設定，原先想說可能會有點麻煩，沒想到比預期還要容易許多，簡單做個筆記記錄一下，整個過程需要對 Github Pages, Gandi, CloudFlare (SSL) 做一些設定。</p>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>最近看到好多人的 Github Pages 都有了自己的域名和 https，剛好在 <a href="https://www.gandi.net/" target="_blank" rel="external">gandi</a> 上看到 space 的 domain 好便宜，心血來潮於是就買了一個來玩，之前其實沒有碰過 domain 相關的設定，原先想說可能會有點麻煩，沒想到比預期還要容易許多，簡單做個筆記記錄一下，整個過程需要對 Github Pages, Gandi, CloudFlare (SSL) 做一些設定。</p>
 <p>我們先從 custom domain 開始吧</p>
 <h2 id="Set-Custom-Domain"><a href="#Set-Custom-Domain" class="headerlink" title="Set Custom Domain"></a>Set Custom Domain</h2><ol>
 <li><h3 id="購買域名"><a href="#購買域名" class="headerlink" title="購買域名"></a>購買域名</h3><p>我是在 <a href="https://www.gandi.net/" target="_blank" rel="external">gandi</a> 購買的，大家可以到各域名商的網站上搜尋喜歡的域名進行購買，租期到了要記得續訂，才不會發生慘劇。</p>
@@ -283,32 +286,91 @@
 </li>
 </ol>
 
-                    
-                        
+            
+                
 
-                    
-                    
-                        <p>
-                            <a href="/2017/01/31/github-pages-custom-https-domain-1/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
             
         </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
         
-    </article>
-    
-    <div class="pagination-bar">
-    <ul class="pagination">
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">標籤</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/Custom-Domain/">Custom Domain</a> <a class="tag tag--primary tag--small t-link" href="/tags/Github-Pages/">Github Pages</a> <a class="tag tag--primary tag--small t-link" href="/tags/HTTPS/">HTTPS</a> <a class="tag tag--primary tag--small t-link" href="/tags/Hexo/">Hexo</a> <a class="tag tag--primary tag--small t-link" href="/tags/SSL/">SSL</a>
+
+            </div>
         
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/10/05/Retina-Display-AntiReflective-Coating-Damage/" data-tooltip="Macbook Pro Retina 螢幕鍍膜剝落送修心得">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://blog.dmoon.space/2017/01/31/github-pages-custom-https-domain-1/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.dmoon.space/2017/01/31/github-pages-custom-https-domain-1/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://blog.dmoon.space/2017/01/31/github-pages-custom-https-domain-1/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
         
-        <li class="pagination-number">第 1 頁 共 1 頁</li>
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
     </ul>
 </div>
 
-</section>
+
+        
+            
+                <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+            
+        
+    </div>
+</article>
+
 
 
                 <footer id="footer" class="main-content-wrap">
@@ -318,6 +380,89 @@
 </footer>
 
             </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/10/05/Retina-Display-AntiReflective-Coating-Damage/" data-tooltip="Macbook Pro Retina 螢幕鍍膜剝落送修心得">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://blog.dmoon.space/2017/01/31/github-pages-custom-https-domain-1/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.dmoon.space/2017/01/31/github-pages-custom-https-domain-1/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://blog.dmoon.space/2017/01/31/github-pages-custom-https-domain-1/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://blog.dmoon.space/2017/01/31/github-pages-custom-https-domain-1/">
+                <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.dmoon.space/2017/01/31/github-pages-custom-https-domain-1/">
+                <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://blog.dmoon.space/2017/01/31/github-pages-custom-https-domain-1/">
+                <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
             
         </div>
         
@@ -368,6 +513,25 @@
     <!--SCRIPTS-->
 <script src="/assets/js/scrip-rqqlj6b7v5ivwny6sgniqsu72gtrtvjnmmxventm0z3dqdq1ipz7ouqtm6yx.min.js"></script>
 <!--SCRIPTS END-->
+
+    
+        <script>
+             var disqus_config = function () {
+                 this.page.url = 'https://blog.dmoon.space/2017/01/31/github-pages-custom-https-domain-1/';
+                 
+                    this.page.identifier = '2017/01/31/github-pages-custom-https-domain-1/';
+                                  
+             };
+            (function() {
+                var d = document, s = d.createElement('script');
+                var disqus_shortname = 'dmoonlaputa';
+                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
 
 
 
