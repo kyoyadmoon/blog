@@ -603,11 +603,11 @@ $ react-native init AwesomeProject
       <category term="Blog" scheme="https://blog.dmoon.space/categories/Blog/"/>
     
     
-      <category term="Hexo" scheme="https://blog.dmoon.space/tags/Hexo/"/>
-    
       <category term="Node.js" scheme="https://blog.dmoon.space/tags/Node-js/"/>
     
       <category term="Github" scheme="https://blog.dmoon.space/tags/Github/"/>
+    
+      <category term="Hexo" scheme="https://blog.dmoon.space/tags/Hexo/"/>
     
   </entry>
   
