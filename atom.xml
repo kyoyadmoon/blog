@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.dmoon.space/"/>
-  <updated>2017-02-01T06:51:43.000Z</updated>
+  <updated>2017-02-01T07:12:49.000Z</updated>
   <id>https://blog.dmoon.space/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://blog.dmoon.space/github-pages-custom-https-domain-1/"/>
     <id>https://blog.dmoon.space/github-pages-custom-https-domain-1/</id>
     <published>2017-02-01T08:15:33.000Z</published>
-    <updated>2017-02-01T06:51:43.000Z</updated>
+    <updated>2017-02-01T07:12:49.000Z</updated>
     
     <content type="html"><![CDATA[<p>在  中，我們應該已經設定好了自定義域名，接下來就是幫我們的自定義域名加上漂亮安全的 https 綠色鎖頭啦。</p>
 <h2 id="Add-Free-SSL"><a href="#Add-Free-SSL" class="headerlink" title="Add Free SSL"></a>Add Free SSL</h2><p>說到 Free SSL 相信很多人第一個想到的就是開源的 <a href="https://letsencrypt.org/" target="_blank" rel="external">Let&#39;s Encrypt</a> 吧，不過很遺憾在爬文時發現，Github 似乎並不支援 Let&#39;s Encrypt ，因此只好找其他的免費 SSL 憑證了，這篇要說明如何使用 <a href="https://www.cloudflare.com/" target="_blank" rel="external">CloudFlare</a> 幫 Github Pages 掛上的免費 SSL</p>
@@ -48,6 +48,11 @@
 像是在 <head> 中加上</head></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="keyword">var</span> host = <span class="string">"yoursite.com"</span>;</div><div class="line">    <span class="keyword">if</span> ((host == <span class="built_in">window</span>.location.host) &amp;&amp; (<span class="built_in">window</span>.location.protocol != <span class="string">"https:"</span>))</div><div class="line">        <span class="built_in">window</span>.location.protocol = <span class="string">"https"</span>;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>讓 http 的連線自動導向到 https</p>
+</li>
+<li><p>告訴搜尋引擎偏好網址
+將下面加入你的 Hexo theme header template 中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=&quot;canonical&quot; href=&quot;&lt;%= url %&gt;&quot; /&gt;</div></pre></td></tr></table></figure>
+<p>​</p>
 </li>
 </ol>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://sheharyar.me/blog/free-ssl-for-github-pages-with-custom-domains/" target="_blank" rel="external">https://sheharyar.me/blog/free-ssl-for-github-pages-with-custom-domains/</a></p>
