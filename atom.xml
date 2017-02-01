@@ -85,7 +85,7 @@
     <link href="https://blog.dmoon.space/github-pages-custom-https-domain-1/"/>
     <id>https://blog.dmoon.space/github-pages-custom-https-domain-1/</id>
     <published>2017-01-31T08:15:33.000Z</published>
-    <updated>2017-02-01T07:15:43.000Z</updated>
+    <updated>2017-02-01T07:18:58.000Z</updated>
     
     <content type="html"><![CDATA[<p>最近看到好多人的 Github Pages 都有了自己的域名和 https，剛好在 <a href="https://www.gandi.net/" target="_blank" rel="external">Gandi</a> 上看到 space 的 domain 好便宜，心血來潮於是就買了一個來玩，之前其實沒有碰過 domain 相關的設定，原先想說可能會有點麻煩，沒想到比預期還要容易許多，簡單做個筆記記錄一下，整個過程需要對 Github Pages, <a href="https://www.gandi.net/" target="_blank" rel="external">Gandi</a>,  <a href="https://www.cloudflare.com/" target="_blank" rel="external">CloudFlare</a> (SSL) 做一些設定。</p>
 <p>我們先從 custom domain 開始吧</p>
@@ -119,10 +119,9 @@
 </li>
 <li><h4 id="Hexo-設定"><a href="#Hexo-設定" class="headerlink" title="Hexo 設定"></a>Hexo 設定</h4><p><code>_config.yml</code> 中將 url 設定為新的域名</p>
 <p>設定好之後記得用 hexo g &amp;&amp; hexo d 更新 blog</p>
-<p>​</p>
-<p>​</p>
 </li>
 </ol>
+<p>想要加上免費的 SSL 簽證，完成 HTTPS 綠色鎖頭請見 </p>
 <h2 id="Read-More"><a href="#Read-More" class="headerlink" title="Read More"></a>Read More</h2><ul>
 <li><p><a href="http://www.cnblogs.com/winxiang/archive/2012/08/11/2633337.html" target="_blank" rel="external">SSL 與 HTTPS 介紹</a></p>
 <p>​</p>
