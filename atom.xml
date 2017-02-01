@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.dmoon.space/"/>
-  <updated>2017-02-01T07:12:49.000Z</updated>
+  <updated>2017-02-01T07:15:50.000Z</updated>
   <id>https://blog.dmoon.space/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Github Pages 免費 ssl 設定  輕鬆擁有 https 綠鎖頭 (2)</title>
-    <link href="https://blog.dmoon.space/github-pages-custom-https-domain-1/"/>
-    <id>https://blog.dmoon.space/github-pages-custom-https-domain-1/</id>
+    <title>Github Pages 免費 ssl 設定 - 輕鬆擁有 https 綠鎖頭 (2)</title>
+    <link href="https://blog.dmoon.space/github-pages-custom-https-domain-2/"/>
+    <id>https://blog.dmoon.space/github-pages-custom-https-domain-2/</id>
     <published>2017-02-01T08:15:33.000Z</published>
-    <updated>2017-02-01T07:12:49.000Z</updated>
+    <updated>2017-02-01T07:15:50.000Z</updated>
     
     <content type="html"><![CDATA[<p>在  中，我們應該已經設定好了自定義域名，接下來就是幫我們的自定義域名加上漂亮安全的 https 綠色鎖頭啦。</p>
 <h2 id="Add-Free-SSL"><a href="#Add-Free-SSL" class="headerlink" title="Add Free SSL"></a>Add Free SSL</h2><p>說到 Free SSL 相信很多人第一個想到的就是開源的 <a href="https://letsencrypt.org/" target="_blank" rel="external">Let&#39;s Encrypt</a> 吧，不過很遺憾在爬文時發現，Github 似乎並不支援 Let&#39;s Encrypt ，因此只好找其他的免費 SSL 憑證了，這篇要說明如何使用 <a href="https://www.cloudflare.com/" target="_blank" rel="external">CloudFlare</a> 幫 Github Pages 掛上的免費 SSL</p>
@@ -40,7 +40,7 @@
 </li>
 <li><p>請先到 CloudFlare website 管理頁面，將 Crypto / SSL 設定為 Flexible
 如圖：</p>
-<img src="/github-pages-custom-https-domain-1/flexible_config.png" alt="flexible_config.png" title="">
+<img src="/github-pages-custom-https-domain-2/flexible_config.png" alt="flexible_config.png" title="">
 <p>好奇 Flexible 意思的請點這裡 <a href="https://sofree.cc/cloudflare-free-ssl/" target="_blank" rel="external">Read More...</a></p>
 </li>
 <li><p>到這邊差不多就完成囉
@@ -81,11 +81,11 @@
   </entry>
   
   <entry>
-    <title>Github Pages 自訂域名, 免費 ssl 設定  輕鬆擁有 https 綠鎖頭 (1)</title>
+    <title>Github Pages 自訂域名 - 輕鬆擁有 https 綠鎖頭 (1)</title>
     <link href="https://blog.dmoon.space/github-pages-custom-https-domain-1/"/>
     <id>https://blog.dmoon.space/github-pages-custom-https-domain-1/</id>
     <published>2017-01-31T08:15:33.000Z</published>
-    <updated>2017-02-01T07:01:01.000Z</updated>
+    <updated>2017-02-01T07:15:43.000Z</updated>
     
     <content type="html"><![CDATA[<p>最近看到好多人的 Github Pages 都有了自己的域名和 https，剛好在 <a href="https://www.gandi.net/" target="_blank" rel="external">Gandi</a> 上看到 space 的 domain 好便宜，心血來潮於是就買了一個來玩，之前其實沒有碰過 domain 相關的設定，原先想說可能會有點麻煩，沒想到比預期還要容易許多，簡單做個筆記記錄一下，整個過程需要對 Github Pages, <a href="https://www.gandi.net/" target="_blank" rel="external">Gandi</a>,  <a href="https://www.cloudflare.com/" target="_blank" rel="external">CloudFlare</a> (SSL) 做一些設定。</p>
 <p>我們先從 custom domain 開始吧</p>
