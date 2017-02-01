@@ -1,0 +1,529 @@
+
+<!DOCTYPE html>
+<html lang="zh-tw">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="DMoon&#39;s Laputa">
+    <title>GMT vs UTC 差異，Linux Etc/GMT 為何與現實時區相反 - DMoon&#39;s Laputa</title>
+    <meta name="author" content="DMoon">
+    
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <meta name="description" content="GMT &amp;amp; UTC首先來說 GMT 和 UTC 是什麼，有什麼差別
+
+GMT：格林威治標準時間
+UTC：世界協調時間
+
+他們都是世界標準時間，而 UTC 的算法更為嚴謹，所以比 GMT 更為精準，不過兩者的差異是極小的，所以基本上時間是可以看作相同的
+Linux Etc/GMT 時區為何正負顛倒當你使用 Linux 設定時區時 ，若是選用 Etc 底下的 GMT 時區，可能會發現設定的結果">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="GMT vs UTC 差異，Linux Etc/GMT 為何與現實時區相反">
+<meta property="og:url" content="https://blog.dmoon.space/GWT-vs-UTC-diff-and-Etc-GWT-reverse-timezone/index.html">
+<meta property="og:site_name" content="DMoon's Laputa">
+<meta property="og:description" content="GMT &amp;amp; UTC首先來說 GMT 和 UTC 是什麼，有什麼差別
+
+GMT：格林威治標準時間
+UTC：世界協調時間
+
+他們都是世界標準時間，而 UTC 的算法更為嚴謹，所以比 GMT 更為精準，不過兩者的差異是極小的，所以基本上時間是可以看作相同的
+Linux Etc/GMT 時區為何正負顛倒當你使用 Linux 設定時區時 ，若是選用 Etc 底下的 GMT 時區，可能會發現設定的結果">
+<meta property="og:updated_time" content="2016-03-10T13:38:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="GMT vs UTC 差異，Linux Etc/GMT 為何與現實時區相反">
+<meta name="twitter:description" content="GMT &amp;amp; UTC首先來說 GMT 和 UTC 是什麼，有什麼差別
+
+GMT：格林威治標準時間
+UTC：世界協調時間
+
+他們都是世界標準時間，而 UTC 的算法更為嚴謹，所以比 GMT 更為精準，不過兩者的差異是極小的，所以基本上時間是可以看作相同的
+Linux Etc/GMT 時區為何正負顛倒當你使用 Linux 設定時區時 ，若是選用 Etc 底下的 GMT 時區，可能會發現設定的結果">
+    
+    
+        
+    
+    
+        <!-- <meta property="og:image" content="https://lh3.googleusercontent.com/88FDhLBFjY4kGdPJPmbJZYbKoa-A0CFRWA8CJFa2h49QCigrrjgr64NKKXl4X3Kmkiwhrj71bgNhX27ktYo3r_gyHBnxgEuPBEFlsjLl4JhvNBuHkQCryECYESdFcU5EaYq-01bDZbk0wu_F5FE3zlPp0TpCE9j9vAKgs6C8xyqnCWzS29DFSGWfxs7PO5nl2zoRON-NfFjgzcXk1yuP9TyEsvvkce58H3DRdww5X1xwWHhiCCfwkuxaeWBsU6C3bXQ9mtTzNjn02G7q1w-KFxgkhgwvkDNGKvJgzOIHOZsWQ2kPWU1J9miaxM5ekL9tYaI1I3H-zGob8GPrA3JQnB09yPB9YJrOh9NawhJ4mjDsjMysJFa-O-sQRojBN-mn8q5OBNPrstayomy1K0EtsR8k3qdttlfe8l1a26yib2kCEwHD_ovZP_menbKffaHMnVN2VNT3Ivf-I9Hl9s34PUr9IwHFkhKxLzuwqO5_Awk5P7Ye5pJO7C4FrdDhBUunuwI3WtKsftG-X-U8e5XDjsPym4YZSQA_PvP43eDPIb8ZdZsQbOkQ255ZI2HrCiafI18C=s874-no"/> -->
+    
+
+    
+
+    
+
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-0adefamlmvv28egr1y5cljrsrywnnwnqx6riua1bgmzd8eov2hp4lakoa4yq.min.css">
+    <!--STYLES END-->
+    
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-57006180-2']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+    
+    <link rel="canonical" href=" { { site.url } }{ { page.url } }" />
+    <script type="text/javascript">
+    var host = "blog.dmoon.space";
+    if ((host == window.location.host) && (window.location.protocol != "https:"))
+        window.location.protocol = "https";
+    </script>
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+            
+        
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">DMoon&#39;s Laputa</a>
+    </h1>
+    
+        
+            <a  class="header-right-picture "
+                href="#about">
+        
+        
+            <img class="header-picture" src="https://lh3.googleusercontent.com/88FDhLBFjY4kGdPJPmbJZYbKoa-A0CFRWA8CJFa2h49QCigrrjgr64NKKXl4X3Kmkiwhrj71bgNhX27ktYo3r_gyHBnxgEuPBEFlsjLl4JhvNBuHkQCryECYESdFcU5EaYq-01bDZbk0wu_F5FE3zlPp0TpCE9j9vAKgs6C8xyqnCWzS29DFSGWfxs7PO5nl2zoRON-NfFjgzcXk1yuP9TyEsvvkce58H3DRdww5X1xwWHhiCCfwkuxaeWBsU6C3bXQ9mtTzNjn02G7q1w-KFxgkhgwvkDNGKvJgzOIHOZsWQ2kPWU1J9miaxM5ekL9tYaI1I3H-zGob8GPrA3JQnB09yPB9YJrOh9NawhJ4mjDsjMysJFa-O-sQRojBN-mn8q5OBNPrstayomy1K0EtsR8k3qdttlfe8l1a26yib2kCEwHD_ovZP_menbKffaHMnVN2VNT3Ivf-I9Hl9s34PUr9IwHFkhKxLzuwqO5_Awk5P7Ye5pJO7C4FrdDhBUunuwI3WtKsftG-X-U8e5XDjsPym4YZSQA_PvP43eDPIb8ZdZsQbOkQ255ZI2HrCiafI18C=s874-no"/>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+
+        
+    
+
+<nav id="sidebar" data-behavior="3">
+    
+        <div class="sidebar-profile">
+            <a href="/#about">
+                    <img class="sidebar-profile-picture" src="https://lh3.googleusercontent.com/88FDhLBFjY4kGdPJPmbJZYbKoa-A0CFRWA8CJFa2h49QCigrrjgr64NKKXl4X3Kmkiwhrj71bgNhX27ktYo3r_gyHBnxgEuPBEFlsjLl4JhvNBuHkQCryECYESdFcU5EaYq-01bDZbk0wu_F5FE3zlPp0TpCE9j9vAKgs6C8xyqnCWzS29DFSGWfxs7PO5nl2zoRON-NfFjgzcXk1yuP9TyEsvvkce58H3DRdww5X1xwWHhiCCfwkuxaeWBsU6C3bXQ9mtTzNjn02G7q1w-KFxgkhgwvkDNGKvJgzOIHOZsWQ2kPWU1J9miaxM5ekL9tYaI1I3H-zGob8GPrA3JQnB09yPB9YJrOh9NawhJ4mjDsjMysJFa-O-sQRojBN-mn8q5OBNPrstayomy1K0EtsR8k3qdttlfe8l1a26yib2kCEwHD_ovZP_menbKffaHMnVN2VNT3Ivf-I9Hl9s34PUr9IwHFkhKxLzuwqO5_Awk5P7Ye5pJO7C4FrdDhBUunuwI3WtKsftG-X-U8e5XDjsPym4YZSQA_PvP43eDPIb8ZdZsQbOkQ255ZI2HrCiafI18C=s874-no"/>
+            </a>
+            <span class="sidebar-profile-name">DMoon</span>
+        </div>
+    
+    
+      
+        <ul class="sidebar-buttons button-link-block">
+          
+            <li class="sidebar-button">
+              
+                  <a  class="sidebar-button-link "
+                       href="/ "
+                      
+                  >
+              
+                  <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                  <span class="sidebar-button-desc">首頁</span>
+                  </a>
+            </li>
+          
+            <li class="sidebar-button">
+              
+                  <a  class="sidebar-button-link "
+                       href="/all-categories"
+                      
+                  >
+              
+                  <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                  <span class="sidebar-button-desc">分類</span>
+                  </a>
+            </li>
+          
+            <li class="sidebar-button">
+              
+                  <a  class="sidebar-button-link "
+                       href="/all-tags"
+                      
+                  >
+              
+                  <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                  <span class="sidebar-button-desc">標籤</span>
+                  </a>
+            </li>
+          
+            <li class="sidebar-button">
+              
+                  <a  class="sidebar-button-link "
+                       href="/all-archives"
+                      
+                  >
+              
+                  <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                  <span class="sidebar-button-desc">所有文章</span>
+                  </a>
+            </li>
+          
+            <li class="sidebar-button">
+              
+                  <a  class="sidebar-button-link "
+                       href="#about"
+                      
+                  >
+              
+                  <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                  <span class="sidebar-button-desc">關於</span>
+                  </a>
+            </li>
+          
+        </ul>
+      
+      
+    
+      
+      
+        <div class="sidebar-buttons flex-container space-around author_links">
+          
+            <!-- <li class="sidebar-button"> -->
+              
+                  <a  class="sidebar-button-link " href="https://github.com/kyoyadmoon" target="_blank">
+              
+                  <i class="sidebar-button-icon fa fa-lg fa-github" style="color: #ebebeb "></i>
+                  <!-- <span class="sidebar-button-desc">GitHub</span> -->
+                  </a>
+            <!-- </li> -->
+          
+            <!-- <li class="sidebar-button"> -->
+              
+                  <a  class="sidebar-button-link " href="https://www.facebook.com/dmoonhuang" target="_blank">
+              
+                  <i class="sidebar-button-icon fa fa-lg fa-facebook" style="color: #ebebeb "></i>
+                  <!-- <span class="sidebar-button-desc">Facebook</span> -->
+                  </a>
+            <!-- </li> -->
+          
+            <!-- <li class="sidebar-button"> -->
+              
+                  <a  target="_blank" class="sidebar-button-link "
+                       href="/atom.xml"
+                      
+                  >
+              
+                  <i class="sidebar-button-icon fa fa-lg fa-rss" style="color: #ebebeb "></i>
+                  <!-- <span class="sidebar-button-desc">RSS</span> -->
+                  </a>
+            <!-- </li> -->
+          
+        </ul>
+      
+    
+      
+      
+    
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        
+                         " >
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            GMT vs UTC 差異，Linux Etc/GMT 為何與現實時區相反
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Tue Mar 08 2016 21:22:03 GMT+0800">
+	
+		    3月 08, 2016
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/categories/Linux/">Linux</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <h2 id="GMT-amp-UTC"><a href="#GMT-amp-UTC" class="headerlink" title="GMT &amp; UTC"></a>GMT &amp; UTC</h2><p>首先來說 GMT 和 UTC 是什麼，有什麼差別</p>
+<blockquote>
+<p>GMT：格林威治標準時間</p>
+<p>UTC：世界協調時間</p>
+</blockquote>
+<p>他們都是世界標準時間，而 UTC 的算法更為嚴謹，所以比 GMT 更為精準，不過兩者的差異是極小的，所以基本上時間是可以看作相同的</p>
+<h2 id="Linux-Etc-GMT-時區為何正負顛倒"><a href="#Linux-Etc-GMT-時區為何正負顛倒" class="headerlink" title="Linux Etc/GMT 時區為何正負顛倒"></a>Linux Etc/GMT 時區為何正負顛倒</h2><p>當你使用 Linux 設定時區時 ，若是選用 Etc 底下的 GMT 時區，可能會發現設定的結果與你預想的不同，當你想設定台北的時區 （GMT＋8) ，但設定完後，系統時間卻是 -8 的時區，和台北時間相差 16 小時，原因是因為 Etc 底下的 GMT 時區是以 <code>格林威治</code> 以西為正，以東為負，剛好與我們現實生活的認知相反</p>
+<p>而原因只是因為當初 Unix 多為西方人使用，便以西為正</p>
+<p>因此在設定的時候需要選擇正負相反的選項</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="http://lemonlatte.logdown.com/tags/tzdata" target="_blank" rel="external">http://lemonlatte.logdown.com/tags/tzdata</a></p>
+
+            
+                
+
+            
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">標籤</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/GMT/">GMT</a> <a class="tag tag--primary tag--small t-link" href="/tags/Linux/">Linux</a> <a class="tag tag--primary tag--small t-link" href="/tags/Timezone/">Timezone</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/koa-production-cache/"  data-tooltip="koa production cache 設定 - koa-static-cache">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/Chromecast-Audio/" data-tooltip="Chromecast Audio 變身無線音響">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://blog.dmoon.space/GWT-vs-UTC-diff-and-Etc-GWT-reverse-timezone/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.dmoon.space/GWT-vs-UTC-diff-and-Etc-GWT-reverse-timezone/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://blog.dmoon.space/GWT-vs-UTC-diff-and-Etc-GWT-reverse-timezone/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            
+                <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2017 DMoon. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/koa-production-cache/"  data-tooltip="koa production cache 設定 - koa-static-cache">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/Chromecast-Audio/" data-tooltip="Chromecast Audio 變身無線音響">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://blog.dmoon.space/GWT-vs-UTC-diff-and-Etc-GWT-reverse-timezone/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.dmoon.space/GWT-vs-UTC-diff-and-Etc-GWT-reverse-timezone/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://blog.dmoon.space/GWT-vs-UTC-diff-and-Etc-GWT-reverse-timezone/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://blog.dmoon.space/GWT-vs-UTC-diff-and-Etc-GWT-reverse-timezone/">
+                <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.dmoon.space/GWT-vs-UTC-diff-and-Etc-GWT-reverse-timezone/">
+                <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://blog.dmoon.space/GWT-vs-UTC-diff-and-Etc-GWT-reverse-timezone/">
+                <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        
+
+
+    
+        
+    
+
+<div id="about">
+    <div id="about-card" class="frosted-glass">
+        <div >
+          <div id="about-btn-close">
+              <i class="fa fa-remove"></i>
+          </div>
+          
+              <img id="about-card-picture" src="https://lh3.googleusercontent.com/88FDhLBFjY4kGdPJPmbJZYbKoa-A0CFRWA8CJFa2h49QCigrrjgr64NKKXl4X3Kmkiwhrj71bgNhX27ktYo3r_gyHBnxgEuPBEFlsjLl4JhvNBuHkQCryECYESdFcU5EaYq-01bDZbk0wu_F5FE3zlPp0TpCE9j9vAKgs6C8xyqnCWzS29DFSGWfxs7PO5nl2zoRON-NfFjgzcXk1yuP9TyEsvvkce58H3DRdww5X1xwWHhiCCfwkuxaeWBsU6C3bXQ9mtTzNjn02G7q1w-KFxgkhgwvkDNGKvJgzOIHOZsWQ2kPWU1J9miaxM5ekL9tYaI1I3H-zGob8GPrA3JQnB09yPB9YJrOh9NawhJ4mjDsjMysJFa-O-sQRojBN-mn8q5OBNPrstayomy1K0EtsR8k3qdttlfe8l1a26yib2kCEwHD_ovZP_menbKffaHMnVN2VNT3Ivf-I9Hl9s34PUr9IwHFkhKxLzuwqO5_Awk5P7Ye5pJO7C4FrdDhBUunuwI3WtKsftG-X-U8e5XDjsPym4YZSQA_PvP43eDPIb8ZdZsQbOkQ255ZI2HrCiafI18C=s874-no"/>
+          
+              <h4 id="about-card-name">DMoon</h4>
+          
+              <h5 id="about-card-bio"><p>熱愛科技的資工系學生，喜歡學習新的技術</p>
+<p>目前主要開發 Web APP</p>
+<p>較熟悉的技術是 Node.JS / React.JS</p>
+</h5>
+          
+          
+              <h5 id="about-card-job">
+                  <i class="fa fa-briefcase"></i>
+                  <br/>
+                  <p>學生 / 創科資訊實習生</p>
+
+              </h5>
+          
+          
+              <h5 id="about-card-location">
+                  <i class="fa fa-map-marker"></i>
+                  <br/>
+                  Taichung, Taiwan
+              </h5>
+          
+        </div>
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('/assets/images/cover3.jpeg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/scrip-rqqlj6b7v5ivwny6sgniqsu72gtrtvjnmmxventm0z3dqdq1ipz7ouqtm6yx.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+        <script>
+             var disqus_config = function () {
+                 this.page.url = 'https://blog.dmoon.space/GWT-vs-UTC-diff-and-Etc-GWT-reverse-timezone/';
+                 
+                    this.page.identifier = 'GWT-vs-UTC-diff-and-Etc-GWT-reverse-timezone/';
+                                  
+             };
+            (function() {
+                var d = document, s = d.createElement('script');
+                var disqus_shortname = 'dmoonlaputa';
+                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+
+
+
+</html>

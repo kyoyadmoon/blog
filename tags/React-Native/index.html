@@ -227,7 +227,7 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
-                        <a class="link-unstyled" href="/2016/04/27/react-native-auto-ip-configuration/">
+                        <a class="link-unstyled" href="/react-native-auto-ip-configuration/">
                             React Native 進階開發配置-自動設定 IP
                         </a>
                     
@@ -275,23 +275,23 @@
 <p>OK 我們現在能夠拿到正確的 IP 了</p>
 <h2 id="Add-Run-Script"><a href="#Add-Run-Script" class="headerlink" title="Add Run Script"></a>Add Run Script</h2><p>再來我們需要設定在專案執行時執行一段 shell script 去抓取 IP 寫入到專案中</p>
 <p>照著圖中藍色 focus 的地方找到 <code>Build Phases</code></p>
-<img src="/2016/04/27/react-native-auto-ip-configuration/addScript.png" alt="addScript.png" title="">
+<img src="/react-native-auto-ip-configuration/addScript.png" alt="addScript.png" title="">
 <p>新增一個 Run Script 後的畫面</p>
-<img src="/2016/04/27/react-native-auto-ip-configuration/editScript.png" alt="editScript.png" title="">
+<img src="/react-native-auto-ip-configuration/editScript.png" alt="editScript.png" title="">
 <p>接下來就是填入主角 script  了</p>
 <p>下面的 script 會在專案的 INFOPLIST 裡新增一個 SERVER_IP 的欄位，並把 IP 寫入</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">INFOPLIST=&quot;$&#123;TARGET_BUILD_DIR&#125;/$&#123;INFOPLIST_PATH&#125;&quot;</div><div class="line">echo &quot;writing to $INFOPLIST&quot;</div><div class="line">PLISTCMD=&quot;Add :SERVER_IP string $(ifconfig | grep -Eo &apos;inet (addr:)?([0-9]*\.)&#123;3&#125;[0-9]*&apos; | grep -Eo &apos;([0-9]*\.)&#123;3&#125;[0-9]*&apos; | grep -v &apos;127.0.0.1&apos; | head -1)&quot;</div><div class="line">echo -n &quot;$INFOPLIST&quot; | xargs -0 /usr/libexec/PlistBuddy -c &quot;$PLISTCMD&quot; || true</div><div class="line">PLISTCMD=&quot;Set :SERVER_IP $(ifconfig | grep -Eo &apos;inet (addr:)?([0-9]*\.)&#123;3&#125;[0-9]*&apos; | grep -Eo &apos;([0-9]*\.)&#123;3&#125;[0-9]*&apos; | grep -v &apos;127.0.0.1&apos; | head -1)&quot;</div><div class="line">echo -n &quot;$INFOPLIST&quot; | xargs -0 /usr/libexec/PlistBuddy -c &quot;$PLISTCMD&quot; || true</div></pre></td></tr></table></figure>
 <p>填好之後會像這樣</p>
-<img src="/2016/04/27/react-native-auto-ip-configuration/addedScript.png" alt="addedScript.png" title="">
+<img src="/react-native-auto-ip-configuration/addedScript.png" alt="addedScript.png" title="">
 <h2 id="在-AppDelegate-m-讀取-SERVER-IP"><a href="#在-AppDelegate-m-讀取-SERVER-IP" class="headerlink" title="在 AppDelegate.m 讀取 SERVER_IP"></a>在 <code>AppDelegate.m</code> 讀取 SERVER_IP</h2><p>打開 <code>AppDelegate.m</code> </p>
 <p>將原本</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jsCodeLocation = [NSURL URLWithString:@&quot;http://localhost:8081/index.ios.bundle?platform=ios&amp;dev=true&quot;];</div></pre></td></tr></table></figure>
 <p>替換成能夠動態改變 SERVER_IP 的 code</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">NSString *serverIP = [[NSBundle mainBundle] objectForInfoDictionaryKey:@&quot;SERVER_IP&quot;];</div><div class="line">NSString *jsCodeUrlString = [NSString stringWithFormat:@&quot;http://%@:8081/index.ios.bundle?platform=ios&amp;dev=true&quot;, serverIP];</div><div class="line">NSString *jsBundleUrlString = [jsCodeUrlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];</div><div class="line">jsCodeLocation = [NSURL URLWithString:jsBundleUrlString];</div></pre></td></tr></table></figure>
-<img src="/2016/04/27/react-native-auto-ip-configuration/AppDelegate.png" alt="AppDelegate.png" title="">
+<img src="/react-native-auto-ip-configuration/AppDelegate.png" alt="AppDelegate.png" title="">
 <p>這時候你可以測試看看 simulator 和 real device 上是不是都能正常運作，可以的話就成功囉！</p>
 <h2 id="Debug-in-Chrome-on-Real-Device"><a href="#Debug-in-Chrome-on-Real-Device" class="headerlink" title="Debug in Chrome on Real Device"></a>Debug in Chrome on Real Device</h2><p>找到 <code>RCTWebSocketExecutor.ｍ</code> 的 setUp</p>
-<img src="/2016/04/27/react-native-auto-ip-configuration/RCTWebSocketExecutor.png" alt="RCTWebSocketExecutor.png" title="">
+<img src="/react-native-auto-ip-configuration/RCTWebSocketExecutor.png" alt="RCTWebSocketExecutor.png" title="">
 <p>將這行</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">NSString *URLString = [NSString stringWithFormat:@&quot;http://localhost:%zd/debugger-proxy?role=client&quot;, port];</div></pre></td></tr></table></figure>
 <p>替換成</p>
@@ -306,7 +306,7 @@
                     
                     
                         <p>
-                            <a href="/2016/04/27/react-native-auto-ip-configuration/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/react-native-auto-ip-configuration/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>
@@ -323,7 +323,7 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
-                        <a class="link-unstyled" href="/2016/04/19/react-native-101/">
+                        <a class="link-unstyled" href="/react-native-101/">
                             React Native 初心者攻略 (OS X)
                         </a>
                     
@@ -402,7 +402,7 @@ $ react-native init AwesomeProject
                     
                     
                         <p>
-                            <a href="/2016/04/19/react-native-101/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/react-native-101/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>

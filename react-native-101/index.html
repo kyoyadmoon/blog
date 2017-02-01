@@ -1,0 +1,555 @@
+
+<!DOCTYPE html>
+<html lang="zh-tw">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="DMoon&#39;s Laputa">
+    <title>React Native 初心者攻略 (OS X) - DMoon&#39;s Laputa</title>
+    <meta name="author" content="DMoon">
+    
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <meta name="description" content="由於 React 的火熱程度，身邊許多朋友都開始接觸 React ，我也推薦他們玩玩看 React Native ，我覺得 React 的入門門檻有些其實和 React 本身無關，像是 Webpack, Babel 等等都多少在無形中增加了入門的難度，且有許多範例可能還使用了 ES6 語法，雖然不是必要，但可能會造成初學者混淆、失去信心，使學習過程更不順利。
+然而 React Native 完">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="React Native 初心者攻略 (OS X)">
+<meta property="og:url" content="https://blog.dmoon.space/react-native-101/index.html">
+<meta property="og:site_name" content="DMoon's Laputa">
+<meta property="og:description" content="由於 React 的火熱程度，身邊許多朋友都開始接觸 React ，我也推薦他們玩玩看 React Native ，我覺得 React 的入門門檻有些其實和 React 本身無關，像是 Webpack, Babel 等等都多少在無形中增加了入門的難度，且有許多範例可能還使用了 ES6 語法，雖然不是必要，但可能會造成初學者混淆、失去信心，使學習過程更不順利。
+然而 React Native 完">
+<meta property="og:image" content="https://i.imgur.com/dnaYgtL.png">
+<meta property="og:updated_time" content="2017-01-31T01:17:30.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React Native 初心者攻略 (OS X)">
+<meta name="twitter:description" content="由於 React 的火熱程度，身邊許多朋友都開始接觸 React ，我也推薦他們玩玩看 React Native ，我覺得 React 的入門門檻有些其實和 React 本身無關，像是 Webpack, Babel 等等都多少在無形中增加了入門的難度，且有許多範例可能還使用了 ES6 語法，雖然不是必要，但可能會造成初學者混淆、失去信心，使學習過程更不順利。
+然而 React Native 完">
+<meta name="twitter:image" content="https://i.imgur.com/dnaYgtL.png">
+    
+    
+        
+    
+    
+        <!-- <meta property="og:image" content="https://lh3.googleusercontent.com/88FDhLBFjY4kGdPJPmbJZYbKoa-A0CFRWA8CJFa2h49QCigrrjgr64NKKXl4X3Kmkiwhrj71bgNhX27ktYo3r_gyHBnxgEuPBEFlsjLl4JhvNBuHkQCryECYESdFcU5EaYq-01bDZbk0wu_F5FE3zlPp0TpCE9j9vAKgs6C8xyqnCWzS29DFSGWfxs7PO5nl2zoRON-NfFjgzcXk1yuP9TyEsvvkce58H3DRdww5X1xwWHhiCCfwkuxaeWBsU6C3bXQ9mtTzNjn02G7q1w-KFxgkhgwvkDNGKvJgzOIHOZsWQ2kPWU1J9miaxM5ekL9tYaI1I3H-zGob8GPrA3JQnB09yPB9YJrOh9NawhJ4mjDsjMysJFa-O-sQRojBN-mn8q5OBNPrstayomy1K0EtsR8k3qdttlfe8l1a26yib2kCEwHD_ovZP_menbKffaHMnVN2VNT3Ivf-I9Hl9s34PUr9IwHFkhKxLzuwqO5_Awk5P7Ye5pJO7C4FrdDhBUunuwI3WtKsftG-X-U8e5XDjsPym4YZSQA_PvP43eDPIb8ZdZsQbOkQ255ZI2HrCiafI18C=s874-no"/> -->
+    
+
+    
+
+    
+
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-0adefamlmvv28egr1y5cljrsrywnnwnqx6riua1bgmzd8eov2hp4lakoa4yq.min.css">
+    <!--STYLES END-->
+    
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-57006180-2']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+    
+    <link rel="canonical" href=" { { site.url } }{ { page.url } }" />
+    <script type="text/javascript">
+    var host = "blog.dmoon.space";
+    if ((host == window.location.host) && (window.location.protocol != "https:"))
+        window.location.protocol = "https";
+    </script>
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+            
+        
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">DMoon&#39;s Laputa</a>
+    </h1>
+    
+        
+            <a  class="header-right-picture "
+                href="#about">
+        
+        
+            <img class="header-picture" src="https://lh3.googleusercontent.com/88FDhLBFjY4kGdPJPmbJZYbKoa-A0CFRWA8CJFa2h49QCigrrjgr64NKKXl4X3Kmkiwhrj71bgNhX27ktYo3r_gyHBnxgEuPBEFlsjLl4JhvNBuHkQCryECYESdFcU5EaYq-01bDZbk0wu_F5FE3zlPp0TpCE9j9vAKgs6C8xyqnCWzS29DFSGWfxs7PO5nl2zoRON-NfFjgzcXk1yuP9TyEsvvkce58H3DRdww5X1xwWHhiCCfwkuxaeWBsU6C3bXQ9mtTzNjn02G7q1w-KFxgkhgwvkDNGKvJgzOIHOZsWQ2kPWU1J9miaxM5ekL9tYaI1I3H-zGob8GPrA3JQnB09yPB9YJrOh9NawhJ4mjDsjMysJFa-O-sQRojBN-mn8q5OBNPrstayomy1K0EtsR8k3qdttlfe8l1a26yib2kCEwHD_ovZP_menbKffaHMnVN2VNT3Ivf-I9Hl9s34PUr9IwHFkhKxLzuwqO5_Awk5P7Ye5pJO7C4FrdDhBUunuwI3WtKsftG-X-U8e5XDjsPym4YZSQA_PvP43eDPIb8ZdZsQbOkQ255ZI2HrCiafI18C=s874-no"/>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+
+        
+    
+
+<nav id="sidebar" data-behavior="3">
+    
+        <div class="sidebar-profile">
+            <a href="/#about">
+                    <img class="sidebar-profile-picture" src="https://lh3.googleusercontent.com/88FDhLBFjY4kGdPJPmbJZYbKoa-A0CFRWA8CJFa2h49QCigrrjgr64NKKXl4X3Kmkiwhrj71bgNhX27ktYo3r_gyHBnxgEuPBEFlsjLl4JhvNBuHkQCryECYESdFcU5EaYq-01bDZbk0wu_F5FE3zlPp0TpCE9j9vAKgs6C8xyqnCWzS29DFSGWfxs7PO5nl2zoRON-NfFjgzcXk1yuP9TyEsvvkce58H3DRdww5X1xwWHhiCCfwkuxaeWBsU6C3bXQ9mtTzNjn02G7q1w-KFxgkhgwvkDNGKvJgzOIHOZsWQ2kPWU1J9miaxM5ekL9tYaI1I3H-zGob8GPrA3JQnB09yPB9YJrOh9NawhJ4mjDsjMysJFa-O-sQRojBN-mn8q5OBNPrstayomy1K0EtsR8k3qdttlfe8l1a26yib2kCEwHD_ovZP_menbKffaHMnVN2VNT3Ivf-I9Hl9s34PUr9IwHFkhKxLzuwqO5_Awk5P7Ye5pJO7C4FrdDhBUunuwI3WtKsftG-X-U8e5XDjsPym4YZSQA_PvP43eDPIb8ZdZsQbOkQ255ZI2HrCiafI18C=s874-no"/>
+            </a>
+            <span class="sidebar-profile-name">DMoon</span>
+        </div>
+    
+    
+      
+        <ul class="sidebar-buttons button-link-block">
+          
+            <li class="sidebar-button">
+              
+                  <a  class="sidebar-button-link "
+                       href="/ "
+                      
+                  >
+              
+                  <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                  <span class="sidebar-button-desc">首頁</span>
+                  </a>
+            </li>
+          
+            <li class="sidebar-button">
+              
+                  <a  class="sidebar-button-link "
+                       href="/all-categories"
+                      
+                  >
+              
+                  <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                  <span class="sidebar-button-desc">分類</span>
+                  </a>
+            </li>
+          
+            <li class="sidebar-button">
+              
+                  <a  class="sidebar-button-link "
+                       href="/all-tags"
+                      
+                  >
+              
+                  <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                  <span class="sidebar-button-desc">標籤</span>
+                  </a>
+            </li>
+          
+            <li class="sidebar-button">
+              
+                  <a  class="sidebar-button-link "
+                       href="/all-archives"
+                      
+                  >
+              
+                  <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                  <span class="sidebar-button-desc">所有文章</span>
+                  </a>
+            </li>
+          
+            <li class="sidebar-button">
+              
+                  <a  class="sidebar-button-link "
+                       href="#about"
+                      
+                  >
+              
+                  <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                  <span class="sidebar-button-desc">關於</span>
+                  </a>
+            </li>
+          
+        </ul>
+      
+      
+    
+      
+      
+        <div class="sidebar-buttons flex-container space-around author_links">
+          
+            <!-- <li class="sidebar-button"> -->
+              
+                  <a  class="sidebar-button-link " href="https://github.com/kyoyadmoon" target="_blank">
+              
+                  <i class="sidebar-button-icon fa fa-lg fa-github" style="color: #ebebeb "></i>
+                  <!-- <span class="sidebar-button-desc">GitHub</span> -->
+                  </a>
+            <!-- </li> -->
+          
+            <!-- <li class="sidebar-button"> -->
+              
+                  <a  class="sidebar-button-link " href="https://www.facebook.com/dmoonhuang" target="_blank">
+              
+                  <i class="sidebar-button-icon fa fa-lg fa-facebook" style="color: #ebebeb "></i>
+                  <!-- <span class="sidebar-button-desc">Facebook</span> -->
+                  </a>
+            <!-- </li> -->
+          
+            <!-- <li class="sidebar-button"> -->
+              
+                  <a  target="_blank" class="sidebar-button-link "
+                       href="/atom.xml"
+                      
+                  >
+              
+                  <i class="sidebar-button-icon fa fa-lg fa-rss" style="color: #ebebeb "></i>
+                  <!-- <span class="sidebar-button-desc">RSS</span> -->
+                  </a>
+            <!-- </li> -->
+          
+        </ul>
+      
+    
+      
+      
+    
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        
+                         " >
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            React Native 初心者攻略 (OS X)
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Tue Apr 19 2016 00:05:03 GMT+0800">
+	
+		    4月 19, 2016
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/categories/React-Native/">React Native</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p><img src="https://i.imgur.com/dnaYgtL.png" alt="React Native"></p>
+<p>由於 React 的火熱程度，身邊許多朋友都開始接觸 React ，我也推薦他們玩玩看 React Native ，我覺得 React 的入門門檻有些其實和 React 本身無關，像是 Webpack, Babel 等等都多少在無形中增加了入門的難度，且有許多範例可能還使用了 ES6 語法，雖然不是必要，但可能會造成初學者混淆、失去信心，使學習過程更不順利。</p>
+<p>然而 React Native 完全就是一個超棒的東西，只要跟著官網的教學就可以很簡單的開始使用 React 撰寫跨平台的 App，不僅內建支援 ES6 ，還有 Live Reload , Hot Reloading 等強大功能, 甚至能在 Chrome 中 debug ，這些React Native 統統幫你包好了，省去了原先我們在 web 專案開發需要自行加入 webpack, babel 等等的處理過程。</p>
+<h2 id="環境建立"><a href="#環境建立" class="headerlink" title="環境建立"></a>環境建立</h2><p>相關環境安裝的部分跟著 <a href="http://reactnative.cn/docs/0.23/getting-started.html#环境需求" target="_blank" rel="external"><strong>官網的詳細指示</strong> (別擔心這裡有中文版) </a>操作就可以了，這部分就不多敘述</p>
+<h2 id="建立RN專案"><a href="#建立RN專案" class="headerlink" title="建立RN專案"></a>建立RN專案</h2><pre><code>$ npm install -g react-native-cli
+$ react-native init AwesomeProject
+</code></pre><h1 id="iOS"><a href="#iOS" class="headerlink" title="iOS"></a>iOS</h1><h2 id="環境準備"><a href="#環境準備" class="headerlink" title="環境準備"></a>環境準備</h2><p>安裝 Xcode 即可</p>
+<h2 id="專案開發"><a href="#專案開發" class="headerlink" title="專案開發"></a>專案開發</h2><p>有兩種方法</p>
+<p>第一種是使用 Xcode ：</p>
+<blockquote>
+<p>開啟專案目錄下的 <code>/ios/AwesomeProject.xcodeproj</code> （應該會以 Xcode 開啟）, 按左上角的播放圖示按鈕就會自動開啟 iPhone 模擬器和 Packager server ，並把專案 build 成 App 到模擬器中。</p>
+</blockquote>
+<p>另一種是開啟 terminal 切換到專案目錄</p>
+<blockquote>
+<p><code>$ react-native run-ios</code></p>
+<p>這個指令可以不用開啟 Xcode 做和上面同樣的事情，一個指令解決，非常簡潔</p>
+</blockquote>
+<p>接著你就可以開始編輯專案目錄下的 <code>index.ios.js</code> 開始開發你的專案。</p>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>在模擬器的 RN App 中你可以用快捷鍵 <code>cmd+D</code> 打開開發 Menu，這邊可以設定 Debug in Chrome, Live Reload, Hot Reloading 等等功能。</p>
+<p>若需要手動刷新可以使用熱鍵 <code>cmd+R</code></p>
+<p>另外，如果你有實體 Apple 裝置的話，也能夠直接在實體裝置上測試、開發</p>
+<ol>
+<li><p>將 Apple 裝置用USB線連接到電腦，並和電腦連接同一個 wifi</p>
+</li>
+<li><p>將專案用 Xcode 開啟（上面的第一種方法）</p>
+</li>
+<li><p>在 Xcode 左上角播放圖示的右方應該可以看到 寫著 Apple 裝置的選項，點按後選到自己的實體裝置</p>
+</li>
+<li><p>打開 Xcode 左邊檔案管理的導覽列 Tree View，找到 <code>AwesomeProject/AppDelegate.m</code> 這個檔案打開來
+可以在裡面找到這段，相信看到註解大家應該都知道要怎麼做了，把 localhost 換成電腦的 ip 就可以了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">* To run on device, change `localhost` to the IP address of your computer</div><div class="line">* (you can get this by typing `ifconfig` into the terminal and selecting the</div><div class="line">* `inet` value under `en0:`) and make sure your computer and iOS device are</div><div class="line">* on the same Wi-Fi network.</div><div class="line">*/</div><div class="line"></div><div class="line">jsCodeLocation = [NSURL URLWithString:@&quot;http://localhost:8081/index.ios.bundle?platform=ios&amp;dev=true&quot;];</div></pre></td></tr></table></figure>
+</li>
+<li><p>按下 Xcode 左上角的播放鍵開始 Run 囉</p>
+</li>
+</ol>
+<h1 id="Android-環境準備"><a href="#Android-環境準備" class="headerlink" title="Android 環境準備"></a>Android 環境準備</h1><p>由於目前我主要都是在 iOS 上開發， Android 部分還沒有很了解，如果有漏掉什麼還請各位大大提醒</p>
+<p>Android 在 OS X 上的環境準備相對 iOS 來說稍微麻煩一點，但也不難
+細心按照官方指示應該就能成功囉</p>
+<p><a href="http://reactnative.cn/docs/0.23/android-setup.html#content" target="_blank" rel="external">參考這裡</a></p>
+<h2 id="開發準備"><a href="#開發準備" class="headerlink" title="開發準備"></a>開發準備</h2><p>安裝完 Android SDK 和 Genymotion 之後</p>
+<p>先打開 Genymotion 創建一個模擬器啟動</p>
+<p>接著開啟 terminal 切到專案目錄下</p>
+<p><code>$ react-native run-android</code></p>
+<p>然後就可以編輯 <code>index.android.js</code> 開始開發了</p>
+<p>在模擬器中按下 menu 按鈕可以打開開發 Menu ，這邊可以設定 Debug in Chrome, Live Reload, Hot Reloading 等等功能。</p>
+<h1 id="如何使用別人寫好的-library-Package"><a href="#如何使用別人寫好的-library-Package" class="headerlink" title="如何使用別人寫好的 library, Package"></a>如何使用別人寫好的 library, Package</h1><p>我的同事 yaode 寫了一篇詳細完整的教學文章
+大家可以參考看看</p>
+<p><a href="http://trunk-studio.com/blog/react-native-how-to-use-component/" target="_blank" rel="external">http://trunk-studio.com/blog/react-native-how-to-use-component/</a></p>
+<p>記得有用到文章內的方法 link library 的話，是需要重新 build App 到模擬器才能正常運作的喔！（run-ios / run-android）</p>
+
+            
+                
+
+            
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">標籤</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/Android/">Android</a> <a class="tag tag--primary tag--small t-link" href="/tags/React/">React</a> <a class="tag tag--primary tag--small t-link" href="/tags/React-Native/">React Native</a> <a class="tag tag--primary tag--small t-link" href="/tags/iOS/">iOS</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/react-native-auto-ip-configuration/"  data-tooltip="React Native 進階開發配置-自動設定 IP">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/react-native-with-socketIO/" data-tooltip="React Native with Socket.io - error: evaluting &#39;navigator.userAgent.match&#39;">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://blog.dmoon.space/react-native-101/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.dmoon.space/react-native-101/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://blog.dmoon.space/react-native-101/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            
+                <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2017 DMoon. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/react-native-auto-ip-configuration/"  data-tooltip="React Native 進階開發配置-自動設定 IP">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/react-native-with-socketIO/" data-tooltip="React Native with Socket.io - error: evaluting &#39;navigator.userAgent.match&#39;">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://blog.dmoon.space/react-native-101/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.dmoon.space/react-native-101/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://blog.dmoon.space/react-native-101/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://blog.dmoon.space/react-native-101/">
+                <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.dmoon.space/react-native-101/">
+                <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://blog.dmoon.space/react-native-101/">
+                <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        
+
+
+    
+        
+    
+
+<div id="about">
+    <div id="about-card" class="frosted-glass">
+        <div >
+          <div id="about-btn-close">
+              <i class="fa fa-remove"></i>
+          </div>
+          
+              <img id="about-card-picture" src="https://lh3.googleusercontent.com/88FDhLBFjY4kGdPJPmbJZYbKoa-A0CFRWA8CJFa2h49QCigrrjgr64NKKXl4X3Kmkiwhrj71bgNhX27ktYo3r_gyHBnxgEuPBEFlsjLl4JhvNBuHkQCryECYESdFcU5EaYq-01bDZbk0wu_F5FE3zlPp0TpCE9j9vAKgs6C8xyqnCWzS29DFSGWfxs7PO5nl2zoRON-NfFjgzcXk1yuP9TyEsvvkce58H3DRdww5X1xwWHhiCCfwkuxaeWBsU6C3bXQ9mtTzNjn02G7q1w-KFxgkhgwvkDNGKvJgzOIHOZsWQ2kPWU1J9miaxM5ekL9tYaI1I3H-zGob8GPrA3JQnB09yPB9YJrOh9NawhJ4mjDsjMysJFa-O-sQRojBN-mn8q5OBNPrstayomy1K0EtsR8k3qdttlfe8l1a26yib2kCEwHD_ovZP_menbKffaHMnVN2VNT3Ivf-I9Hl9s34PUr9IwHFkhKxLzuwqO5_Awk5P7Ye5pJO7C4FrdDhBUunuwI3WtKsftG-X-U8e5XDjsPym4YZSQA_PvP43eDPIb8ZdZsQbOkQ255ZI2HrCiafI18C=s874-no"/>
+          
+              <h4 id="about-card-name">DMoon</h4>
+          
+              <h5 id="about-card-bio"><p>熱愛科技的資工系學生，喜歡學習新的技術</p>
+<p>目前主要開發 Web APP</p>
+<p>較熟悉的技術是 Node.JS / React.JS</p>
+</h5>
+          
+          
+              <h5 id="about-card-job">
+                  <i class="fa fa-briefcase"></i>
+                  <br/>
+                  <p>學生 / 創科資訊實習生</p>
+
+              </h5>
+          
+          
+              <h5 id="about-card-location">
+                  <i class="fa fa-map-marker"></i>
+                  <br/>
+                  Taichung, Taiwan
+              </h5>
+          
+        </div>
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('/assets/images/cover3.jpeg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/scrip-rqqlj6b7v5ivwny6sgniqsu72gtrtvjnmmxventm0z3dqdq1ipz7ouqtm6yx.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+        <script>
+             var disqus_config = function () {
+                 this.page.url = 'https://blog.dmoon.space/react-native-101/';
+                 
+                    this.page.identifier = 'react-native-101/';
+                                  
+             };
+            (function() {
+                var d = document, s = d.createElement('script');
+                var disqus_shortname = 'dmoonlaputa';
+                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+
+
+
+</html>

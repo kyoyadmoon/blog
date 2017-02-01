@@ -227,7 +227,67 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
-                        <a class="link-unstyled" href="/2016/02/23/iOS-App-Deploy-Signing-Failed/">
+                        <a class="link-unstyled" href="/free-to-import-react/">
+                            Webpack ProvidePlugin : 不用再 import React 了
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Tue Feb 23 2016 00:35:32 GMT+0800">
+	
+		    2月 23, 2016
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/categories/Front-end-Tool/">Front-end Tool</a>
+
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <hr>
+<p>從前可能需要每個檔案都自己人工 import jquery、react</p>
+<p>現在透過 webpack 的 ProvidePlugin 可以幫你將 dependency 自動 import</p>
+<p>不只是 react , jquery  或其他 lib 都可以使用</p>
+<h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><p>把 ProvidePlugin 加到 webpack.config.js 的 plugins</p>
+<p>example</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> webpack.ProvidePlugin(&#123;</div><div class="line">    <span class="string">'React'</span>: <span class="string">'react'</span>,</div><div class="line">          <span class="attr">$</span>: <span class="string">"jquery"</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>原理是 webpack 在 build bundle.js 時，如果發現 &#39;React&#39; 、 $ ，就會自動去 import 設定中對應的 dependency</p>
+<p>例如 使用 React 時</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">React.createClass()</div></pre></td></tr></table></figure>
+<p>就會自動去 import react</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://webpack.github.io/docs/list-of-plugins.html#provideplugin" target="_blank" rel="external">官方文件</a></p>
+<p><a href="https://medium.com/@thejenniekim/never-import-react-from-react-again-thanks-to-webpack-s-provideplugin-69e7feb69e#.o6x19nno8" target="_blank" rel="external">https://medium.com/@thejenniekim/never-import-react-from-react-again-thanks-to-webpack-s-provideplugin-69e7feb69e#.o6x19nno8</a></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/free-to-import-react/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/iOS-App-Deploy-Signing-Failed/">
                             iOS Deploy 證書簽發者無效 Failed to locate or generate matching signing assets
                         </a>
                     
@@ -267,7 +327,7 @@
                     
                     
                         <p>
-                            <a href="/2016/02/23/iOS-App-Deploy-Signing-Failed/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/iOS-App-Deploy-Signing-Failed/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>
@@ -284,7 +344,7 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
-                        <a class="link-unstyled" href="/2016/02/21/github-blog-build-with-hexo/">
+                        <a class="link-unstyled" href="/github-blog-build-with-hexo/">
                             Github Blog 架設 - Hexo
                         </a>
                     
@@ -360,7 +420,7 @@
                     
                     
                         <p>
-                            <a href="/2016/02/21/github-blog-build-with-hexo/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/github-blog-build-with-hexo/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>

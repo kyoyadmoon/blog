@@ -1,0 +1,572 @@
+
+<!DOCTYPE html>
+<html lang="zh-tw">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="DMoon&#39;s Laputa">
+    <title>React Native 進階開發配置-自動設定 IP - DMoon&#39;s Laputa</title>
+    <meta name="author" content="DMoon">
+    
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <meta name="description" content="在上一篇 React Native 初心者攻略 中有說明如何在實體 iPhone 上開發
+透過 AppDelegate.m 這個檔案我們可以將 localhost 手動更改成電腦 ip 來達到實機測試的目的
+但是這樣的開發方式有幾個缺點
+
+
+需要經常手動去做更改，尤其當你是使用筆電，甚至是和其他人共同開發的狀況，就會常常在 merge 時衝突，除非團隊都使用 localhost 以 simula">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="React Native 進階開發配置-自動設定 IP">
+<meta property="og:url" content="https://blog.dmoon.space/react-native-auto-ip-configuration/index.html">
+<meta property="og:site_name" content="DMoon's Laputa">
+<meta property="og:description" content="在上一篇 React Native 初心者攻略 中有說明如何在實體 iPhone 上開發
+透過 AppDelegate.m 這個檔案我們可以將 localhost 手動更改成電腦 ip 來達到實機測試的目的
+但是這樣的開發方式有幾個缺點
+
+
+需要經常手動去做更改，尤其當你是使用筆電，甚至是和其他人共同開發的狀況，就會常常在 merge 時衝突，除非團隊都使用 localhost 以 simula">
+<meta property="og:image" content="https://softnshare.files.wordpress.com/2016/04/corporate-image-1.png?w=1000&h=545&crop=1">
+<meta property="og:image" content="https://blog.dmoon.space/react-native-auto-ip-configuration/addScript.png">
+<meta property="og:image" content="https://blog.dmoon.space/react-native-auto-ip-configuration/editScript.png">
+<meta property="og:image" content="https://blog.dmoon.space/react-native-auto-ip-configuration/addedScript.png">
+<meta property="og:image" content="https://blog.dmoon.space/react-native-auto-ip-configuration/AppDelegate.png">
+<meta property="og:image" content="https://blog.dmoon.space/react-native-auto-ip-configuration/RCTWebSocketExecutor.png">
+<meta property="og:updated_time" content="2016-04-28T01:47:43.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React Native 進階開發配置-自動設定 IP">
+<meta name="twitter:description" content="在上一篇 React Native 初心者攻略 中有說明如何在實體 iPhone 上開發
+透過 AppDelegate.m 這個檔案我們可以將 localhost 手動更改成電腦 ip 來達到實機測試的目的
+但是這樣的開發方式有幾個缺點
+
+
+需要經常手動去做更改，尤其當你是使用筆電，甚至是和其他人共同開發的狀況，就會常常在 merge 時衝突，除非團隊都使用 localhost 以 simula">
+<meta name="twitter:image" content="https://softnshare.files.wordpress.com/2016/04/corporate-image-1.png?w=1000&h=545&crop=1">
+    
+    
+        
+    
+    
+        <!-- <meta property="og:image" content="https://lh3.googleusercontent.com/88FDhLBFjY4kGdPJPmbJZYbKoa-A0CFRWA8CJFa2h49QCigrrjgr64NKKXl4X3Kmkiwhrj71bgNhX27ktYo3r_gyHBnxgEuPBEFlsjLl4JhvNBuHkQCryECYESdFcU5EaYq-01bDZbk0wu_F5FE3zlPp0TpCE9j9vAKgs6C8xyqnCWzS29DFSGWfxs7PO5nl2zoRON-NfFjgzcXk1yuP9TyEsvvkce58H3DRdww5X1xwWHhiCCfwkuxaeWBsU6C3bXQ9mtTzNjn02G7q1w-KFxgkhgwvkDNGKvJgzOIHOZsWQ2kPWU1J9miaxM5ekL9tYaI1I3H-zGob8GPrA3JQnB09yPB9YJrOh9NawhJ4mjDsjMysJFa-O-sQRojBN-mn8q5OBNPrstayomy1K0EtsR8k3qdttlfe8l1a26yib2kCEwHD_ovZP_menbKffaHMnVN2VNT3Ivf-I9Hl9s34PUr9IwHFkhKxLzuwqO5_Awk5P7Ye5pJO7C4FrdDhBUunuwI3WtKsftG-X-U8e5XDjsPym4YZSQA_PvP43eDPIb8ZdZsQbOkQ255ZI2HrCiafI18C=s874-no"/> -->
+    
+
+    
+
+    
+
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-0adefamlmvv28egr1y5cljrsrywnnwnqx6riua1bgmzd8eov2hp4lakoa4yq.min.css">
+    <!--STYLES END-->
+    
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-57006180-2']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+    
+    <link rel="canonical" href=" { { site.url } }{ { page.url } }" />
+    <script type="text/javascript">
+    var host = "blog.dmoon.space";
+    if ((host == window.location.host) && (window.location.protocol != "https:"))
+        window.location.protocol = "https";
+    </script>
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+            
+        
+    
+
+<header id="header" data-behavior="3">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="/ ">DMoon&#39;s Laputa</a>
+    </h1>
+    
+        
+            <a  class="header-right-picture "
+                href="#about">
+        
+        
+            <img class="header-picture" src="https://lh3.googleusercontent.com/88FDhLBFjY4kGdPJPmbJZYbKoa-A0CFRWA8CJFa2h49QCigrrjgr64NKKXl4X3Kmkiwhrj71bgNhX27ktYo3r_gyHBnxgEuPBEFlsjLl4JhvNBuHkQCryECYESdFcU5EaYq-01bDZbk0wu_F5FE3zlPp0TpCE9j9vAKgs6C8xyqnCWzS29DFSGWfxs7PO5nl2zoRON-NfFjgzcXk1yuP9TyEsvvkce58H3DRdww5X1xwWHhiCCfwkuxaeWBsU6C3bXQ9mtTzNjn02G7q1w-KFxgkhgwvkDNGKvJgzOIHOZsWQ2kPWU1J9miaxM5ekL9tYaI1I3H-zGob8GPrA3JQnB09yPB9YJrOh9NawhJ4mjDsjMysJFa-O-sQRojBN-mn8q5OBNPrstayomy1K0EtsR8k3qdttlfe8l1a26yib2kCEwHD_ovZP_menbKffaHMnVN2VNT3Ivf-I9Hl9s34PUr9IwHFkhKxLzuwqO5_Awk5P7Ye5pJO7C4FrdDhBUunuwI3WtKsftG-X-U8e5XDjsPym4YZSQA_PvP43eDPIb8ZdZsQbOkQ255ZI2HrCiafI18C=s874-no"/>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+
+        
+    
+
+<nav id="sidebar" data-behavior="3">
+    
+        <div class="sidebar-profile">
+            <a href="/#about">
+                    <img class="sidebar-profile-picture" src="https://lh3.googleusercontent.com/88FDhLBFjY4kGdPJPmbJZYbKoa-A0CFRWA8CJFa2h49QCigrrjgr64NKKXl4X3Kmkiwhrj71bgNhX27ktYo3r_gyHBnxgEuPBEFlsjLl4JhvNBuHkQCryECYESdFcU5EaYq-01bDZbk0wu_F5FE3zlPp0TpCE9j9vAKgs6C8xyqnCWzS29DFSGWfxs7PO5nl2zoRON-NfFjgzcXk1yuP9TyEsvvkce58H3DRdww5X1xwWHhiCCfwkuxaeWBsU6C3bXQ9mtTzNjn02G7q1w-KFxgkhgwvkDNGKvJgzOIHOZsWQ2kPWU1J9miaxM5ekL9tYaI1I3H-zGob8GPrA3JQnB09yPB9YJrOh9NawhJ4mjDsjMysJFa-O-sQRojBN-mn8q5OBNPrstayomy1K0EtsR8k3qdttlfe8l1a26yib2kCEwHD_ovZP_menbKffaHMnVN2VNT3Ivf-I9Hl9s34PUr9IwHFkhKxLzuwqO5_Awk5P7Ye5pJO7C4FrdDhBUunuwI3WtKsftG-X-U8e5XDjsPym4YZSQA_PvP43eDPIb8ZdZsQbOkQ255ZI2HrCiafI18C=s874-no"/>
+            </a>
+            <span class="sidebar-profile-name">DMoon</span>
+        </div>
+    
+    
+      
+        <ul class="sidebar-buttons button-link-block">
+          
+            <li class="sidebar-button">
+              
+                  <a  class="sidebar-button-link "
+                       href="/ "
+                      
+                  >
+              
+                  <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                  <span class="sidebar-button-desc">首頁</span>
+                  </a>
+            </li>
+          
+            <li class="sidebar-button">
+              
+                  <a  class="sidebar-button-link "
+                       href="/all-categories"
+                      
+                  >
+              
+                  <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                  <span class="sidebar-button-desc">分類</span>
+                  </a>
+            </li>
+          
+            <li class="sidebar-button">
+              
+                  <a  class="sidebar-button-link "
+                       href="/all-tags"
+                      
+                  >
+              
+                  <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                  <span class="sidebar-button-desc">標籤</span>
+                  </a>
+            </li>
+          
+            <li class="sidebar-button">
+              
+                  <a  class="sidebar-button-link "
+                       href="/all-archives"
+                      
+                  >
+              
+                  <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                  <span class="sidebar-button-desc">所有文章</span>
+                  </a>
+            </li>
+          
+            <li class="sidebar-button">
+              
+                  <a  class="sidebar-button-link "
+                       href="#about"
+                      
+                  >
+              
+                  <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                  <span class="sidebar-button-desc">關於</span>
+                  </a>
+            </li>
+          
+        </ul>
+      
+      
+    
+      
+      
+        <div class="sidebar-buttons flex-container space-around author_links">
+          
+            <!-- <li class="sidebar-button"> -->
+              
+                  <a  class="sidebar-button-link " href="https://github.com/kyoyadmoon" target="_blank">
+              
+                  <i class="sidebar-button-icon fa fa-lg fa-github" style="color: #ebebeb "></i>
+                  <!-- <span class="sidebar-button-desc">GitHub</span> -->
+                  </a>
+            <!-- </li> -->
+          
+            <!-- <li class="sidebar-button"> -->
+              
+                  <a  class="sidebar-button-link " href="https://www.facebook.com/dmoonhuang" target="_blank">
+              
+                  <i class="sidebar-button-icon fa fa-lg fa-facebook" style="color: #ebebeb "></i>
+                  <!-- <span class="sidebar-button-desc">Facebook</span> -->
+                  </a>
+            <!-- </li> -->
+          
+            <!-- <li class="sidebar-button"> -->
+              
+                  <a  target="_blank" class="sidebar-button-link "
+                       href="/atom.xml"
+                      
+                  >
+              
+                  <i class="sidebar-button-icon fa fa-lg fa-rss" style="color: #ebebeb "></i>
+                  <!-- <span class="sidebar-button-desc">RSS</span> -->
+                  </a>
+            <!-- </li> -->
+          
+        </ul>
+      
+    
+      
+      
+    
+</nav>
+
+            
+            <div id="main" data-behavior="3"
+                 class="
+                        hasCoverMetaIn
+                        
+                         " >
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            React Native 進階開發配置-自動設定 IP
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" content="Wed Apr 27 2016 20:57:40 GMT+0800">
+	
+		    4月 27, 2016
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/categories/React-Native/">React Native</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p><img src="https://softnshare.files.wordpress.com/2016/04/corporate-image-1.png?w=1000&amp;h=545&amp;crop=1" alt="React Native"></p>
+<p>在上一篇 <a href="http://kyoyadmoon.github.io/blog/2016/04/19/react-native-101/" target="_blank" rel="external">React Native 初心者攻略</a> 中有說明如何在實體 iPhone 上開發</p>
+<p>透過 <code>AppDelegate.m</code> 這個檔案我們可以將 localhost 手動更改成電腦 ip 來達到實機測試的目的</p>
+<p>但是這樣的開發方式有幾個缺點</p>
+<blockquote>
+<ol>
+<li>需要經常手動去做更改，尤其當你是使用筆電，甚至是和其他人共同開發的狀況，就會常常在 merge 時衝突，除非團隊都使用 localhost 以 simulator 進行開發</li>
+<li>沒辦法在實體機器上 Debug in Chrome</li>
+</ol>
+</blockquote>
+<p>在開發一段時間後，實在受不了，好在找到了自動設定的方法</p>
+<p><code>透過 shell script 抓取電腦的 IP 後，寫入到專案</code></p>
+<h1 id="設置方法"><a href="#設置方法" class="headerlink" title="設置方法"></a>設置方法</h1><h2 id="抓取電腦-IP"><a href="#抓取電腦-IP" class="headerlink" title="抓取電腦 IP"></a>抓取電腦 IP</h2><p>我們需要先寫出能夠抓取電腦 IP 的指令</p>
+<p>網路上大多使用這個指令，可以先填到 terminal 執行看看，確認 IP 是否正確</p>
+<blockquote>
+<p><code>ifconfig | grep inet\ | tail -1 | cut -d &quot; &quot; -f 2</code></p>
+</blockquote>
+<p>但是因為我們專案後端 server 有使用到 docker ，使用上面 command 抓到的是錯誤的 IP</p>
+<p>所以我需要改成這樣</p>
+<blockquote>
+<p><code>ifconfig | grep -Eo &#39;inet (addr:)?([0-9]*\.){3}[0-9]*&#39; | grep -Eo &#39;([0-9]*\.){3}[0-9]*&#39; | grep -v &#39;127.0.0.1&#39; | head -1</code></p>
+</blockquote>
+<p>OK 我們現在能夠拿到正確的 IP 了</p>
+<h2 id="Add-Run-Script"><a href="#Add-Run-Script" class="headerlink" title="Add Run Script"></a>Add Run Script</h2><p>再來我們需要設定在專案執行時執行一段 shell script 去抓取 IP 寫入到專案中</p>
+<p>照著圖中藍色 focus 的地方找到 <code>Build Phases</code></p>
+<img src="/react-native-auto-ip-configuration/addScript.png" alt="addScript.png" title="">
+<p>新增一個 Run Script 後的畫面</p>
+<img src="/react-native-auto-ip-configuration/editScript.png" alt="editScript.png" title="">
+<p>接下來就是填入主角 script  了</p>
+<p>下面的 script 會在專案的 INFOPLIST 裡新增一個 SERVER_IP 的欄位，並把 IP 寫入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">INFOPLIST=&quot;$&#123;TARGET_BUILD_DIR&#125;/$&#123;INFOPLIST_PATH&#125;&quot;</div><div class="line">echo &quot;writing to $INFOPLIST&quot;</div><div class="line">PLISTCMD=&quot;Add :SERVER_IP string $(ifconfig | grep -Eo &apos;inet (addr:)?([0-9]*\.)&#123;3&#125;[0-9]*&apos; | grep -Eo &apos;([0-9]*\.)&#123;3&#125;[0-9]*&apos; | grep -v &apos;127.0.0.1&apos; | head -1)&quot;</div><div class="line">echo -n &quot;$INFOPLIST&quot; | xargs -0 /usr/libexec/PlistBuddy -c &quot;$PLISTCMD&quot; || true</div><div class="line">PLISTCMD=&quot;Set :SERVER_IP $(ifconfig | grep -Eo &apos;inet (addr:)?([0-9]*\.)&#123;3&#125;[0-9]*&apos; | grep -Eo &apos;([0-9]*\.)&#123;3&#125;[0-9]*&apos; | grep -v &apos;127.0.0.1&apos; | head -1)&quot;</div><div class="line">echo -n &quot;$INFOPLIST&quot; | xargs -0 /usr/libexec/PlistBuddy -c &quot;$PLISTCMD&quot; || true</div></pre></td></tr></table></figure>
+<p>填好之後會像這樣</p>
+<img src="/react-native-auto-ip-configuration/addedScript.png" alt="addedScript.png" title="">
+<h2 id="在-AppDelegate-m-讀取-SERVER-IP"><a href="#在-AppDelegate-m-讀取-SERVER-IP" class="headerlink" title="在 AppDelegate.m 讀取 SERVER_IP"></a>在 <code>AppDelegate.m</code> 讀取 SERVER_IP</h2><p>打開 <code>AppDelegate.m</code> </p>
+<p>將原本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jsCodeLocation = [NSURL URLWithString:@&quot;http://localhost:8081/index.ios.bundle?platform=ios&amp;dev=true&quot;];</div></pre></td></tr></table></figure>
+<p>替換成能夠動態改變 SERVER_IP 的 code</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">NSString *serverIP = [[NSBundle mainBundle] objectForInfoDictionaryKey:@&quot;SERVER_IP&quot;];</div><div class="line">NSString *jsCodeUrlString = [NSString stringWithFormat:@&quot;http://%@:8081/index.ios.bundle?platform=ios&amp;dev=true&quot;, serverIP];</div><div class="line">NSString *jsBundleUrlString = [jsCodeUrlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];</div><div class="line">jsCodeLocation = [NSURL URLWithString:jsBundleUrlString];</div></pre></td></tr></table></figure>
+<img src="/react-native-auto-ip-configuration/AppDelegate.png" alt="AppDelegate.png" title="">
+<p>這時候你可以測試看看 simulator 和 real device 上是不是都能正常運作，可以的話就成功囉！</p>
+<h2 id="Debug-in-Chrome-on-Real-Device"><a href="#Debug-in-Chrome-on-Real-Device" class="headerlink" title="Debug in Chrome on Real Device"></a>Debug in Chrome on Real Device</h2><p>找到 <code>RCTWebSocketExecutor.ｍ</code> 的 setUp</p>
+<img src="/react-native-auto-ip-configuration/RCTWebSocketExecutor.png" alt="RCTWebSocketExecutor.png" title="">
+<p>將這行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">NSString *URLString = [NSString stringWithFormat:@&quot;http://localhost:%zd/debugger-proxy?role=client&quot;, port];</div></pre></td></tr></table></figure>
+<p>替換成</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">NSString *serverIP = [[NSBundle mainBundle] objectForInfoDictionaryKey:@&quot;SERVER_IP&quot;];</div><div class="line">NSString *URLString = [NSString stringWithFormat:@&quot;http://%@:%zd/debugger-proxy?role=client&quot;, serverIP, port];</div></pre></td></tr></table></figure>
+<p>這邊一樣是將 localhost 改成 SERVER_IP</p>
+<p>實體裝置就能透過 wifi 在電腦的 chrome 上進行 debug 了，趕快試試看！</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://moduscreate.com/automated-ip-configuration-for-react-native-development/" target="_blank" rel="external">http://moduscreate.com/automated-ip-configuration-for-react-native-development/</a></p>
+
+            
+                
+
+            
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">標籤</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/React-Native/">React Native</a> <a class="tag tag--primary tag--small t-link" href="/tags/iOS/">iOS</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/Retina-Display-AntiReflective-Coating-Damage/"  data-tooltip="Macbook Pro Retina 螢幕鍍膜剝落送修心得">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/react-native-101/" data-tooltip="React Native 初心者攻略 (OS X)">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://blog.dmoon.space/react-native-auto-ip-configuration/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.dmoon.space/react-native-auto-ip-configuration/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://blog.dmoon.space/react-native-auto-ip-configuration/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+            
+                <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2017 DMoon. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/Retina-Display-AntiReflective-Coating-Damage/"  data-tooltip="Macbook Pro Retina 螢幕鍍膜剝落送修心得">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/react-native-101/" data-tooltip="React Native 初心者攻略 (OS X)">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://blog.dmoon.space/react-native-auto-ip-configuration/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.dmoon.space/react-native-auto-ip-configuration/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://blog.dmoon.space/react-native-auto-ip-configuration/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://blog.dmoon.space/react-native-auto-ip-configuration/">
+                <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.dmoon.space/react-native-auto-ip-configuration/">
+                <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://blog.dmoon.space/react-native-auto-ip-configuration/">
+                <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+            
+        </div>
+        
+
+
+    
+        
+    
+
+<div id="about">
+    <div id="about-card" class="frosted-glass">
+        <div >
+          <div id="about-btn-close">
+              <i class="fa fa-remove"></i>
+          </div>
+          
+              <img id="about-card-picture" src="https://lh3.googleusercontent.com/88FDhLBFjY4kGdPJPmbJZYbKoa-A0CFRWA8CJFa2h49QCigrrjgr64NKKXl4X3Kmkiwhrj71bgNhX27ktYo3r_gyHBnxgEuPBEFlsjLl4JhvNBuHkQCryECYESdFcU5EaYq-01bDZbk0wu_F5FE3zlPp0TpCE9j9vAKgs6C8xyqnCWzS29DFSGWfxs7PO5nl2zoRON-NfFjgzcXk1yuP9TyEsvvkce58H3DRdww5X1xwWHhiCCfwkuxaeWBsU6C3bXQ9mtTzNjn02G7q1w-KFxgkhgwvkDNGKvJgzOIHOZsWQ2kPWU1J9miaxM5ekL9tYaI1I3H-zGob8GPrA3JQnB09yPB9YJrOh9NawhJ4mjDsjMysJFa-O-sQRojBN-mn8q5OBNPrstayomy1K0EtsR8k3qdttlfe8l1a26yib2kCEwHD_ovZP_menbKffaHMnVN2VNT3Ivf-I9Hl9s34PUr9IwHFkhKxLzuwqO5_Awk5P7Ye5pJO7C4FrdDhBUunuwI3WtKsftG-X-U8e5XDjsPym4YZSQA_PvP43eDPIb8ZdZsQbOkQ255ZI2HrCiafI18C=s874-no"/>
+          
+              <h4 id="about-card-name">DMoon</h4>
+          
+              <h5 id="about-card-bio"><p>熱愛科技的資工系學生，喜歡學習新的技術</p>
+<p>目前主要開發 Web APP</p>
+<p>較熟悉的技術是 Node.JS / React.JS</p>
+</h5>
+          
+          
+              <h5 id="about-card-job">
+                  <i class="fa fa-briefcase"></i>
+                  <br/>
+                  <p>學生 / 創科資訊實習生</p>
+
+              </h5>
+          
+          
+              <h5 id="about-card-location">
+                  <i class="fa fa-map-marker"></i>
+                  <br/>
+                  Taichung, Taiwan
+              </h5>
+          
+        </div>
+    </div>
+</div>
+
+        
+<div id="cover" style="background-image:url('/assets/images/cover3.jpeg');"></div>
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/scrip-rqqlj6b7v5ivwny6sgniqsu72gtrtvjnmmxventm0z3dqdq1ipz7ouqtm6yx.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+        <script>
+             var disqus_config = function () {
+                 this.page.url = 'https://blog.dmoon.space/react-native-auto-ip-configuration/';
+                 
+                    this.page.identifier = 'react-native-auto-ip-configuration/';
+                                  
+             };
+            (function() {
+                var d = document, s = d.createElement('script');
+                var disqus_shortname = 'dmoonlaputa';
+                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+
+
+
+</html>
