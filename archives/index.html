@@ -227,6 +227,125 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/react-native-integrate-with-code-push/">
+                            react-native-integrate-with-code-push
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Sun Feb 19 2017 18:16:36 GMT+0800">
+	
+		    2月 19, 2017
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/categories/React-Native/">React Native</a>
+
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h1 id="React-Native-CodePush-偷天換日術"><a href="#React-Native-CodePush-偷天換日術" class="headerlink" title="React Native CodePush 偷天換日術"></a>React Native CodePush 偷天換日術</h1><h1 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h1><p>CodePush是一個雲服務，它能讓Cordova和React Native的開發者將手機應用的更新直接部署到用戶的設備上。 它擔任類似中間倉庫的角色，開發者可以把更新（JS，HTML，CSS和圖片）發佈到這個倉庫上，然後那些Apps就能查詢到更新了。</p>
+<h1 id="Setup-CodePush-Service"><a href="#Setup-CodePush-Service" class="headerlink" title="Setup CodePush Service"></a>Setup CodePush Service</h1><p>首先我們先從 CodePush 服務的準備開始～～</p>
+<h2 id="Install-CodePush-Management-CLI"><a href="#Install-CodePush-Management-CLI" class="headerlink" title="Install CodePush Management CLI"></a>Install CodePush Management CLI</h2><p>首先我們需要安裝 <a href="https://github.com/Microsoft/code-push/tree/master/cli" target="_blank" rel="external">CodePush CLI</a></p>
+<p><code>$ npm install -g code-push-cli</code></p>
+<p>安裝完後察看版本確認安裝成功</p>
+<p><code>$ code-push -v</code></p>
+<h2 id="Register-amp-Login-CodePush"><a href="#Register-amp-Login-CodePush" class="headerlink" title="Register &amp; Login CodePush"></a>Register &amp; Login CodePush</h2><p><code>$ code-push register</code></p>
+<p>執行後會開啟網頁讓你進行註冊，並在 terminal 要求填入 access key</p>
+<p>可以直接透過網頁以微軟或Github帳號做第三方登入進行授權</p>
+<p>註冊登入後頁面會給你 access key </p>
+<p>此時複製回到 terminal 貼上</p>
+<ul>
+<li>登入：<code>$ code-push login</code> </li>
+<li>登出：<code>$ code-push loout</code> </li>
+</ul>
+<h2 id="Add-new-App"><a href="#Add-new-App" class="headerlink" title="Add new App"></a>Add new App</h2><p><code>$ code-push app add &lt;appName&gt;</code></p>
+<p>新增完後透過 ls 指令確認新增成功</p>
+<p>新增的 App 將會有兩個預設的環境</p>
+<ul>
+<li><p>Staging</p>
+</li>
+<li><p>Production</p>
+<p>​</p>
+</li>
+</ul>
+<h2 id="Get-Deployment-Key-Of-App"><a href="#Get-Deployment-Key-Of-App" class="headerlink" title="Get Deployment Key Of App"></a>Get Deployment Key Of App</h2><p><code>$ code-push deployment ls &lt;appName&gt; -k</code></p>
+<p>就能看見該 App 所有部署環境的 deplyment key</p>
+<h1 id="React-Native-Code-Push-整合"><a href="#React-Native-Code-Push-整合" class="headerlink" title="React-Native-Code-Push 整合"></a>React-Native-Code-Push 整合</h1><ul>
+<li><a href="https://github.com/Microsoft/react-native-code-push#getting-started" target="_blank" rel="external">Official Docs</a></li>
+</ul>
+<p>文件寫得非常詳細簡單，Step by step 照著文件作就可以</p>
+<p>這邊簡單說明流程</p>
+<p>由於不同的 React Native 版本所需要做的配置略有不同</p>
+<p>這邊以 React Native v0.41.2 為例</p>
+<ol>
+<li><p>安裝 react-native-code-push : </p>
+<p><code>$ npm install --save react-native-code-push@latest</code> 
+<a href="https://github.com/Microsoft/react-native-code-push#supported-react-native-platforms" target="_blank" rel="external">點一下這邊</a> 確認 RN 版本和套件支援的版本相依性 </p>
+</li>
+<li><p>安裝完後，接下來需要 link</p>
+<p>由於 React Native 版本在 0.27 之後，已經將 <code>rnpm link</code> 合併到 <code>React Native CLI</code></p>
+<p>直接使用</p>
+<p><code>$ react-native link react-native-code-push</code></p>
+<p>0.27 以下的版本則可以透過 <code>$ rnpm link</code> 設置，詳細可以參考 <a href="https://github.com/Microsoft/react-native-code-push#getting-started" target="_blank" rel="external">Setup</a></p>
+</li>
+<li><p>安裝完後還需要做兩個整合的動作 (這邊的設置方式對應不同的 RN 版本也有差異)</p>
+<ul>
+<li><p>設定 deployment key 到專案中</p>
+<ul>
+<li><p>Android :</p>
+<p>編輯 <code>android/app/src/main/java/com/&lt;ProjectName&gt;/MainApplication.java</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> List&lt;ReactPackage&gt; <span class="title">getPackages</span><span class="params">()</span> </span>&#123;</div><div class="line">      <span class="keyword">return</span> Arrays.&lt;ReactPackage&gt;asList(</div><div class="line">          <span class="keyword">new</span> MainReactPackage(),</div><div class="line">            <span class="keyword">new</span> CodePush(<span class="string">"Deployment_Key"</span>, getApplicationContext(), BuildConfig.DEBUG)</div><div class="line">      );</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>填入 app 的 deployment key</p>
+</li>
+<li><p>iOS :</p>
+<p>在 <code>ios/&lt;Project_Name&gt;/info.plist</code> 中 </p>
+<p>可以看見 <code>CodePushDeploymentKey</code> 欄位，在 value 欄填入 deployment key 即可</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>最後是整合 JS 的部分</p>
+<p>使用 HOC (Higher Order Component) 的方式就能快速的整合到你的 App 中了</p>
+<p>程式碼如下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> codePush <span class="keyword">from</span> <span class="string">"react-native-code-push"</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyApp</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line">MyApp = codePush(MyApp);</div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ol>
+<h1 id="進行更新"><a href="#進行更新" class="headerlink" title="進行更新"></a>進行更新</h1><p>release-react 是專門更新 React Native 專案的指令</p>
+<p>會自動將目前檔案產生 bundle 並上傳更新版本到 CodePush 的雲端上</p>
+<p><code>$ code-push release-react &lt;appName&gt;  &lt;platform&gt;</code></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/react-native-integrate-with-code-push/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/github-pages-with-free-ssl/">
                             Github Pages 免費 ssl 設定 - 輕鬆擁有 https 綠鎖頭 (2)
                         </a>
@@ -870,80 +989,6 @@ $ react-native init AwesomeProject
                     
                         <p>
                             <a href="/GWT-vs-UTC-diff-and-Etc-GWT-reverse-timezone/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/Chromecast-Audio/">
-                            Chromecast Audio 變身無線音響
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Mon Feb 29 2016 00:50:21 GMT+0800">
-	
-		    2月 29, 2016
-    	
-    </time>
-    
-        <span>分類 </span>
-        
-    <a class="category-link" href="/categories/科技產品/">科技產品</a>
-
-
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p><img src="https://lh3.googleusercontent.com/7UgD5xli6K2rYKoprrlVPKU1w-OIZoiSJVR3CApp97IKGPtgGr952C6v29JWbIVEQelN3_enMvypP_pJkmGHwwEwql32tk_G8ARvt5SaNS9zrQUCyqXyyWhXyENCG9usX2o1jQLFTj6vYGSKYSrbN4beQ6ixiSS2qcIVR0v1Hw9v84GbEQAp5pW8tggzKYId-Lh4HFrdPthaOu9txYmOAcFQaDyD5IONCV1BBTuD9pSAHwMiThMzVTxCKWnBRl4HfEgmBE_U7ZT1cPzRhOaKjGHB0BWnqCIl8LuUkaXCS8GQ14gS68U3xay4SQBT60pne0sbpPQq5jQqZHeAZaJzSK4HjrVg5lxvgzjinCLBUbpdBbEw8qNYSsBXbg_y0BQvyCviLe785jQO7HT-GTb0up5B3hIWAxJACNfh2GmHhsdLy-g53oF9zD2bc_97GRh3VvJ1pJHWecwaXuulNa4przEf6lpVyBi4qXyhKBTBgJ4sqk0dpyyFOFlSqW1hXgLYcr0d8WSRMwlwuG-lyLHD1sIKkuBbEJh24Ek_ROOI-L6bJEBNn06KbJu57FwJxqfO4M8S=s1024-no" alt="Chromecast Audio"></p>
-<p><a href="https://www.google.com/chromecast/speakers/" target="_blank" rel="external"><strong>Chromecast Audio</strong></a> 去年發表的時候就很想買了 沒想到台灣遲遲沒有開賣</p>
-<p>感謝好朋友幫我從美國帶回來，可以提前嘗鮮！</p>
-<p>總共有兩個接口</p>
-<blockquote>
-<ol>
-<li>3.5mm 音源 output： 用來連接音響的</li>
-<li>micro USB：電源 （有附線材和充電器）</li>
-</ol>
-</blockquote>
-<h1 id="設置"><a href="#設置" class="headerlink" title="設置"></a>設置</h1><p>安裝方法和 Chromecast 應該是一樣的</p>
-<blockquote>
-<ol>
-<li>使用手機或平版到 App Store 搜尋下載官方的 Chromecast App ，打開後就可以開始設定裝置</li>
-<li>幫 Chromecast Audio 命名 （建議不要包含特殊字元或空白，純英數佳）</li>
-<li>填入家中 WiFi 帳號密碼 （讓Chromecast 能夠連上加中的 WiFi ， 之後就可以透過裝置連接家中 WiFi 來播放</li>
-</ol>
-</blockquote>
-<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>Spotify 有支援能夠在 App 內選擇要在哪個裝置上播放，相信有用 Spotify 的人都知道，只要連接到 Chromecast Audio 的相同 Wifi 上，在播放裝置列表就能看見 Chromecast Audio 了</p>
-<h1 id="Mac-amp-Windows-投放"><a href="#Mac-amp-Windows-投放" class="headerlink" title="Mac &amp; Windows 投放"></a>Mac &amp; Windows 投放</h1><p>當然只在手機上使用是絕對不夠方便的，如果用電腦到一半還要去操作手機就太 low 了，好在有廣大的開發者，提供了開源的桌面應用程式</p>
-<blockquote>
-<ul>
-<li>OS X: <a href="https://github.com/andresgottlieb/soundcast" target="_blank" rel="external">soundcast github repo</a>  如果 chromecast 名稱含有空白或特殊字元可能搜尋不到</li>
-<li>Windows: <a href="https://github.com/acidhax/chromecast-audio-stream" target="_blank" rel="external">chromecast-audio-stream github repo</a></li>
-</ul>
-</blockquote>
-<p>感恩開源，讚嘆開源</p>
-
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/Chromecast-Audio/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>
