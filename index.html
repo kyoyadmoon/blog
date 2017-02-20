@@ -268,18 +268,17 @@
 <p>新增完後透過 ls 指令確認新增成功</p>
 <p>新增的 App 將會有兩個預設的環境</p>
 <ul>
-<li><p>Staging</p>
-</li>
-<li><p>Production</p>
-<p>​</p>
-</li>
+<li>Staging：通常用來當作開發中的部署環境</li>
+<li>Production：上線的部署環境</li>
 </ul>
+<p>每個部署環境可以當成是 <code>git</code> 當中不同的 branch 概念</p>
+<p>也能夠從 history 進行版本控制，做一些 rollback 的動作</p>
 <h2 id="Get-Deployment-Key-Of-App"><a href="#Get-Deployment-Key-Of-App" class="headerlink" title="Get Deployment Key Of App"></a>Get Deployment Key Of App</h2><p><code>$ code-push deployment ls &lt;appName&gt; -k</code></p>
 <p>就能看見該 App 所有部署環境的 deplyment key</p>
 <h1 id="React-Native-Code-Push-整合"><a href="#React-Native-Code-Push-整合" class="headerlink" title="React-Native-Code-Push 整合"></a>React-Native-Code-Push 整合</h1><ul>
 <li><a href="https://github.com/Microsoft/react-native-code-push#getting-started" target="_blank" rel="external">Official Docs</a></li>
 </ul>
-<p>文件寫得非常詳細簡單，Step by step 照著文件作就可以</p>
+<p>文件寫得相當詳細，Step by step 照著文件作就可以</p>
 <p>這邊簡單說明流程</p>
 <p>由於不同的 React Native 版本所需要做的配置略有不同</p>
 <p>這邊以 React Native v0.41.2 為例</p>
@@ -320,7 +319,8 @@
 </ol>
 <h1 id="進行更新"><a href="#進行更新" class="headerlink" title="進行更新"></a>進行更新</h1><p>release-react 是專門更新 React Native 專案的指令</p>
 <p>會自動將目前檔案產生 bundle 並上傳更新版本到 CodePush 的雲端上</p>
-<p><code>$ code-push release-react &lt;appName&gt;  &lt;platform&gt;</code></p>
+<p><code>$ code-push release-react &lt;appName&gt;  &lt;platform&gt; -d &lt;deploymentName&gt;</code></p>
+<p>如果沒有給 -d 的 <code>deploymentName</code> 參數的話，預設將會是 <code>Staging</code></p>
 <h2 id="Read-More"><a href="#Read-More" class="headerlink" title="Read More"></a>Read More</h2><ul>
 <li><a href="http://www.jianshu.com/p/fa362da953c7" target="_blank" rel="external">http://www.jianshu.com/p/fa362da953c7</a></li>
 <li><a href="http://www.jianshu.com/p/87ccfb795635" target="_blank" rel="external">http://www.jianshu.com/p/87ccfb795635</a></li>
