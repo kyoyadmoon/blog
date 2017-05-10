@@ -372,9 +372,9 @@
       <category term="React Native" scheme="https://blog.dmoon.tw/categories/React-Native/"/>
     
     
-      <category term="React Native" scheme="https://blog.dmoon.tw/tags/React-Native/"/>
-    
       <category term="iOS" scheme="https://blog.dmoon.tw/tags/iOS/"/>
+    
+      <category term="React Native" scheme="https://blog.dmoon.tw/tags/React-Native/"/>
     
   </entry>
   
@@ -448,9 +448,9 @@ $ react-native init AwesomeProject
       <category term="React Native" scheme="https://blog.dmoon.tw/categories/React-Native/"/>
     
     
-      <category term="React Native" scheme="https://blog.dmoon.tw/tags/React-Native/"/>
-    
       <category term="iOS" scheme="https://blog.dmoon.tw/tags/iOS/"/>
+    
+      <category term="React Native" scheme="https://blog.dmoon.tw/tags/React-Native/"/>
     
       <category term="Android" scheme="https://blog.dmoon.tw/tags/Android/"/>
     
