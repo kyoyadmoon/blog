@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.dmoon.tw/"/>
-  <updated>2017-02-20T05:18:31.000Z</updated>
+  <updated>2017-05-10T08:31:50.000Z</updated>
   <id>https://blog.dmoon.tw/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="https://blog.dmoon.tw/react-native-integrate-with-code-push/"/>
     <id>https://blog.dmoon.tw/react-native-integrate-with-code-push/</id>
     <published>2017-02-19T10:16:36.000Z</published>
-    <updated>2017-02-20T05:18:31.000Z</updated>
+    <updated>2017-05-10T08:31:50.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h1><p>CodePush 是一個雲端服務，能夠讓 Cordova 和 React Native 的開發者將手機應用的更新，跳過提交審查，直接部署到用戶的設備上。 它擔任類似中間倉庫的角色，開發者可以把更新（JS，HTML，CSS和圖片）發佈到這個倉庫上，透過程式碼的整合，Apps 就能夠查詢到更新並且下載。</p>
+    <content type="html"><![CDATA[<p>CodePush 是一個雲端服務，能夠讓 Cordova 和 React Native 的開發者將手機應用的更新，跳過提交審查，直接部署到用戶的設備上。 它擔任類似中間倉庫的角色，開發者可以把更新（JS，HTML，CSS和圖片）發佈到這個倉庫上，透過程式碼的整合，Apps 就能夠查詢到更新並且下載。</p>
+<a id="more"></a>
 <h1 id="Setup-CodePush-Service"><a href="#Setup-CodePush-Service" class="headerlink" title="Setup CodePush Service"></a>Setup CodePush Service</h1><p>首先我們先從 CodePush 服務的準備開始～～</p>
 <h2 id="Install-CodePush-Management-CLI"><a href="#Install-CodePush-Management-CLI" class="headerlink" title="Install CodePush Management CLI"></a>Install CodePush Management CLI</h2><p>首先我們需要安裝 <a href="https://github.com/Microsoft/code-push/tree/master/cli" target="_blank" rel="external">CodePush CLI</a></p>
 <p><code>$ npm install -g code-push-cli</code></p>
@@ -103,7 +104,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Intro&quot;&gt;&lt;a href=&quot;#Intro&quot; class=&quot;headerlink&quot; title=&quot;Intro&quot;&gt;&lt;/a&gt;Intro&lt;/h1&gt;&lt;p&gt;CodePush 是一個雲端服務，能夠讓 Cordova 和 React Native 的開發者將手機應用的更新，跳
+      &lt;p&gt;CodePush 是一個雲端服務，能夠讓 Cordova 和 React Native 的開發者將手機應用的更新，跳過提交審查，直接部署到用戶的設備上。 它擔任類似中間倉庫的角色，開發者可以把更新（JS，HTML，CSS和圖片）發佈到這個倉庫上，透過程式碼的整合，Apps 就能夠查詢到更新並且下載。&lt;/p&gt;
     
     </summary>
     
@@ -119,9 +120,10 @@
     <link href="https://blog.dmoon.tw/github-pages-with-free-ssl/"/>
     <id>https://blog.dmoon.tw/github-pages-with-free-ssl/</id>
     <published>2017-02-01T08:15:33.000Z</published>
-    <updated>2017-02-01T07:29:41.000Z</updated>
+    <updated>2017-05-10T08:26:58.000Z</updated>
     
     <content type="html"><![CDATA[<p>在 <a href="/github-pages-custom-domain/" title="上一篇">上一篇</a> 中，我們應該已經設定好了自定義域名，接下來就是幫我們的自定義域名加上漂亮安全的 https 綠色鎖頭啦。</p>
+<a id="more"></a>
 <h2 id="Add-Free-SSL"><a href="#Add-Free-SSL" class="headerlink" title="Add Free SSL"></a>Add Free SSL</h2><p>說到 Free SSL 相信很多人第一個想到的就是開源的 <a href="https://letsencrypt.org/" target="_blank" rel="external">Let&#39;s Encrypt</a> 吧，不過很遺憾在爬文時發現，Github 似乎並不支援 Let&#39;s Encrypt ，因此只好找其他的免費 SSL 憑證了，這篇要說明如何使用 <a href="https://www.cloudflare.com/" target="_blank" rel="external">CloudFlare</a> 幫 Github Pages 掛上的免費 SSL</p>
 <ol>
 <li><p><a href="https://www.cloudflare.com/a/sign-up" target="_blank" rel="external">註冊 CloudFlare 帳號</a>
@@ -160,7 +162,6 @@
     <summary type="html">
     
       &lt;p&gt;在 &lt;a href=&quot;/github-pages-custom-domain/&quot; title=&quot;上一篇&quot;&gt;上一篇&lt;/a&gt; 中，我們應該已經設定好了自定義域名，接下來就是幫我們的自定義域名加上漂亮安全的 https 綠色鎖頭啦。&lt;/p&gt;
-&lt;h2 id=&quot;Add-Free-SS
     
     </summary>
     
@@ -184,10 +185,11 @@
     <link href="https://blog.dmoon.tw/github-pages-custom-domain/"/>
     <id>https://blog.dmoon.tw/github-pages-custom-domain/</id>
     <published>2017-01-31T08:15:33.000Z</published>
-    <updated>2017-02-01T07:30:18.000Z</updated>
+    <updated>2017-05-10T08:27:44.000Z</updated>
     
     <content type="html"><![CDATA[<p>最近看到好多人的 Github Pages 都有了自己的域名和 https，剛好在 <a href="https://www.gandi.net/" target="_blank" rel="external">Gandi</a> 上看到 space 的 domain 好便宜，心血來潮於是就買了一個來玩，之前其實沒有碰過 domain 相關的設定，原先想說可能會有點麻煩，沒想到比預期還要容易許多，簡單做個筆記記錄一下，整個過程需要對 Github Pages, <a href="https://www.gandi.net/" target="_blank" rel="external">Gandi</a>,  <a href="https://www.cloudflare.com/" target="_blank" rel="external">CloudFlare</a> (SSL) 做一些設定。</p>
 <p>我們先從 custom domain 開始吧</p>
+<a id="more"></a>
 <h2 id="Set-Custom-Domain"><a href="#Set-Custom-Domain" class="headerlink" title="Set Custom Domain"></a>Set Custom Domain</h2><ol>
 <li><h3 id="購買域名"><a href="#購買域名" class="headerlink" title="購買域名"></a>購買域名</h3><p>我是在 <a href="https://www.gandi.net/" target="_blank" rel="external">gandi</a> 購買的，大家可以到各域名商的網站上搜尋喜歡的域名進行購買，租期到了要記得續訂，才不會發生慘劇。</p>
 </li>
@@ -234,7 +236,8 @@
     
     <summary type="html">
     
-      &lt;p&gt;最近看到好多人的 Github Pages 都有了自己的域名和 https，剛好在 &lt;a href=&quot;https://www.gandi.net/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Gandi&lt;/a&gt; 上看到 space 的 domain 好便
+      &lt;p&gt;最近看到好多人的 Github Pages 都有了自己的域名和 https，剛好在 &lt;a href=&quot;https://www.gandi.net/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Gandi&lt;/a&gt; 上看到 space 的 domain 好便宜，心血來潮於是就買了一個來玩，之前其實沒有碰過 domain 相關的設定，原先想說可能會有點麻煩，沒想到比預期還要容易許多，簡單做個筆記記錄一下，整個過程需要對 Github Pages, &lt;a href=&quot;https://www.gandi.net/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Gandi&lt;/a&gt;,  &lt;a href=&quot;https://www.cloudflare.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CloudFlare&lt;/a&gt; (SSL) 做一些設定。&lt;/p&gt;
+&lt;p&gt;我們先從 custom domain 開始吧&lt;/p&gt;
     
     </summary>
     
@@ -258,9 +261,10 @@
     <link href="https://blog.dmoon.tw/Retina-Display-AntiReflective-Coating-Damage/"/>
     <id>https://blog.dmoon.tw/Retina-Display-AntiReflective-Coating-Damage/</id>
     <published>2016-10-05T08:16:41.000Z</published>
-    <updated>2016-10-05T09:57:38.000Z</updated>
+    <updated>2017-05-10T08:24:55.000Z</updated>
     
     <content type="html"><![CDATA[<p>我是 2015 年初購買的 MacBook Pro (Retina, 13-inch, Mid 2014)，使用上體驗真的很棒，覺得非常值得，但用了大約半年後，從中間開始出現輕微的鍍膜剝落情形，立馬上網 Google，發現全球災情不少，但即使是保固內，仍有多例在官方評估後認為是人為損害，無法免費維修。引起網友連署希望官方處理，當時看完也是心涼了一截，花了許多錢才買的電腦沒想到半年就出了狀況。之後一邊 follow 相關消息，剝落狀況也漸漸擴散，明顯可以看出鍵盤按鍵的輪廓痕跡，合理推測是螢幕闔上時，和鍵盤接觸導致的鍍膜剝落，心想這應該是設計上的問題，如果真的不處理，對於蘋果實在相當失望。</p>
+<a id="more"></a>
 <p>最後在 2015 年底的時候，在 <a href="http://www.macuknow.com/node/73531" target="_blank" rel="external">MACUKNOW</a> 上面看到官方將會針對鍍膜剝落的 Retina MacBook 提供免費維修服務，心裡的大石頭才放下了些，雖然去年十一月就看到了消息，不過因為實習的工作需要，也沒辦法將筆電送修一個禮拜之久，於是一直拖到兩個禮拜前才送修。</p>
 <h2 id="送修過程"><a href="#送修過程" class="headerlink" title="送修過程"></a>送修過程</h2><p>由於台灣並沒有 Apple 直營的維修中心，只有<strong>授權</strong>維修中心，於是爬了一些網路上的文章，覺得 STUDIO A 相對好評較多，維修門市本就較少，也不是所有維修門市業務內容都包含 MacBook，最後選擇到<code>大安門市</code>送修（有提供線上預約），只需要帶著 MacBook 過去就可以了</p>
 <p><strong>幾點注意事項：</strong></p>
@@ -276,7 +280,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;我是 2015 年初購買的 MacBook Pro (Retina, 13-inch, Mid 2014)，使用上體驗真的很棒，覺得非常值得，但用了大約半年後，從中間開始出現輕微的鍍膜剝落情形，立馬上網 Google，發現全球災情不少，但即使是保固內，仍有多例在官方評估後認
+      &lt;p&gt;我是 2015 年初購買的 MacBook Pro (Retina, 13-inch, Mid 2014)，使用上體驗真的很棒，覺得非常值得，但用了大約半年後，從中間開始出現輕微的鍍膜剝落情形，立馬上網 Google，發現全球災情不少，但即使是保固內，仍有多例在官方評估後認為是人為損害，無法免費維修。引起網友連署希望官方處理，當時看完也是心涼了一截，花了許多錢才買的電腦沒想到半年就出了狀況。之後一邊 follow 相關消息，剝落狀況也漸漸擴散，明顯可以看出鍵盤按鍵的輪廓痕跡，合理推測是螢幕闔上時，和鍵盤接觸導致的鍍膜剝落，心想這應該是設計上的問題，如果真的不處理，對於蘋果實在相當失望。&lt;/p&gt;
     
     </summary>
     
@@ -294,7 +298,7 @@
     <link href="https://blog.dmoon.tw/react-native-auto-ip-configuration/"/>
     <id>https://blog.dmoon.tw/react-native-auto-ip-configuration/</id>
     <published>2016-04-27T12:57:40.000Z</published>
-    <updated>2016-04-28T01:47:43.000Z</updated>
+    <updated>2017-05-10T08:27:37.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://softnshare.files.wordpress.com/2016/04/corporate-image-1.png?w=1000&amp;h=545&amp;crop=1" alt="React Native"></p>
 <p>在上一篇 <a href="http://kyoyadmoon.github.io/blog/2016/04/19/react-native-101/" target="_blank" rel="external">React Native 初心者攻略</a> 中有說明如何在實體 iPhone 上開發</p>
@@ -308,6 +312,7 @@
 </blockquote>
 <p>在開發一段時間後，實在受不了，好在找到了自動設定的方法</p>
 <p><code>透過 shell script 抓取電腦的 IP 後，寫入到專案</code></p>
+<a id="more"></a>
 <h1 id="設置方法"><a href="#設置方法" class="headerlink" title="設置方法"></a>設置方法</h1><h2 id="抓取電腦-IP"><a href="#抓取電腦-IP" class="headerlink" title="抓取電腦 IP"></a>抓取電腦 IP</h2><p>我們需要先寫出能夠抓取電腦 IP 的指令</p>
 <p>網路上大多使用這個指令，可以先填到 terminal 執行看看，確認 IP 是否正確</p>
 <blockquote>
@@ -350,7 +355,17 @@
     <summary type="html">
     
       &lt;p&gt;&lt;img src=&quot;https://softnshare.files.wordpress.com/2016/04/corporate-image-1.png?w=1000&amp;amp;h=545&amp;amp;crop=1&quot; alt=&quot;React Native&quot;&gt;&lt;/p&gt;
-&lt;p&gt;在上
+&lt;p&gt;在上一篇 &lt;a href=&quot;http://kyoyadmoon.github.io/blog/2016/04/19/react-native-101/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;React Native 初心者攻略&lt;/a&gt; 中有說明如何在實體 iPhone 上開發&lt;/p&gt;
+&lt;p&gt;透過 &lt;code&gt;AppDelegate.m&lt;/code&gt; 這個檔案我們可以將 localhost 手動更改成電腦 ip 來達到實機測試的目的&lt;/p&gt;
+&lt;p&gt;但是這樣的開發方式有幾個缺點&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;需要經常手動去做更改，尤其當你是使用筆電，甚至是和其他人共同開發的狀況，就會常常在 merge 時衝突，除非團隊都使用 localhost 以 simulator 進行開發&lt;/li&gt;
+&lt;li&gt;沒辦法在實體機器上 Debug in Chrome&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在開發一段時間後，實在受不了，好在找到了自動設定的方法&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;透過 shell script 抓取電腦的 IP 後，寫入到專案&lt;/code&gt;&lt;/p&gt;
     
     </summary>
     
@@ -368,11 +383,12 @@
     <link href="https://blog.dmoon.tw/react-native-101/"/>
     <id>https://blog.dmoon.tw/react-native-101/</id>
     <published>2016-04-18T16:05:03.000Z</published>
-    <updated>2017-01-31T01:17:30.000Z</updated>
+    <updated>2017-05-10T08:28:52.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://i.imgur.com/dnaYgtL.png" alt="React Native"></p>
 <p>由於 React 的火熱程度，身邊許多朋友都開始接觸 React ，我也推薦他們玩玩看 React Native ，我覺得 React 的入門門檻有些其實和 React 本身無關，像是 Webpack, Babel 等等都多少在無形中增加了入門的難度，且有許多範例可能還使用了 ES6 語法，雖然不是必要，但可能會造成初學者混淆、失去信心，使學習過程更不順利。</p>
 <p>然而 React Native 完全就是一個超棒的東西，只要跟著官網的教學就可以很簡單的開始使用 React 撰寫跨平台的 App，不僅內建支援 ES6 ，還有 Live Reload , Hot Reloading 等強大功能, 甚至能在 Chrome 中 debug ，這些React Native 統統幫你包好了，省去了原先我們在 web 專案開發需要自行加入 webpack, babel 等等的處理過程。</p>
+<a id="more"></a>
 <h2 id="環境建立"><a href="#環境建立" class="headerlink" title="環境建立"></a>環境建立</h2><p>相關環境安裝的部分跟著 <a href="http://reactnative.cn/docs/0.23/getting-started.html#环境需求" target="_blank" rel="external"><strong>官網的詳細指示</strong> (別擔心這裡有中文版) </a>操作就可以了，這部分就不多敘述</p>
 <h2 id="建立RN專案"><a href="#建立RN專案" class="headerlink" title="建立RN專案"></a>建立RN專案</h2><pre><code>$ npm install -g react-native-cli
 $ react-native init AwesomeProject
@@ -424,7 +440,8 @@ $ react-native init AwesomeProject
     <summary type="html">
     
       &lt;p&gt;&lt;img src=&quot;https://i.imgur.com/dnaYgtL.png&quot; alt=&quot;React Native&quot;&gt;&lt;/p&gt;
-&lt;p&gt;由於 React 的火熱程度，身邊許多朋友都開始接觸 React ，我也推薦他們玩玩看 React Native ，我覺得 Reac
+&lt;p&gt;由於 React 的火熱程度，身邊許多朋友都開始接觸 React ，我也推薦他們玩玩看 React Native ，我覺得 React 的入門門檻有些其實和 React 本身無關，像是 Webpack, Babel 等等都多少在無形中增加了入門的難度，且有許多範例可能還使用了 ES6 語法，雖然不是必要，但可能會造成初學者混淆、失去信心，使學習過程更不順利。&lt;/p&gt;
+&lt;p&gt;然而 React Native 完全就是一個超棒的東西，只要跟著官網的教學就可以很簡單的開始使用 React 撰寫跨平台的 App，不僅內建支援 ES6 ，還有 Live Reload , Hot Reloading 等強大功能, 甚至能在 Chrome 中 debug ，這些React Native 統統幫你包好了，省去了原先我們在 web 專案開發需要自行加入 webpack, babel 等等的處理過程。&lt;/p&gt;
     
     </summary>
     
@@ -446,10 +463,11 @@ $ react-native init AwesomeProject
     <link href="https://blog.dmoon.tw/react-native-with-socketIO/"/>
     <id>https://blog.dmoon.tw/react-native-with-socketIO/</id>
     <published>2016-03-25T10:53:20.000Z</published>
-    <updated>2016-03-26T03:20:10.000Z</updated>
+    <updated>2017-05-10T08:22:51.000Z</updated>
     
     <content type="html"><![CDATA[<p>昨天在處理為 React Native 加上 聊天室的功能，首先遇到的問題就是串接 Socket ，要在 RN 上使用 socket 需要安裝 <a href="https://github.com/socketio/socket.io-client" target="_blank" rel="external">socket.io-client</a>，安裝之後 import socket.io-client/socket.io 時，遇到了這個 error </p>
 <p><em>undefined is not an object (evaluting &#39;navigator.userAgent.match&#39;)</em></p>
+<a id="more"></a>
 <p>找了一下解決方法
 發現這個套件不能用 import ，必需用 require
 另外需要 assign window.navigator.userAgent</p>
@@ -461,7 +479,8 @@ $ react-native init AwesomeProject
     
     <summary type="html">
     
-      &lt;p&gt;昨天在處理為 React Native 加上 聊天室的功能，首先遇到的問題就是串接 Socket ，要在 RN 上使用 socket 需要安裝 &lt;a href=&quot;https://github.com/socketio/socket.io-client&quot; target=&quot;_b
+      &lt;p&gt;昨天在處理為 React Native 加上 聊天室的功能，首先遇到的問題就是串接 Socket ，要在 RN 上使用 socket 需要安裝 &lt;a href=&quot;https://github.com/socketio/socket.io-client&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;socket.io-client&lt;/a&gt;，安裝之後 import socket.io-client/socket.io 時，遇到了這個 error &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;undefined is not an object (evaluting &amp;#39;navigator.userAgent.match&amp;#39;)&lt;/em&gt;&lt;/p&gt;
     
     </summary>
     
@@ -479,11 +498,12 @@ $ react-native init AwesomeProject
     <link href="https://blog.dmoon.tw/eslint-react-extends-airbnb/"/>
     <id>https://blog.dmoon.tw/eslint-react-extends-airbnb/</id>
     <published>2016-03-23T04:54:43.000Z</published>
-    <updated>2016-03-23T09:42:18.000Z</updated>
+    <updated>2017-05-10T08:25:29.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://lh3.googleusercontent.com/KgEwDSPFlRq08oUvZD6yr_VHLTdP3E7YJp4M9CxiZ7jmyKbahUleLusWuoaq2fsdYiW71mhX5p-WnnRhqcvog-xWs-UpCEOj4X1Y-vZYE7pCfSY4nbLyuR69wTpFBFkgFZPJY7Q7Uzuxky5QjoF0rMO6_2bvtYqzNjZow_-mnQKk5tBG2MQtvQkWRXC_XrPsIX3KVbwTER0ZUYZTsAV4LMDpm5_WrEBZ6E0vRfIo6BYqcAi5tqmsKvwqKZSvwWUAPD6Bj2x7U4cjwzv9q7EgeRr4j47gYypVmGt3-9wO7_oCNGQCdyzFvHa__3J9d7zAfrgLnDJW65rZJy15He-BC9_2PkUaBMnS_BHZIeLhL3HIwwXQOmRe4WZBkRaCeF2X_g1QgZCQCyPEPojiXOTqHTPJGL-RUuK5pAriwWNRKe6wUVCDz5XZ0U3hFg7wJNFITPEqRoIcMx9tELrZmQfouTScjCa_KrdsSdE5-i7-oYUKyTV5iwtZW0-jAX7ZISy9itZnHDO3HT8jRk47gDyj_aOmdGfycgBYWFYvFP86NCmp4KbUHT4z6-FnISxzAnLp-3eE=w1237-h195-no" alt="ESLint"></p>
 <p>之前一直沒有嘗試過 JSHint、ESLint ，但隨著合作開發的人數越來越多，程式碼的風格和規範問題就更加明顯，加上最近看了聖經 <code>Clean Code</code> ，覺得寫出乾淨的程式碼真的很重要，剛好爬文發現有人推薦 Airbnb 釋出的 ESLint config 來做 js 和 React.js 規範，所以就決定來嘗試看看！</p>
 <p>首先我要推薦 <a href="https://github.com/yannickcr/eslint-plugin-react" target="_blank" rel="external">eslint-plugin-react</a> 這個套件，這套件除了規範 React 的一些寫法，重要的是他還有寫 rules 的文件，告訴你為什麼建議這樣寫，只要把 eslint 上出現的錯誤訊息，拿去 google 就會找到 github 上用 markdown 寫的相關說明，跟著寫就有種 Level Up 的感覺，實在受益匪淺！</p>
+<a id="more"></a>
 <p>#Setup</p>
 <p>安裝方法很簡單</p>
 <p>先使用 npm 安裝 eslint 、 eslint-plugin-react、eslint-config-airbnb</p>
@@ -501,7 +521,9 @@ $ react-native init AwesomeProject
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/KgEwDSPFlRq08oUvZD6yr_VHLTdP3E7YJp4M9CxiZ7jmyKbahUleLusWuoaq2fsdYiW71mhX5p-WnnRhqcvog-xWs-UpC
+      &lt;p&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/KgEwDSPFlRq08oUvZD6yr_VHLTdP3E7YJp4M9CxiZ7jmyKbahUleLusWuoaq2fsdYiW71mhX5p-WnnRhqcvog-xWs-UpCEOj4X1Y-vZYE7pCfSY4nbLyuR69wTpFBFkgFZPJY7Q7Uzuxky5QjoF0rMO6_2bvtYqzNjZow_-mnQKk5tBG2MQtvQkWRXC_XrPsIX3KVbwTER0ZUYZTsAV4LMDpm5_WrEBZ6E0vRfIo6BYqcAi5tqmsKvwqKZSvwWUAPD6Bj2x7U4cjwzv9q7EgeRr4j47gYypVmGt3-9wO7_oCNGQCdyzFvHa__3J9d7zAfrgLnDJW65rZJy15He-BC9_2PkUaBMnS_BHZIeLhL3HIwwXQOmRe4WZBkRaCeF2X_g1QgZCQCyPEPojiXOTqHTPJGL-RUuK5pAriwWNRKe6wUVCDz5XZ0U3hFg7wJNFITPEqRoIcMx9tELrZmQfouTScjCa_KrdsSdE5-i7-oYUKyTV5iwtZW0-jAX7ZISy9itZnHDO3HT8jRk47gDyj_aOmdGfycgBYWFYvFP86NCmp4KbUHT4z6-FnISxzAnLp-3eE=w1237-h195-no&quot; alt=&quot;ESLint&quot;&gt;&lt;/p&gt;
+&lt;p&gt;之前一直沒有嘗試過 JSHint、ESLint ，但隨著合作開發的人數越來越多，程式碼的風格和規範問題就更加明顯，加上最近看了聖經 &lt;code&gt;Clean Code&lt;/code&gt; ，覺得寫出乾淨的程式碼真的很重要，剛好爬文發現有人推薦 Airbnb 釋出的 ESLint config 來做 js 和 React.js 規範，所以就決定來嘗試看看！&lt;/p&gt;
+&lt;p&gt;首先我要推薦 &lt;a href=&quot;https://github.com/yannickcr/eslint-plugin-react&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;eslint-plugin-react&lt;/a&gt; 這個套件，這套件除了規範 React 的一些寫法，重要的是他還有寫 rules 的文件，告訴你為什麼建議這樣寫，只要把 eslint 上出現的錯誤訊息，拿去 google 就會找到 github 上用 markdown 寫的相關說明，跟著寫就有種 Level Up 的感覺，實在受益匪淺！&lt;/p&gt;
     
     </summary>
     
@@ -519,12 +541,13 @@ $ react-native init AwesomeProject
     <link href="https://blog.dmoon.tw/koa-production-cache/"/>
     <id>https://blog.dmoon.tw/koa-production-cache/</id>
     <published>2016-03-19T02:07:46.000Z</published>
-    <updated>2016-03-19T06:03:12.000Z</updated>
+    <updated>2017-05-10T08:27:21.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://lh3.googleusercontent.com/ehH3I28TQSBMOxkYzQ_Yp2Z9kXlDYbX-v22jH8BRXZ5bUC8PYpShgwBQP42-PKZ77vx0bn1eRsz3yrr_gIaEaKqeA_4Mt7WGd_YGXT3B40haq311NgEkP2K98NJMoj7J1-gwvEVbBPnyNO53PEFazJAZT6XMcYdnf_VNZ3NqVbPq3dgmgR8LMi2PIzdCqK0F_RWMedcl1RLfTbqxBugRbNcr38oiQ82yr5eZGAC2Chcni09MCtYdhHINoIzl-3cVh8M-K8rTpAAa3YwHwXrjUgTf4ZRVqC8aQnpr8RbCb2kboVZ6AbcVLwv1dz1LeCjo8pVEXEAqCBbxi4I3hUzfq-BpWJPmSRIqq55KPyKgXJeU90H-Aqkj0Yg0qe8zYEhd-vL_6nyqcpE7jT83VyLKStI6dsaA_LA72KqbvTuDRO8ABONlYOuQrG2Qsvxjm0A6d9qVRyCci1iD7q1c1ZhQ_xKfNgSXhnrZynFMoMaWhBSsdPVkbj7Jk_1nTnirxofc5nJOJphRMD2pwbBrSY4B-2uNhv0l0qpa5eI5LB6AvBjc4pPeXEq-ozZO06deNMj0tRUO=w1585-h712-no" alt="Koa.js"></p>
 <p>之前在設定 Koa 的 cache 時，有點小卡關，所以記錄一下</p>
 <p>我使用的 Koa 版本是 2.0.0</p>
 <p>搭配處理 cache 的套件 是 <a href="https://github.com/koajs/static-cache" target="_blank" rel="external">koa-static-cache</a></p>
+<a id="more"></a>
 <p>官方 readme 上面的範例用法長這樣</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">app.use(staticCache(path.join(__dirname, <span class="string">'public'</span>), &#123;</div><div class="line">  <span class="attr">maxAge</span>: <span class="number">365</span> * <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span></div><div class="line">&#125;))</div></pre></td></tr></table></figure>
 <p>因為使用 Koa 2.0 的關係，需要 <a href="https://github.com/koajs/convert" target="_blank" rel="external">koa-convert</a> 套件 convert 還沒更新支援 Koa 2.0 的套件，才能使用</p>
@@ -538,7 +561,10 @@ $ react-native init AwesomeProject
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/ehH3I28TQSBMOxkYzQ_Yp2Z9kXlDYbX-v22jH8BRXZ5bUC8PYpShgwBQP42-PKZ77vx0bn1eRsz3yrr_gIaEaKqeA_4Mt
+      &lt;p&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/ehH3I28TQSBMOxkYzQ_Yp2Z9kXlDYbX-v22jH8BRXZ5bUC8PYpShgwBQP42-PKZ77vx0bn1eRsz3yrr_gIaEaKqeA_4Mt7WGd_YGXT3B40haq311NgEkP2K98NJMoj7J1-gwvEVbBPnyNO53PEFazJAZT6XMcYdnf_VNZ3NqVbPq3dgmgR8LMi2PIzdCqK0F_RWMedcl1RLfTbqxBugRbNcr38oiQ82yr5eZGAC2Chcni09MCtYdhHINoIzl-3cVh8M-K8rTpAAa3YwHwXrjUgTf4ZRVqC8aQnpr8RbCb2kboVZ6AbcVLwv1dz1LeCjo8pVEXEAqCBbxi4I3hUzfq-BpWJPmSRIqq55KPyKgXJeU90H-Aqkj0Yg0qe8zYEhd-vL_6nyqcpE7jT83VyLKStI6dsaA_LA72KqbvTuDRO8ABONlYOuQrG2Qsvxjm0A6d9qVRyCci1iD7q1c1ZhQ_xKfNgSXhnrZynFMoMaWhBSsdPVkbj7Jk_1nTnirxofc5nJOJphRMD2pwbBrSY4B-2uNhv0l0qpa5eI5LB6AvBjc4pPeXEq-ozZO06deNMj0tRUO=w1585-h712-no&quot; alt=&quot;Koa.js&quot;&gt;&lt;/p&gt;
+&lt;p&gt;之前在設定 Koa 的 cache 時，有點小卡關，所以記錄一下&lt;/p&gt;
+&lt;p&gt;我使用的 Koa 版本是 2.0.0&lt;/p&gt;
+&lt;p&gt;搭配處理 cache 的套件 是 &lt;a href=&quot;https://github.com/koajs/static-cache&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;koa-static-cache&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
@@ -556,7 +582,7 @@ $ react-native init AwesomeProject
     <link href="https://blog.dmoon.tw/GWT-vs-UTC-diff-and-Etc-GWT-reverse-timezone/"/>
     <id>https://blog.dmoon.tw/GWT-vs-UTC-diff-and-Etc-GWT-reverse-timezone/</id>
     <published>2016-03-08T13:22:03.000Z</published>
-    <updated>2016-03-10T13:38:46.000Z</updated>
+    <updated>2017-05-10T08:27:04.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="GMT-amp-UTC"><a href="#GMT-amp-UTC" class="headerlink" title="GMT &amp; UTC"></a>GMT &amp; UTC</h2><p>首先來說 GMT 和 UTC 是什麼，有什麼差別</p>
 <blockquote>
@@ -564,6 +590,7 @@ $ react-native init AwesomeProject
 <p>UTC：世界協調時間</p>
 </blockquote>
 <p>他們都是世界標準時間，而 UTC 的算法更為嚴謹，所以比 GMT 更為精準，不過兩者的差異是極小的，所以基本上時間是可以看作相同的</p>
+<a id="more"></a>
 <h2 id="Linux-Etc-GMT-時區為何正負顛倒"><a href="#Linux-Etc-GMT-時區為何正負顛倒" class="headerlink" title="Linux Etc/GMT 時區為何正負顛倒"></a>Linux Etc/GMT 時區為何正負顛倒</h2><p>當你使用 Linux 設定時區時 ，若是選用 Etc 底下的 GMT 時區，可能會發現設定的結果與你預想的不同，當你想設定台北的時區 （GMT＋8) ，但設定完後，系統時間卻是 -8 的時區，和台北時間相差 16 小時，原因是因為 Etc 底下的 GMT 時區是以 <code>格林威治</code> 以西為正，以東為負，剛好與我們現實生活的認知相反</p>
 <p>而原因只是因為當初 Unix 多為西方人使用，便以西為正</p>
 <p>因此在設定的時候需要選擇正負相反的選項</p>
@@ -573,7 +600,11 @@ $ react-native init AwesomeProject
     <summary type="html">
     
       &lt;h2 id=&quot;GMT-amp-UTC&quot;&gt;&lt;a href=&quot;#GMT-amp-UTC&quot; class=&quot;headerlink&quot; title=&quot;GMT &amp;amp; UTC&quot;&gt;&lt;/a&gt;GMT &amp;amp; UTC&lt;/h2&gt;&lt;p&gt;首先來說 GMT 和 UTC 是什麼，有什麼差別&lt;/p&gt;
-&lt;
+&lt;blockquote&gt;
+&lt;p&gt;GMT：格林威治標準時間&lt;/p&gt;
+&lt;p&gt;UTC：世界協調時間&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;他們都是世界標準時間，而 UTC 的算法更為嚴謹，所以比 GMT 更為精準，不過兩者的差異是極小的，所以基本上時間是可以看作相同的&lt;/p&gt;
     
     </summary>
     
@@ -593,11 +624,12 @@ $ react-native init AwesomeProject
     <link href="https://blog.dmoon.tw/Chromecast-Audio/"/>
     <id>https://blog.dmoon.tw/Chromecast-Audio/</id>
     <published>2016-02-28T16:50:21.000Z</published>
-    <updated>2016-03-08T17:39:07.000Z</updated>
+    <updated>2017-05-10T08:25:18.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://lh3.googleusercontent.com/7UgD5xli6K2rYKoprrlVPKU1w-OIZoiSJVR3CApp97IKGPtgGr952C6v29JWbIVEQelN3_enMvypP_pJkmGHwwEwql32tk_G8ARvt5SaNS9zrQUCyqXyyWhXyENCG9usX2o1jQLFTj6vYGSKYSrbN4beQ6ixiSS2qcIVR0v1Hw9v84GbEQAp5pW8tggzKYId-Lh4HFrdPthaOu9txYmOAcFQaDyD5IONCV1BBTuD9pSAHwMiThMzVTxCKWnBRl4HfEgmBE_U7ZT1cPzRhOaKjGHB0BWnqCIl8LuUkaXCS8GQ14gS68U3xay4SQBT60pne0sbpPQq5jQqZHeAZaJzSK4HjrVg5lxvgzjinCLBUbpdBbEw8qNYSsBXbg_y0BQvyCviLe785jQO7HT-GTb0up5B3hIWAxJACNfh2GmHhsdLy-g53oF9zD2bc_97GRh3VvJ1pJHWecwaXuulNa4przEf6lpVyBi4qXyhKBTBgJ4sqk0dpyyFOFlSqW1hXgLYcr0d8WSRMwlwuG-lyLHD1sIKkuBbEJh24Ek_ROOI-L6bJEBNn06KbJu57FwJxqfO4M8S=s1024-no" alt="Chromecast Audio"></p>
 <p><a href="https://www.google.com/chromecast/speakers/" target="_blank" rel="external"><strong>Chromecast Audio</strong></a> 去年發表的時候就很想買了 沒想到台灣遲遲沒有開賣</p>
 <p>感謝好朋友幫我從美國帶回來，可以提前嘗鮮！</p>
+<a id="more"></a>
 <p>總共有兩個接口</p>
 <blockquote>
 <ol>
@@ -626,7 +658,9 @@ $ react-native init AwesomeProject
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/7UgD5xli6K2rYKoprrlVPKU1w-OIZoiSJVR3CApp97IKGPtgGr952C6v29JWbIVEQelN3_enMvypP_pJkmGHwwEwql32t
+      &lt;p&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/7UgD5xli6K2rYKoprrlVPKU1w-OIZoiSJVR3CApp97IKGPtgGr952C6v29JWbIVEQelN3_enMvypP_pJkmGHwwEwql32tk_G8ARvt5SaNS9zrQUCyqXyyWhXyENCG9usX2o1jQLFTj6vYGSKYSrbN4beQ6ixiSS2qcIVR0v1Hw9v84GbEQAp5pW8tggzKYId-Lh4HFrdPthaOu9txYmOAcFQaDyD5IONCV1BBTuD9pSAHwMiThMzVTxCKWnBRl4HfEgmBE_U7ZT1cPzRhOaKjGHB0BWnqCIl8LuUkaXCS8GQ14gS68U3xay4SQBT60pne0sbpPQq5jQqZHeAZaJzSK4HjrVg5lxvgzjinCLBUbpdBbEw8qNYSsBXbg_y0BQvyCviLe785jQO7HT-GTb0up5B3hIWAxJACNfh2GmHhsdLy-g53oF9zD2bc_97GRh3VvJ1pJHWecwaXuulNa4przEf6lpVyBi4qXyhKBTBgJ4sqk0dpyyFOFlSqW1hXgLYcr0d8WSRMwlwuG-lyLHD1sIKkuBbEJh24Ek_ROOI-L6bJEBNn06KbJu57FwJxqfO4M8S=s1024-no&quot; alt=&quot;Chromecast Audio&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.google.com/chromecast/speakers/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;Chromecast Audio&lt;/strong&gt;&lt;/a&gt; 去年發表的時候就很想買了 沒想到台灣遲遲沒有開賣&lt;/p&gt;
+&lt;p&gt;感謝好朋友幫我從美國帶回來，可以提前嘗鮮！&lt;/p&gt;
     
     </summary>
     
@@ -642,12 +676,13 @@ $ react-native init AwesomeProject
     <link href="https://blog.dmoon.tw/free-to-import-react/"/>
     <id>https://blog.dmoon.tw/free-to-import-react/</id>
     <published>2016-02-22T16:35:32.000Z</published>
-    <updated>2016-03-08T17:37:12.000Z</updated>
+    <updated>2017-05-10T08:27:56.000Z</updated>
     
     <content type="html"><![CDATA[<hr>
 <p>從前可能需要每個檔案都自己人工 import jquery、react</p>
 <p>現在透過 webpack 的 ProvidePlugin 可以幫你將 dependency 自動 import</p>
 <p>不只是 react , jquery  或其他 lib 都可以使用</p>
+<a id="more"></a>
 <h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><p>把 ProvidePlugin 加到 webpack.config.js 的 plugins</p>
 <p>example</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> webpack.ProvidePlugin(&#123;</div><div class="line">    <span class="string">'React'</span>: <span class="string">'react'</span>,</div><div class="line">          <span class="attr">$</span>: <span class="string">"jquery"</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
@@ -664,7 +699,7 @@ $ react-native init AwesomeProject
       &lt;hr&gt;
 &lt;p&gt;從前可能需要每個檔案都自己人工 import jquery、react&lt;/p&gt;
 &lt;p&gt;現在透過 webpack 的 ProvidePlugin 可以幫你將 dependency 自動 import&lt;/p&gt;
-&lt;p&gt;不只是 react , jquery  或其他 li
+&lt;p&gt;不只是 react , jquery  或其他 lib 都可以使用&lt;/p&gt;
     
     </summary>
     
@@ -680,12 +715,13 @@ $ react-native init AwesomeProject
     <link href="https://blog.dmoon.tw/iOS-App-Deploy-Signing-Failed/"/>
     <id>https://blog.dmoon.tw/iOS-App-Deploy-Signing-Failed/</id>
     <published>2016-02-22T16:05:03.000Z</published>
-    <updated>2016-04-18T17:42:29.000Z</updated>
+    <updated>2017-05-10T08:25:06.000Z</updated>
     
     <content type="html"><![CDATA[<p>這幾天在幫公司處理 iOS APP 上架的事情，整個流程需要一堆簽章，真的很麻煩</p>
 <p>其中最雷的就是這篇要講的證書的簽發者無效，是什麼證書的簽發者無效呢？</p>
 <p>我所有的 Apple 開發相關憑證上面全部都寫簽發者過期....</p>
 <p>查了才知道是 Apple 之前給開發者的憑證 ( Apple World Wide Developer Relation Certification Authority ) 有效期限到 2016.2.14 ，也就是說這是一個熱騰騰的雷阿!</p>
+<a id="more"></a>
 <h1 id="解決方法："><a href="#解決方法：" class="headerlink" title="解決方法："></a>解決方法：</h1><ol>
 <li>打開 Keychain 在登陸和系統中刪除過期的這一個 Apple World Wide Developer Relation Certification Authority</li>
 <li>下載並安裝這個新的憑證 <a href="https://developer.apple.com/certificationauthority/AppleWWDRCA.cer" target="_blank" rel="external">WWDR intermediate certificate</a></li>
@@ -699,7 +735,7 @@ $ react-native init AwesomeProject
       &lt;p&gt;這幾天在幫公司處理 iOS APP 上架的事情，整個流程需要一堆簽章，真的很麻煩&lt;/p&gt;
 &lt;p&gt;其中最雷的就是這篇要講的證書的簽發者無效，是什麼證書的簽發者無效呢？&lt;/p&gt;
 &lt;p&gt;我所有的 Apple 開發相關憑證上面全部都寫簽發者過期....&lt;/p&gt;
-&lt;p&gt;查了才知道是 
+&lt;p&gt;查了才知道是 Apple 之前給開發者的憑證 ( Apple World Wide Developer Relation Certification Authority ) 有效期限到 2016.2.14 ，也就是說這是一個熱騰騰的雷阿!&lt;/p&gt;
     
     </summary>
     
@@ -717,7 +753,7 @@ $ react-native init AwesomeProject
     <link href="https://blog.dmoon.tw/github-blog-build-with-hexo/"/>
     <id>https://blog.dmoon.tw/github-blog-build-with-hexo/</id>
     <published>2016-02-21T10:22:32.000Z</published>
-    <updated>2016-03-09T03:16:21.000Z</updated>
+    <updated>2017-05-10T08:26:46.000Z</updated>
     
     <content type="html"><![CDATA[<p>最近在爬文學習前端技術時，發現不少網誌都是用 github 的靜態網站來當 blog，覺得很酷，而且也不必煩惱主機的事，便搜尋了一下建立的方法，發現有滿多語言框架可以快速建立</p>
 <blockquote>
@@ -728,6 +764,7 @@ $ react-native init AwesomeProject
 <li>PHP : Phrozn</li>
 </ul>
 </blockquote>
+<a id="more"></a>
 <p>因為對於 js 較為熟悉所以選了 Hexo 來嘗試看看，先說心得好了， Hexo 框架真的很強大，blog 大多功能幾乎都包含在裡面了，而且只需透過編輯 _config.yml ，就能完成架構及功能設定，有些功能雖然是需要另外安裝 plugin 的，使用方法都相當簡單，程式碼都埋好了，只需申請服務後，填入 id 到設定檔就可以了</p>
 <blockquote>
 <ul>
@@ -772,7 +809,12 @@ $ react-native init AwesomeProject
       &lt;p&gt;最近在爬文學習前端技術時，發現不少網誌都是用 github 的靜態網站來當 blog，覺得很酷，而且也不必煩惱主機的事，便搜尋了一下建立的方法，發現有滿多語言框架可以快速建立&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;ul&gt;
-&lt;li&gt;JavaScript : Hexo  &lt;/li
+&lt;li&gt;JavaScript : Hexo  &lt;/li&gt;
+&lt;li&gt;Ruby : Jekyll  &lt;/li&gt;
+&lt;li&gt;Python : Hyde  &lt;/li&gt;
+&lt;li&gt;PHP : Phrozn&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
     
     </summary>
     

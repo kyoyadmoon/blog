@@ -222,7 +222,7 @@
 <section class="postShorten-group main-content-wrap bg-white main-section">
     
     
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
@@ -249,95 +249,13 @@
             </div>
             
             
-                <div class="postShorten-content" itemprop="articleBody">
-                    <h1 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h1><p>CodePush 是一個雲端服務，能夠讓 Cordova 和 React Native 的開發者將手機應用的更新，跳過提交審查，直接部署到用戶的設備上。 它擔任類似中間倉庫的角色，開發者可以把更新（JS，HTML，CSS和圖片）發佈到這個倉庫上，透過程式碼的整合，Apps 就能夠查詢到更新並且下載。</p>
-<h1 id="Setup-CodePush-Service"><a href="#Setup-CodePush-Service" class="headerlink" title="Setup CodePush Service"></a>Setup CodePush Service</h1><p>首先我們先從 CodePush 服務的準備開始～～</p>
-<h2 id="Install-CodePush-Management-CLI"><a href="#Install-CodePush-Management-CLI" class="headerlink" title="Install CodePush Management CLI"></a>Install CodePush Management CLI</h2><p>首先我們需要安裝 <a href="https://github.com/Microsoft/code-push/tree/master/cli" target="_blank" rel="external">CodePush CLI</a></p>
-<p><code>$ npm install -g code-push-cli</code></p>
-<p>安裝完後察看版本確認安裝成功</p>
-<p><code>$ code-push -v</code></p>
-<h2 id="Register-amp-Login-CodePush"><a href="#Register-amp-Login-CodePush" class="headerlink" title="Register &amp; Login CodePush"></a>Register &amp; Login CodePush</h2><p><code>$ code-push register</code></p>
-<p>執行後會開啟網頁讓你進行註冊，並在 terminal 要求填入 access key</p>
-<p>可以直接透過網頁以微軟或Github帳號做第三方登入進行授權</p>
-<p>註冊登入後頁面會給你 access key </p>
-<p>此時複製回到 terminal 貼上</p>
-<ul>
-<li>登入：<code>$ code-push login</code> </li>
-<li>登出：<code>$ code-push loout</code> </li>
-</ul>
-<h2 id="Add-new-App"><a href="#Add-new-App" class="headerlink" title="Add new App"></a>Add new App</h2><p><code>$ code-push app add &lt;appName&gt;</code></p>
-<p>新增完後透過 ls 指令確認新增成功</p>
-<p>新增的 App 將會有兩個預設的環境</p>
-<ul>
-<li>Staging：通常用來當作開發中的部署環境</li>
-<li>Production：上線的部署環境</li>
-</ul>
-<p>每個部署環境可以當成是 <code>git</code> 當中不同的 branch 概念</p>
-<p>也能夠從 history 進行版本控制，做一些 rollback 的動作</p>
-<h2 id="Get-Deployment-Key-Of-App"><a href="#Get-Deployment-Key-Of-App" class="headerlink" title="Get Deployment Key Of App"></a>Get Deployment Key Of App</h2><p><code>$ code-push deployment ls &lt;appName&gt; -k</code></p>
-<p>就能看見該 App 所有部署環境的 deplyment key</p>
-<h1 id="React-Native-Code-Push-整合"><a href="#React-Native-Code-Push-整合" class="headerlink" title="React-Native-Code-Push 整合"></a>React-Native-Code-Push 整合</h1><ul>
-<li><a href="https://github.com/Microsoft/react-native-code-push#getting-started" target="_blank" rel="external">Official Docs</a></li>
-</ul>
-<p>文件寫得相當詳細，Step by step 照著文件作就可以</p>
-<p>這邊簡單說明流程</p>
-<p>由於不同的 React Native 版本所需要做的配置略有不同</p>
-<p>這邊以 React Native v0.41.2 為例</p>
-<ol>
-<li><p>安裝 react-native-code-push : </p>
-<p><code>$ npm install --save react-native-code-push@latest</code> 
-<a href="https://github.com/Microsoft/react-native-code-push#supported-react-native-platforms" target="_blank" rel="external">點一下這邊</a> 確認 RN 版本和套件支援的版本相依性 </p>
-</li>
-<li><p>安裝完後，接下來需要 link</p>
-<p>由於 React Native 版本在 0.27 之後，已經將 <code>rnpm link</code> 合併到 <code>React Native CLI</code></p>
-<p>直接使用</p>
-<p><code>$ react-native link react-native-code-push</code></p>
-<p>0.27 以下的版本則可以透過 <code>$ rnpm link</code> 設置，詳細可以參考 <a href="https://github.com/Microsoft/react-native-code-push#getting-started" target="_blank" rel="external">Setup</a></p>
-</li>
-<li><p>安裝完後還需要做兩個整合的動作 (這邊的設置方式對應不同的 RN 版本也有差異)</p>
-<ul>
-<li><p>設定 deployment key 到專案中</p>
-<ul>
-<li><p>Android :</p>
-<p>編輯 <code>android/app/src/main/java/com/&lt;ProjectName&gt;/MainApplication.java</code></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> List&lt;ReactPackage&gt; <span class="title">getPackages</span><span class="params">()</span> </span>&#123;</div><div class="line">      <span class="keyword">return</span> Arrays.&lt;ReactPackage&gt;asList(</div><div class="line">          <span class="keyword">new</span> MainReactPackage(),</div><div class="line">            <span class="keyword">new</span> CodePush(<span class="string">"Deployment_Key"</span>, getApplicationContext(), BuildConfig.DEBUG)</div><div class="line">      );</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<p>填入 app 的 deployment key</p>
-</li>
-<li><p>iOS :</p>
-<p>在 <code>ios/&lt;Project_Name&gt;/info.plist</code> 中 </p>
-<p>可以看見 <code>CodePushDeploymentKey</code> 欄位，在 value 欄填入 deployment key 即可</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>最後是整合 JS 的部分</p>
-<p>使用 HOC (Higher Order Component) 的方式就能快速的整合到你的 App 中了</p>
-<p>程式碼如下</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> codePush <span class="keyword">from</span> <span class="string">"react-native-code-push"</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyApp</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line">MyApp = codePush(MyApp);</div></pre></td></tr></table></figure>
-<p>​</p>
-</li>
-</ol>
-<h1 id="進行更新"><a href="#進行更新" class="headerlink" title="進行更新"></a>進行更新</h1><p>release-react 是專門更新 React Native 專案的指令</p>
-<p>會自動將目前檔案產生 bundle 並上傳更新版本到 CodePush 的雲端上</p>
-<p><code>$ code-push release-react &lt;appName&gt;  &lt;platform&gt; -d &lt;deploymentName&gt;</code></p>
-<p>如果沒有給 -d 的 <code>deploymentName</code> 參數的話，預設將會是 <code>Staging</code></p>
-<h2 id="Read-More"><a href="#Read-More" class="headerlink" title="Read More"></a>Read More</h2><ul>
-<li><a href="http://www.jianshu.com/p/fa362da953c7" target="_blank" rel="external">http://www.jianshu.com/p/fa362da953c7</a></li>
-<li><a href="http://www.jianshu.com/p/87ccfb795635" target="_blank" rel="external">http://www.jianshu.com/p/87ccfb795635</a></li>
-<li><a href="http://bbs.reactnative.cn/topic/725/code-push-%E7%83%AD%E6%9B%B4%E6%96%B0%E4%BD%BF%E7%94%A8%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E%E5%92%8C%E6%95%99%E7%A8%8B" target="_blank" rel="external">http://bbs.reactnative.cn/topic/725/code-push-%E7%83%AD%E6%9B%B4%E6%96%B0%E4%BD%BF%E7%94%A8%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E%E5%92%8C%E6%95%99%E7%A8%8B</a></li>
-</ul>
-
+                <div class="postShorten-excerpt" itemprop="articleBody">
+                    <p>CodePush 是一個雲端服務，能夠讓 Cordova 和 React Native 的開發者將手機應用的更新，跳過提交審查，直接部署到用戶的設備上。 它擔任類似中間倉庫的角色，開發者可以把更新（JS，HTML，CSS和圖片）發佈到這個倉庫上，透過程式碼的整合，Apps 就能夠查詢到更新並且下載。</p>
                     
+                        <a href="/react-native-integrate-with-code-push/" class="postShorten-excerpt_link link">
+                            繼續閱讀
+                        </a>
                         
-
-                    
-                    
-                        <p>
-                            <a href="/react-native-integrate-with-code-push/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
                     
                 </div>
             
@@ -346,7 +264,7 @@
     </article>
     
     
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
@@ -373,52 +291,13 @@
             </div>
             
             
-                <div class="postShorten-content" itemprop="articleBody">
+                <div class="postShorten-excerpt" itemprop="articleBody">
                     <p>在 <a href="/github-pages-custom-domain/" title="上一篇">上一篇</a> 中，我們應該已經設定好了自定義域名，接下來就是幫我們的自定義域名加上漂亮安全的 https 綠色鎖頭啦。</p>
-<h2 id="Add-Free-SSL"><a href="#Add-Free-SSL" class="headerlink" title="Add Free SSL"></a>Add Free SSL</h2><p>說到 Free SSL 相信很多人第一個想到的就是開源的 <a href="https://letsencrypt.org/" target="_blank" rel="external">Let&#39;s Encrypt</a> 吧，不過很遺憾在爬文時發現，Github 似乎並不支援 Let&#39;s Encrypt ，因此只好找其他的免費 SSL 憑證了，這篇要說明如何使用 <a href="https://www.cloudflare.com/" target="_blank" rel="external">CloudFlare</a> 幫 Github Pages 掛上的免費 SSL</p>
-<ol>
-<li><p><a href="https://www.cloudflare.com/a/sign-up" target="_blank" rel="external">註冊 CloudFlare 帳號</a>
-如果你和我一樣只是要用免費版的 SSL，註冊完不必填信用卡資訊，直接到信箱收信</p>
-</li>
-<li><p><a href="https://www.cloudflare.com/a/account/my-account" target="_blank" rel="external">由此登入</a> 點選 <code>Add website</code> 新增你的域名，ex: dmoon.space
-確認後會開始掃描你的域名將地區檔設定掃出來，自動設定到 CloudFlare 的 DNS 上
-接著他會提供幾個他設定好的 DNS 位址給你，請你到域名提供商的館理頁面，設定為他提供給你的 DNS</p>
-</li>
-<li><p>設定 CloudFlare 提供的 DNS
-例如我是在 gandi 上買的域名，回到 gandi 域名管理頁的右下角會看到 <code>域名伺服器</code>，按下 <code>修改伺服器</code> 設定為 CloudFlare 提供的 DNS</p>
-</li>
-<li><p>等待... 等待... 再等待...</p>
-<p>更改 DNS 需要等滿久的時間才會生效，我等了應該有四五個小時，在他生效之前我們可以繼續下一步處理一些額外的設定</p>
-</li>
-<li><p>請先到 CloudFlare website 管理頁面，將 Crypto / SSL 設定為 Flexible
-如圖：</p>
-<img src="/github-pages-with-free-ssl/flexible_config.png" alt="flexible_config.png" title="">
-<p>好奇 Flexible 意思的請點這裡 <a href="https://sofree.cc/cloudflare-free-ssl/" target="_blank" rel="external">Read More...</a></p>
-</li>
-<li><p>到這邊差不多就完成囉
-接下來是對網站做一些額外設定
-像是在 <head> 中加上</head></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="keyword">var</span> host = <span class="string">"yoursite.com"</span>;</div><div class="line">    <span class="keyword">if</span> ((host == <span class="built_in">window</span>.location.host) &amp;&amp; (<span class="built_in">window</span>.location.protocol != <span class="string">"https:"</span>))</div><div class="line">        <span class="built_in">window</span>.location.protocol = <span class="string">"https"</span>;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>讓 http 的連線自動導向到 https</p>
-</li>
-<li><p>告訴搜尋引擎偏好網址
-將下面加入你的 Hexo theme header template 中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=&quot;canonical&quot; href=&quot;&lt;%= url %&gt;&quot; /&gt;</div></pre></td></tr></table></figure>
-<p>​</p>
-</li>
-</ol>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://sheharyar.me/blog/free-ssl-for-github-pages-with-custom-domains/" target="_blank" rel="external">https://sheharyar.me/blog/free-ssl-for-github-pages-with-custom-domains/</a></p>
-
                     
+                        <a href="/github-pages-with-free-ssl/" class="postShorten-excerpt_link link">
+                            繼續閱讀
+                        </a>
                         
-
-                    
-                    
-                        <p>
-                            <a href="/github-pages-with-free-ssl/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
                     
                 </div>
             

@@ -222,7 +222,7 @@
 <section class="postShorten-group main-content-wrap bg-white main-section">
     
     
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
@@ -249,52 +249,13 @@
             </div>
             
             
-                <div class="postShorten-content" itemprop="articleBody">
+                <div class="postShorten-excerpt" itemprop="articleBody">
                     <p>在 <a href="/github-pages-custom-domain/" title="上一篇">上一篇</a> 中，我們應該已經設定好了自定義域名，接下來就是幫我們的自定義域名加上漂亮安全的 https 綠色鎖頭啦。</p>
-<h2 id="Add-Free-SSL"><a href="#Add-Free-SSL" class="headerlink" title="Add Free SSL"></a>Add Free SSL</h2><p>說到 Free SSL 相信很多人第一個想到的就是開源的 <a href="https://letsencrypt.org/" target="_blank" rel="external">Let&#39;s Encrypt</a> 吧，不過很遺憾在爬文時發現，Github 似乎並不支援 Let&#39;s Encrypt ，因此只好找其他的免費 SSL 憑證了，這篇要說明如何使用 <a href="https://www.cloudflare.com/" target="_blank" rel="external">CloudFlare</a> 幫 Github Pages 掛上的免費 SSL</p>
-<ol>
-<li><p><a href="https://www.cloudflare.com/a/sign-up" target="_blank" rel="external">註冊 CloudFlare 帳號</a>
-如果你和我一樣只是要用免費版的 SSL，註冊完不必填信用卡資訊，直接到信箱收信</p>
-</li>
-<li><p><a href="https://www.cloudflare.com/a/account/my-account" target="_blank" rel="external">由此登入</a> 點選 <code>Add website</code> 新增你的域名，ex: dmoon.space
-確認後會開始掃描你的域名將地區檔設定掃出來，自動設定到 CloudFlare 的 DNS 上
-接著他會提供幾個他設定好的 DNS 位址給你，請你到域名提供商的館理頁面，設定為他提供給你的 DNS</p>
-</li>
-<li><p>設定 CloudFlare 提供的 DNS
-例如我是在 gandi 上買的域名，回到 gandi 域名管理頁的右下角會看到 <code>域名伺服器</code>，按下 <code>修改伺服器</code> 設定為 CloudFlare 提供的 DNS</p>
-</li>
-<li><p>等待... 等待... 再等待...</p>
-<p>更改 DNS 需要等滿久的時間才會生效，我等了應該有四五個小時，在他生效之前我們可以繼續下一步處理一些額外的設定</p>
-</li>
-<li><p>請先到 CloudFlare website 管理頁面，將 Crypto / SSL 設定為 Flexible
-如圖：</p>
-<img src="/github-pages-with-free-ssl/flexible_config.png" alt="flexible_config.png" title="">
-<p>好奇 Flexible 意思的請點這裡 <a href="https://sofree.cc/cloudflare-free-ssl/" target="_blank" rel="external">Read More...</a></p>
-</li>
-<li><p>到這邊差不多就完成囉
-接下來是對網站做一些額外設定
-像是在 <head> 中加上</head></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="keyword">var</span> host = <span class="string">"yoursite.com"</span>;</div><div class="line">    <span class="keyword">if</span> ((host == <span class="built_in">window</span>.location.host) &amp;&amp; (<span class="built_in">window</span>.location.protocol != <span class="string">"https:"</span>))</div><div class="line">        <span class="built_in">window</span>.location.protocol = <span class="string">"https"</span>;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>讓 http 的連線自動導向到 https</p>
-</li>
-<li><p>告訴搜尋引擎偏好網址
-將下面加入你的 Hexo theme header template 中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=&quot;canonical&quot; href=&quot;&lt;%= url %&gt;&quot; /&gt;</div></pre></td></tr></table></figure>
-<p>​</p>
-</li>
-</ol>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://sheharyar.me/blog/free-ssl-for-github-pages-with-custom-domains/" target="_blank" rel="external">https://sheharyar.me/blog/free-ssl-for-github-pages-with-custom-domains/</a></p>
-
                     
+                        <a href="/github-pages-with-free-ssl/" class="postShorten-excerpt_link link">
+                            繼續閱讀
+                        </a>
                         
-
-                    
-                    
-                        <p>
-                            <a href="/github-pages-with-free-ssl/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
                     
                 </div>
             
@@ -303,7 +264,7 @@
     </article>
     
     
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
@@ -330,62 +291,14 @@
             </div>
             
             
-                <div class="postShorten-content" itemprop="articleBody">
+                <div class="postShorten-excerpt" itemprop="articleBody">
                     <p>最近看到好多人的 Github Pages 都有了自己的域名和 https，剛好在 <a href="https://www.gandi.net/" target="_blank" rel="external">Gandi</a> 上看到 space 的 domain 好便宜，心血來潮於是就買了一個來玩，之前其實沒有碰過 domain 相關的設定，原先想說可能會有點麻煩，沒想到比預期還要容易許多，簡單做個筆記記錄一下，整個過程需要對 Github Pages, <a href="https://www.gandi.net/" target="_blank" rel="external">Gandi</a>,  <a href="https://www.cloudflare.com/" target="_blank" rel="external">CloudFlare</a> (SSL) 做一些設定。</p>
 <p>我們先從 custom domain 開始吧</p>
-<h2 id="Set-Custom-Domain"><a href="#Set-Custom-Domain" class="headerlink" title="Set Custom Domain"></a>Set Custom Domain</h2><ol>
-<li><h3 id="購買域名"><a href="#購買域名" class="headerlink" title="購買域名"></a>購買域名</h3><p>我是在 <a href="https://www.gandi.net/" target="_blank" rel="external">gandi</a> 購買的，大家可以到各域名商的網站上搜尋喜歡的域名進行購買，租期到了要記得續訂，才不會發生慘劇。</p>
-</li>
-<li><h3 id="設定-區域檔"><a href="#設定-區域檔" class="headerlink" title="設定 區域檔"></a>設定 區域檔</h3><p>在 gandi 購買完後，進入 domain 的 管理頁面找到 <code>編輯區域檔</code> 的連結，進入區域檔的編輯頁面，( gandi 無法更改現正套用的設定檔，所以需要先新增一個來編輯，編輯好再選擇套用) ，總之最後設定的結果應該要長這樣</p>
-{% asset_img gandi-zone-configure.png %}
-<p><code>192.30.252.153</code> , <code>192.30.252.154</code> 是 Github 的位址
-第三個 CNAME 的設定，name 的地方可以填你想要的子網域(subDomain)，value 則是填寫你的 github.io 網址（最後記得加上一個 <code>.　ex: kyoyadmoon.github.io.</code>）</p>
-<p>需要畫面截圖參考，<a href="http://spector.io/how-to-set-up-github-pages-with-a-custom-domain-on-gandi/" target="_blank" rel="external">請點這裡</a></p>
-<p><code>記得使用新編輯的設定!</code></p>
-<p><code>記得使用新編輯的設定!</code></p>
-<p><code>記得使用新編輯的設定!</code></p>
-</li>
-<li><h3 id="等待-amp-設定-Github-Page-CNAME"><a href="#等待-amp-設定-Github-Page-CNAME" class="headerlink" title="等待 &amp; 設定 Github Page CNAME　"></a>等待 &amp; 設定 Github Page CNAME　</h3><p>等待設定更新需要一些時間，多久不一定，可能幾分鐘也可能幾小時</p>
-<p>如果你在瀏覽器輸入你設定的子域名能夠看到 Github 的頁面（這時應該是 Github 404 頁面）表示更新生效了</p>
-<p>在等待的時間我們可以先來設定 Github CNAME</p>
-<p>能夠讓輸入原本 Github Pages url 時，自動導向到你的域名底下</p>
-<blockquote>
-<h4 id="demo"><a href="#demo" class="headerlink" title="demo:"></a>demo:</h4><p>試著開啟我的 Github Page 網址：<a href="https://kyoyadmoon.github.io/blog/" target="_blank" rel="external">https://kyoyadmoon.github.io/blog/</a></p>
-<p>會看到自動導向到 <a href="https://blog.dmoon.space" target="_blank" rel="external">https://blog.dmoon.space</a> 底下</p>
-</blockquote>
-<h4 id="Github-Page-CNAME"><a href="#Github-Page-CNAME" class="headerlink" title="Github Page CNAME"></a>Github Page CNAME</h4><p>設定方法是在跟目錄底下新增一個 <code>CNAME</code> 檔案</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">blog.dmoon.space</div></pre></td></tr></table></figure>
-<p>裡面填寫你設定的域名就可以了</p>
-<p>和我一樣是 Hexo 的使用者請看這裡！</p>
-<p>如果直接透過 git 添加到 github 上的話，下次 hexo generate, hexo deploy 時就會被覆蓋掉</p>
-<p>請把 CNAME 檔案放到 /source/ 底下</p>
-<p>hexo g 就會產生對應的檔案囉</p>
-</li>
-<li><h4 id="Hexo-設定"><a href="#Hexo-設定" class="headerlink" title="Hexo 設定"></a>Hexo 設定</h4><p><code>_config.yml</code> 中將 url 設定為新的域名</p>
-<p>設定好之後記得用 hexo g &amp;&amp; hexo d 更新 blog</p>
-</li>
-</ol>
-<p>想要加上免費的 SSL 簽證，完成 HTTPS 綠色鎖頭請見 <a href="/github-pages-with-free-ssl/" title="Hexo Github Pages 免費 SSL 設定">Hexo Github Pages 免費 SSL 設定</a></p>
-<h2 id="Read-More"><a href="#Read-More" class="headerlink" title="Read More"></a>Read More</h2><ul>
-<li><p><a href="http://www.cnblogs.com/winxiang/archive/2012/08/11/2633337.html" target="_blank" rel="external">SSL 與 HTTPS 介紹</a></p>
-<p>​</p>
-</li>
-</ul>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
-<li><a href="http://spector.io/how-to-set-up-github-pages-with-a-custom-domain-on-gandi/" target="_blank" rel="external">http://spector.io/how-to-set-up-github-pages-with-a-custom-domain-on-gandi/</a></li>
-<li><a href="https://blog.ccjeng.com/2016/03/How-To-Config-A-Record-Domain-Name-In-GitHub.html" target="_blank" rel="external">https://blog.ccjeng.com/2016/03/How-To-Config-A-Record-Domain-Name-In-GitHub.html</a></li>
-</ul>
-
                     
+                        <a href="/github-pages-custom-domain/" class="postShorten-excerpt_link link">
+                            繼續閱讀
+                        </a>
                         
-
-                    
-                    
-                        <p>
-                            <a href="/github-pages-custom-domain/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
                     
                 </div>
             
@@ -394,7 +307,7 @@
     </article>
     
     
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
@@ -421,7 +334,7 @@
             </div>
             
             
-                <div class="postShorten-content" itemprop="articleBody">
+                <div class="postShorten-excerpt" itemprop="articleBody">
                     <p>最近在爬文學習前端技術時，發現不少網誌都是用 github 的靜態網站來當 blog，覺得很酷，而且也不必煩惱主機的事，便搜尋了一下建立的方法，發現有滿多語言框架可以快速建立</p>
 <blockquote>
 <ul>
@@ -431,54 +344,11 @@
 <li>PHP : Phrozn</li>
 </ul>
 </blockquote>
-<p>因為對於 js 較為熟悉所以選了 Hexo 來嘗試看看，先說心得好了， Hexo 框架真的很強大，blog 大多功能幾乎都包含在裡面了，而且只需透過編輯 _config.yml ，就能完成架構及功能設定，有些功能雖然是需要另外安裝 plugin 的，使用方法都相當簡單，程式碼都埋好了，只需申請服務後，填入 id 到設定檔就可以了</p>
-<blockquote>
-<ul>
-<li>Sitemap</li>
-<li>RSS Feed</li>
-<li>Google Analytics</li>
-<li>Comment: Disqus</li>
-</ul>
-</blockquote>
-<h1 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h1><p>instal Node.js &amp; Hexo</p>
-<p>已經有 Node.js 環境可以直接安裝 Hexo</p>
-<p><code>$ npm install hexo -g</code></p>
-<p>詳細可以參考這裡 <a href="https://wwssllabcd.github.io/blog/2014/12/22/how-to-install-hexo-on-window/#安裝_Hexo" target="_blank" rel="external">安裝 Hexo</a></p>
-<h1 id="Init-Your-Blog"><a href="#Init-Your-Blog" class="headerlink" title="Init Your Blog"></a>Init Your Blog</h1><p><code>hexo init &lt;blog_name&gt;</code></p>
-<p><code>cd &lt;blog_name&gt;</code></p>
-<p><code>npm i</code></p>
-<p>再加裝一些 plugin</p>
-<p><code>npm i hexo-deployer-git hexo-renderer-ejs hexo-renderer-marked hexo-renderer-stylus --save</code></p>
-<blockquote>
-<p>hexo-deployer-git:  deploy to github</p>
-</blockquote>
-<p>hexo g  # 產生 blog</p>
-<p>hexo new <post_title> # 建立一個新的文章</post_title></p>
-<p>hexo s  # hexo server 讓 blog 可以在 local 端檢視 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a></p>
-<h1 id="Blog-Setting"><a href="#Blog-Setting" class="headerlink" title="Blog Setting"></a>Blog Setting</h1><p>前面有說過只需要透過設定 _config.yml 就可以完成，這邊需要注意的是， _config.yml 有兩個，一個在專案根目錄，另一個在 theme 資料夾裡</p>
-<h1 id="Blog-Deploy"><a href="#Blog-Deploy" class="headerlink" title="Blog Deploy"></a>Blog Deploy</h1><p>deploy 到 github 前需要先到 github 開一個 repo</p>
-<p>接著將 repo 的資訊填寫到 _config.yml 的 deploy 部分</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">    type:</span> <span class="string">git</span></div><div class="line"><span class="attr">    repository:</span> <span class="string">git@github.com:yourname/yourRepo.git</span></div><div class="line"><span class="attr">    branch:</span> <span class="string">gh-pages</span></div></pre></td></tr></table></figure>
-<p>url 的部分也需要調整一下，下面是範例</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attr">url:</span> <span class="attr">http://xxx.github.io/Blog</span></div><div class="line"><span class="attr">root:</span> <span class="string">/Blog/</span></div></pre></td></tr></table></figure>
-<p>透過指令部署之前請先確定你有 github 的 SSH key</p>
-<p>沒有的話請參考 <a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/" target="_blank" rel="external">這篇</a></p>
-<p>然後就可以部署到 github 上了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo d # hexo deploy</div></pre></td></tr></table></figure>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://hexo.io/zh-tw/docs/" target="_blank" rel="external">Hexo offical docs</a></p>
-<p><a href="https://wwssllabcd.github.io/blog/2014/12/22/how-to-install-hexo-on-window/#安裝_Hexo_所需檔案" target="_blank" rel="external">Hexo 中文安裝教學</a></p>
-<p><a href="http://v123582.github.io/blog/2015/10/25/用-hexo-建立一個自己的部落格/" target="_blank" rel="external">http://v123582.github.io/blog/2015/10/25/用-hexo-建立一個自己的部落格/</a></p>
-
                     
+                        <a href="/github-blog-build-with-hexo/" class="postShorten-excerpt_link link">
+                            繼續閱讀
+                        </a>
                         
-
-                    
-                    
-                        <p>
-                            <a href="/github-blog-build-with-hexo/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
                     
                 </div>
             

@@ -22,7 +22,7 @@
 <meta property="og:description" content="在上一篇 React Native 初心者攻略 中有說明如何在實體 iPhone 上開發 透過 AppDelegate.m 這個檔案我們可以將 localhost 手動更改成電腦 ip 來達到實機測試的目的 但是這樣的開發方式有幾個缺點   需要經常手動去做更改，尤其當你是使用筆電，甚至是和其他人共同開發的狀況，就會常常在 merge 時衝突，除非團隊都使用 localhost 以 simula">
 <meta property="og:image" content="https://softnshare.files.wordpress.com/2016/04/corporate-image-1.png?w=1000&h=545&crop=1">
 <meta property="og:image" content="https://blog.dmoon.tw/react-native-auto-ip-configuration/RCTWebSocketExecutor.png">
-<meta property="og:updated_time" content="2016-04-28T01:47:43.000Z">
+<meta property="og:updated_time" content="2017-05-10T08:27:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React Native 進階開發配置-自動設定 IP">
 <meta name="twitter:description" content="在上一篇 React Native 初心者攻略 中有說明如何在實體 iPhone 上開發 透過 AppDelegate.m 這個檔案我們可以將 localhost 手動更改成電腦 ip 來達到實機測試的目的 但是這樣的開發方式有幾個缺點   需要經常手動去做更改，尤其當你是使用筆電，甚至是和其他人共同開發的狀況，就會常常在 merge 時衝突，除非團隊都使用 localhost 以 simula">
@@ -264,6 +264,7 @@
 </blockquote>
 <p>在開發一段時間後，實在受不了，好在找到了自動設定的方法</p>
 <p><code>透過 shell script 抓取電腦的 IP 後，寫入到專案</code></p>
+<a id="more"></a>
 <h1 id="設置方法"><a href="#設置方法" class="headerlink" title="設置方法"></a>設置方法</h1><h2 id="抓取電腦-IP"><a href="#抓取電腦-IP" class="headerlink" title="抓取電腦 IP"></a>抓取電腦 IP</h2><p>我們需要先寫出能夠抓取電腦 IP 的指令</p>
 <p>網路上大多使用這個指令，可以先填到 terminal 執行看看，確認 IP 是否正確</p>
 <blockquote>

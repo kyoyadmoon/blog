@@ -222,26 +222,26 @@
 <section class="postShorten-group main-content-wrap bg-white main-section">
     
     
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
-                        <a class="link-unstyled" href="/github-blog-build-with-hexo/">
-                            Github Blog 架設 - Hexo
+                        <a class="link-unstyled" href="/koa-production-cache/">
+                            koa production cache 設定 - koa-static-cache
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Sun Feb 21 2016 18:22:32 GMT+0800">
+    <time itemprop="datePublished" content="Sat Mar 19 2016 10:07:46 GMT+0800">
 	
-		    2月 21, 2016
+		    3月 19, 2016
     	
     </time>
     
         <span>分類 </span>
         
-    <a class="category-link" href="/categories/Blog/">Blog</a>
+    <a class="category-link" href="/categories/Node-js/">Node.js</a>
 
 
     
@@ -249,64 +249,197 @@
             </div>
             
             
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>最近在爬文學習前端技術時，發現不少網誌都是用 github 的靜態網站來當 blog，覺得很酷，而且也不必煩惱主機的事，便搜尋了一下建立的方法，發現有滿多語言框架可以快速建立</p>
-<blockquote>
-<ul>
-<li>JavaScript : Hexo  </li>
-<li>Ruby : Jekyll  </li>
-<li>Python : Hyde  </li>
-<li>PHP : Phrozn</li>
-</ul>
-</blockquote>
-<p>因為對於 js 較為熟悉所以選了 Hexo 來嘗試看看，先說心得好了， Hexo 框架真的很強大，blog 大多功能幾乎都包含在裡面了，而且只需透過編輯 _config.yml ，就能完成架構及功能設定，有些功能雖然是需要另外安裝 plugin 的，使用方法都相當簡單，程式碼都埋好了，只需申請服務後，填入 id 到設定檔就可以了</p>
-<blockquote>
-<ul>
-<li>Sitemap</li>
-<li>RSS Feed</li>
-<li>Google Analytics</li>
-<li>Comment: Disqus</li>
-</ul>
-</blockquote>
-<h1 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h1><p>instal Node.js &amp; Hexo</p>
-<p>已經有 Node.js 環境可以直接安裝 Hexo</p>
-<p><code>$ npm install hexo -g</code></p>
-<p>詳細可以參考這裡 <a href="https://wwssllabcd.github.io/blog/2014/12/22/how-to-install-hexo-on-window/#安裝_Hexo" target="_blank" rel="external">安裝 Hexo</a></p>
-<h1 id="Init-Your-Blog"><a href="#Init-Your-Blog" class="headerlink" title="Init Your Blog"></a>Init Your Blog</h1><p><code>hexo init &lt;blog_name&gt;</code></p>
-<p><code>cd &lt;blog_name&gt;</code></p>
-<p><code>npm i</code></p>
-<p>再加裝一些 plugin</p>
-<p><code>npm i hexo-deployer-git hexo-renderer-ejs hexo-renderer-marked hexo-renderer-stylus --save</code></p>
-<blockquote>
-<p>hexo-deployer-git:  deploy to github</p>
-</blockquote>
-<p>hexo g  # 產生 blog</p>
-<p>hexo new <post_title> # 建立一個新的文章</post_title></p>
-<p>hexo s  # hexo server 讓 blog 可以在 local 端檢視 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a></p>
-<h1 id="Blog-Setting"><a href="#Blog-Setting" class="headerlink" title="Blog Setting"></a>Blog Setting</h1><p>前面有說過只需要透過設定 _config.yml 就可以完成，這邊需要注意的是， _config.yml 有兩個，一個在專案根目錄，另一個在 theme 資料夾裡</p>
-<h1 id="Blog-Deploy"><a href="#Blog-Deploy" class="headerlink" title="Blog Deploy"></a>Blog Deploy</h1><p>deploy 到 github 前需要先到 github 開一個 repo</p>
-<p>接著將 repo 的資訊填寫到 _config.yml 的 deploy 部分</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">    type:</span> <span class="string">git</span></div><div class="line"><span class="attr">    repository:</span> <span class="string">git@github.com:yourname/yourRepo.git</span></div><div class="line"><span class="attr">    branch:</span> <span class="string">gh-pages</span></div></pre></td></tr></table></figure>
-<p>url 的部分也需要調整一下，下面是範例</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attr">url:</span> <span class="attr">http://xxx.github.io/Blog</span></div><div class="line"><span class="attr">root:</span> <span class="string">/Blog/</span></div></pre></td></tr></table></figure>
-<p>透過指令部署之前請先確定你有 github 的 SSH key</p>
-<p>沒有的話請參考 <a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/" target="_blank" rel="external">這篇</a></p>
-<p>然後就可以部署到 github 上了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo d # hexo deploy</div></pre></td></tr></table></figure>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://hexo.io/zh-tw/docs/" target="_blank" rel="external">Hexo offical docs</a></p>
-<p><a href="https://wwssllabcd.github.io/blog/2014/12/22/how-to-install-hexo-on-window/#安裝_Hexo_所需檔案" target="_blank" rel="external">Hexo 中文安裝教學</a></p>
-<p><a href="http://v123582.github.io/blog/2015/10/25/用-hexo-建立一個自己的部落格/" target="_blank" rel="external">http://v123582.github.io/blog/2015/10/25/用-hexo-建立一個自己的部落格/</a></p>
-
+                <div class="postShorten-excerpt" itemprop="articleBody">
+                    <p><img src="https://lh3.googleusercontent.com/ehH3I28TQSBMOxkYzQ_Yp2Z9kXlDYbX-v22jH8BRXZ5bUC8PYpShgwBQP42-PKZ77vx0bn1eRsz3yrr_gIaEaKqeA_4Mt7WGd_YGXT3B40haq311NgEkP2K98NJMoj7J1-gwvEVbBPnyNO53PEFazJAZT6XMcYdnf_VNZ3NqVbPq3dgmgR8LMi2PIzdCqK0F_RWMedcl1RLfTbqxBugRbNcr38oiQ82yr5eZGAC2Chcni09MCtYdhHINoIzl-3cVh8M-K8rTpAAa3YwHwXrjUgTf4ZRVqC8aQnpr8RbCb2kboVZ6AbcVLwv1dz1LeCjo8pVEXEAqCBbxi4I3hUzfq-BpWJPmSRIqq55KPyKgXJeU90H-Aqkj0Yg0qe8zYEhd-vL_6nyqcpE7jT83VyLKStI6dsaA_LA72KqbvTuDRO8ABONlYOuQrG2Qsvxjm0A6d9qVRyCci1iD7q1c1ZhQ_xKfNgSXhnrZynFMoMaWhBSsdPVkbj7Jk_1nTnirxofc5nJOJphRMD2pwbBrSY4B-2uNhv0l0qpa5eI5LB6AvBjc4pPeXEq-ozZO06deNMj0tRUO=w1585-h712-no" alt="Koa.js"></p>
+<p>之前在設定 Koa 的 cache 時，有點小卡關，所以記錄一下</p>
+<p>我使用的 Koa 版本是 2.0.0</p>
+<p>搭配處理 cache 的套件 是 <a href="https://github.com/koajs/static-cache" target="_blank" rel="external">koa-static-cache</a></p>
                     
+                        <a href="/koa-production-cache/" class="postShorten-excerpt_link link">
+                            繼續閱讀
+                        </a>
                         
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/GWT-vs-UTC-diff-and-Etc-GWT-reverse-timezone/">
+                            GMT vs UTC 差異，Linux Etc/GMT 為何與現實時區相反
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Tue Mar 08 2016 21:22:03 GMT+0800">
+	
+		    3月 08, 2016
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/categories/Linux/">Linux</a>
 
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-excerpt" itemprop="articleBody">
+                    <h2 id="GMT-amp-UTC"><a href="#GMT-amp-UTC" class="headerlink" title="GMT &amp; UTC"></a>GMT &amp; UTC</h2><p>首先來說 GMT 和 UTC 是什麼，有什麼差別</p>
+<blockquote>
+<p>GMT：格林威治標準時間</p>
+<p>UTC：世界協調時間</p>
+</blockquote>
+<p>他們都是世界標準時間，而 UTC 的算法更為嚴謹，所以比 GMT 更為精準，不過兩者的差異是極小的，所以基本上時間是可以看作相同的</p>
                     
+                        <a href="/GWT-vs-UTC-diff-and-Etc-GWT-reverse-timezone/" class="postShorten-excerpt_link link">
+                            繼續閱讀
+                        </a>
+                        
                     
-                        <p>
-                            <a href="/github-blog-build-with-hexo/#post-footer" class="postShorten-excerpt_link link">
-                                留言與分享
-                            </a>
-                        </p>
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/Chromecast-Audio/">
+                            Chromecast Audio 變身無線音響
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Mon Feb 29 2016 00:50:21 GMT+0800">
+	
+		    2月 29, 2016
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/categories/科技產品/">科技產品</a>
+
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-excerpt" itemprop="articleBody">
+                    <p><img src="https://lh3.googleusercontent.com/7UgD5xli6K2rYKoprrlVPKU1w-OIZoiSJVR3CApp97IKGPtgGr952C6v29JWbIVEQelN3_enMvypP_pJkmGHwwEwql32tk_G8ARvt5SaNS9zrQUCyqXyyWhXyENCG9usX2o1jQLFTj6vYGSKYSrbN4beQ6ixiSS2qcIVR0v1Hw9v84GbEQAp5pW8tggzKYId-Lh4HFrdPthaOu9txYmOAcFQaDyD5IONCV1BBTuD9pSAHwMiThMzVTxCKWnBRl4HfEgmBE_U7ZT1cPzRhOaKjGHB0BWnqCIl8LuUkaXCS8GQ14gS68U3xay4SQBT60pne0sbpPQq5jQqZHeAZaJzSK4HjrVg5lxvgzjinCLBUbpdBbEw8qNYSsBXbg_y0BQvyCviLe785jQO7HT-GTb0up5B3hIWAxJACNfh2GmHhsdLy-g53oF9zD2bc_97GRh3VvJ1pJHWecwaXuulNa4przEf6lpVyBi4qXyhKBTBgJ4sqk0dpyyFOFlSqW1hXgLYcr0d8WSRMwlwuG-lyLHD1sIKkuBbEJh24Ek_ROOI-L6bJEBNn06KbJu57FwJxqfO4M8S=s1024-no" alt="Chromecast Audio"></p>
+<p><a href="https://www.google.com/chromecast/speakers/" target="_blank" rel="external"><strong>Chromecast Audio</strong></a> 去年發表的時候就很想買了 沒想到台灣遲遲沒有開賣</p>
+<p>感謝好朋友幫我從美國帶回來，可以提前嘗鮮！</p>
+                    
+                        <a href="/Chromecast-Audio/" class="postShorten-excerpt_link link">
+                            繼續閱讀
+                        </a>
+                        
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/free-to-import-react/">
+                            Webpack ProvidePlugin : 不用再 import React 了
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Tue Feb 23 2016 00:35:32 GMT+0800">
+	
+		    2月 23, 2016
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/categories/Front-end-Tool/">Front-end Tool</a>
+
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-excerpt" itemprop="articleBody">
+                    <hr>
+<p>從前可能需要每個檔案都自己人工 import jquery、react</p>
+<p>現在透過 webpack 的 ProvidePlugin 可以幫你將 dependency 自動 import</p>
+<p>不只是 react , jquery  或其他 lib 都可以使用</p>
+                    
+                        <a href="/free-to-import-react/" class="postShorten-excerpt_link link">
+                            繼續閱讀
+                        </a>
+                        
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/iOS-App-Deploy-Signing-Failed/">
+                            iOS Deploy 證書簽發者無效 Failed to locate or generate matching signing assets
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Tue Feb 23 2016 00:05:03 GMT+0800">
+	
+		    2月 23, 2016
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/categories/iOS/">iOS</a>
+
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-excerpt" itemprop="articleBody">
+                    <p>這幾天在幫公司處理 iOS APP 上架的事情，整個流程需要一堆簽章，真的很麻煩</p>
+<p>其中最雷的就是這篇要講的證書的簽發者無效，是什麼證書的簽發者無效呢？</p>
+<p>我所有的 Apple 開發相關憑證上面全部都寫簽發者過期....</p>
+<p>查了才知道是 Apple 之前給開發者的憑證 ( Apple World Wide Developer Relation Certification Authority ) 有效期限到 2016.2.14 ，也就是說這是一個熱騰騰的雷阿!</p>
+                    
+                        <a href="/iOS-App-Deploy-Signing-Failed/" class="postShorten-excerpt_link link">
+                            繼續閱讀
+                        </a>
+                        
                     
                 </div>
             
@@ -327,7 +460,14 @@
         </li>
         
         
-        <li class="pagination-number">第 2 頁 共 2 頁</li>
+        <li class="pagination-next">
+            <a class="btn btn--default btn--small" href="/archives/2016/page/3/">
+                    <span>下一頁</span>
+                <i class="fa fa-angle-right text-base icon-ml"></i>
+            </a>
+        </li>
+        
+        <li class="pagination-number">第 2 頁 共 3 頁</li>
     </ul>
 </div>
 
