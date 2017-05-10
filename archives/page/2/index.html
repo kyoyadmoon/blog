@@ -14,11 +14,11 @@
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
     <meta property="og:type" content="blog">
-<meta property="og:title" content="DMoon's Laputa">
+<meta property="og:title" content="DMoon&#39;s Laputa">
 <meta property="og:url" content="https://blog.dmoon.tw/archives/page/2/index.html">
-<meta property="og:site_name" content="DMoon's Laputa">
+<meta property="og:site_name" content="DMoon&#39;s Laputa">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DMoon's Laputa">
+<meta name="twitter:title" content="DMoon&#39;s Laputa">
     
     
         
@@ -477,9 +477,9 @@
 <h1 id="Blog-Setting"><a href="#Blog-Setting" class="headerlink" title="Blog Setting"></a>Blog Setting</h1><p>前面有說過只需要透過設定 _config.yml 就可以完成，這邊需要注意的是， _config.yml 有兩個，一個在專案根目錄，另一個在 theme 資料夾裡</p>
 <h1 id="Blog-Deploy"><a href="#Blog-Deploy" class="headerlink" title="Blog Deploy"></a>Blog Deploy</h1><p>deploy 到 github 前需要先到 github 開一個 repo</p>
 <p>接著將 repo 的資訊填寫到 _config.yml 的 deploy 部分</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">    type:</span> git</div><div class="line"><span class="attr">    repository:</span> git@github.com:yourname/yourRepo.git</div><div class="line"><span class="attr">    branch:</span> gh-pages</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">    type:</span> <span class="string">git</span></div><div class="line"><span class="attr">    repository:</span> <span class="string">git@github.com:yourname/yourRepo.git</span></div><div class="line"><span class="attr">    branch:</span> <span class="string">gh-pages</span></div></pre></td></tr></table></figure>
 <p>url 的部分也需要調整一下，下面是範例</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attr">url:</span> http://xxx.github.io/Blog</div><div class="line"><span class="attr">root:</span> /Blog/</div></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attr">url:</span> <span class="attr">http://xxx.github.io/Blog</span></div><div class="line"><span class="attr">root:</span> <span class="string">/Blog/</span></div></pre></td></tr></table></figure>
 <p>透過指令部署之前請先確定你有 github 的 SSH key</p>
 <p>沒有的話請參考 <a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/" target="_blank" rel="external">這篇</a></p>
 <p>然後就可以部署到 github 上了</p>

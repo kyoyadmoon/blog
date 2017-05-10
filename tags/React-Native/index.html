@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="DMoon&#39;s Laputa">
-    <title>標籤: React-Native - DMoon&#39;s Laputa</title>
+    <title>標籤: React Native - DMoon&#39;s Laputa</title>
     <meta property="author" name="author" content="DMoon">
     
     
@@ -14,11 +14,11 @@
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
     <meta property="og:type" content="blog">
-<meta property="og:title" content="DMoon's Laputa">
+<meta property="og:title" content="DMoon&#39;s Laputa">
 <meta property="og:url" content="https://blog.dmoon.tw/tags/React-Native/index.html">
-<meta property="og:site_name" content="DMoon's Laputa">
+<meta property="og:site_name" content="DMoon&#39;s Laputa">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DMoon's Laputa">
+<meta name="twitter:title" content="DMoon&#39;s Laputa">
     
     
         
@@ -227,21 +227,21 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
-                        <a class="link-unstyled" href="/react-native-with-socketIO/">
-                            React Native with Socket.io - error: evaluting &#39;navigator.userAgent.match&#39;
+                        <a class="link-unstyled" href="/react-native-integrate-with-code-push/">
+                            React Native CodePush 偷天換日術
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Fri Mar 25 2016 18:53:20 GMT+0800">
+    <time itemprop="datePublished" content="Sun Feb 19 2017 18:16:36 GMT+0800">
 	
-		    3月 25, 2016
+		    2月 19, 2017
     	
     </time>
     
         <span>分類 </span>
         
-    <a class="category-link" href="/categories/React-Native/">React-Native</a>
+    <a class="category-link" href="/categories/React-Native/">React Native</a>
 
 
     
@@ -250,15 +250,83 @@
             
             
                 <div class="postShorten-content" itemprop="articleBody">
-                    <p>昨天在處理為 React Native 加上 聊天室的功能，首先遇到的問題就是串接 Socket ，要在 RN 上使用 socket 需要安裝 <a href="https://github.com/socketio/socket.io-client" target="_blank" rel="external">socket.io-client</a>，安裝之後 import socket.io-client/socket.io 時，遇到了這個 error </p>
-<p><em>undefined is not an object (evaluting &#39;navigator.userAgent.match&#39;)</em></p>
-<p>找了一下解決方法
-發現這個套件不能用 import ，必需用 require
-另外需要 assign window.navigator.userAgent</p>
-<p>正確設定方法如下</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</div><div class="line"></div><div class="line"><span class="built_in">window</span>.navigator.userAgent = <span class="string">'react-native'</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> io = <span class="built_in">require</span>(<span class="string">'socket.io-client/socket.io'</span>);</div><div class="line"></div><div class="line"><span class="keyword">const</span> socket = io(<span class="string">'ws://'</span>, &#123; <span class="attr">jsonp</span>: <span class="literal">false</span> &#125;);</div></pre></td></tr></table></figure>
-<p>#Reference</p>
-<p><a href="http://browniefed.com/blog/2015/05/16/react-native-and-socket-dot-io/" target="_blank" rel="external">http://browniefed.com/blog/2015/05/16/react-native-and-socket-dot-io/</a></p>
+                    <h1 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h1><p>CodePush 是一個雲端服務，能夠讓 Cordova 和 React Native 的開發者將手機應用的更新，跳過提交審查，直接部署到用戶的設備上。 它擔任類似中間倉庫的角色，開發者可以把更新（JS，HTML，CSS和圖片）發佈到這個倉庫上，透過程式碼的整合，Apps 就能夠查詢到更新並且下載。</p>
+<h1 id="Setup-CodePush-Service"><a href="#Setup-CodePush-Service" class="headerlink" title="Setup CodePush Service"></a>Setup CodePush Service</h1><p>首先我們先從 CodePush 服務的準備開始～～</p>
+<h2 id="Install-CodePush-Management-CLI"><a href="#Install-CodePush-Management-CLI" class="headerlink" title="Install CodePush Management CLI"></a>Install CodePush Management CLI</h2><p>首先我們需要安裝 <a href="https://github.com/Microsoft/code-push/tree/master/cli" target="_blank" rel="external">CodePush CLI</a></p>
+<p><code>$ npm install -g code-push-cli</code></p>
+<p>安裝完後察看版本確認安裝成功</p>
+<p><code>$ code-push -v</code></p>
+<h2 id="Register-amp-Login-CodePush"><a href="#Register-amp-Login-CodePush" class="headerlink" title="Register &amp; Login CodePush"></a>Register &amp; Login CodePush</h2><p><code>$ code-push register</code></p>
+<p>執行後會開啟網頁讓你進行註冊，並在 terminal 要求填入 access key</p>
+<p>可以直接透過網頁以微軟或Github帳號做第三方登入進行授權</p>
+<p>註冊登入後頁面會給你 access key </p>
+<p>此時複製回到 terminal 貼上</p>
+<ul>
+<li>登入：<code>$ code-push login</code> </li>
+<li>登出：<code>$ code-push loout</code> </li>
+</ul>
+<h2 id="Add-new-App"><a href="#Add-new-App" class="headerlink" title="Add new App"></a>Add new App</h2><p><code>$ code-push app add &lt;appName&gt;</code></p>
+<p>新增完後透過 ls 指令確認新增成功</p>
+<p>新增的 App 將會有兩個預設的環境</p>
+<ul>
+<li>Staging：通常用來當作開發中的部署環境</li>
+<li>Production：上線的部署環境</li>
+</ul>
+<p>每個部署環境可以當成是 <code>git</code> 當中不同的 branch 概念</p>
+<p>也能夠從 history 進行版本控制，做一些 rollback 的動作</p>
+<h2 id="Get-Deployment-Key-Of-App"><a href="#Get-Deployment-Key-Of-App" class="headerlink" title="Get Deployment Key Of App"></a>Get Deployment Key Of App</h2><p><code>$ code-push deployment ls &lt;appName&gt; -k</code></p>
+<p>就能看見該 App 所有部署環境的 deplyment key</p>
+<h1 id="React-Native-Code-Push-整合"><a href="#React-Native-Code-Push-整合" class="headerlink" title="React-Native-Code-Push 整合"></a>React-Native-Code-Push 整合</h1><ul>
+<li><a href="https://github.com/Microsoft/react-native-code-push#getting-started" target="_blank" rel="external">Official Docs</a></li>
+</ul>
+<p>文件寫得相當詳細，Step by step 照著文件作就可以</p>
+<p>這邊簡單說明流程</p>
+<p>由於不同的 React Native 版本所需要做的配置略有不同</p>
+<p>這邊以 React Native v0.41.2 為例</p>
+<ol>
+<li><p>安裝 react-native-code-push : </p>
+<p><code>$ npm install --save react-native-code-push@latest</code> 
+<a href="https://github.com/Microsoft/react-native-code-push#supported-react-native-platforms" target="_blank" rel="external">點一下這邊</a> 確認 RN 版本和套件支援的版本相依性 </p>
+</li>
+<li><p>安裝完後，接下來需要 link</p>
+<p>由於 React Native 版本在 0.27 之後，已經將 <code>rnpm link</code> 合併到 <code>React Native CLI</code></p>
+<p>直接使用</p>
+<p><code>$ react-native link react-native-code-push</code></p>
+<p>0.27 以下的版本則可以透過 <code>$ rnpm link</code> 設置，詳細可以參考 <a href="https://github.com/Microsoft/react-native-code-push#getting-started" target="_blank" rel="external">Setup</a></p>
+</li>
+<li><p>安裝完後還需要做兩個整合的動作 (這邊的設置方式對應不同的 RN 版本也有差異)</p>
+<ul>
+<li><p>設定 deployment key 到專案中</p>
+<ul>
+<li><p>Android :</p>
+<p>編輯 <code>android/app/src/main/java/com/&lt;ProjectName&gt;/MainApplication.java</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> List&lt;ReactPackage&gt; <span class="title">getPackages</span><span class="params">()</span> </span>&#123;</div><div class="line">      <span class="keyword">return</span> Arrays.&lt;ReactPackage&gt;asList(</div><div class="line">          <span class="keyword">new</span> MainReactPackage(),</div><div class="line">            <span class="keyword">new</span> CodePush(<span class="string">"Deployment_Key"</span>, getApplicationContext(), BuildConfig.DEBUG)</div><div class="line">      );</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>填入 app 的 deployment key</p>
+</li>
+<li><p>iOS :</p>
+<p>在 <code>ios/&lt;Project_Name&gt;/info.plist</code> 中 </p>
+<p>可以看見 <code>CodePushDeploymentKey</code> 欄位，在 value 欄填入 deployment key 即可</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>最後是整合 JS 的部分</p>
+<p>使用 HOC (Higher Order Component) 的方式就能快速的整合到你的 App 中了</p>
+<p>程式碼如下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> codePush <span class="keyword">from</span> <span class="string">"react-native-code-push"</span>;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyApp</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line">MyApp = codePush(MyApp);</div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ol>
+<h1 id="進行更新"><a href="#進行更新" class="headerlink" title="進行更新"></a>進行更新</h1><p>release-react 是專門更新 React Native 專案的指令</p>
+<p>會自動將目前檔案產生 bundle 並上傳更新版本到 CodePush 的雲端上</p>
+<p><code>$ code-push release-react &lt;appName&gt;  &lt;platform&gt; -d &lt;deploymentName&gt;</code></p>
+<p>如果沒有給 -d 的 <code>deploymentName</code> 參數的話，預設將會是 <code>Staging</code></p>
+<h2 id="Read-More"><a href="#Read-More" class="headerlink" title="Read More"></a>Read More</h2><ul>
+<li><a href="http://www.jianshu.com/p/fa362da953c7" target="_blank" rel="external">http://www.jianshu.com/p/fa362da953c7</a></li>
+<li><a href="http://www.jianshu.com/p/87ccfb795635" target="_blank" rel="external">http://www.jianshu.com/p/87ccfb795635</a></li>
+<li><a href="http://bbs.reactnative.cn/topic/725/code-push-%E7%83%AD%E6%9B%B4%E6%96%B0%E4%BD%BF%E7%94%A8%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E%E5%92%8C%E6%95%99%E7%A8%8B" target="_blank" rel="external">http://bbs.reactnative.cn/topic/725/code-push-%E7%83%AD%E6%9B%B4%E6%96%B0%E4%BD%BF%E7%94%A8%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E%E5%92%8C%E6%95%99%E7%A8%8B</a></li>
+</ul>
 
                     
                         
@@ -266,7 +334,199 @@
                     
                     
                         <p>
-                            <a href="/react-native-with-socketIO/#post-footer" class="postShorten-excerpt_link link">
+                            <a href="/react-native-integrate-with-code-push/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/react-native-auto-ip-configuration/">
+                            React Native 進階開發配置-自動設定 IP
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Wed Apr 27 2016 20:57:40 GMT+0800">
+	
+		    4月 27, 2016
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/categories/React-Native/">React Native</a>
+
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p><img src="https://softnshare.files.wordpress.com/2016/04/corporate-image-1.png?w=1000&amp;h=545&amp;crop=1" alt="React Native"></p>
+<p>在上一篇 <a href="http://kyoyadmoon.github.io/blog/2016/04/19/react-native-101/" target="_blank" rel="external">React Native 初心者攻略</a> 中有說明如何在實體 iPhone 上開發</p>
+<p>透過 <code>AppDelegate.m</code> 這個檔案我們可以將 localhost 手動更改成電腦 ip 來達到實機測試的目的</p>
+<p>但是這樣的開發方式有幾個缺點</p>
+<blockquote>
+<ol>
+<li>需要經常手動去做更改，尤其當你是使用筆電，甚至是和其他人共同開發的狀況，就會常常在 merge 時衝突，除非團隊都使用 localhost 以 simulator 進行開發</li>
+<li>沒辦法在實體機器上 Debug in Chrome</li>
+</ol>
+</blockquote>
+<p>在開發一段時間後，實在受不了，好在找到了自動設定的方法</p>
+<p><code>透過 shell script 抓取電腦的 IP 後，寫入到專案</code></p>
+<h1 id="設置方法"><a href="#設置方法" class="headerlink" title="設置方法"></a>設置方法</h1><h2 id="抓取電腦-IP"><a href="#抓取電腦-IP" class="headerlink" title="抓取電腦 IP"></a>抓取電腦 IP</h2><p>我們需要先寫出能夠抓取電腦 IP 的指令</p>
+<p>網路上大多使用這個指令，可以先填到 terminal 執行看看，確認 IP 是否正確</p>
+<blockquote>
+<p><code>ifconfig | grep inet\ | tail -1 | cut -d &quot; &quot; -f 2</code></p>
+</blockquote>
+<p>但是因為我們專案後端 server 有使用到 docker ，使用上面 command 抓到的是錯誤的 IP</p>
+<p>所以我需要改成這樣</p>
+<blockquote>
+<p><code>ifconfig | grep -Eo &#39;inet (addr:)?([0-9]*\.){3}[0-9]*&#39; | grep -Eo &#39;([0-9]*\.){3}[0-9]*&#39; | grep -v &#39;127.0.0.1&#39; | head -1</code></p>
+</blockquote>
+<p>OK 我們現在能夠拿到正確的 IP 了</p>
+<h2 id="Add-Run-Script"><a href="#Add-Run-Script" class="headerlink" title="Add Run Script"></a>Add Run Script</h2><p>再來我們需要設定在專案執行時執行一段 shell script 去抓取 IP 寫入到專案中</p>
+<p>照著圖中藍色 focus 的地方找到 <code>Build Phases</code></p>
+{% asset_img addScript.png %}
+<p>新增一個 Run Script 後的畫面</p>
+{% asset_img editScript.png %}
+<p>接下來就是填入主角 script  了</p>
+<p>下面的 script 會在專案的 INFOPLIST 裡新增一個 SERVER_IP 的欄位，並把 IP 寫入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">INFOPLIST=&quot;$&#123;TARGET_BUILD_DIR&#125;/$&#123;INFOPLIST_PATH&#125;&quot;</div><div class="line">echo &quot;writing to $INFOPLIST&quot;</div><div class="line">PLISTCMD=&quot;Add :SERVER_IP string $(ifconfig | grep -Eo &apos;inet (addr:)?([0-9]*\.)&#123;3&#125;[0-9]*&apos; | grep -Eo &apos;([0-9]*\.)&#123;3&#125;[0-9]*&apos; | grep -v &apos;127.0.0.1&apos; | head -1)&quot;</div><div class="line">echo -n &quot;$INFOPLIST&quot; | xargs -0 /usr/libexec/PlistBuddy -c &quot;$PLISTCMD&quot; || true</div><div class="line">PLISTCMD=&quot;Set :SERVER_IP $(ifconfig | grep -Eo &apos;inet (addr:)?([0-9]*\.)&#123;3&#125;[0-9]*&apos; | grep -Eo &apos;([0-9]*\.)&#123;3&#125;[0-9]*&apos; | grep -v &apos;127.0.0.1&apos; | head -1)&quot;</div><div class="line">echo -n &quot;$INFOPLIST&quot; | xargs -0 /usr/libexec/PlistBuddy -c &quot;$PLISTCMD&quot; || true</div></pre></td></tr></table></figure>
+<p>填好之後會像這樣</p>
+{% asset_img addedScript.png %}
+<h2 id="在-AppDelegate-m-讀取-SERVER-IP"><a href="#在-AppDelegate-m-讀取-SERVER-IP" class="headerlink" title="在 AppDelegate.m 讀取 SERVER_IP"></a>在 <code>AppDelegate.m</code> 讀取 SERVER_IP</h2><p>打開 <code>AppDelegate.m</code> </p>
+<p>將原本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jsCodeLocation = [NSURL URLWithString:@&quot;http://localhost:8081/index.ios.bundle?platform=ios&amp;dev=true&quot;];</div></pre></td></tr></table></figure>
+<p>替換成能夠動態改變 SERVER_IP 的 code</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">NSString *serverIP = [[NSBundle mainBundle] objectForInfoDictionaryKey:@&quot;SERVER_IP&quot;];</div><div class="line">NSString *jsCodeUrlString = [NSString stringWithFormat:@&quot;http://%@:8081/index.ios.bundle?platform=ios&amp;dev=true&quot;, serverIP];</div><div class="line">NSString *jsBundleUrlString = [jsCodeUrlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];</div><div class="line">jsCodeLocation = [NSURL URLWithString:jsBundleUrlString];</div></pre></td></tr></table></figure>
+{% asset_img AppDelegate.png %}
+<p>這時候你可以測試看看 simulator 和 real device 上是不是都能正常運作，可以的話就成功囉！</p>
+<h2 id="Debug-in-Chrome-on-Real-Device"><a href="#Debug-in-Chrome-on-Real-Device" class="headerlink" title="Debug in Chrome on Real Device"></a>Debug in Chrome on Real Device</h2><p>找到 <code>RCTWebSocketExecutor.ｍ</code> 的 setUp</p>
+<img src="/react-native-auto-ip-configuration/RCTWebSocketExecutor.png" alt="RCTWebSocketExecutor.png" title="">
+<p>將這行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">NSString *URLString = [NSString stringWithFormat:@&quot;http://localhost:%zd/debugger-proxy?role=client&quot;, port];</div></pre></td></tr></table></figure>
+<p>替換成</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">NSString *serverIP = [[NSBundle mainBundle] objectForInfoDictionaryKey:@&quot;SERVER_IP&quot;];</div><div class="line">NSString *URLString = [NSString stringWithFormat:@&quot;http://%@:%zd/debugger-proxy?role=client&quot;, serverIP, port];</div></pre></td></tr></table></figure>
+<p>這邊一樣是將 localhost 改成 SERVER_IP</p>
+<p>實體裝置就能透過 wifi 在電腦的 chrome 上進行 debug 了，趕快試試看！</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://moduscreate.com/automated-ip-configuration-for-react-native-development/" target="_blank" rel="external">http://moduscreate.com/automated-ip-configuration-for-react-native-development/</a></p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/react-native-auto-ip-configuration/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/react-native-101/">
+                            React Native 初心者攻略 (OS X)
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Tue Apr 19 2016 00:05:03 GMT+0800">
+	
+		    4月 19, 2016
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/categories/React-Native/">React Native</a>
+
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p><img src="https://i.imgur.com/dnaYgtL.png" alt="React Native"></p>
+<p>由於 React 的火熱程度，身邊許多朋友都開始接觸 React ，我也推薦他們玩玩看 React Native ，我覺得 React 的入門門檻有些其實和 React 本身無關，像是 Webpack, Babel 等等都多少在無形中增加了入門的難度，且有許多範例可能還使用了 ES6 語法，雖然不是必要，但可能會造成初學者混淆、失去信心，使學習過程更不順利。</p>
+<p>然而 React Native 完全就是一個超棒的東西，只要跟著官網的教學就可以很簡單的開始使用 React 撰寫跨平台的 App，不僅內建支援 ES6 ，還有 Live Reload , Hot Reloading 等強大功能, 甚至能在 Chrome 中 debug ，這些React Native 統統幫你包好了，省去了原先我們在 web 專案開發需要自行加入 webpack, babel 等等的處理過程。</p>
+<h2 id="環境建立"><a href="#環境建立" class="headerlink" title="環境建立"></a>環境建立</h2><p>相關環境安裝的部分跟著 <a href="http://reactnative.cn/docs/0.23/getting-started.html#环境需求" target="_blank" rel="external"><strong>官網的詳細指示</strong> (別擔心這裡有中文版) </a>操作就可以了，這部分就不多敘述</p>
+<h2 id="建立RN專案"><a href="#建立RN專案" class="headerlink" title="建立RN專案"></a>建立RN專案</h2><pre><code>$ npm install -g react-native-cli
+$ react-native init AwesomeProject
+</code></pre><h1 id="iOS"><a href="#iOS" class="headerlink" title="iOS"></a>iOS</h1><h2 id="環境準備"><a href="#環境準備" class="headerlink" title="環境準備"></a>環境準備</h2><p>安裝 Xcode 即可</p>
+<h2 id="專案開發"><a href="#專案開發" class="headerlink" title="專案開發"></a>專案開發</h2><p>有兩種方法</p>
+<p>第一種是使用 Xcode ：</p>
+<blockquote>
+<p>開啟專案目錄下的 <code>/ios/AwesomeProject.xcodeproj</code> （應該會以 Xcode 開啟）, 按左上角的播放圖示按鈕就會自動開啟 iPhone 模擬器和 Packager server ，並把專案 build 成 App 到模擬器中。</p>
+</blockquote>
+<p>另一種是開啟 terminal 切換到專案目錄</p>
+<blockquote>
+<p><code>$ react-native run-ios</code></p>
+<p>這個指令可以不用開啟 Xcode 做和上面同樣的事情，一個指令解決，非常簡潔</p>
+</blockquote>
+<p>接著你就可以開始編輯專案目錄下的 <code>index.ios.js</code> 開始開發你的專案。</p>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>在模擬器的 RN App 中你可以用快捷鍵 <code>cmd+D</code> 打開開發 Menu，這邊可以設定 Debug in Chrome, Live Reload, Hot Reloading 等等功能。</p>
+<p>若需要手動刷新可以使用熱鍵 <code>cmd+R</code></p>
+<p>另外，如果你有實體 Apple 裝置的話，也能夠直接在實體裝置上測試、開發</p>
+<ol>
+<li><p>將 Apple 裝置用USB線連接到電腦，並和電腦連接同一個 wifi</p>
+</li>
+<li><p>將專案用 Xcode 開啟（上面的第一種方法）</p>
+</li>
+<li><p>在 Xcode 左上角播放圖示的右方應該可以看到 寫著 Apple 裝置的選項，點按後選到自己的實體裝置</p>
+</li>
+<li><p>打開 Xcode 左邊檔案管理的導覽列 Tree View，找到 <code>AwesomeProject/AppDelegate.m</code> 這個檔案打開來
+可以在裡面找到這段，相信看到註解大家應該都知道要怎麼做了，把 localhost 換成電腦的 ip 就可以了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">* To run on device, change `localhost` to the IP address of your computer</div><div class="line">* (you can get this by typing `ifconfig` into the terminal and selecting the</div><div class="line">* `inet` value under `en0:`) and make sure your computer and iOS device are</div><div class="line">* on the same Wi-Fi network.</div><div class="line">*/</div><div class="line"></div><div class="line">jsCodeLocation = [NSURL URLWithString:@&quot;http://localhost:8081/index.ios.bundle?platform=ios&amp;dev=true&quot;];</div></pre></td></tr></table></figure>
+</li>
+<li><p>按下 Xcode 左上角的播放鍵開始 Run 囉</p>
+</li>
+</ol>
+<h1 id="Android-環境準備"><a href="#Android-環境準備" class="headerlink" title="Android 環境準備"></a>Android 環境準備</h1><p>由於目前我主要都是在 iOS 上開發， Android 部分還沒有很了解，如果有漏掉什麼還請各位大大提醒</p>
+<p>Android 在 OS X 上的環境準備相對 iOS 來說稍微麻煩一點，但也不難
+細心按照官方指示應該就能成功囉</p>
+<p><a href="http://reactnative.cn/docs/0.23/android-setup.html#content" target="_blank" rel="external">參考這裡</a></p>
+<h2 id="開發準備"><a href="#開發準備" class="headerlink" title="開發準備"></a>開發準備</h2><p>安裝完 Android SDK 和 Genymotion 之後</p>
+<p>先打開 Genymotion 創建一個模擬器啟動</p>
+<p>接著開啟 terminal 切到專案目錄下</p>
+<p><code>$ react-native run-android</code></p>
+<p>然後就可以編輯 <code>index.android.js</code> 開始開發了</p>
+<p>在模擬器中按下 menu 按鈕可以打開開發 Menu ，這邊可以設定 Debug in Chrome, Live Reload, Hot Reloading 等等功能。</p>
+<h1 id="如何使用別人寫好的-library-Package"><a href="#如何使用別人寫好的-library-Package" class="headerlink" title="如何使用別人寫好的 library, Package"></a>如何使用別人寫好的 library, Package</h1><p>我的同事 yaode 寫了一篇詳細完整的教學文章
+大家可以參考看看</p>
+<p><a href="http://trunk-studio.com/blog/react-native-how-to-use-component/" target="_blank" rel="external">http://trunk-studio.com/blog/react-native-how-to-use-component/</a></p>
+<p>記得有用到文章內的方法 link library 的話，是需要重新 build App 到模擬器才能正常運作的喔！（run-ios / run-android）</p>
+
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/react-native-101/#post-footer" class="postShorten-excerpt_link link">
                                 留言與分享
                             </a>
                         </p>

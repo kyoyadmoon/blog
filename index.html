@@ -14,11 +14,11 @@
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
     <meta property="og:type" content="blog">
-<meta property="og:title" content="DMoon's Laputa">
+<meta property="og:title" content="DMoon&#39;s Laputa">
 <meta property="og:url" content="https://blog.dmoon.tw/index.html">
-<meta property="og:site_name" content="DMoon's Laputa">
+<meta property="og:site_name" content="DMoon&#39;s Laputa">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DMoon's Laputa">
+<meta name="twitter:title" content="DMoon&#39;s Laputa">
     
     
         
@@ -460,7 +460,7 @@
 <li><h3 id="購買域名"><a href="#購買域名" class="headerlink" title="購買域名"></a>購買域名</h3><p>我是在 <a href="https://www.gandi.net/" target="_blank" rel="external">gandi</a> 購買的，大家可以到各域名商的網站上搜尋喜歡的域名進行購買，租期到了要記得續訂，才不會發生慘劇。</p>
 </li>
 <li><h3 id="設定-區域檔"><a href="#設定-區域檔" class="headerlink" title="設定 區域檔"></a>設定 區域檔</h3><p>在 gandi 購買完後，進入 domain 的 管理頁面找到 <code>編輯區域檔</code> 的連結，進入區域檔的編輯頁面，( gandi 無法更改現正套用的設定檔，所以需要先新增一個來編輯，編輯好再選擇套用) ，總之最後設定的結果應該要長這樣</p>
-<img src="/github-pages-custom-domain/gandi-zone-configure.png" alt="gandi-zone-configure.png" title="">
+{% asset_img gandi-zone-configure.png %}
 <p><code>192.30.252.153</code> , <code>192.30.252.154</code> 是 Github 的位址
 第三個 CNAME 的設定，name 的地方可以填你想要的子網域(subDomain)，value 則是填寫你的 github.io 網址（最後記得加上一個 <code>.　ex: kyoyadmoon.github.io.</code>）</p>
 <p>需要畫面截圖參考，<a href="http://spector.io/how-to-set-up-github-pages-with-a-custom-domain-on-gandi/" target="_blank" rel="external">請點這裡</a></p>
@@ -629,20 +629,20 @@
 <p>OK 我們現在能夠拿到正確的 IP 了</p>
 <h2 id="Add-Run-Script"><a href="#Add-Run-Script" class="headerlink" title="Add Run Script"></a>Add Run Script</h2><p>再來我們需要設定在專案執行時執行一段 shell script 去抓取 IP 寫入到專案中</p>
 <p>照著圖中藍色 focus 的地方找到 <code>Build Phases</code></p>
-<img src="/react-native-auto-ip-configuration/addScript.png" alt="addScript.png" title="">
+{% asset_img addScript.png %}
 <p>新增一個 Run Script 後的畫面</p>
-<img src="/react-native-auto-ip-configuration/editScript.png" alt="editScript.png" title="">
+{% asset_img editScript.png %}
 <p>接下來就是填入主角 script  了</p>
 <p>下面的 script 會在專案的 INFOPLIST 裡新增一個 SERVER_IP 的欄位，並把 IP 寫入</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">INFOPLIST=&quot;$&#123;TARGET_BUILD_DIR&#125;/$&#123;INFOPLIST_PATH&#125;&quot;</div><div class="line">echo &quot;writing to $INFOPLIST&quot;</div><div class="line">PLISTCMD=&quot;Add :SERVER_IP string $(ifconfig | grep -Eo &apos;inet (addr:)?([0-9]*\.)&#123;3&#125;[0-9]*&apos; | grep -Eo &apos;([0-9]*\.)&#123;3&#125;[0-9]*&apos; | grep -v &apos;127.0.0.1&apos; | head -1)&quot;</div><div class="line">echo -n &quot;$INFOPLIST&quot; | xargs -0 /usr/libexec/PlistBuddy -c &quot;$PLISTCMD&quot; || true</div><div class="line">PLISTCMD=&quot;Set :SERVER_IP $(ifconfig | grep -Eo &apos;inet (addr:)?([0-9]*\.)&#123;3&#125;[0-9]*&apos; | grep -Eo &apos;([0-9]*\.)&#123;3&#125;[0-9]*&apos; | grep -v &apos;127.0.0.1&apos; | head -1)&quot;</div><div class="line">echo -n &quot;$INFOPLIST&quot; | xargs -0 /usr/libexec/PlistBuddy -c &quot;$PLISTCMD&quot; || true</div></pre></td></tr></table></figure>
 <p>填好之後會像這樣</p>
-<img src="/react-native-auto-ip-configuration/addedScript.png" alt="addedScript.png" title="">
+{% asset_img addedScript.png %}
 <h2 id="在-AppDelegate-m-讀取-SERVER-IP"><a href="#在-AppDelegate-m-讀取-SERVER-IP" class="headerlink" title="在 AppDelegate.m 讀取 SERVER_IP"></a>在 <code>AppDelegate.m</code> 讀取 SERVER_IP</h2><p>打開 <code>AppDelegate.m</code> </p>
 <p>將原本</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jsCodeLocation = [NSURL URLWithString:@&quot;http://localhost:8081/index.ios.bundle?platform=ios&amp;dev=true&quot;];</div></pre></td></tr></table></figure>
 <p>替換成能夠動態改變 SERVER_IP 的 code</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">NSString *serverIP = [[NSBundle mainBundle] objectForInfoDictionaryKey:@&quot;SERVER_IP&quot;];</div><div class="line">NSString *jsCodeUrlString = [NSString stringWithFormat:@&quot;http://%@:8081/index.ios.bundle?platform=ios&amp;dev=true&quot;, serverIP];</div><div class="line">NSString *jsBundleUrlString = [jsCodeUrlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];</div><div class="line">jsCodeLocation = [NSURL URLWithString:jsBundleUrlString];</div></pre></td></tr></table></figure>
-<img src="/react-native-auto-ip-configuration/AppDelegate.png" alt="AppDelegate.png" title="">
+{% asset_img AppDelegate.png %}
 <p>這時候你可以測試看看 simulator 和 real device 上是不是都能正常運作，可以的話就成功囉！</p>
 <h2 id="Debug-in-Chrome-on-Real-Device"><a href="#Debug-in-Chrome-on-Real-Device" class="headerlink" title="Debug in Chrome on Real Device"></a>Debug in Chrome on Real Device</h2><p>找到 <code>RCTWebSocketExecutor.ｍ</code> 的 setUp</p>
 <img src="/react-native-auto-ip-configuration/RCTWebSocketExecutor.png" alt="RCTWebSocketExecutor.png" title="">
