@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.dmoon.tw/react-native-auto-ip-configuration/</loc>
+    
+    <lastmod>2017-05-10T09:00:10.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.dmoon.tw/react-native-integrate-with-code-push/</loc>
     
     <lastmod>2017-05-10T08:31:50.000Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>https://blog.dmoon.tw/github-pages-custom-domain/</loc>
     
     <lastmod>2017-05-10T08:27:44.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.dmoon.tw/react-native-auto-ip-configuration/</loc>
-    
-    <lastmod>2017-05-10T08:27:37.000Z</lastmod>
     
   </url>
   

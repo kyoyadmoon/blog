@@ -298,9 +298,9 @@
     <link href="https://blog.dmoon.tw/react-native-auto-ip-configuration/"/>
     <id>https://blog.dmoon.tw/react-native-auto-ip-configuration/</id>
     <published>2016-04-27T12:57:40.000Z</published>
-    <updated>2017-05-10T08:27:37.000Z</updated>
+    <updated>2017-05-10T09:00:10.000Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://softnshare.files.wordpress.com/2016/04/corporate-image-1.png?w=1000&amp;h=545&amp;crop=1" alt="React Native"></p>
+    <content type="html"><![CDATA[<img src="/react-native-auto-ip-configuration/react-native.png" alt="react-native.png" title="">
 <p>在上一篇 <a href="http://kyoyadmoon.github.io/blog/2016/04/19/react-native-101/" target="_blank" rel="external">React Native 初心者攻略</a> 中有說明如何在實體 iPhone 上開發</p>
 <p>透過 <code>AppDelegate.m</code> 這個檔案我們可以將 localhost 手動更改成電腦 ip 來達到實機測試的目的</p>
 <p>但是這樣的開發方式有幾個缺點</p>
@@ -354,7 +354,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;https://softnshare.files.wordpress.com/2016/04/corporate-image-1.png?w=1000&amp;amp;h=545&amp;amp;crop=1&quot; alt=&quot;React Native&quot;&gt;&lt;/p&gt;
+      &lt;img src=&quot;/react-native-auto-ip-configuration/react-native.png&quot; alt=&quot;react-native.png&quot; title=&quot;&quot;&gt;
 &lt;p&gt;在上一篇 &lt;a href=&quot;http://kyoyadmoon.github.io/blog/2016/04/19/react-native-101/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;React Native 初心者攻略&lt;/a&gt; 中有說明如何在實體 iPhone 上開發&lt;/p&gt;
 &lt;p&gt;透過 &lt;code&gt;AppDelegate.m&lt;/code&gt; 這個檔案我們可以將 localhost 手動更改成電腦 ip 來達到實機測試的目的&lt;/p&gt;
 &lt;p&gt;但是這樣的開發方式有幾個缺點&lt;/p&gt;
