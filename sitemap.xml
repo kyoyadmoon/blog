@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.dmoon.tw/iPhoneX-simulator-with-Xcode-9-GM/</loc>
+    
+    <lastmod>2017-09-14T19:09:54.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.dmoon.tw/2017-iPhone-X-keynote/</loc>
+    
+    <lastmod>2017-09-14T17:47:26.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.dmoon.tw/react-native-auto-ip-configuration/</loc>
     
     <lastmod>2017-05-10T09:00:10.000Z</lastmod>
