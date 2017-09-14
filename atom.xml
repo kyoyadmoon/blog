@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.dmoon.tw/"/>
-  <updated>2017-09-14T17:47:26.000Z</updated>
+  <updated>2017-09-14T19:15:17.000Z</updated>
   <id>https://blog.dmoon.tw/</id>
   
   <author>
@@ -20,11 +20,11 @@
     <link href="https://blog.dmoon.tw/2017-iPhone-X-keynote/"/>
     <id>https://blog.dmoon.tw/2017-iPhone-X-keynote/</id>
     <published>2017-09-14T17:21:04.000Z</published>
-    <updated>2017-09-14T17:47:26.000Z</updated>
+    <updated>2017-09-14T19:15:17.000Z</updated>
     
     <content type="html"><![CDATA[<img src="/2017-iPhone-X-keynote/iPhone-X-keynote.png" alt="iPhone-X-keynote.png" title="">  
 <h4 id=""><a href="#" class="headerlink" title=" "></a> </h4><p>前天 (9/13) 凌晨是大家引頸期盼的 iPhone 十週年發表會，當然我也熬夜的看了直播，畢竟 iPhone 當時問世可說是劃時代的產品，顛覆了整個手機產業。而在十年之後，相信所有人都好奇，他們這次準備了哪些超乎想像的新驚喜，讓我們更接近未來。</p>
-<p>至於發表會的內容，我想大家應該就算沒看直播，也看過許多人整理的懶人包了，大多的消息在發表會之前就都走漏，因此也少了許多新鮮感。</p>
+<p>至於發表會的內容，我想大家應該就算沒看直播，也看過許多人整理的懶人包了，大多的消息在發表會之前就都走漏，因此也少了許多新鮮感。<a id="more"></a></p>
 <p>我個人對於發表會的內容感到失望，因為消息走漏 (外型什麼的都和傳言一模一樣，再看一次真的是很乏味的事)，又缺少立即具有震撼力的功能展示。</p>
 <p>接下來換說一些我覺得有潛力的地方：</p>
 <ol>
@@ -38,7 +38,8 @@
     <summary type="html">
     
       &lt;img src=&quot;/2017-iPhone-X-keynote/iPhone-X-keynote.png&quot; alt=&quot;iPhone-X-keynote.png&quot; title=&quot;&quot;&gt;  
-&lt;h4 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title
+&lt;h4 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot; &quot;&gt;&lt;/a&gt; &lt;/h4&gt;&lt;p&gt;前天 (9/13) 凌晨是大家引頸期盼的 iPhone 十週年發表會，當然我也熬夜的看了直播，畢竟 iPhone 當時問世可說是劃時代的產品，顛覆了整個手機產業。而在十年之後，相信所有人都好奇，他們這次準備了哪些超乎想像的新驚喜，讓我們更接近未來。&lt;/p&gt;
+&lt;p&gt;至於發表會的內容，我想大家應該就算沒看直播，也看過許多人整理的懶人包了，大多的消息在發表會之前就都走漏，因此也少了許多新鮮感。
     
     </summary>
     
@@ -54,12 +55,13 @@
     <link href="https://blog.dmoon.tw/iPhoneX-simulator-with-Xcode-9-GM/"/>
     <id>https://blog.dmoon.tw/iPhoneX-simulator-with-Xcode-9-GM/</id>
     <published>2017-09-14T16:08:19.000Z</published>
-    <updated>2017-09-14T19:12:29.000Z</updated>
+    <updated>2017-09-14T19:14:43.000Z</updated>
     
     <content type="html"><![CDATA[<p>在 iPhone X 發表之前，大家應該就多少有聽到傳聞、甚至看到照片，而當時在看到全螢幕上方的咩咩頭瀏海時，我就開始疑惑 UI 會有什麼樣的變化，身為前端開發者，嗅到一股不太妙的預感，但憑著 &quot;在發表會之前，我只相信林志穎&quot; 的信念，這些都是幻覺，嚇不倒我的。</p>
 <p>萬萬沒想到，發表會影片一播，竟然如同傳聞的一模一樣...</p>
 <p>接著在發表會隔天就在 Facebook 看到其他開發者的哀嚎  </p>
 <h3 id=""><a href="#" class="headerlink" title=" "></a> </h3><img src="/iPhoneX-simulator-with-Xcode-9-GM/plurk-on-iphoneX.jpg" alt="plurk-on-iphoneX.jpg" title="">
+<a id="more"></a>  
 <p>於是我也去找了 Xcode 測試版，下載來試看看 React Native App 在 iPhone X 上的樣子，想體驗的人可以到這個<a href="https://developer.apple.com/download/" target="_blank" rel="external">網址</a>下載 GM 版本的 Xcode 9  (BTW,  macOS High Sierra 10.13 GM 也剛剛釋出了)</p>
 <p>下載過程不是很順利，檔案有5GB，但下載速度不快，大約只有幾百 KB/s，而且不是很穩定，前三次都下載到一半斷掉，花了好幾個小時才載完.....</p>
 <blockquote>
@@ -82,7 +84,10 @@
     
     <summary type="html">
     
-      &lt;p&gt;在 iPhone X 發表之前，大家應該就多少有聽到傳聞、甚至看到照片，而當時在看到全螢幕上方的咩咩頭瀏海時，我就開始疑惑 UI 會有什麼樣的變化，身為前端開發者，嗅到一股不太妙的預感，但憑著 &amp;quot;在發表會之前，我只相信林志穎&amp;quot; 的信念，這些都是幻覺，嚇不
+      &lt;p&gt;在 iPhone X 發表之前，大家應該就多少有聽到傳聞、甚至看到照片，而當時在看到全螢幕上方的咩咩頭瀏海時，我就開始疑惑 UI 會有什麼樣的變化，身為前端開發者，嗅到一股不太妙的預感，但憑著 &amp;quot;在發表會之前，我只相信林志穎&amp;quot; 的信念，這些都是幻覺，嚇不倒我的。&lt;/p&gt;
+&lt;p&gt;萬萬沒想到，發表會影片一播，竟然如同傳聞的一模一樣...&lt;/p&gt;
+&lt;p&gt;接著在發表會隔天就在 Facebook 看到其他開發者的哀嚎  &lt;/p&gt;
+&lt;h3 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot; &quot;&gt;&lt;/a&gt; &lt;/h3&gt;&lt;img src=&quot;/iPhoneX-simulator-with-Xcode-9-GM/plurk-on-iphoneX.jpg&quot; alt=&quot;plurk-on-iphoneX.jpg&quot; title=&quot;&quot;&gt;
     
     </summary>
     
@@ -901,11 +906,11 @@ $ react-native init AwesomeProject
       <category term="Blog" scheme="https://blog.dmoon.tw/categories/Blog/"/>
     
     
+      <category term="Hexo" scheme="https://blog.dmoon.tw/tags/Hexo/"/>
+    
       <category term="Node.js" scheme="https://blog.dmoon.tw/tags/Node-js/"/>
     
       <category term="Github" scheme="https://blog.dmoon.tw/tags/Github/"/>
-    
-      <category term="Hexo" scheme="https://blog.dmoon.tw/tags/Hexo/"/>
     
   </entry>
   
