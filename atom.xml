@@ -54,7 +54,7 @@
     <link href="https://blog.dmoon.tw/iPhoneX-simulator-with-Xcode-9-GM/"/>
     <id>https://blog.dmoon.tw/iPhoneX-simulator-with-Xcode-9-GM/</id>
     <published>2017-09-14T16:08:19.000Z</published>
-    <updated>2017-09-14T19:09:54.000Z</updated>
+    <updated>2017-09-14T19:12:29.000Z</updated>
     
     <content type="html"><![CDATA[<p>在 iPhone X 發表之前，大家應該就多少有聽到傳聞、甚至看到照片，而當時在看到全螢幕上方的咩咩頭瀏海時，我就開始疑惑 UI 會有什麼樣的變化，身為前端開發者，嗅到一股不太妙的預感，但憑著 &quot;在發表會之前，我只相信林志穎&quot; 的信念，這些都是幻覺，嚇不倒我的。</p>
 <p>萬萬沒想到，發表會影片一播，竟然如同傳聞的一模一樣...</p>
@@ -75,7 +75,7 @@
 <p><strong>專案相關套件版本</strong></p>
  <figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"> 	<span class="attr">"react"</span>: <span class="string">"16.0.0-alpha.12"</span>,</div><div class="line"> 	<span class="attr">"react-native"</span>: <span class="string">"0.47.1"</span>,</div><div class="line"> 	<span class="attr">"react-native-router-flux"</span>: <span class="string">"^4.0.0-beta.18"</span>,</div><div class="line"> 	<span class="attr">"react-native-vector-icons"</span>: <span class="string">"4.2.0"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>畫面中的 Navbar 和 TabBar 都是 <a href="https://github.com/aksonov/react-native-router-flux" target="_blank" rel="external">react-native-router-flux</a> 這個套件預設的樣式
-( react-native-router-flux 是一個 base on <a href="https://reactnavigation.org/" target="_blank" rel="external">React Navigation</a> 的專案 )</p>
+( react-native-router-flux 是一個 based on <a href="https://reactnavigation.org/" target="_blank" rel="external">React Navigation</a> 的場景管理套件 )</p>
 <p>嗯....　看來有太多要改的地方了　還是先改天吧</p>
 <p>希望在 iPhone X 上市前，RN 會有對應的規劃</p>
 ]]></content>
