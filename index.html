@@ -222,6 +222,86 @@
 <section class="postShorten-group main-content-wrap bg-white main-section">
     
     
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
+                        <a class="link-unstyled" href="/react-native-universal-linking/">
+                            React Native - Universal Linking
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" content="Fri Nov 23 2018 15:00:07 GMT+0800">
+	
+		    11月 23, 2018
+    	
+    </time>
+    
+        <span>分類 </span>
+        
+    <a class="category-link" href="/categories/React-Native/">React Native</a>
+
+
+    
+</div>
+            </div>
+            
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <h1 id="Universal-Links"><a href="#Universal-Links" class="headerlink" title="Universal Links"></a>Universal Links</h1><p>iOS 稱 <strong>Universal Links</strong> ，Android 稱 <strong>Deep Linking</strong>，原理是在裝置上新增 URL Scheme 設定，當開啟特定規則的連結時可以開啟 App，用這個方法可以提升應用程式跨 Web 與 Mobile App 平台的使用體驗，當使用者開啟連結時，判斷裝置上是否有安裝 App ，有的話會直接開啟 App，若沒有則使用瀏覽器開啟網頁版提供檢視，或者直接導向到該裝置平台的 App 下載畫面 (iOS 的 <strong>App Store</strong> / Android 的 <strong>Google Play</strong>)</p>
+<h2 id="設定方法"><a href="#設定方法" class="headerlink" title="設定方法"></a>設定方法</h2><p>設定希望開啟 App 的  url scheme，你可以自定義一組 url 並且在安裝 App 時向裝置註冊這個 url 與 App 的綁定。例如你做了一個 ToDoApp，你可以設定開啟你ToDoApp的連結為 <code>myToDo://blabla</code> ，由於安裝時，會對這個 url 做註冊，當你開啟這個連結時就會跳轉到你的 App。</p>
+<p>如果你想註冊自己的 domain 為 url ，iOS 上需要額外做 domain 的驗證，確認你是 domain 的擁有者，帶來的好處是可以達到當使用者開啟 domain 連結時，如果有安裝 mobile App 可以直接用 native App 開啟，如果沒有的話則會自動使用瀏覽器打開網站。</p>
+<h3 id="iOS-設定-Associated-Domains"><a href="#iOS-設定-Associated-Domains" class="headerlink" title="iOS 設定 Associated Domains"></a>iOS 設定 Associated Domains</h3><p>需要在你網站上新增一個 route </p>
+<p>你可以選擇直接掛在 domain 根目錄下或是多一層 <code>.well-known</code></p>
+<p>範例如下</p>
+<p><code>https://&lt;fully qualified domain&gt;/apple-app-site-association</code></p>
+<p>或是</p>
+<p><code>https://&lt;fully qualified domain&gt;/.well-known/apple-app-site-association</code></p>
+<p>皆下來要讓這個 route 回傳 JSON 格式的內容</p>
+<p>內容範例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">   <span class="attr">"webcredentials"</span>: &#123;</div><div class="line">       <span class="attr">"apps"</span>: [ <span class="string">"D3KQX62K1A.com.example.DemoApp"</span> ]</div><div class="line">    &#125;,</div><div class="line">   <span class="attr">"applinks"</span>: &#123;</div><div class="line">        <span class="attr">"apps"</span>: [],</div><div class="line">        <span class="attr">"details"</span>: [</div><div class="line">            &#123;</div><div class="line">                <span class="attr">"appID"</span>: <span class="string">"D3KQX62K1A.com.example.DemoApp"</span>,</div><div class="line">                <span class="attr">"paths"</span>: [ <span class="string">"/app/*"</span> ]</div><div class="line">            &#125;</div><div class="line">        ]</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>App ID 格式</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; &lt;Team Identifier&gt;.&lt;Bundle Identifier&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<p><strong>paths</strong> 可以設定想要跳轉的 url 路徑規則</p>
+</blockquote>
+<h3 id="設定-App-Url-Scheme"><a href="#設定-App-Url-Scheme" class="headerlink" title="設定 App Url Scheme"></a>設定 App Url Scheme</h3><h4 id="iOS"><a href="#iOS" class="headerlink" title="iOS"></a>iOS</h4><p><code>Info.plist</code></p>
+<figure class="highlight plist"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>CFBundleURLTypes<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">array</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">dict</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">key</span>&gt;</span>CFBundleURLSchemes<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">array</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">string</span>&gt;</span>https://your.domain.com<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">array</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">key</span>&gt;</span>CFBundleURLName<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">string</span>&gt;</span><span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">dict</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">array</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><code>AppDelegate.m</code></p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"RCTLinkingManager.h"</span> // import</span></div><div class="line"></div><div class="line"><span class="comment">// ADD THIS METHOD</span></div><div class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)application continueUserActivity:(<span class="built_in">NSUserActivity</span> *)userActivity</div><div class="line"> restorationHandler:(<span class="keyword">void</span> (^)(<span class="built_in">NSArray</span> * _Nullable))restorationHandler</div><div class="line">&#123;</div><div class="line"> <span class="keyword">return</span> [RCTLinkingManager application:application</div><div class="line">                  continueUserActivity:userActivity</div><div class="line">                    restorationHandler:restorationHandler];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">intent-filter</span> <span class="attr">android:label</span>=<span class="string">"&lt;YOUR_APP_NAME&gt;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"android.intent.action.VIEW"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"android.intent.category.DEFAULT"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"android.intent.category.BROWSABLE"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">data</span> <span class="attr">android:scheme</span>=<span class="string">"https"</span> <span class="attr">android:host</span>=<span class="string">"&lt;YOUR_DOMAIN&gt;"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="React-Native-端處理"><a href="#React-Native-端處理" class="headerlink" title="React Native 端處理"></a>React Native 端處理</h2><p>新增監聽 UniversalLinking 函式，並在 App 進入點的 <code>componentDidMount</code> 執行</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">listenUniversalLinking = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">  <span class="comment">// 當 App 從關閉狀態，被 universal links 呼叫開啟時，執行 restStackToProperRoute</span></div><div class="line">  Linking.getInitialURL()</div><div class="line">    .then(<span class="function">(<span class="params">url</span>) =&gt;</span> &#123;</div><div class="line">      <span class="keyword">if</span> (url) &#123;</div><div class="line">        <span class="keyword">this</span>.resetStackToProperRoute(url);</div><div class="line">      &#125;</div><div class="line">    &#125;)</div><div class="line">    .catch(<span class="function">(<span class="params">e</span>) =&gt;</span> &#123;&#125;);</div><div class="line"></div><div class="line">  <span class="comment">// 當 App 因為 universal links 從背景被叫醒時，執行 this.appWokeUp </span></div><div class="line">  Linking.addEventListener(<span class="string">'url'</span>, <span class="keyword">this</span>.appWokeUp);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>在 <code>componentWillUnmount</code> 事件加上移除監聽事件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">componentWillUnmount() &#123;</div><div class="line">    <span class="comment">// Remove the listener</span></div><div class="line">    Linking.removeEventListener(<span class="string">'url'</span>, <span class="keyword">this</span>.appWokeUp);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>appWokeUp</strong> 處理</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">appWokeUp = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'appWokeUp'</span>, event);</div><div class="line">  <span class="keyword">this</span>.resetStackToProperRoute(event.url);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p><strong>resetStackToProperRoute</strong> 處理</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">resetStackToProperRoute = <span class="function">(<span class="params">url</span>) =&gt;</span> &#123;</div><div class="line"><span class="comment">// 在這邊判斷 url，導向到對應的畫面</span></div><div class="line"> &#125;;</div></pre></td></tr></table></figure>
+<h2 id="測試方法-Test-Universal-Links-Deep-Linking"><a href="#測試方法-Test-Universal-Links-Deep-Linking" class="headerlink" title="測試方法 Test Universal Links, Deep Linking"></a>測試方法 Test Universal Links, Deep Linking</h2><p>可以在裝置或模擬器上的瀏覽器輸入網址來進行測試
+或是更方便的透過下列指令來直接在裝置或模擬器上開啟網址</p>
+<h3 id="iOS-1"><a href="#iOS-1" class="headerlink" title="iOS"></a>iOS</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xcrun simctl openurl booted <span class="string">"https://domain.com/something"</span></div></pre></td></tr></table></figure>
+<h3 id="Android-1"><a href="#Android-1" class="headerlink" title="Android"></a>Android</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell am start <span class="_">-a</span> android.intent.action.VIEW <span class="_">-d</span> <span class="string">"https://domain.com/something"</span></div></pre></td></tr></table></figure>
+                    
+                        
+
+                    
+                    
+                        <p>
+                            <a href="/react-native-universal-linking/#post-footer" class="postShorten-excerpt_link link">
+                                留言與分享
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
     <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             <div class="postShorten-header">
@@ -394,49 +474,6 @@
         
     </article>
     
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/github-pages-custom-domain/">
-                            Github Pages 自訂域名 - 輕鬆擁有 https 綠鎖頭 (1)
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Tue Jan 31 2017 16:15:33 GMT+0800">
-	
-		    1月 31, 2017
-    	
-    </time>
-    
-        <span>分類 </span>
-        
-    <a class="category-link" href="/categories/Hexo/">Hexo</a>
-
-
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <p>最近看到好多人的 Github Pages 都有了自己的域名和 https，剛好在 <a href="https://www.gandi.net/" target="_blank" rel="external">Gandi</a> 上看到 space 的 domain 好便宜，心血來潮於是就買了一個來玩，之前其實沒有碰過 domain 相關的設定，原先想說可能會有點麻煩，沒想到比預期還要容易許多，簡單做個筆記記錄一下，整個過程需要對 Github Pages, <a href="https://www.gandi.net/" target="_blank" rel="external">Gandi</a>,  <a href="https://www.cloudflare.com/" target="_blank" rel="external">CloudFlare</a> (SSL) 做一些設定。</p>
-<p>我們先從 custom domain 開始吧</p>
-                    
-                        <a href="/github-pages-custom-domain/" class="postShorten-excerpt_link link">
-                            繼續閱讀
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
     <div class="pagination-bar">
     <ul class="pagination">
         
@@ -457,7 +494,7 @@
 
                 <footer id="footer" class="main-content-wrap">
     <span class="copyrights">
-        Copyrights &copy; 2017 DMoon. All Rights Reserved.
+        Copyrights &copy; 2018 DMoon. All Rights Reserved.
     </span>
 </footer>
 
