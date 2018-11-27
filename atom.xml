@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.dmoon.tw/"/>
-  <updated>2018-11-27T08:23:48.497Z</updated>
+  <updated>2018-11-27T08:38:51.225Z</updated>
   <id>https://blog.dmoon.tw/</id>
   
   <author>
@@ -14,6 +14,45 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>apply apple developer</title>
+    <link href="https://blog.dmoon.tw/apply-apple-developer/"/>
+    <id>https://blog.dmoon.tw/apply-apple-developer/</id>
+    <published>2018-11-27T08:35:29.000Z</published>
+    <updated>2018-11-27T08:38:51.225Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="申請-Apple-Developer"><a href="#申請-Apple-Developer" class="headerlink" title="申請 Apple Developer"></a>申請 Apple Developer</h1><h3 id="申請前需準備的資料"><a href="#申請前需準備的資料" class="headerlink" title="申請前需準備的資料"></a>申請前需準備的資料</h3><ul>
+<li>已開啟<a href="https://support.apple.com/zh-cn/HT204915" target="_blank" rel="external">雙重認證</a>的 Apple ID</li>
+<li>申請組織帳號 (Organization)<ul>
+<li>組織的 D-U-N-S 編號</li>
+<li>組織的公開網站</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>詳細請見下方申請網址中的申請說明</p>
+</blockquote>
+<h3 id="申請網址"><a href="#申請網址" class="headerlink" title="申請網址"></a>申請網址</h3><p><a href="https://developer.apple.com/cn/programs/enroll/" target="_blank" rel="external">https://developer.apple.com/cn/programs/enroll/</a></p>
+<p>確認一下申請說明的事項和想要申請的帳號類型</p>
+<p>若不是組織帳戶，可以像我一樣選擇獨立開發者</p>
+<p>若是公司或團體可以申請組織帳號，但需要更詳細的申請資料及更長的申請時間</p>
+<p>接著在下一頁填寫帳號資訊，最後填寫付款資訊 (信用卡) 就可以完成申請</p>
+<h3 id="申請金額"><a href="#申請金額" class="headerlink" title="申請金額"></a>申請金額</h3><p>NTD $ 3400 / 年</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;申請-Apple-Developer&quot;&gt;&lt;a href=&quot;#申請-Apple-Developer&quot; class=&quot;headerlink&quot; title=&quot;申請 Apple Developer&quot;&gt;&lt;/a&gt;申請 Apple Developer&lt;/h1&gt;&lt;h3 id=&quot;申
+    
+    </summary>
+    
+      <category term="iOS" scheme="https://blog.dmoon.tw/categories/iOS/"/>
+    
+    
+      <category term="iOS" scheme="https://blog.dmoon.tw/tags/iOS/"/>
+    
+  </entry>
   
   <entry>
     <title>React Native - Universal Linking</title>
