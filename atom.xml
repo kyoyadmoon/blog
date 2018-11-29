@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.dmoon.tw/"/>
-  <updated>2018-11-29T16:32:23.700Z</updated>
+  <updated>2018-11-29T16:48:15.853Z</updated>
   <id>https://blog.dmoon.tw/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="https://blog.dmoon.tw/print-folder-tree-on-mac/"/>
     <id>https://blog.dmoon.tw/print-folder-tree-on-mac/</id>
     <published>2018-11-29T15:53:35.000Z</published>
-    <updated>2018-11-29T16:32:23.700Z</updated>
+    <updated>2018-11-29T16:48:15.853Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Mac-印出樹狀資料夾目錄結構"><a href="#Mac-印出樹狀資料夾目錄結構" class="headerlink" title="Mac 印出樹狀資料夾目錄結構"></a>Mac 印出樹狀資料夾目錄結構</h1><p><img src="print-folder-tree-on-mac/2018-11-30-00-27-22.png" alt=""></p>
+    <content type="html"><![CDATA[<img src="/print-folder-tree-on-mac/2018-11-30-00-27-22.png" alt="2018-11-30-00-27-22.png" title="">  
 <p>最近寫文章需要將專案的檔案目錄結構用樹狀印出，方便閱讀，所以找了一些相關資料，整理一下做個筆記</p>
 <p>homebrew 上就有個 <code>tree</code> 的套件可以做到這個功能</p>
 <a id="more"></a>
@@ -44,7 +44,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Mac-印出樹狀資料夾目錄結構&quot;&gt;&lt;a href=&quot;#Mac-印出樹狀資料夾目錄結構&quot; class=&quot;headerlink&quot; title=&quot;Mac 印出樹狀資料夾目錄結構&quot;&gt;&lt;/a&gt;Mac 印出樹狀資料夾目錄結構&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;print-folder-tree-on-mac/2018-11-30-00-27-22.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+      &lt;img src=&quot;/print-folder-tree-on-mac/2018-11-30-00-27-22.png&quot; alt=&quot;2018-11-30-00-27-22.png&quot; title=&quot;&quot;&gt;  
 &lt;p&gt;最近寫文章需要將專案的檔案目錄結構用樹狀印出，方便閱讀，所以找了一些相關資料，整理一下做個筆記&lt;/p&gt;
 &lt;p&gt;homebrew 上就有個 &lt;code&gt;tree&lt;/code&gt; 的套件可以做到這個功能&lt;/p&gt;
     
@@ -62,18 +62,18 @@
     <link href="https://blog.dmoon.tw/introduce-firacode/"/>
     <id>https://blog.dmoon.tw/introduce-firacode/</id>
     <published>2018-11-27T17:08:57.000Z</published>
-    <updated>2018-11-29T16:30:23.324Z</updated>
+    <updated>2018-11-29T16:43:51.494Z</updated>
     
     <content type="html"><![CDATA[<p><a href="https://github.com/tonsky/FiraCode" target="_blank" rel="external">FiraCode</a> 是一套讓程式碼更易讀的符號字型，當初在 GitHub 看到下面的這張預覽圖</p>
 <p><img src="https://github.com/tonsky/FiraCode/blob/master/showcases/all_ligatures.png" alt=""></p>
 <p>第一點看到時非常不習慣，覺得只是套讓程式碼看起來更潮，裝Ｂ的開發工具
 但實際試用後，發現對於程式碼的符號閱讀速度和精確度確實有不少程度的提升，看起來也更簡潔易懂</p>
-<p>以下舉一些例子說明，左邊是 FiraCode 字型，右邊的則是一般字型的符號顯示結果</p>
-<p>等號的比較
-<img src="Introduce-FiraCode/2018-11-28-01-21-04.png" alt=""></p>
-<p>小於、大於符號的顯示
-<img src="Introduce-FiraCode/2018-11-28-01-19-27.png" alt=""></p>
 <a id="more"></a>
+<p>以下舉一些例子說明，左邊是 FiraCode 字型，右邊的則是一般字型的符號顯示結果</p>
+<p>等號的比較</p>
+<img src="/introduce-firacode/2018-11-28-01-21-04.png" alt="2018-11-28-01-21-04.png" title="">
+<p>小於、大於符號的顯示</p>
+<img src="/introduce-firacode/2018-11-28-01-19-27.png" alt="2018-11-28-01-19-27.png" title="">
 <h1 id="安裝方法"><a href="#安裝方法" class="headerlink" title="安裝方法"></a>安裝方法</h1>]]></content>
     
     <summary type="html">
@@ -82,11 +82,6 @@
 &lt;p&gt;&lt;img src=&quot;https://github.com/tonsky/FiraCode/blob/master/showcases/all_ligatures.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;第一點看到時非常不習慣，覺得只是套讓程式碼看起來更潮，裝Ｂ的開發工具
 但實際試用後，發現對於程式碼的符號閱讀速度和精確度確實有不少程度的提升，看起來也更簡潔易懂&lt;/p&gt;
-&lt;p&gt;以下舉一些例子說明，左邊是 FiraCode 字型，右邊的則是一般字型的符號顯示結果&lt;/p&gt;
-&lt;p&gt;等號的比較
-&lt;img src=&quot;Introduce-FiraCode/2018-11-28-01-21-04.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;小於、大於符號的顯示
-&lt;img src=&quot;Introduce-FiraCode/2018-11-28-01-19-27.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
     
     </summary>
     
@@ -1083,11 +1078,11 @@ $ react-native init AwesomeProject
       <category term="Blog" scheme="https://blog.dmoon.tw/categories/Blog/"/>
     
     
-      <category term="Hexo" scheme="https://blog.dmoon.tw/tags/Hexo/"/>
-    
       <category term="Node.js" scheme="https://blog.dmoon.tw/tags/Node-js/"/>
     
       <category term="Github" scheme="https://blog.dmoon.tw/tags/Github/"/>
+    
+      <category term="Hexo" scheme="https://blog.dmoon.tw/tags/Hexo/"/>
     
   </entry>
   

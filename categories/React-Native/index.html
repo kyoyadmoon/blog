@@ -7,7 +7,7 @@
     <meta http-equiv="cache-control" content="max-age=604800" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="DMoon&#39;s Laputa">
-    <title>分類: React Native - DMoon&#39;s Laputa</title>
+    <title>分類: React-Native - DMoon&#39;s Laputa</title>
     <meta property="author" name="author" content="DMoon">
     
     
@@ -235,21 +235,21 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
-                        <a class="link-unstyled" href="/react-native-universal-linking/">
-                            React Native - Universal Linking
+                        <a class="link-unstyled" href="/react-native-with-socketIO/">
+                            React Native with Socket.io - error: evaluting &#39;navigator.userAgent.match&#39;
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Fri Nov 23 2018 15:00:07 GMT+0800">
+    <time itemprop="datePublished" content="Fri Mar 25 2016 18:53:20 GMT+0800">
 	
-		    11月 23, 2018
+		    3月 25, 2016
     	
     </time>
     
         <span>分類 </span>
         
-    <a class="category-link" href="/categories/React-Native/">React Native</a>
+    <a class="category-link" href="/categories/React-Native/">React-Native</a>
 
 
     
@@ -258,148 +258,10 @@
             
             
                 <div class="postShorten-excerpt" itemprop="articleBody">
-                    <h1 id="Universal-Links-Deep-Linking"><a href="#Universal-Links-Deep-Linking" class="headerlink" title="Universal Links / Deep Linking"></a>Universal Links / Deep Linking</h1><p>網址跳轉手機原生 App 功能，iOS 稱 <strong>Universal Links</strong> ，Android 稱 <strong>Deep Linking</strong>，原理是在裝置上新增 URL Scheme 設定，當開啟特定規則的連結時可以開啟 App，用這個方法可以提升應用程式跨 Web 與 Mobile App 平台的使用體驗，當使用者開啟連結時，判斷裝置上是否有安裝 App ，有的話會直接開啟 App，若沒有則使用瀏覽器開啟網頁版提供檢視，或者直接導向到該裝置平台的 App 下載畫面 (iOS 的 <strong>App Store</strong> / Android 的 <strong>Google Play</strong>)</p>
+                    <p>昨天在處理為 React Native 加上 聊天室的功能，首先遇到的問題就是串接 Socket ，要在 RN 上使用 socket 需要安裝 <a href="https://github.com/socketio/socket.io-client" target="_blank" rel="external">socket.io-client</a>，安裝之後 import socket.io-client/socket.io 時，遇到了這個 error </p>
+<p><em>undefined is not an object (evaluting &#39;navigator.userAgent.match&#39;)</em></p>
                     
-                        <a href="/react-native-universal-linking/" class="postShorten-excerpt_link link">
-                            繼續閱讀
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/react-native-integrate-with-code-push/">
-                            React Native CodePush 偷天換日術
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Sun Feb 19 2017 18:16:36 GMT+0800">
-	
-		    2月 19, 2017
-    	
-    </time>
-    
-        <span>分類 </span>
-        
-    <a class="category-link" href="/categories/React-Native/">React Native</a>
-
-
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <p>CodePush 是一個雲端服務，能夠讓 Cordova 和 React Native 的開發者將手機應用的更新，跳過提交審查，直接部署到用戶的設備上。 它擔任類似中間倉庫的角色，開發者可以把更新（JS，HTML，CSS和圖片）發佈到這個倉庫上，透過程式碼的整合，Apps 就能夠查詢到更新並且下載。</p>
-                    
-                        <a href="/react-native-integrate-with-code-push/" class="postShorten-excerpt_link link">
-                            繼續閱讀
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/react-native-auto-ip-configuration/">
-                            React Native 進階開發配置-自動設定 IP
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Wed Apr 27 2016 20:57:40 GMT+0800">
-	
-		    4月 27, 2016
-    	
-    </time>
-    
-        <span>分類 </span>
-        
-    <a class="category-link" href="/categories/React-Native/">React Native</a>
-
-
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <img src="/react-native-auto-ip-configuration/react-native.png" alt="react-native.png" title="">
-<p>在上一篇 <a href="http://kyoyadmoon.github.io/blog/2016/04/19/react-native-101/" target="_blank" rel="external">React Native 初心者攻略</a> 中有說明如何在實體 iPhone 上開發</p>
-<p>透過 <code>AppDelegate.m</code> 這個檔案我們可以將 localhost 手動更改成電腦 ip 來達到實機測試的目的</p>
-<p>但是這樣的開發方式有幾個缺點</p>
-<blockquote>
-<ol>
-<li>需要經常手動去做更改，尤其當你是使用筆電，甚至是和其他人共同開發的狀況，就會常常在 merge 時衝突，除非團隊都使用 localhost 以 simulator 進行開發</li>
-<li>沒辦法在實體機器上 Debug in Chrome</li>
-</ol>
-</blockquote>
-<p>在開發一段時間後，實在受不了，好在找到了自動設定的方法</p>
-<p><code>透過 shell script 抓取電腦的 IP 後，寫入到專案</code></p>
-                    
-                        <a href="/react-native-auto-ip-configuration/" class="postShorten-excerpt_link link">
-                            繼續閱讀
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/react-native-101/">
-                            React Native 初心者攻略 (OS X)
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Tue Apr 19 2016 00:05:03 GMT+0800">
-	
-		    4月 19, 2016
-    	
-    </time>
-    
-        <span>分類 </span>
-        
-    <a class="category-link" href="/categories/React-Native/">React Native</a>
-
-
-    
-</div>
-            </div>
-            
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <p><img src="https://i.imgur.com/dnaYgtL.png" alt="React Native"></p>
-<p>由於 React 的火熱程度，身邊許多朋友都開始接觸 React ，我也推薦他們玩玩看 React Native ，我覺得 React 的入門門檻有些其實和 React 本身無關，像是 Webpack, Babel 等等都多少在無形中增加了入門的難度，且有許多範例可能還使用了 ES6 語法，雖然不是必要，但可能會造成初學者混淆、失去信心，使學習過程更不順利。</p>
-<p>然而 React Native 完全就是一個超棒的東西，只要跟著官網的教學就可以很簡單的開始使用 React 撰寫跨平台的 App，不僅內建支援 ES6 ，還有 Live Reload , Hot Reloading 等強大功能, 甚至能在 Chrome 中 debug ，這些React Native 統統幫你包好了，省去了原先我們在 web 專案開發需要自行加入 webpack, babel 等等的處理過程。</p>
-                    
-                        <a href="/react-native-101/" class="postShorten-excerpt_link link">
+                        <a href="/react-native-with-socketIO/" class="postShorten-excerpt_link link">
                             繼續閱讀
                         </a>
                         
