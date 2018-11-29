@@ -133,9 +133,9 @@
     <link href="https://blog.dmoon.tw/react-native-universal-linking/"/>
     <id>https://blog.dmoon.tw/react-native-universal-linking/</id>
     <published>2018-11-23T07:00:07.000Z</published>
-    <updated>2018-11-27T08:23:48.497Z</updated>
+    <updated>2018-11-29T16:59:01.718Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Universal-Links-Deep-Linking"><a href="#Universal-Links-Deep-Linking" class="headerlink" title="Universal Links / Deep Linking"></a>Universal Links / Deep Linking</h1><p>網址跳轉手機原生 App 功能，iOS 稱 <strong>Universal Links</strong> ，Android 稱 <strong>Deep Linking</strong>，原理是在裝置上新增 URL Scheme 設定，當開啟特定規則的連結時可以開啟 App，用這個方法可以提升應用程式跨 Web 與 Mobile App 平台的使用體驗，當使用者開啟連結時，判斷裝置上是否有安裝 App ，有的話會直接開啟 App，若沒有則使用瀏覽器開啟網頁版提供檢視，或者直接導向到該裝置平台的 App 下載畫面 (iOS 的 <strong>App Store</strong> / Android 的 <strong>Google Play</strong>)</p>
+    <content type="html"><![CDATA[<p>網址跳轉手機原生 App 功能，iOS 稱 <strong>Universal Links</strong> ，Android 稱 <strong>Deep Linking</strong>，原理是在裝置上新增 URL Scheme 設定，當開啟特定規則的連結時可以開啟 App，用這個方法可以提升應用程式跨 Web 與 Mobile App 平台的使用體驗，當使用者開啟連結時，判斷裝置上是否有安裝 App ，有的話會直接開啟 App，若沒有則使用瀏覽器開啟網頁版提供檢視，或者直接導向到該裝置平台的 App 下載畫面 (iOS 的 <strong>App Store</strong> / Android 的 <strong>Google Play</strong>)</p>
 <a id="more"></a>
 <h2 id="設定方法"><a href="#設定方法" class="headerlink" title="設定方法"></a>設定方法</h2><p>設定希望開啟 App 的  url scheme，你可以自定義一組 url 並且在安裝 App 時向裝置註冊這個 url 與 App 的綁定。例如你做了一個 ToDoApp，你可以設定開啟你ToDoApp的連結為 <code>myToDo://blabla</code> ，由於安裝時，會對這個 url 做註冊，當你開啟這個連結時就會跳轉到你的 App。</p>
 <p>如果你想註冊自己的 domain 為 url ，iOS 上需要額外做 domain 的驗證，確認你是 domain 的擁有者，帶來的好處是可以達到當使用者開啟 domain 連結時，如果有安裝 mobile App 可以直接用 native App 開啟，如果沒有的話則會自動使用瀏覽器打開網站。</p>
@@ -172,7 +172,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Universal-Links-Deep-Linking&quot;&gt;&lt;a href=&quot;#Universal-Links-Deep-Linking&quot; class=&quot;headerlink&quot; title=&quot;Universal Links / Deep Linking&quot;&gt;&lt;/a&gt;Universal Links / Deep Linking&lt;/h1&gt;&lt;p&gt;網址跳轉手機原生 App 功能，iOS 稱 &lt;strong&gt;Universal Links&lt;/strong&gt; ，Android 稱 &lt;strong&gt;Deep Linking&lt;/strong&gt;，原理是在裝置上新增 URL Scheme 設定，當開啟特定規則的連結時可以開啟 App，用這個方法可以提升應用程式跨 Web 與 Mobile App 平台的使用體驗，當使用者開啟連結時，判斷裝置上是否有安裝 App ，有的話會直接開啟 App，若沒有則使用瀏覽器開啟網頁版提供檢視，或者直接導向到該裝置平台的 App 下載畫面 (iOS 的 &lt;strong&gt;App Store&lt;/strong&gt; / Android 的 &lt;strong&gt;Google Play&lt;/strong&gt;)&lt;/p&gt;
+      &lt;p&gt;網址跳轉手機原生 App 功能，iOS 稱 &lt;strong&gt;Universal Links&lt;/strong&gt; ，Android 稱 &lt;strong&gt;Deep Linking&lt;/strong&gt;，原理是在裝置上新增 URL Scheme 設定，當開啟特定規則的連結時可以開啟 App，用這個方法可以提升應用程式跨 Web 與 Mobile App 平台的使用體驗，當使用者開啟連結時，判斷裝置上是否有安裝 App ，有的話會直接開啟 App，若沒有則使用瀏覽器開啟網頁版提供檢視，或者直接導向到該裝置平台的 App 下載畫面 (iOS 的 &lt;strong&gt;App Store&lt;/strong&gt; / Android 的 &lt;strong&gt;Google Play&lt;/strong&gt;)&lt;/p&gt;
     
     </summary>
     

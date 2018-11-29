@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.dmoon.tw/react-native-universal-linking/</loc>
+    
+    <lastmod>2018-11-29T16:59:01.718Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.dmoon.tw/print-folder-tree-on-mac/</loc>
     
     <lastmod>2018-11-29T16:48:15.853Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>https://blog.dmoon.tw/apply-apple-developer/</loc>
     
     <lastmod>2018-11-27T17:11:28.257Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.dmoon.tw/react-native-universal-linking/</loc>
-    
-    <lastmod>2018-11-27T08:23:48.497Z</lastmod>
     
   </url>
   
