@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.dmoon.tw/"/>
-  <updated>2018-11-27T08:42:27.215Z</updated>
+  <updated>2018-11-29T16:30:34.867Z</updated>
   <id>https://blog.dmoon.tw/</id>
   
   <author>
@@ -16,13 +16,88 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Mac 印出樹狀資料夾目錄結構</title>
+    <link href="https://blog.dmoon.tw/print-folder-tree-on-mac/"/>
+    <id>https://blog.dmoon.tw/print-folder-tree-on-mac/</id>
+    <published>2018-11-29T15:53:35.000Z</published>
+    <updated>2018-11-29T16:30:34.867Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Mac-印出樹狀資料夾目錄結構"><a href="#Mac-印出樹狀資料夾目錄結構" class="headerlink" title="Mac 印出樹狀資料夾目錄結構"></a>Mac 印出樹狀資料夾目錄結構</h1><p><img src="print-folder-tree-on-mac/2018-11-30-00-27-22.png" alt=""></p>
+<p>最近寫文章需要將專案的檔案目錄結構用樹狀印出，方便閱讀，所以找了一些相關資料，整理一下做個筆記</p>
+<p>homebrew 上就有個 <code>tree</code> 的套件可以做到這個功能</p>
+<h2 id="安裝方法"><a href="#安裝方法" class="headerlink" title="安裝方法"></a>安裝方法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install tree</div></pre></td></tr></table></figure>
+<h2 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h2><p>安裝完成後，就可以在 terminal 直接使用 <strong>tree</strong> 這個指令啦</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tree</div></pre></td></tr></table></figure>
+<h2 id="常用參數"><a href="#常用參數" class="headerlink" title="常用參數"></a>常用參數</h2><h3 id="中文亂碼"><a href="#中文亂碼" class="headerlink" title="中文亂碼"></a>中文亂碼</h3><p>當你用 tree 列印資料夾目錄時，可能會發現一些中文檔名會出現亂碼的情況</p>
+<p>加上 <code>-N</code> 參數，就可以印出原本的字元了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tree -N</div></pre></td></tr></table></figure>
+<h3 id="設定印出層數"><a href="#設定印出層數" class="headerlink" title="設定印出層數"></a>設定印出層數</h3><p>加上 <code>-L</code> 參數，並在後面加上層數的數字</p>
+<p>列印一層</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tree -L 1</div></pre></td></tr></table></figure>
+<h3 id="依字母排序"><a href="#依字母排序" class="headerlink" title="依字母排序"></a>依字母排序</h3><p>加上 <code>-v</code> 參數可以依照字母排序</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tree -v</div></pre></td></tr></table></figure>
+<h2 id="其他參數"><a href="#其他參數" class="headerlink" title="其他參數"></a>其他參數</h2><p>可以透過　<code>--help</code> 指令查詢</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tree --help</div></pre></td></tr></table></figure>
+<p>這邊附上查詢得到的列表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line">usage: tree [-acdfghilnpqrstuvxACDFJQNSUX] [-H baseHREF] [-T title ]</div><div class="line">    [-L level [-R]] [-P pattern] [-I pattern] [-o filename] [--version]</div><div class="line">    [--help] [--inodes] [--device] [--noreport] [--nolinks] [--dirsfirst]</div><div class="line">    [--charset charset] [--filelimit[=]#] [--si] [--timefmt[=]&lt;f&gt;]</div><div class="line">    [--sort[=]&lt;name&gt;] [--matchdirs] [--ignore-case] [--] [&lt;directory list&gt;]</div><div class="line">  ------- Listing options -------</div><div class="line">  -a            All files are listed.</div><div class="line">  -d            List directories only.</div><div class="line">  -l            Follow symbolic links like directories.</div><div class="line">  -f            Print the full path prefix for each file.</div><div class="line">  -x            Stay on current filesystem only.</div><div class="line">  -L level      Descend only level directories deep.</div><div class="line">  -R            Rerun tree when max dir level reached.</div><div class="line">  -P pattern    List only those files that match the pattern given.</div><div class="line">  -I pattern    Do not list files that match the given pattern.</div><div class="line">  --ignore-case Ignore case when pattern matching.</div><div class="line">  --matchdirs   Include directory names in -P pattern matching.</div><div class="line">  --noreport    Turn off file/directory count at end of tree listing.</div><div class="line">  --charset X   Use charset X for terminal/HTML and indentation line output.</div><div class="line">  --filelimit # Do not descend dirs with more than # files in them.</div><div class="line">  --timefmt &lt;f&gt; Print and format time according to the format &lt;f&gt;.</div><div class="line">  -o filename   Output to file instead of stdout.</div><div class="line">  -------- File options ---------</div><div class="line">  -q            Print non-printable characters as &apos;?&apos;.</div><div class="line">  -N            Print non-printable characters as is.</div><div class="line">  -Q            Quote filenames with double quotes.</div><div class="line">  -p            Print the protections for each file.</div><div class="line">  -u            Displays file owner or UID number.</div><div class="line">  -g            Displays file group owner or GID number.</div><div class="line">  -s            Print the size in bytes of each file.</div><div class="line">  -h            Print the size in a more human readable way.</div><div class="line">  --si          Like -h, but use in SI units (powers of 1000).</div><div class="line">  -D            Print the date of last modification or (-c) status change.</div><div class="line">  -F            Appends &apos;/&apos;, &apos;=&apos;, &apos;*&apos;, &apos;@&apos;, &apos;|&apos; or &apos;&gt;&apos; as per ls -F.</div><div class="line">  --inodes      Print inode number of each file.</div><div class="line">  --device      Print device ID number to which each file belongs.</div><div class="line">  ------- Sorting options -------</div><div class="line">  -v            Sort files alphanumerically by version.</div><div class="line">  -t            Sort files by last modification time.</div><div class="line">  -c            Sort files by last status change time.</div><div class="line">  -U            Leave files unsorted.</div><div class="line">  -r            Reverse the order of the sort.</div><div class="line">  --dirsfirst   List directories before files (-U disables).</div><div class="line">  --sort X      Select sort: name,version,size,mtime,ctime.</div><div class="line">  ------- Graphics options ------</div><div class="line">  -i            Don&apos;t print indentation lines.</div><div class="line">  -A            Print ANSI lines graphic indentation lines.</div><div class="line">  -S            Print with CP437 (console) graphics indentation lines.</div><div class="line">  -n            Turn colorization off always (-C overrides).</div><div class="line">  -C            Turn colorization on always.</div><div class="line">  ------- XML/HTML/JSON options -------</div><div class="line">  -X            Prints out an XML representation of the tree.</div><div class="line">  -J            Prints out an JSON representation of the tree.</div><div class="line">  -H baseHREF   Prints out HTML format with baseHREF as top directory.</div><div class="line">  -T string     Replace the default HTML title and H1 header with string.</div><div class="line">  --nolinks     Turn off hyperlinks in HTML output.</div><div class="line">  ---- Miscellaneous options ----</div><div class="line">  --version     Print version and exit.</div><div class="line">  --help        Print usage and this help message and exit.</div><div class="line">  --            Options processing terminator.</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Mac-印出樹狀資料夾目錄結構&quot;&gt;&lt;a href=&quot;#Mac-印出樹狀資料夾目錄結構&quot; class=&quot;headerlink&quot; title=&quot;Mac 印出樹狀資料夾目錄結構&quot;&gt;&lt;/a&gt;Mac 印出樹狀資料夾目錄結構&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;print-fo
+    
+    </summary>
+    
+      <category term="macOS" scheme="https://blog.dmoon.tw/categories/macOS/"/>
+    
+    
+      <category term="macOS" scheme="https://blog.dmoon.tw/tags/macOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>讓程式碼更易讀的字型 FiraCode</title>
+    <link href="https://blog.dmoon.tw/introduce-firacode/"/>
+    <id>https://blog.dmoon.tw/introduce-firacode/</id>
+    <published>2018-11-27T17:08:57.000Z</published>
+    <updated>2018-11-29T16:30:23.324Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://github.com/tonsky/FiraCode" target="_blank" rel="external">FiraCode</a> 是一套讓程式碼更易讀的符號字型，當初在 GitHub 看到下面的這張預覽圖</p>
+<p><img src="https://github.com/tonsky/FiraCode/blob/master/showcases/all_ligatures.png" alt=""></p>
+<p>第一點看到時非常不習慣，覺得只是套讓程式碼看起來更潮，裝Ｂ的開發工具
+但實際試用後，發現對於程式碼的符號閱讀速度和精確度確實有不少程度的提升，看起來也更簡潔易懂</p>
+<p>以下舉一些例子說明，左邊是 FiraCode 字型，右邊的則是一般字型的符號顯示結果</p>
+<p>等號的比較
+<img src="Introduce-FiraCode/2018-11-28-01-21-04.png" alt=""></p>
+<p>小於、大於符號的顯示
+<img src="Introduce-FiraCode/2018-11-28-01-19-27.png" alt=""></p>
+<a id="more"></a>
+<h1 id="安裝方法"><a href="#安裝方法" class="headerlink" title="安裝方法"></a>安裝方法</h1>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://github.com/tonsky/FiraCode&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;FiraCode&lt;/a&gt; 是一套讓程式碼更易讀的符號字型，當初在 GitHub 看到下面的這張預覽圖&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://github.com/tonsky/FiraCode/blob/master/showcases/all_ligatures.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;第一點看到時非常不習慣，覺得只是套讓程式碼看起來更潮，裝Ｂ的開發工具
+但實際試用後，發現對於程式碼的符號閱讀速度和精確度確實有不少程度的提升，看起來也更簡潔易懂&lt;/p&gt;
+&lt;p&gt;以下舉一些例子說明，左邊是 FiraCode 字型，右邊的則是一般字型的符號顯示結果&lt;/p&gt;
+&lt;p&gt;等號的比較
+&lt;img src=&quot;Introduce-FiraCode/2018-11-28-01-21-04.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;小於、大於符號的顯示
+&lt;img src=&quot;Introduce-FiraCode/2018-11-28-01-19-27.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>申請 Apple Developer 開發者帳號</title>
     <link href="https://blog.dmoon.tw/apply-apple-developer/"/>
     <id>https://blog.dmoon.tw/apply-apple-developer/</id>
     <published>2018-11-27T08:35:29.000Z</published>
-    <updated>2018-11-27T08:42:27.215Z</updated>
+    <updated>2018-11-27T17:11:28.257Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="申請-Apple-Developer"><a href="#申請-Apple-Developer" class="headerlink" title="申請 Apple Developer"></a>申請 Apple Developer</h1><h3 id="申請前需準備的資料"><a href="#申請前需準備的資料" class="headerlink" title="申請前需準備的資料"></a>申請前需準備的資料</h3><ul>
+    <content type="html"><![CDATA[<h2 id="申請前需準備的資料"><a href="#申請前需準備的資料" class="headerlink" title="申請前需準備的資料"></a>申請前需準備的資料</h2><ul>
 <li>已開啟<a href="https://support.apple.com/zh-cn/HT204915" target="_blank" rel="external">雙重認證</a>的 Apple ID</li>
 <li>申請組織帳號 (Organization)<ul>
 <li>組織的 D-U-N-S 編號</li>
@@ -33,17 +108,18 @@
 <blockquote>
 <p>詳細請見下方申請網址中的申請說明</p>
 </blockquote>
-<h3 id="申請網址"><a href="#申請網址" class="headerlink" title="申請網址"></a>申請網址</h3><p><a href="https://developer.apple.com/cn/programs/enroll/" target="_blank" rel="external">https://developer.apple.com/cn/programs/enroll/</a></p>
+<h2 id="申請網址"><a href="#申請網址" class="headerlink" title="申請網址"></a>申請網址</h2><p><a href="https://developer.apple.com/cn/programs/enroll/" target="_blank" rel="external">https://developer.apple.com/cn/programs/enroll/</a></p>
 <p>確認一下申請說明的事項和想要申請的帳號類型</p>
 <p>若不是組織帳戶，可以像我一樣選擇獨立開發者</p>
 <p>若是公司或團體可以申請組織帳號，但需要更詳細的申請資料及更長的申請時間</p>
 <p>接著在下一頁填寫帳號資訊，最後填寫付款資訊 (信用卡) 就可以完成申請</p>
-<h3 id="申請金額"><a href="#申請金額" class="headerlink" title="申請金額"></a>申請金額</h3><p>NTD $ 3400 / 年</p>
+<h2 id="申請金額"><a href="#申請金額" class="headerlink" title="申請金額"></a>申請金額</h2><p>NTD $ 3400 / 年</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;申請-Apple-Developer&quot;&gt;&lt;a href=&quot;#申請-Apple-Developer&quot; class=&quot;headerlink&quot; title=&quot;申請 Apple Developer&quot;&gt;&lt;/a&gt;申請 Apple Developer&lt;/h1&gt;&lt;h3 id=&quot;申
+      &lt;h2 id=&quot;申請前需準備的資料&quot;&gt;&lt;a href=&quot;#申請前需準備的資料&quot; class=&quot;headerlink&quot; title=&quot;申請前需準備的資料&quot;&gt;&lt;/a&gt;申請前需準備的資料&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;已開啟&lt;a href=&quot;https://support.apple.co
     
     </summary>
     
