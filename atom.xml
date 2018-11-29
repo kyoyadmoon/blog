@@ -62,7 +62,7 @@
     <link href="https://blog.dmoon.tw/introduce-firacode/"/>
     <id>https://blog.dmoon.tw/introduce-firacode/</id>
     <published>2018-11-27T17:08:57.000Z</published>
-    <updated>2018-11-29T16:43:51.494Z</updated>
+    <updated>2018-11-29T17:39:32.025Z</updated>
     
     <content type="html"><![CDATA[<p><a href="https://github.com/tonsky/FiraCode" target="_blank" rel="external">FiraCode</a> 是一套讓程式碼更易讀的符號字型，當初在 GitHub 看到下面的這張預覽圖</p>
 <p><img src="https://github.com/tonsky/FiraCode/blob/master/showcases/all_ligatures.png" alt=""></p>
@@ -74,7 +74,22 @@
 <img src="/introduce-firacode/2018-11-28-01-21-04.png" alt="2018-11-28-01-21-04.png" title="">
 <p>小於、大於符號的顯示</p>
 <img src="/introduce-firacode/2018-11-28-01-19-27.png" alt="2018-11-28-01-19-27.png" title="">
-<h1 id="安裝方法"><a href="#安裝方法" class="headerlink" title="安裝方法"></a>安裝方法</h1>]]></content>
+<h2 id="安裝方法"><a href="#安裝方法" class="headerlink" title="安裝方法"></a>安裝方法</h2><p>參考 <a href="https://github.com/tonsky/FiraCode/wiki#installing-font" target="_blank" rel="external">FiraCode Wiki 文件</a></p>
+<h2 id="整合開發工具"><a href="#整合開發工具" class="headerlink" title="整合開發工具"></a>整合開發工具</h2><p><a href="https://github.com/tonsky/FiraCode#terminal-support" target="_blank" rel="external">Terminal 支援列表</a> | <a href="https://github.com/tonsky/FiraCode#editor-support" target="_blank" rel="external">編輯器支援列表</a></p>
+<h3 id="Visual-Studio-Code-的設定方法"><a href="#Visual-Studio-Code-的設定方法" class="headerlink" title="Visual Studio Code 的設定方法"></a><strong>Visual Studio Code</strong> 的設定方法</h3><ol>
+<li>在 <strong>VS Code</strong> 使用快捷鍵開啟設定選單<ul>
+<li>windows: <code>ctrl</code> + <code>,</code></li>
+<li>mac: <code>cmd</code> + <code>,</code></li>
+</ul>
+</li>
+<li><p>搜尋 <code>fontFamily</code>，找到設定欄位，在前面加上 <strong>Fira Code</strong>
+結果如下圖所示</p>
+<img src="/introduce-firacode/2018-11-30-01-17-28.png" alt="2018-11-30-01-17-28.png" title="">
+</li>
+<li><p>搜尋 <code>fontLigatures</code>，勾選設定為<code>true</code></p>
+<img src="/introduce-firacode/2018-11-30-01-21-34.png" alt="2018-11-30-01-21-34.png" title=""></li>
+</ol>
+]]></content>
     
     <summary type="html">
     
@@ -1078,11 +1093,11 @@ $ react-native init AwesomeProject
       <category term="Blog" scheme="https://blog.dmoon.tw/categories/Blog/"/>
     
     
+      <category term="Hexo" scheme="https://blog.dmoon.tw/tags/Hexo/"/>
+    
       <category term="Node.js" scheme="https://blog.dmoon.tw/tags/Node-js/"/>
     
       <category term="Github" scheme="https://blog.dmoon.tw/tags/Github/"/>
-    
-      <category term="Hexo" scheme="https://blog.dmoon.tw/tags/Hexo/"/>
     
   </entry>
   
