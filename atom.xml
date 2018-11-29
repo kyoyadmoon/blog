@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.dmoon.tw/"/>
-  <updated>2018-11-29T16:30:34.867Z</updated>
+  <updated>2018-11-29T16:32:23.700Z</updated>
   <id>https://blog.dmoon.tw/</id>
   
   <author>
@@ -20,11 +20,12 @@
     <link href="https://blog.dmoon.tw/print-folder-tree-on-mac/"/>
     <id>https://blog.dmoon.tw/print-folder-tree-on-mac/</id>
     <published>2018-11-29T15:53:35.000Z</published>
-    <updated>2018-11-29T16:30:34.867Z</updated>
+    <updated>2018-11-29T16:32:23.700Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Mac-印出樹狀資料夾目錄結構"><a href="#Mac-印出樹狀資料夾目錄結構" class="headerlink" title="Mac 印出樹狀資料夾目錄結構"></a>Mac 印出樹狀資料夾目錄結構</h1><p><img src="print-folder-tree-on-mac/2018-11-30-00-27-22.png" alt=""></p>
 <p>最近寫文章需要將專案的檔案目錄結構用樹狀印出，方便閱讀，所以找了一些相關資料，整理一下做個筆記</p>
 <p>homebrew 上就有個 <code>tree</code> 的套件可以做到這個功能</p>
+<a id="more"></a>
 <h2 id="安裝方法"><a href="#安裝方法" class="headerlink" title="安裝方法"></a>安裝方法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install tree</div></pre></td></tr></table></figure>
 <h2 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h2><p>安裝完成後，就可以在 terminal 直接使用 <strong>tree</strong> 這個指令啦</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tree</div></pre></td></tr></table></figure>
@@ -43,7 +44,9 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Mac-印出樹狀資料夾目錄結構&quot;&gt;&lt;a href=&quot;#Mac-印出樹狀資料夾目錄結構&quot; class=&quot;headerlink&quot; title=&quot;Mac 印出樹狀資料夾目錄結構&quot;&gt;&lt;/a&gt;Mac 印出樹狀資料夾目錄結構&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;print-fo
+      &lt;h1 id=&quot;Mac-印出樹狀資料夾目錄結構&quot;&gt;&lt;a href=&quot;#Mac-印出樹狀資料夾目錄結構&quot; class=&quot;headerlink&quot; title=&quot;Mac 印出樹狀資料夾目錄結構&quot;&gt;&lt;/a&gt;Mac 印出樹狀資料夾目錄結構&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;print-folder-tree-on-mac/2018-11-30-00-27-22.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;最近寫文章需要將專案的檔案目錄結構用樹狀印出，方便閱讀，所以找了一些相關資料，整理一下做個筆記&lt;/p&gt;
+&lt;p&gt;homebrew 上就有個 &lt;code&gt;tree&lt;/code&gt; 的套件可以做到這個功能&lt;/p&gt;
     
     </summary>
     
@@ -1080,11 +1083,11 @@ $ react-native init AwesomeProject
       <category term="Blog" scheme="https://blog.dmoon.tw/categories/Blog/"/>
     
     
+      <category term="Hexo" scheme="https://blog.dmoon.tw/tags/Hexo/"/>
+    
       <category term="Node.js" scheme="https://blog.dmoon.tw/tags/Node-js/"/>
     
       <category term="Github" scheme="https://blog.dmoon.tw/tags/Github/"/>
-    
-      <category term="Hexo" scheme="https://blog.dmoon.tw/tags/Hexo/"/>
     
   </entry>
   
