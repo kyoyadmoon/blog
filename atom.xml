@@ -114,11 +114,11 @@
     <link href="https://blog.dmoon.tw/introduce-firacode/"/>
     <id>https://blog.dmoon.tw/introduce-firacode/</id>
     <published>2018-11-27T17:08:57.000Z</published>
-    <updated>2019-01-09T20:00:48.873Z</updated>
+    <updated>2019-01-09T20:35:26.147Z</updated>
     
     <content type="html"><![CDATA[<p><a href="https://github.com/tonsky/FiraCode" target="_blank" rel="external">FiraCode</a> 是一套讓程式碼更易讀的符號字型，當初在 GitHub 看到下面的這張預覽圖</p>
 <p><img src="https://github.com/tonsky/FiraCode/blob/master/showcases/all_ligatures.png" alt=""></p>
-<p>第一點看到時非常不習慣，覺得只是套讓程式碼看起來更潮，裝Ｂ的開發工具
+<p>其實第一眼看到時非常不習慣，覺得只是套讓程式碼看起來更潮，裝Ｂ的開發工具
 但實際試用後，發現對於程式碼的符號閱讀速度和精確度確實有不少程度的提升，看起來也更簡潔易懂</p>
 <a id="more"></a>
 <p>以下舉一些例子說明，左邊是 FiraCode 字型，右邊的則是一般字型的符號顯示結果</p>
@@ -147,7 +147,7 @@
     
       &lt;p&gt;&lt;a href=&quot;https://github.com/tonsky/FiraCode&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;FiraCode&lt;/a&gt; 是一套讓程式碼更易讀的符號字型，當初在 GitHub 看到下面的這張預覽圖&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://github.com/tonsky/FiraCode/blob/master/showcases/all_ligatures.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;第一點看到時非常不習慣，覺得只是套讓程式碼看起來更潮，裝Ｂ的開發工具
+&lt;p&gt;其實第一眼看到時非常不習慣，覺得只是套讓程式碼看起來更潮，裝Ｂ的開發工具
 但實際試用後，發現對於程式碼的符號閱讀速度和精確度確實有不少程度的提升，看起來也更簡潔易懂&lt;/p&gt;
     
     </summary>
