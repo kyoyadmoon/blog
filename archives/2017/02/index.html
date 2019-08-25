@@ -14,12 +14,13 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
+    <script type="application/ld+json">{}</script>
     <meta property="og:type" content="blog">
-<meta property="og:title" content="DMoon&#39;s Laputa">
+<meta property="og:title" content="DMoon's Laputa">
 <meta property="og:url" content="https://blog.dmoon.tw/archives/2017/02/index.html">
-<meta property="og:site_name" content="DMoon&#39;s Laputa">
+<meta property="og:site_name" content="DMoon's Laputa">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DMoon&#39;s Laputa">
+<meta name="twitter:title" content="DMoon's Laputa">
     
     
         
@@ -34,19 +35,18 @@
 
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/style-rylrrsqywzl9hyui2n1ziymwh8cyf3cxpysf9outvwx8ofhjpty2ccllpauf.min.css">
+    <link rel="stylesheet" href="/assets/css/style-2o71hzttz2k9pq9pfin3x87oyv0konupeunubjb5vmvwocyfflcpdgglsdmb.min.css">
     <!--STYLES END-->
     
-    <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-57006180-2']);
-        _gaq.push(['_trackPageview']);
-        (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57006180-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-57006180-2');
     </script>
+
 
     
     <link rel="canonical" href="https://blog.dmoon.tw/archives/2017/02/index.html" />
@@ -62,6 +62,29 @@
               enable_page_level_ads: true
          });
     </script>
+    <!-- update origin -->
+    <!--  -->
+    <!--STYLES-->
+    <!-- <link rel="stylesheet" href="/assets/css/all.css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/assets/css/thumbs.css">
+    <link rel="stylesheet" href="/assets/css/tranquilpeak.css"> -->
+    <!--STYLES END-->
+    <!-- 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57006180-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-57006180-2');
+    </script>
+
+
+    
+
+     -->
+    <!-- End of update origin -->
 </head>
 
     <body>
@@ -77,16 +100,25 @@
 
 <header id="header" data-behavior="1">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
-    <h1 class="header-title">
-        <a class="header-title-link" href="/ ">DMoon&#39;s Laputa</a>
-    </h1>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/ "
+            aria-label=""
+        >
+            DMoon&#39;s Laputa
+        </a>
+    </div>
     
         
-            <a  class="header-right-picture "
-                href="#about">
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="打開鏈接: /#about"
+            >
         
         
-            <img class="header-picture" src="https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"/>
+            <img class="header-picture" src="https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg" alt="作者的圖片"/>
         
         </a>
     
@@ -100,122 +132,130 @@
     
 
 <nav id="sidebar" data-behavior="1">
-    
-        <div class="sidebar-profile">
-            <a href="/#about">
-                    <img class="sidebar-profile-picture" src="https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"/>
-            </a>
-            <span class="sidebar-profile-name">DMoon</span>
-        </div>
-    
-    
-      
-        <ul class="sidebar-buttons button-link-block">
-          
-            <li class="sidebar-button">
-              
-                  <a  class="sidebar-button-link "
-                       href="/ "
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-home"></i>
-                  <span class="sidebar-button-desc">首頁</span>
-                  </a>
+    <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a
+                    href="/#about"
+                    aria-label="閱讀有關作者的更多信息"
+                >
+                    <img class="sidebar-profile-picture" src="https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg" alt="作者的圖片"/>
+                </a>
+                <h4 class="sidebar-profile-name">DMoon</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>熱愛科技的資工系學生，喜歡學習新的技術</p>
+<p>目前主要開發 Web APP</p>
+<p>較熟悉的技術是 Node.JS / React.JS</p>
+</h5>
+                
+            </div>
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/ "
+                            
+                            title="首頁"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">首頁</span>
+                    </a>
             </li>
-          
-            <li class="sidebar-button">
-              
-                  <a  class="sidebar-button-link "
-                       href="/all-categories"
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
-                  <span class="sidebar-button-desc">分類</span>
-                  </a>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-categories"
+                            
+                            title="分類"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">分類</span>
+                    </a>
             </li>
-          
-            <li class="sidebar-button">
-              
-                  <a  class="sidebar-button-link "
-                       href="/all-tags"
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
-                  <span class="sidebar-button-desc">標籤</span>
-                  </a>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-tags"
+                            
+                            title="標籤"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">標籤</span>
+                    </a>
             </li>
-          
-            <li class="sidebar-button">
-              
-                  <a  class="sidebar-button-link "
-                       href="/all-archives"
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                  <span class="sidebar-button-desc">所有文章</span>
-                  </a>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-archives"
+                            
+                            title="所有文章"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">所有文章</span>
+                    </a>
             </li>
-          
-            <li class="sidebar-button">
-              
-                  <a  class="sidebar-button-link "
-                       href="#about"
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-question"></i>
-                  <span class="sidebar-button-desc">關於</span>
-                  </a>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="#about"
+                            
+                            title="關於"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-question" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">關於</span>
+                    </a>
             </li>
-          
+            
         </ul>
-      
-      
-    
-      
-      
-        <div class="sidebar-buttons flex-container space-around author_links">
-          
-            <!-- <li class="sidebar-button"> -->
-              
-                  <a  class="sidebar-button-link " href="https://github.com/kyoyadmoon" target="_blank">
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-github" style="color: #ebebeb "></i>
-                  <!-- <span class="sidebar-button-desc">GitHub</span> -->
-                  </a>
-            <!-- </li> -->
-          
-            <!-- <li class="sidebar-button"> -->
-              
-                  <a  class="sidebar-button-link " href="https://www.facebook.com/dmoonhuang" target="_blank">
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-facebook" style="color: #ebebeb "></i>
-                  <!-- <span class="sidebar-button-desc">Facebook</span> -->
-                  </a>
-            <!-- </li> -->
-          
-            <!-- <li class="sidebar-button"> -->
-              
-                  <a  target="_blank" class="sidebar-button-link "
-                       href="/atom.xml"
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-rss" style="color: #ebebeb "></i>
-                  <!-- <span class="sidebar-button-desc">RSS</span> -->
-                  </a>
-            <!-- </li> -->
-          
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://github.com/kyoyadmoon" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://www.facebook.com/dmoonhuang" target="_blank" rel="noopener" title="Facebook">
+                    
+                        <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/atom.xml"
+                            
+                            title="RSS"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-rss" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">RSS</span>
+                    </a>
+            </li>
+            
         </ul>
-      
-    
-      
-      
-    
+        
+    </div>
 </nav>
 
             
@@ -228,20 +268,26 @@
     
 
 <section class="postShorten-group main-content-wrap bg-white main-section">
+<!-- <section class="postShorten-group main-content-wrap"> -->
     
     
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-bottom">
         <div class="postShorten-wrap">
+            
             <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
+                <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/react-native-integrate-with-code-push/">
+                        <a
+                            class="link-unstyled"
+                            href="/react-native-integrate-with-code-push/"
+                            aria-label=": React Native CodePush 偷天換日術"
+                        >
                             React Native CodePush 偷天換日術
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Sun Feb 19 2017 18:16:36 GMT+0800">
+    <time datetime="2017-02-19T18:16:36+08:00">
 	
 		    2月 19, 2017
     	
@@ -254,13 +300,17 @@
 
     
 </div>
+
             </div>
             
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
+                <div class="postShorten-excerpt">
                     <p>CodePush 是一個雲端服務，能夠讓 Cordova 和 React Native 的開發者將手機應用的更新，跳過提交審查，直接部署到用戶的設備上。 它擔任類似中間倉庫的角色，開發者可以把更新（JS，HTML，CSS和圖片）發佈到這個倉庫上，透過程式碼的整合，Apps 就能夠查詢到更新並且下載。</p>
                     
-                        <a href="/react-native-integrate-with-code-push/" class="postShorten-excerpt_link link">
+                        <a
+                            href="/react-native-integrate-with-code-push/"
+                            class="postShorten-excerpt_link link"
+                            aria-label=": React Native CodePush 偷天換日術"
+                        >
                             繼續閱讀
                         </a>
                         
@@ -272,18 +322,23 @@
     </article>
     
     
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-bottom">
         <div class="postShorten-wrap">
+            
             <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
+                <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/github-pages-with-free-ssl/">
+                        <a
+                            class="link-unstyled"
+                            href="/github-pages-with-free-ssl/"
+                            aria-label=": Github Pages 免費 ssl 設定 - 輕鬆擁有 https 綠鎖頭 (2)"
+                        >
                             Github Pages 免費 ssl 設定 - 輕鬆擁有 https 綠鎖頭 (2)
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Wed Feb 01 2017 16:15:33 GMT+0800">
+    <time datetime="2017-02-01T16:15:33+08:00">
 	
 		    2月 01, 2017
     	
@@ -296,13 +351,17 @@
 
     
 </div>
+
             </div>
             
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
+                <div class="postShorten-excerpt">
                     <p>在 <a href="/github-pages-custom-domain/" title="上一篇">上一篇</a> 中，我們應該已經設定好了自定義域名，接下來就是幫我們的自定義域名加上漂亮安全的 https 綠色鎖頭啦。</p>
                     
-                        <a href="/github-pages-with-free-ssl/" class="postShorten-excerpt_link link">
+                        <a
+                            href="/github-pages-with-free-ssl/"
+                            class="postShorten-excerpt_link link"
+                            aria-label=": Github Pages 免費 ssl 設定 - 輕鬆擁有 https 綠鎖頭 (2)"
+                        >
                             繼續閱讀
                         </a>
                         
@@ -374,15 +433,48 @@
           
         </div>
     </div>
+    <!-- update origin <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <img id="about-card-picture" src="https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg" alt="作者的圖片"/>
+        
+            <h4 id="about-card-name">DMoon</h4>
+        
+            <div id="about-card-bio"><p>熱愛科技的資工系學生，喜歡學習新的技術</p>
+<p>目前主要開發 Web APP</p>
+<p>較熟悉的技術是 Node.JS / React.JS</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>學生 / 創科資訊實習生</p>
+
+            </div>
+        
+        
+            <div id="about-card-location">
+                <i class="fa fa-map-marker-alt"></i>
+                <br/>
+                Taichung, Taiwan
+            </div>
+        
+    </div> -->
 </div>
 
         
+        
 <div id="cover" style="background-image:url('/assets/images/myCover.jpeg');"></div>
-    </body>
-    <!--SCRIPTS-->
-<script src="/assets/js/scrip-bxxvsd4n4tu0lxfd23qyh44n9weuvdcmzweqijk10z8umo3eb9r1nhmiyvpz.min.js"></script>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-qorzkckqhbomlhsfohbzueuqlpk87aeixchancwz6resl7ddkfuytzsmttxj.min.js"></script>
 <!--SCRIPTS END-->
 
 
 
+
+
+    </body>
 </html>

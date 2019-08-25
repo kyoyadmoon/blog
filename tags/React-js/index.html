@@ -14,12 +14,13 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
+    <script type="application/ld+json">{}</script>
     <meta property="og:type" content="blog">
-<meta property="og:title" content="DMoon&#39;s Laputa">
+<meta property="og:title" content="DMoon's Laputa">
 <meta property="og:url" content="https://blog.dmoon.tw/tags/React-js/index.html">
-<meta property="og:site_name" content="DMoon&#39;s Laputa">
+<meta property="og:site_name" content="DMoon's Laputa">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DMoon&#39;s Laputa">
+<meta name="twitter:title" content="DMoon's Laputa">
     
     
         
@@ -34,19 +35,18 @@
 
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/style-rylrrsqywzl9hyui2n1ziymwh8cyf3cxpysf9outvwx8ofhjpty2ccllpauf.min.css">
+    <link rel="stylesheet" href="/assets/css/style-2o71hzttz2k9pq9pfin3x87oyv0konupeunubjb5vmvwocyfflcpdgglsdmb.min.css">
     <!--STYLES END-->
     
-    <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-57006180-2']);
-        _gaq.push(['_trackPageview']);
-        (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57006180-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-57006180-2');
     </script>
+
 
     
     <link rel="canonical" href="https://blog.dmoon.tw/tags/React-js/index.html" />
@@ -62,6 +62,29 @@
               enable_page_level_ads: true
          });
     </script>
+    <!-- update origin -->
+    <!--  -->
+    <!--STYLES-->
+    <!-- <link rel="stylesheet" href="/assets/css/all.css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/assets/css/thumbs.css">
+    <link rel="stylesheet" href="/assets/css/tranquilpeak.css"> -->
+    <!--STYLES END-->
+    <!-- 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57006180-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-57006180-2');
+    </script>
+
+
+    
+
+     -->
+    <!-- End of update origin -->
 </head>
 
     <body>
@@ -77,16 +100,25 @@
 
 <header id="header" data-behavior="1">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
-    <h1 class="header-title">
-        <a class="header-title-link" href="/ ">DMoon&#39;s Laputa</a>
-    </h1>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/ "
+            aria-label=""
+        >
+            DMoon&#39;s Laputa
+        </a>
+    </div>
     
         
-            <a  class="header-right-picture "
-                href="#about">
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="打開鏈接: /#about"
+            >
         
         
-            <img class="header-picture" src="https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"/>
+            <img class="header-picture" src="https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg" alt="作者的圖片"/>
         
         </a>
     
@@ -100,122 +132,130 @@
     
 
 <nav id="sidebar" data-behavior="1">
-    
-        <div class="sidebar-profile">
-            <a href="/#about">
-                    <img class="sidebar-profile-picture" src="https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"/>
-            </a>
-            <span class="sidebar-profile-name">DMoon</span>
-        </div>
-    
-    
-      
-        <ul class="sidebar-buttons button-link-block">
-          
-            <li class="sidebar-button">
-              
-                  <a  class="sidebar-button-link "
-                       href="/ "
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-home"></i>
-                  <span class="sidebar-button-desc">首頁</span>
-                  </a>
+    <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a
+                    href="/#about"
+                    aria-label="閱讀有關作者的更多信息"
+                >
+                    <img class="sidebar-profile-picture" src="https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg" alt="作者的圖片"/>
+                </a>
+                <h4 class="sidebar-profile-name">DMoon</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>熱愛科技的資工系學生，喜歡學習新的技術</p>
+<p>目前主要開發 Web APP</p>
+<p>較熟悉的技術是 Node.JS / React.JS</p>
+</h5>
+                
+            </div>
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/ "
+                            
+                            title="首頁"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">首頁</span>
+                    </a>
             </li>
-          
-            <li class="sidebar-button">
-              
-                  <a  class="sidebar-button-link "
-                       href="/all-categories"
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
-                  <span class="sidebar-button-desc">分類</span>
-                  </a>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-categories"
+                            
+                            title="分類"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">分類</span>
+                    </a>
             </li>
-          
-            <li class="sidebar-button">
-              
-                  <a  class="sidebar-button-link "
-                       href="/all-tags"
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
-                  <span class="sidebar-button-desc">標籤</span>
-                  </a>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-tags"
+                            
+                            title="標籤"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">標籤</span>
+                    </a>
             </li>
-          
-            <li class="sidebar-button">
-              
-                  <a  class="sidebar-button-link "
-                       href="/all-archives"
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                  <span class="sidebar-button-desc">所有文章</span>
-                  </a>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-archives"
+                            
+                            title="所有文章"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">所有文章</span>
+                    </a>
             </li>
-          
-            <li class="sidebar-button">
-              
-                  <a  class="sidebar-button-link "
-                       href="#about"
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-question"></i>
-                  <span class="sidebar-button-desc">關於</span>
-                  </a>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="#about"
+                            
+                            title="關於"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-question" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">關於</span>
+                    </a>
             </li>
-          
+            
         </ul>
-      
-      
-    
-      
-      
-        <div class="sidebar-buttons flex-container space-around author_links">
-          
-            <!-- <li class="sidebar-button"> -->
-              
-                  <a  class="sidebar-button-link " href="https://github.com/kyoyadmoon" target="_blank">
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-github" style="color: #ebebeb "></i>
-                  <!-- <span class="sidebar-button-desc">GitHub</span> -->
-                  </a>
-            <!-- </li> -->
-          
-            <!-- <li class="sidebar-button"> -->
-              
-                  <a  class="sidebar-button-link " href="https://www.facebook.com/dmoonhuang" target="_blank">
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-facebook" style="color: #ebebeb "></i>
-                  <!-- <span class="sidebar-button-desc">Facebook</span> -->
-                  </a>
-            <!-- </li> -->
-          
-            <!-- <li class="sidebar-button"> -->
-              
-                  <a  target="_blank" class="sidebar-button-link "
-                       href="/atom.xml"
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-rss" style="color: #ebebeb "></i>
-                  <!-- <span class="sidebar-button-desc">RSS</span> -->
-                  </a>
-            <!-- </li> -->
-          
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://github.com/kyoyadmoon" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://www.facebook.com/dmoonhuang" target="_blank" rel="noopener" title="Facebook">
+                    
+                        <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/atom.xml"
+                            
+                            title="RSS"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-rss" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">RSS</span>
+                    </a>
+            </li>
+            
         </ul>
-      
-    
-      
-      
-    
+        
+    </div>
 </nav>
 
             
@@ -228,20 +268,26 @@
     
 
 <section class="postShorten-group main-content-wrap bg-white main-section">
+<!-- <section class="postShorten-group main-content-wrap"> -->
     
     
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-bottom">
         <div class="postShorten-wrap">
+            
             <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
+                <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/eslint-react-extends-airbnb/">
+                        <a
+                            class="link-unstyled"
+                            href="/eslint-react-extends-airbnb/"
+                            aria-label=": ESLint React 心得 - extends Airbnb config"
+                        >
                             ESLint React 心得 - extends Airbnb config
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Wed Mar 23 2016 12:54:43 GMT+0800">
+    <time datetime="2016-03-23T12:54:43+08:00">
 	
 		    3月 23, 2016
     	
@@ -254,15 +300,19 @@
 
     
 </div>
+
             </div>
             
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
+                <div class="postShorten-excerpt">
                     <p><img src="https://lh3.googleusercontent.com/KgEwDSPFlRq08oUvZD6yr_VHLTdP3E7YJp4M9CxiZ7jmyKbahUleLusWuoaq2fsdYiW71mhX5p-WnnRhqcvog-xWs-UpCEOj4X1Y-vZYE7pCfSY4nbLyuR69wTpFBFkgFZPJY7Q7Uzuxky5QjoF0rMO6_2bvtYqzNjZow_-mnQKk5tBG2MQtvQkWRXC_XrPsIX3KVbwTER0ZUYZTsAV4LMDpm5_WrEBZ6E0vRfIo6BYqcAi5tqmsKvwqKZSvwWUAPD6Bj2x7U4cjwzv9q7EgeRr4j47gYypVmGt3-9wO7_oCNGQCdyzFvHa__3J9d7zAfrgLnDJW65rZJy15He-BC9_2PkUaBMnS_BHZIeLhL3HIwwXQOmRe4WZBkRaCeF2X_g1QgZCQCyPEPojiXOTqHTPJGL-RUuK5pAriwWNRKe6wUVCDz5XZ0U3hFg7wJNFITPEqRoIcMx9tELrZmQfouTScjCa_KrdsSdE5-i7-oYUKyTV5iwtZW0-jAX7ZISy9itZnHDO3HT8jRk47gDyj_aOmdGfycgBYWFYvFP86NCmp4KbUHT4z6-FnISxzAnLp-3eE=w1237-h195-no" alt="ESLint"></p>
 <p>之前一直沒有嘗試過 JSHint、ESLint ，但隨著合作開發的人數越來越多，程式碼的風格和規範問題就更加明顯，加上最近看了聖經 <code>Clean Code</code> ，覺得寫出乾淨的程式碼真的很重要，剛好爬文發現有人推薦 Airbnb 釋出的 ESLint config 來做 js 和 React.js 規範，所以就決定來嘗試看看！</p>
-<p>首先我要推薦 <a href="https://github.com/yannickcr/eslint-plugin-react" target="_blank" rel="external">eslint-plugin-react</a> 這個套件，這套件除了規範 React 的一些寫法，重要的是他還有寫 rules 的文件，告訴你為什麼建議這樣寫，只要把 eslint 上出現的錯誤訊息，拿去 google 就會找到 github 上用 markdown 寫的相關說明，跟著寫就有種 Level Up 的感覺，實在受益匪淺！</p>
+<p>首先我要推薦 <a href="https://github.com/yannickcr/eslint-plugin-react">eslint-plugin-react</a> 這個套件，這套件除了規範 React 的一些寫法，重要的是他還有寫 rules 的文件，告訴你為什麼建議這樣寫，只要把 eslint 上出現的錯誤訊息，拿去 google 就會找到 github 上用 markdown 寫的相關說明，跟著寫就有種 Level Up 的感覺，實在受益匪淺！</p>
                     
-                        <a href="/eslint-react-extends-airbnb/" class="postShorten-excerpt_link link">
+                        <a
+                            href="/eslint-react-extends-airbnb/"
+                            class="postShorten-excerpt_link link"
+                            aria-label=": ESLint React 心得 - extends Airbnb config"
+                        >
                             繼續閱讀
                         </a>
                         
@@ -333,15 +383,48 @@
           
         </div>
     </div>
+    <!-- update origin <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <img id="about-card-picture" src="https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg" alt="作者的圖片"/>
+        
+            <h4 id="about-card-name">DMoon</h4>
+        
+            <div id="about-card-bio"><p>熱愛科技的資工系學生，喜歡學習新的技術</p>
+<p>目前主要開發 Web APP</p>
+<p>較熟悉的技術是 Node.JS / React.JS</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>學生 / 創科資訊實習生</p>
+
+            </div>
+        
+        
+            <div id="about-card-location">
+                <i class="fa fa-map-marker-alt"></i>
+                <br/>
+                Taichung, Taiwan
+            </div>
+        
+    </div> -->
 </div>
 
         
+        
 <div id="cover" style="background-image:url('/assets/images/myCover.jpeg');"></div>
-    </body>
-    <!--SCRIPTS-->
-<script src="/assets/js/scrip-bxxvsd4n4tu0lxfd23qyh44n9weuvdcmzweqijk10z8umo3eb9r1nhmiyvpz.min.js"></script>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-qorzkckqhbomlhsfohbzueuqlpk87aeixchancwz6resl7ddkfuytzsmttxj.min.js"></script>
 <!--SCRIPTS END-->
 
 
 
+
+
+    </body>
 </html>

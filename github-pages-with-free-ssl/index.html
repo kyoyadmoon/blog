@@ -14,15 +14,15 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"DMoon","sameAs":["https://github.com/kyoyadmoon","https://www.facebook.com/dmoonhuang","/atom.xml"],"image":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"},"articleBody":"在 上一篇 中，我們應該已經設定好了自定義域名，接下來就是幫我們的自定義域名加上漂亮安全的 https 綠色鎖頭啦。\n\n\nAdd Free SSL說到 Free SSL 相信很多人第一個想到的就是開源的 Let&#39;s Encrypt 吧，不過很遺憾在爬文時發現，Github 似乎並不支援 Let&#39;s Encrypt ，因此只好找其他的免費 SSL 憑證了，這篇要說明如何使用 CloudFlare 幫 Github Pages 掛上的免費 SSL\n\n註冊 CloudFlare 帳號\n如果你和我一樣只是要用免費版的 SSL，註冊完不必填信用卡資訊，直接到信箱收信\n\n由此登入 點選 Add website 新增你的域名，ex: dmoon.space\n確認後會開始掃描你的域名將地區檔設定掃出來，自動設定到 CloudFlare 的 DNS 上\n接著他會提供幾個他設定好的 DNS 位址給你，請你到域名提供商的館理頁面，設定為他提供給你的 DNS\n\n設定 CloudFlare 提供的 DNS\n例如我是在 gandi 上買的域名，回到 gandi 域名管理頁的右下角會看到 域名伺服器，按下 修改伺服器 設定為 CloudFlare 提供的 DNS\n\n等待... 等待... 再等待...\n更改 DNS 需要等滿久的時間才會生效，我等了應該有四五個小時，在他生效之前我們可以繼續下一步處理一些額外的設定\n\n請先到 CloudFlare website 管理頁面，將 Crypto / SSL 設定為 Flexible\n如圖：\n\n好奇 Flexible 意思的請點這裡 Read More...\n\n到這邊差不多就完成囉\n接下來是對網站做一些額外設定\n像是在  中加上\n12345&lt;script type=\"text/javascript\"&gt;    var host = \"yoursite.com\";    if ((host == window.location.host) &amp;&amp; (window.location.protocol != \"https:\"))        window.location.protocol = \"https\";&lt;/script&gt;\n\n讓 http 的連線自動導向到 https\n\n告訴搜尋引擎偏好網址\n將下面加入你的 Hexo theme header template 中\n1&lt;link rel=&quot;canonical&quot; href=&quot;&lt;%= url %&gt;&quot; /&gt;\n\n​\n\n\nReferencehttps://sheharyar.me/blog/free-ssl-for-github-pages-with-custom-domains/\n","dateCreated":"2017-02-01T16:15:33+08:00","dateModified":"2019-08-26T03:26:57+08:00","datePublished":"2017-02-01T16:15:33+08:00","description":"在 上一篇 中，我們應該已經設定好了自定義域名，接下來就是幫我們的自定義域名加上漂亮安全的 https 綠色鎖頭啦。","headline":"Github Pages 免費 ssl 設定 - 輕鬆擁有 https 綠鎖頭 (2)","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.dmoon.tw/github-pages-with-free-ssl/"},"publisher":{"@type":"Organization","name":"DMoon","sameAs":["https://github.com/kyoyadmoon","https://www.facebook.com/dmoonhuang","/atom.xml"],"image":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg","logo":{"@type":"ImageObject","url":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"}},"url":"https://blog.dmoon.tw/github-pages-with-free-ssl/","keywords":"Hexo, Github Pages, HTTPS, SSL, Custom Domain"}</script>
     <meta name="description" content="在 上一篇 中，我們應該已經設定好了自定義域名，接下來就是幫我們的自定義域名加上漂亮安全的 https 綠色鎖頭啦。">
-<meta name="keywords" content="Hexo,Github Pages,HTTPS,SSL,Custom Domain">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Github Pages 免費 ssl 設定 - 輕鬆擁有 https 綠鎖頭 (2)">
 <meta property="og:url" content="https://blog.dmoon.tw/github-pages-with-free-ssl/index.html">
-<meta property="og:site_name" content="DMoon&#39;s Laputa">
+<meta property="og:site_name" content="DMoon's Laputa">
 <meta property="og:description" content="在 上一篇 中，我們應該已經設定好了自定義域名，接下來就是幫我們的自定義域名加上漂亮安全的 https 綠色鎖頭啦。">
 <meta property="og:image" content="https://blog.dmoon.tw/github-pages-with-free-ssl/flexible_config.png">
-<meta property="og:updated_time" content="2017-05-10T08:26:58.000Z">
+<meta property="og:updated_time" content="2019-08-25T19:26:57.739Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Github Pages 免費 ssl 設定 - 輕鬆擁有 https 綠鎖頭 (2)">
 <meta name="twitter:description" content="在 上一篇 中，我們應該已經設定好了自定義域名，接下來就是幫我們的自定義域名加上漂亮安全的 https 綠色鎖頭啦。">
@@ -41,19 +41,18 @@
 
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/style-rylrrsqywzl9hyui2n1ziymwh8cyf3cxpysf9outvwx8ofhjpty2ccllpauf.min.css">
+    <link rel="stylesheet" href="/assets/css/style-2o71hzttz2k9pq9pfin3x87oyv0konupeunubjb5vmvwocyfflcpdgglsdmb.min.css">
     <!--STYLES END-->
     
-    <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-57006180-2']);
-        _gaq.push(['_trackPageview']);
-        (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57006180-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-57006180-2');
     </script>
+
 
     
     <link rel="canonical" href="https://blog.dmoon.tw/github-pages-with-free-ssl/index.html" />
@@ -69,6 +68,31 @@
               enable_page_level_ads: true
          });
     </script>
+    <!-- update origin -->
+    <!--  -->
+    <!--STYLES-->
+    <!-- <link rel="stylesheet" href="/assets/css/all.css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/assets/css/thumbs.css">
+    <link rel="stylesheet" href="/assets/css/tranquilpeak.css"> -->
+    <!--STYLES END-->
+    <!-- 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57006180-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-57006180-2');
+    </script>
+
+
+    
+
+    
+        
+     -->
+    <!-- End of update origin -->
 </head>
 
     <body>
@@ -82,18 +106,27 @@
         
     
 
-<header id="header" data-behavior="3">
+<header id="header" data-behavior="4">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
-    <h1 class="header-title">
-        <a class="header-title-link" href="/ ">DMoon&#39;s Laputa</a>
-    </h1>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/ "
+            aria-label=""
+        >
+            DMoon&#39;s Laputa
+        </a>
+    </div>
     
         
-            <a  class="header-right-picture "
-                href="#about">
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="打開鏈接: /#about"
+            >
         
         
-            <img class="header-picture" src="https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"/>
+            <img class="header-picture" src="https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg" alt="作者的圖片"/>
         
         </a>
     
@@ -106,143 +139,152 @@
         
     
 
-<nav id="sidebar" data-behavior="3">
-    
-        <div class="sidebar-profile">
-            <a href="/#about">
-                    <img class="sidebar-profile-picture" src="https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"/>
-            </a>
-            <span class="sidebar-profile-name">DMoon</span>
-        </div>
-    
-    
-      
-        <ul class="sidebar-buttons button-link-block">
-          
-            <li class="sidebar-button">
-              
-                  <a  class="sidebar-button-link "
-                       href="/ "
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-home"></i>
-                  <span class="sidebar-button-desc">首頁</span>
-                  </a>
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a
+                    href="/#about"
+                    aria-label="閱讀有關作者的更多信息"
+                >
+                    <img class="sidebar-profile-picture" src="https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg" alt="作者的圖片"/>
+                </a>
+                <h4 class="sidebar-profile-name">DMoon</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>熱愛科技的資工系學生，喜歡學習新的技術</p>
+<p>目前主要開發 Web APP</p>
+<p>較熟悉的技術是 Node.JS / React.JS</p>
+</h5>
+                
+            </div>
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/ "
+                            
+                            title="首頁"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">首頁</span>
+                    </a>
             </li>
-          
-            <li class="sidebar-button">
-              
-                  <a  class="sidebar-button-link "
-                       href="/all-categories"
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
-                  <span class="sidebar-button-desc">分類</span>
-                  </a>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-categories"
+                            
+                            title="分類"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">分類</span>
+                    </a>
             </li>
-          
-            <li class="sidebar-button">
-              
-                  <a  class="sidebar-button-link "
-                       href="/all-tags"
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
-                  <span class="sidebar-button-desc">標籤</span>
-                  </a>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-tags"
+                            
+                            title="標籤"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">標籤</span>
+                    </a>
             </li>
-          
-            <li class="sidebar-button">
-              
-                  <a  class="sidebar-button-link "
-                       href="/all-archives"
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                  <span class="sidebar-button-desc">所有文章</span>
-                  </a>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-archives"
+                            
+                            title="所有文章"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">所有文章</span>
+                    </a>
             </li>
-          
-            <li class="sidebar-button">
-              
-                  <a  class="sidebar-button-link "
-                       href="#about"
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-question"></i>
-                  <span class="sidebar-button-desc">關於</span>
-                  </a>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="#about"
+                            
+                            title="關於"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-question" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">關於</span>
+                    </a>
             </li>
-          
+            
         </ul>
-      
-      
-    
-      
-      
-        <div class="sidebar-buttons flex-container space-around author_links">
-          
-            <!-- <li class="sidebar-button"> -->
-              
-                  <a  class="sidebar-button-link " href="https://github.com/kyoyadmoon" target="_blank">
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-github" style="color: #ebebeb "></i>
-                  <!-- <span class="sidebar-button-desc">GitHub</span> -->
-                  </a>
-            <!-- </li> -->
-          
-            <!-- <li class="sidebar-button"> -->
-              
-                  <a  class="sidebar-button-link " href="https://www.facebook.com/dmoonhuang" target="_blank">
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-facebook" style="color: #ebebeb "></i>
-                  <!-- <span class="sidebar-button-desc">Facebook</span> -->
-                  </a>
-            <!-- </li> -->
-          
-            <!-- <li class="sidebar-button"> -->
-              
-                  <a  target="_blank" class="sidebar-button-link "
-                       href="/atom.xml"
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-rss" style="color: #ebebeb "></i>
-                  <!-- <span class="sidebar-button-desc">RSS</span> -->
-                  </a>
-            <!-- </li> -->
-          
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://github.com/kyoyadmoon" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://www.facebook.com/dmoonhuang" target="_blank" rel="noopener" title="Facebook">
+                    
+                        <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/atom.xml"
+                            
+                            title="RSS"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-rss" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">RSS</span>
+                    </a>
+            </li>
+            
         </ul>
-      
-    
-      
-      
-    
+        
+    </div>
 </nav>
 
             
-            <div id="main" data-behavior="3"
+            <div id="main" data-behavior="4"
                  class="
                         hasCoverMetaIn
                         
                          " >
                 
-<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+<article class="post">
     
     
         <div class="post-header main-content-wrap text-left">
     
-        <h1 class="post-title" itemprop="headline">
+        <h1 class="post-title">
             Github Pages 免費 ssl 設定 - 輕鬆擁有 https 綠鎖頭 (2)
         </h1>
     
-    <div class="post-meta">
-    <time itemprop="datePublished" content="Wed Feb 01 2017 16:15:33 GMT+0800">
+    
+        <div class="post-meta">
+    <time datetime="2017-02-01T16:15:33+08:00">
 	
 		    2月 01, 2017
     	
@@ -255,12 +297,16 @@
 
     
 </div>
-</div>
+
     
-    <div class="post-content markdown" itemprop="articleBody">
+</div>
+
+    
+    <div class="post-content markdown">
         <div class="main-content-wrap">
             <p>在 <a href="/github-pages-custom-domain/" title="上一篇">上一篇</a> 中，我們應該已經設定好了自定義域名，接下來就是幫我們的自定義域名加上漂亮安全的 https 綠色鎖頭啦。</p>
 <a id="more"></a>
+
 <h2 id="Add-Free-SSL"><a href="#Add-Free-SSL" class="headerlink" title="Add Free SSL"></a>Add Free SSL</h2><p>說到 Free SSL 相信很多人第一個想到的就是開源的 <a href="https://letsencrypt.org/" target="_blank" rel="external">Let&#39;s Encrypt</a> 吧，不過很遺憾在爬文時發現，Github 似乎並不支援 Let&#39;s Encrypt ，因此只好找其他的免費 SSL 憑證了，這篇要說明如何使用 <a href="https://www.cloudflare.com/" target="_blank" rel="external">CloudFlare</a> 幫 Github Pages 掛上的免費 SSL</p>
 <ol>
 <li><p><a href="https://www.cloudflare.com/a/sign-up" target="_blank" rel="external">註冊 CloudFlare 帳號</a>
@@ -278,27 +324,28 @@
 </li>
 <li><p>請先到 CloudFlare website 管理頁面，將 Crypto / SSL 設定為 Flexible
 如圖：</p>
-<img src="/github-pages-with-free-ssl/flexible_config.png" alt="flexible_config.png" title="">
+<img src="/github-pages-with-free-ssl/flexible_config.png" alt="flexible_config.png" title>
 <p>好奇 Flexible 意思的請點這裡 <a href="https://sofree.cc/cloudflare-free-ssl/" target="_blank" rel="external">Read More...</a></p>
 </li>
 <li><p>到這邊差不多就完成囉
 接下來是對網站做一些額外設定
 像是在 <head> 中加上</head></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="keyword">var</span> host = <span class="string">"yoursite.com"</span>;</div><div class="line">    <span class="keyword">if</span> ((host == <span class="built_in">window</span>.location.host) &amp;&amp; (<span class="built_in">window</span>.location.protocol != <span class="string">"https:"</span>))</div><div class="line">        <span class="built_in">window</span>.location.protocol = <span class="string">"https"</span>;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> host = <span class="string">"yoursite.com"</span>;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">if</span> ((host == <span class="built_in">window</span>.location.host) &amp;&amp; (<span class="built_in">window</span>.location.protocol != <span class="string">"https:"</span>))</span></span><br><span class="line"><span class="javascript">        <span class="built_in">window</span>.location.protocol = <span class="string">"https"</span>;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>讓 http 的連線自動導向到 https</p>
 </li>
 <li><p>告訴搜尋引擎偏好網址
 將下面加入你的 Hexo theme header template 中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=&quot;canonical&quot; href=&quot;&lt;%= url %&gt;&quot; /&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;canonical&quot; href=&quot;&lt;%= url %&gt;&quot; /&gt;</span><br></pre></td></tr></table></figure>
+
 <p>​</p>
 </li>
 </ol>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://sheharyar.me/blog/free-ssl-for-github-pages-with-custom-domains/" target="_blank" rel="external">https://sheharyar.me/blog/free-ssl-for-github-pages-with-custom-domains/</a></p>
 
             
-                
 
-            
+
         </div>
     </div>
     <div id="post-footer" class="post-footer main-content-wrap">
@@ -310,66 +357,115 @@
 
             </div>
         
-        <div class="post-actions-wrap">
+        
+            <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/react-native-integrate-with-code-push/"  data-tooltip="React Native CodePush 偷天換日術">
-                
-                    <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
-                </a>
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/react-native-integrate-with-code-push/"
+                    data-tooltip="React Native CodePush 偷天換日術"
+                    aria-label="上一篇: React Native CodePush 偷天換日術"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                    </a>
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/github-pages-custom-domain/" data-tooltip="Github Pages 自訂域名 - 輕鬆擁有 https 綠鎖頭 (1)">
-                
-                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
-                    <i class="fa fa-angle-right"></i>
-                </a>
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/github-pages-custom-domain/"
+                    data-tooltip="Github Pages 自訂域名 - 輕鬆擁有 https 綠鎖頭 (1)"
+                    aria-label="下一篇: Github Pages 自訂域名 - 輕鬆擁有 https 綠鎖頭 (1)"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
             </li>
         </ul>
     </nav>
     <ul class="post-actions post-action-share">
         <li class="post-action hide-lg hide-md hide-sm">
-            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
-                <i class="fa fa-share-alt"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://blog.dmoon.tw/github-pages-with-free-ssl/">
-                <i class="fa fa-google-plus"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.dmoon.tw/github-pages-with-free-ssl/">
-                <i class="fa fa-facebook-official"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://blog.dmoon.tw/github-pages-with-free-ssl/">
-                <i class="fa fa-twitter"></i>
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Diesen Beitrag teilen"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
             </a>
         </li>
         
-            <li class="post-action">
-                <a class="post-action-btn btn btn--default" href="#disqus_thread">
-                    <i class="fa fa-comment-o"></i>
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.dmoon.tw/github-pages-with-free-ssl/"
+                    title="分享到 Facebook"
+                    aria-label="分享到 Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
         
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=https://blog.dmoon.tw/github-pages-with-free-ssl/"
+                    title="分享到 Twitter"
+                    aria-label="分享到 Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=https://blog.dmoon.tw/github-pages-with-free-ssl/"
+                    title="分享到 Google+"
+                    aria-label="分享到 Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+                <li class="post-action">
+                    <a
+                        class="post-action-btn btn btn--default"
+                        href="#disqus_thread"
+                        aria-label="Kommentieren"
+                    >
+                        <i class="fa fa-comment"></i>
+                    </a>
+                </li>
+            
+        
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Nach oben">
             
-                <i class="fa fa-list"></i>
+                <i class="fa fa-list" aria-hidden="true"></i>
             </a>
         </li>
     </ul>
 </div>
 
 
+        
         
             
                 <div id="disqus_thread">
@@ -390,61 +486,108 @@
 
             </div>
             
-                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
                     <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/react-native-integrate-with-code-push/"  data-tooltip="React Native CodePush 偷天換日術">
-                
-                    <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
-                </a>
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/react-native-integrate-with-code-push/"
+                    data-tooltip="React Native CodePush 偷天換日術"
+                    aria-label="上一篇: React Native CodePush 偷天換日術"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                    </a>
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/github-pages-custom-domain/" data-tooltip="Github Pages 自訂域名 - 輕鬆擁有 https 綠鎖頭 (1)">
-                
-                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
-                    <i class="fa fa-angle-right"></i>
-                </a>
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/github-pages-custom-domain/"
+                    data-tooltip="Github Pages 自訂域名 - 輕鬆擁有 https 綠鎖頭 (1)"
+                    aria-label="下一篇: Github Pages 自訂域名 - 輕鬆擁有 https 綠鎖頭 (1)"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
             </li>
         </ul>
     </nav>
     <ul class="post-actions post-action-share">
         <li class="post-action hide-lg hide-md hide-sm">
-            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
-                <i class="fa fa-share-alt"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://blog.dmoon.tw/github-pages-with-free-ssl/">
-                <i class="fa fa-google-plus"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.dmoon.tw/github-pages-with-free-ssl/">
-                <i class="fa fa-facebook-official"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://blog.dmoon.tw/github-pages-with-free-ssl/">
-                <i class="fa fa-twitter"></i>
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Diesen Beitrag teilen"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
             </a>
         </li>
         
-            <li class="post-action">
-                <a class="post-action-btn btn btn--default" href="#disqus_thread">
-                    <i class="fa fa-comment-o"></i>
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.dmoon.tw/github-pages-with-free-ssl/"
+                    title="分享到 Facebook"
+                    aria-label="分享到 Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
         
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=https://blog.dmoon.tw/github-pages-with-free-ssl/"
+                    title="分享到 Twitter"
+                    aria-label="分享到 Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=https://blog.dmoon.tw/github-pages-with-free-ssl/"
+                    title="分享到 Google+"
+                    aria-label="分享到 Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+                <li class="post-action">
+                    <a
+                        class="post-action-btn btn btn--default"
+                        href="#disqus_thread"
+                        aria-label="Kommentieren"
+                    >
+                        <i class="fa fa-comment"></i>
+                    </a>
+                </li>
+            
+        
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Nach oben">
             
-                <i class="fa fa-list"></i>
+                <i class="fa fa-list" aria-hidden="true"></i>
             </a>
         </li>
     </ul>
@@ -452,26 +595,54 @@
 
 
                 </div>
-                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
-    <ul class="share-options">
-        <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://blog.dmoon.tw/github-pages-with-free-ssl/">
-                <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
-            </a>
-        </li>
-        <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.dmoon.tw/github-pages-with-free-ssl/">
-                <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
-            </a>
-        </li>
-        <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://blog.dmoon.tw/github-pages-with-free-ssl/">
-                <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
-            </a>
-        </li>
-    </ul>
-</div>
-<div id="share-options-mask" class="share-options-mask"></div>
+                
+    <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+        <i id="btn-close-shareoptions" class="fa fa-times"></i>
+        <ul class="share-options">
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://www.facebook.com/sharer/sharer.php?u=https://blog.dmoon.tw/github-pages-with-free-ssl/"
+                        aria-label="分享到 Facebook"
+                    >
+                        <i class="fab fa-facebook" aria-hidden="true"></i><span>分享到 Facebook</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://twitter.com/intent/tweet?text=https://blog.dmoon.tw/github-pages-with-free-ssl/"
+                        aria-label="分享到 Twitter"
+                    >
+                        <i class="fab fa-twitter" aria-hidden="true"></i><span>分享到 Twitter</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://plus.google.com/share?url=https://blog.dmoon.tw/github-pages-with-free-ssl/"
+                        aria-label="分享到 Google+"
+                    >
+                        <i class="fab fa-google-plus" aria-hidden="true"></i><span>分享到 Google+</span>
+                    </a>
+                </li>
+            
+        </ul>
+    </div>
+
+
             
         </div>
         
@@ -514,34 +685,67 @@
           
         </div>
     </div>
+    <!-- update origin <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <img id="about-card-picture" src="https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg" alt="作者的圖片"/>
+        
+            <h4 id="about-card-name">DMoon</h4>
+        
+            <div id="about-card-bio"><p>熱愛科技的資工系學生，喜歡學習新的技術</p>
+<p>目前主要開發 Web APP</p>
+<p>較熟悉的技術是 Node.JS / React.JS</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>學生 / 創科資訊實習生</p>
+
+            </div>
+        
+        
+            <div id="about-card-location">
+                <i class="fa fa-map-marker-alt"></i>
+                <br/>
+                Taichung, Taiwan
+            </div>
+        
+    </div> -->
 </div>
 
         
+        
 <div id="cover" style="background-image:url('/assets/images/myCover.jpeg');"></div>
-    </body>
-    <!--SCRIPTS-->
-<script src="/assets/js/scrip-bxxvsd4n4tu0lxfd23qyh44n9weuvdcmzweqijk10z8umo3eb9r1nhmiyvpz.min.js"></script>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-qorzkckqhbomlhsfohbzueuqlpk87aeixchancwz6resl7ddkfuytzsmttxj.min.js"></script>
 <!--SCRIPTS END-->
+
 
     
         <script>
-             var disqus_config = function () {
-                 this.page.url = 'https://blog.dmoon.tw/github-pages-with-free-ssl/';
-                 
-                    this.page.identifier = 'github-pages-with-free-ssl/';
-                                  
-             };
-            (function() {
-                var d = document, s = d.createElement('script');
-                var disqus_shortname = 'dmoonlaputa';
-                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          var disqus_config = function() {
+            this.page.url = 'https://blog.dmoon.tw/github-pages-with-free-ssl/';
+              
+            this.page.identifier = 'github-pages-with-free-ssl/';
+              
+          };
+          (function() {
+            var d = document, s = d.createElement('script');
+            var disqus_shortname = 'dmoonlaputa';
+            s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-            })();
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+          })();
         </script>
     
 
 
 
+
+    </body>
 </html>

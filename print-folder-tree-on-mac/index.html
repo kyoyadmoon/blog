@@ -14,18 +14,21 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="最近寫文章需要將專案的檔案目錄結構用樹狀印出，方便閱讀，所以找了一些相關資料，整理一下做個筆記 homebrew 上就有個 tree 的套件可以做到這個功能">
-<meta name="keywords" content="macOS">
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"DMoon","sameAs":["https://github.com/kyoyadmoon","https://www.facebook.com/dmoonhuang","/atom.xml"],"image":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"},"articleBody":"  \n\n最近寫文章需要將專案的檔案目錄結構用樹狀印出，方便閱讀，所以找了一些相關資料，整理一下做個筆記\nhomebrew 上就有個 tree 的套件可以做到這個功能\n\n\n安裝方法1brew install tree\n\n使用方式安裝完成後，就可以在 terminal 直接使用 tree 這個指令啦\n1tree\n\n常用參數中文亂碼當你用 tree 列印資料夾目錄時，可能會發現一些中文檔名會出現亂碼的情況\n加上 -N 參數，就可以印出原本的字元了\n1tree -N\n\n設定印出層數加上 -L 參數，並在後面加上層數的數字\n列印一層\n1tree -L 1\n\n依字母排序加上 -v 參數可以依照字母排序\n1tree -v\n\n其他參數可以透過　--help 指令查詢\n1tree --help\n\n這邊附上查詢得到的列表\n123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960usage: tree [-acdfghilnpqrstuvxACDFJQNSUX] [-H baseHREF] [-T title ]    [-L level [-R]] [-P pattern] [-I pattern] [-o filename] [--version]    [--help] [--inodes] [--device] [--noreport] [--nolinks] [--dirsfirst]    [--charset charset] [--filelimit[=]#] [--si] [--timefmt[=]&lt;f&gt;]    [--sort[=]&lt;name&gt;] [--matchdirs] [--ignore-case] [--] [&lt;directory list&gt;]  ------- Listing options -------  -a            All files are listed.  -d            List directories only.  -l            Follow symbolic links like directories.  -f            Print the full path prefix for each file.  -x            Stay on current filesystem only.  -L level      Descend only level directories deep.  -R            Rerun tree when max dir level reached.  -P pattern    List only those files that match the pattern given.  -I pattern    Do not list files that match the given pattern.  --ignore-case Ignore case when pattern matching.  --matchdirs   Include directory names in -P pattern matching.  --noreport    Turn off file/directory count at end of tree listing.  --charset X   Use charset X for terminal/HTML and indentation line output.  --filelimit # Do not descend dirs with more than # files in them.  --timefmt &lt;f&gt; Print and format time according to the format &lt;f&gt;.  -o filename   Output to file instead of stdout.  -------- File options ---------  -q            Print non-printable characters as &apos;?&apos;.  -N            Print non-printable characters as is.  -Q            Quote filenames with double quotes.  -p            Print the protections for each file.  -u            Displays file owner or UID number.  -g            Displays file group owner or GID number.  -s            Print the size in bytes of each file.  -h            Print the size in a more human readable way.  --si          Like -h, but use in SI units (powers of 1000).  -D            Print the date of last modification or (-c) status change.  -F            Appends &apos;/&apos;, &apos;=&apos;, &apos;*&apos;, &apos;@&apos;, &apos;|&apos; or &apos;&gt;&apos; as per ls -F.  --inodes      Print inode number of each file.  --device      Print device ID number to which each file belongs.  ------- Sorting options -------  -v            Sort files alphanumerically by version.  -t            Sort files by last modification time.  -c            Sort files by last status change time.  -U            Leave files unsorted.  -r            Reverse the order of the sort.  --dirsfirst   List directories before files (-U disables).  --sort X      Select sort: name,version,size,mtime,ctime.  ------- Graphics options ------  -i            Don&apos;t print indentation lines.  -A            Print ANSI lines graphic indentation lines.  -S            Print with CP437 (console) graphics indentation lines.  -n            Turn colorization off always (-C overrides).  -C            Turn colorization on always.  ------- XML/HTML/JSON options -------  -X            Prints out an XML representation of the tree.  -J            Prints out an JSON representation of the tree.  -H baseHREF   Prints out HTML format with baseHREF as top directory.  -T string     Replace the default HTML title and H1 header with string.  --nolinks     Turn off hyperlinks in HTML output.  ---- Miscellaneous options ----  --version     Print version and exit.  --help        Print usage and this help message and exit.  --            Options processing terminator.","dateCreated":"2018-11-29T23:53:35+08:00","dateModified":"2019-08-26T03:26:57+08:00","datePublished":"2018-11-29T23:53:35+08:00","description":"  \n\n最近寫文章需要將專案的檔案目錄結構用樹狀印出，方便閱讀，所以找了一些相關資料，整理一下做個筆記\nhomebrew 上就有個 tree 的套件可以做到這個功能","headline":"Mac 印出樹狀資料夾目錄結構","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.dmoon.tw/print-folder-tree-on-mac/"},"publisher":{"@type":"Organization","name":"DMoon","sameAs":["https://github.com/kyoyadmoon","https://www.facebook.com/dmoonhuang","/atom.xml"],"image":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg","logo":{"@type":"ImageObject","url":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"}},"url":"https://blog.dmoon.tw/print-folder-tree-on-mac/","keywords":"macOS"}</script>
+    <meta name="description" content="最近寫文章需要將專案的檔案目錄結構用樹狀印出，方便閱讀，所以找了一些相關資料，整理一下做個筆記
+homebrew 上就有個 tree 的套件可以做到這個功能">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Mac 印出樹狀資料夾目錄結構">
 <meta property="og:url" content="https://blog.dmoon.tw/print-folder-tree-on-mac/index.html">
-<meta property="og:site_name" content="DMoon&#39;s Laputa">
-<meta property="og:description" content="最近寫文章需要將專案的檔案目錄結構用樹狀印出，方便閱讀，所以找了一些相關資料，整理一下做個筆記 homebrew 上就有個 tree 的套件可以做到這個功能">
+<meta property="og:site_name" content="DMoon's Laputa">
+<meta property="og:description" content="最近寫文章需要將專案的檔案目錄結構用樹狀印出，方便閱讀，所以找了一些相關資料，整理一下做個筆記
+homebrew 上就有個 tree 的套件可以做到這個功能">
 <meta property="og:image" content="https://blog.dmoon.tw/print-folder-tree-on-mac/2018-11-30-00-27-22.png">
-<meta property="og:updated_time" content="2018-11-29T16:48:15.853Z">
+<meta property="og:updated_time" content="2019-08-25T19:26:57.749Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac 印出樹狀資料夾目錄結構">
-<meta name="twitter:description" content="最近寫文章需要將專案的檔案目錄結構用樹狀印出，方便閱讀，所以找了一些相關資料，整理一下做個筆記 homebrew 上就有個 tree 的套件可以做到這個功能">
+<meta name="twitter:description" content="最近寫文章需要將專案的檔案目錄結構用樹狀印出，方便閱讀，所以找了一些相關資料，整理一下做個筆記
+homebrew 上就有個 tree 的套件可以做到這個功能">
 <meta name="twitter:image" content="https://blog.dmoon.tw/print-folder-tree-on-mac/2018-11-30-00-27-22.png">
     
     
@@ -41,19 +44,18 @@
 
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/style-rylrrsqywzl9hyui2n1ziymwh8cyf3cxpysf9outvwx8ofhjpty2ccllpauf.min.css">
+    <link rel="stylesheet" href="/assets/css/style-2o71hzttz2k9pq9pfin3x87oyv0konupeunubjb5vmvwocyfflcpdgglsdmb.min.css">
     <!--STYLES END-->
     
-    <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-57006180-2']);
-        _gaq.push(['_trackPageview']);
-        (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57006180-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-57006180-2');
     </script>
+
 
     
     <link rel="canonical" href="https://blog.dmoon.tw/print-folder-tree-on-mac/index.html" />
@@ -69,6 +71,31 @@
               enable_page_level_ads: true
          });
     </script>
+    <!-- update origin -->
+    <!--  -->
+    <!--STYLES-->
+    <!-- <link rel="stylesheet" href="/assets/css/all.css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/assets/css/thumbs.css">
+    <link rel="stylesheet" href="/assets/css/tranquilpeak.css"> -->
+    <!--STYLES END-->
+    <!-- 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57006180-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-57006180-2');
+    </script>
+
+
+    
+
+    
+        
+     -->
+    <!-- End of update origin -->
 </head>
 
     <body>
@@ -82,18 +109,27 @@
         
     
 
-<header id="header" data-behavior="3">
+<header id="header" data-behavior="4">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
-    <h1 class="header-title">
-        <a class="header-title-link" href="/ ">DMoon&#39;s Laputa</a>
-    </h1>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/ "
+            aria-label=""
+        >
+            DMoon&#39;s Laputa
+        </a>
+    </div>
     
         
-            <a  class="header-right-picture "
-                href="#about">
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="打開鏈接: /#about"
+            >
         
         
-            <img class="header-picture" src="https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"/>
+            <img class="header-picture" src="https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg" alt="作者的圖片"/>
         
         </a>
     
@@ -106,143 +142,152 @@
         
     
 
-<nav id="sidebar" data-behavior="3">
-    
-        <div class="sidebar-profile">
-            <a href="/#about">
-                    <img class="sidebar-profile-picture" src="https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"/>
-            </a>
-            <span class="sidebar-profile-name">DMoon</span>
-        </div>
-    
-    
-      
-        <ul class="sidebar-buttons button-link-block">
-          
-            <li class="sidebar-button">
-              
-                  <a  class="sidebar-button-link "
-                       href="/ "
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-home"></i>
-                  <span class="sidebar-button-desc">首頁</span>
-                  </a>
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a
+                    href="/#about"
+                    aria-label="閱讀有關作者的更多信息"
+                >
+                    <img class="sidebar-profile-picture" src="https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg" alt="作者的圖片"/>
+                </a>
+                <h4 class="sidebar-profile-name">DMoon</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>熱愛科技的資工系學生，喜歡學習新的技術</p>
+<p>目前主要開發 Web APP</p>
+<p>較熟悉的技術是 Node.JS / React.JS</p>
+</h5>
+                
+            </div>
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/ "
+                            
+                            title="首頁"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">首頁</span>
+                    </a>
             </li>
-          
-            <li class="sidebar-button">
-              
-                  <a  class="sidebar-button-link "
-                       href="/all-categories"
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
-                  <span class="sidebar-button-desc">分類</span>
-                  </a>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-categories"
+                            
+                            title="分類"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">分類</span>
+                    </a>
             </li>
-          
-            <li class="sidebar-button">
-              
-                  <a  class="sidebar-button-link "
-                       href="/all-tags"
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
-                  <span class="sidebar-button-desc">標籤</span>
-                  </a>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-tags"
+                            
+                            title="標籤"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">標籤</span>
+                    </a>
             </li>
-          
-            <li class="sidebar-button">
-              
-                  <a  class="sidebar-button-link "
-                       href="/all-archives"
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                  <span class="sidebar-button-desc">所有文章</span>
-                  </a>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-archives"
+                            
+                            title="所有文章"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">所有文章</span>
+                    </a>
             </li>
-          
-            <li class="sidebar-button">
-              
-                  <a  class="sidebar-button-link "
-                       href="#about"
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-question"></i>
-                  <span class="sidebar-button-desc">關於</span>
-                  </a>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="#about"
+                            
+                            title="關於"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-question" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">關於</span>
+                    </a>
             </li>
-          
+            
         </ul>
-      
-      
-    
-      
-      
-        <div class="sidebar-buttons flex-container space-around author_links">
-          
-            <!-- <li class="sidebar-button"> -->
-              
-                  <a  class="sidebar-button-link " href="https://github.com/kyoyadmoon" target="_blank">
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-github" style="color: #ebebeb "></i>
-                  <!-- <span class="sidebar-button-desc">GitHub</span> -->
-                  </a>
-            <!-- </li> -->
-          
-            <!-- <li class="sidebar-button"> -->
-              
-                  <a  class="sidebar-button-link " href="https://www.facebook.com/dmoonhuang" target="_blank">
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-facebook" style="color: #ebebeb "></i>
-                  <!-- <span class="sidebar-button-desc">Facebook</span> -->
-                  </a>
-            <!-- </li> -->
-          
-            <!-- <li class="sidebar-button"> -->
-              
-                  <a  target="_blank" class="sidebar-button-link "
-                       href="/atom.xml"
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-rss" style="color: #ebebeb "></i>
-                  <!-- <span class="sidebar-button-desc">RSS</span> -->
-                  </a>
-            <!-- </li> -->
-          
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://github.com/kyoyadmoon" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://www.facebook.com/dmoonhuang" target="_blank" rel="noopener" title="Facebook">
+                    
+                        <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/atom.xml"
+                            
+                            title="RSS"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-rss" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">RSS</span>
+                    </a>
+            </li>
+            
         </ul>
-      
-    
-      
-      
-    
+        
+    </div>
 </nav>
 
             
-            <div id="main" data-behavior="3"
+            <div id="main" data-behavior="4"
                  class="
                         hasCoverMetaIn
                         
                          " >
                 
-<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+<article class="post">
     
     
         <div class="post-header main-content-wrap text-left">
     
-        <h1 class="post-title" itemprop="headline">
+        <h1 class="post-title">
             Mac 印出樹狀資料夾目錄結構
         </h1>
     
-    <div class="post-meta">
-    <time itemprop="datePublished" content="Thu Nov 29 2018 23:53:35 GMT+0800">
+    
+        <div class="post-meta">
+    <time datetime="2018-11-29T23:53:35+08:00">
 	
 		    11月 29, 2018
     	
@@ -255,33 +300,43 @@
 
     
 </div>
-</div>
+
     
-    <div class="post-content markdown" itemprop="articleBody">
+</div>
+
+    
+    <div class="post-content markdown">
         <div class="main-content-wrap">
-            <img src="/print-folder-tree-on-mac/2018-11-30-00-27-22.png" alt="2018-11-30-00-27-22.png" title="">  
+            <img src="/print-folder-tree-on-mac/2018-11-30-00-27-22.png" alt="2018-11-30-00-27-22.png" title>  
+
 <p>最近寫文章需要將專案的檔案目錄結構用樹狀印出，方便閱讀，所以找了一些相關資料，整理一下做個筆記</p>
 <p>homebrew 上就有個 <code>tree</code> 的套件可以做到這個功能</p>
 <a id="more"></a>
-<h2 id="安裝方法"><a href="#安裝方法" class="headerlink" title="安裝方法"></a>安裝方法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install tree</div></pre></td></tr></table></figure>
+
+<h2 id="安裝方法"><a href="#安裝方法" class="headerlink" title="安裝方法"></a>安裝方法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install tree</span><br></pre></td></tr></table></figure>
+
 <h2 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h2><p>安裝完成後，就可以在 terminal 直接使用 <strong>tree</strong> 這個指令啦</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tree</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tree</span><br></pre></td></tr></table></figure>
+
 <h2 id="常用參數"><a href="#常用參數" class="headerlink" title="常用參數"></a>常用參數</h2><h3 id="中文亂碼"><a href="#中文亂碼" class="headerlink" title="中文亂碼"></a>中文亂碼</h3><p>當你用 tree 列印資料夾目錄時，可能會發現一些中文檔名會出現亂碼的情況</p>
 <p>加上 <code>-N</code> 參數，就可以印出原本的字元了</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tree -N</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tree -N</span><br></pre></td></tr></table></figure>
+
 <h3 id="設定印出層數"><a href="#設定印出層數" class="headerlink" title="設定印出層數"></a>設定印出層數</h3><p>加上 <code>-L</code> 參數，並在後面加上層數的數字</p>
 <p>列印一層</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tree -L 1</div></pre></td></tr></table></figure>
-<h3 id="依字母排序"><a href="#依字母排序" class="headerlink" title="依字母排序"></a>依字母排序</h3><p>加上 <code>-v</code> 參數可以依照字母排序</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tree -v</div></pre></td></tr></table></figure>
-<h2 id="其他參數"><a href="#其他參數" class="headerlink" title="其他參數"></a>其他參數</h2><p>可以透過　<code>--help</code> 指令查詢</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tree --help</div></pre></td></tr></table></figure>
-<p>這邊附上查詢得到的列表</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line">usage: tree [-acdfghilnpqrstuvxACDFJQNSUX] [-H baseHREF] [-T title ]</div><div class="line">    [-L level [-R]] [-P pattern] [-I pattern] [-o filename] [--version]</div><div class="line">    [--help] [--inodes] [--device] [--noreport] [--nolinks] [--dirsfirst]</div><div class="line">    [--charset charset] [--filelimit[=]#] [--si] [--timefmt[=]&lt;f&gt;]</div><div class="line">    [--sort[=]&lt;name&gt;] [--matchdirs] [--ignore-case] [--] [&lt;directory list&gt;]</div><div class="line">  ------- Listing options -------</div><div class="line">  -a            All files are listed.</div><div class="line">  -d            List directories only.</div><div class="line">  -l            Follow symbolic links like directories.</div><div class="line">  -f            Print the full path prefix for each file.</div><div class="line">  -x            Stay on current filesystem only.</div><div class="line">  -L level      Descend only level directories deep.</div><div class="line">  -R            Rerun tree when max dir level reached.</div><div class="line">  -P pattern    List only those files that match the pattern given.</div><div class="line">  -I pattern    Do not list files that match the given pattern.</div><div class="line">  --ignore-case Ignore case when pattern matching.</div><div class="line">  --matchdirs   Include directory names in -P pattern matching.</div><div class="line">  --noreport    Turn off file/directory count at end of tree listing.</div><div class="line">  --charset X   Use charset X for terminal/HTML and indentation line output.</div><div class="line">  --filelimit # Do not descend dirs with more than # files in them.</div><div class="line">  --timefmt &lt;f&gt; Print and format time according to the format &lt;f&gt;.</div><div class="line">  -o filename   Output to file instead of stdout.</div><div class="line">  -------- File options ---------</div><div class="line">  -q            Print non-printable characters as &apos;?&apos;.</div><div class="line">  -N            Print non-printable characters as is.</div><div class="line">  -Q            Quote filenames with double quotes.</div><div class="line">  -p            Print the protections for each file.</div><div class="line">  -u            Displays file owner or UID number.</div><div class="line">  -g            Displays file group owner or GID number.</div><div class="line">  -s            Print the size in bytes of each file.</div><div class="line">  -h            Print the size in a more human readable way.</div><div class="line">  --si          Like -h, but use in SI units (powers of 1000).</div><div class="line">  -D            Print the date of last modification or (-c) status change.</div><div class="line">  -F            Appends &apos;/&apos;, &apos;=&apos;, &apos;*&apos;, &apos;@&apos;, &apos;|&apos; or &apos;&gt;&apos; as per ls -F.</div><div class="line">  --inodes      Print inode number of each file.</div><div class="line">  --device      Print device ID number to which each file belongs.</div><div class="line">  ------- Sorting options -------</div><div class="line">  -v            Sort files alphanumerically by version.</div><div class="line">  -t            Sort files by last modification time.</div><div class="line">  -c            Sort files by last status change time.</div><div class="line">  -U            Leave files unsorted.</div><div class="line">  -r            Reverse the order of the sort.</div><div class="line">  --dirsfirst   List directories before files (-U disables).</div><div class="line">  --sort X      Select sort: name,version,size,mtime,ctime.</div><div class="line">  ------- Graphics options ------</div><div class="line">  -i            Don&apos;t print indentation lines.</div><div class="line">  -A            Print ANSI lines graphic indentation lines.</div><div class="line">  -S            Print with CP437 (console) graphics indentation lines.</div><div class="line">  -n            Turn colorization off always (-C overrides).</div><div class="line">  -C            Turn colorization on always.</div><div class="line">  ------- XML/HTML/JSON options -------</div><div class="line">  -X            Prints out an XML representation of the tree.</div><div class="line">  -J            Prints out an JSON representation of the tree.</div><div class="line">  -H baseHREF   Prints out HTML format with baseHREF as top directory.</div><div class="line">  -T string     Replace the default HTML title and H1 header with string.</div><div class="line">  --nolinks     Turn off hyperlinks in HTML output.</div><div class="line">  ---- Miscellaneous options ----</div><div class="line">  --version     Print version and exit.</div><div class="line">  --help        Print usage and this help message and exit.</div><div class="line">  --            Options processing terminator.</div></pre></td></tr></table></figure>
-            
-                
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tree -L 1</span><br></pre></td></tr></table></figure>
 
+<h3 id="依字母排序"><a href="#依字母排序" class="headerlink" title="依字母排序"></a>依字母排序</h3><p>加上 <code>-v</code> 參數可以依照字母排序</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tree -v</span><br></pre></td></tr></table></figure>
+
+<h2 id="其他參數"><a href="#其他參數" class="headerlink" title="其他參數"></a>其他參數</h2><p>可以透過　<code>--help</code> 指令查詢</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tree --help</span><br></pre></td></tr></table></figure>
+
+<p>這邊附上查詢得到的列表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">usage: tree [-acdfghilnpqrstuvxACDFJQNSUX] [-H baseHREF] [-T title ]</span><br><span class="line">    [-L level [-R]] [-P pattern] [-I pattern] [-o filename] [--version]</span><br><span class="line">    [--help] [--inodes] [--device] [--noreport] [--nolinks] [--dirsfirst]</span><br><span class="line">    [--charset charset] [--filelimit[=]#] [--si] [--timefmt[=]&lt;f&gt;]</span><br><span class="line">    [--sort[=]&lt;name&gt;] [--matchdirs] [--ignore-case] [--] [&lt;directory list&gt;]</span><br><span class="line">  ------- Listing options -------</span><br><span class="line">  -a            All files are listed.</span><br><span class="line">  -d            List directories only.</span><br><span class="line">  -l            Follow symbolic links like directories.</span><br><span class="line">  -f            Print the full path prefix for each file.</span><br><span class="line">  -x            Stay on current filesystem only.</span><br><span class="line">  -L level      Descend only level directories deep.</span><br><span class="line">  -R            Rerun tree when max dir level reached.</span><br><span class="line">  -P pattern    List only those files that match the pattern given.</span><br><span class="line">  -I pattern    Do not list files that match the given pattern.</span><br><span class="line">  --ignore-case Ignore case when pattern matching.</span><br><span class="line">  --matchdirs   Include directory names in -P pattern matching.</span><br><span class="line">  --noreport    Turn off file/directory count at end of tree listing.</span><br><span class="line">  --charset X   Use charset X for terminal/HTML and indentation line output.</span><br><span class="line">  --filelimit # Do not descend dirs with more than # files in them.</span><br><span class="line">  --timefmt &lt;f&gt; Print and format time according to the format &lt;f&gt;.</span><br><span class="line">  -o filename   Output to file instead of stdout.</span><br><span class="line">  -------- File options ---------</span><br><span class="line">  -q            Print non-printable characters as &apos;?&apos;.</span><br><span class="line">  -N            Print non-printable characters as is.</span><br><span class="line">  -Q            Quote filenames with double quotes.</span><br><span class="line">  -p            Print the protections for each file.</span><br><span class="line">  -u            Displays file owner or UID number.</span><br><span class="line">  -g            Displays file group owner or GID number.</span><br><span class="line">  -s            Print the size in bytes of each file.</span><br><span class="line">  -h            Print the size in a more human readable way.</span><br><span class="line">  --si          Like -h, but use in SI units (powers of 1000).</span><br><span class="line">  -D            Print the date of last modification or (-c) status change.</span><br><span class="line">  -F            Appends &apos;/&apos;, &apos;=&apos;, &apos;*&apos;, &apos;@&apos;, &apos;|&apos; or &apos;&gt;&apos; as per ls -F.</span><br><span class="line">  --inodes      Print inode number of each file.</span><br><span class="line">  --device      Print device ID number to which each file belongs.</span><br><span class="line">  ------- Sorting options -------</span><br><span class="line">  -v            Sort files alphanumerically by version.</span><br><span class="line">  -t            Sort files by last modification time.</span><br><span class="line">  -c            Sort files by last status change time.</span><br><span class="line">  -U            Leave files unsorted.</span><br><span class="line">  -r            Reverse the order of the sort.</span><br><span class="line">  --dirsfirst   List directories before files (-U disables).</span><br><span class="line">  --sort X      Select sort: name,version,size,mtime,ctime.</span><br><span class="line">  ------- Graphics options ------</span><br><span class="line">  -i            Don&apos;t print indentation lines.</span><br><span class="line">  -A            Print ANSI lines graphic indentation lines.</span><br><span class="line">  -S            Print with CP437 (console) graphics indentation lines.</span><br><span class="line">  -n            Turn colorization off always (-C overrides).</span><br><span class="line">  -C            Turn colorization on always.</span><br><span class="line">  ------- XML/HTML/JSON options -------</span><br><span class="line">  -X            Prints out an XML representation of the tree.</span><br><span class="line">  -J            Prints out an JSON representation of the tree.</span><br><span class="line">  -H baseHREF   Prints out HTML format with baseHREF as top directory.</span><br><span class="line">  -T string     Replace the default HTML title and H1 header with string.</span><br><span class="line">  --nolinks     Turn off hyperlinks in HTML output.</span><br><span class="line">  ---- Miscellaneous options ----</span><br><span class="line">  --version     Print version and exit.</span><br><span class="line">  --help        Print usage and this help message and exit.</span><br><span class="line">  --            Options processing terminator.</span><br></pre></td></tr></table></figure>
             
+
+
         </div>
     </div>
     <div id="post-footer" class="post-footer main-content-wrap">
@@ -293,66 +348,115 @@
 
             </div>
         
-        <div class="post-actions-wrap">
+        
+            <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/daodu-tech-ep44/"  data-tooltip="科技島讀-台灣媒體的未來">
-                
-                    <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
-                </a>
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/diode-tech-ep44/"
+                    data-tooltip="科技島讀-台灣媒體的未來"
+                    aria-label="上一篇: 科技島讀-台灣媒體的未來"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                    </a>
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/introduce-firacode/" data-tooltip="讓程式碼更易讀的字型 FiraCode">
-                
-                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
-                    <i class="fa fa-angle-right"></i>
-                </a>
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/introduce-firacode/"
+                    data-tooltip="讓程式碼更易讀的字型 FiraCode"
+                    aria-label="下一篇: 讓程式碼更易讀的字型 FiraCode"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
             </li>
         </ul>
     </nav>
     <ul class="post-actions post-action-share">
         <li class="post-action hide-lg hide-md hide-sm">
-            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
-                <i class="fa fa-share-alt"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://blog.dmoon.tw/print-folder-tree-on-mac/">
-                <i class="fa fa-google-plus"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.dmoon.tw/print-folder-tree-on-mac/">
-                <i class="fa fa-facebook-official"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://blog.dmoon.tw/print-folder-tree-on-mac/">
-                <i class="fa fa-twitter"></i>
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Diesen Beitrag teilen"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
             </a>
         </li>
         
-            <li class="post-action">
-                <a class="post-action-btn btn btn--default" href="#disqus_thread">
-                    <i class="fa fa-comment-o"></i>
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.dmoon.tw/print-folder-tree-on-mac/"
+                    title="分享到 Facebook"
+                    aria-label="分享到 Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
         
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=https://blog.dmoon.tw/print-folder-tree-on-mac/"
+                    title="分享到 Twitter"
+                    aria-label="分享到 Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=https://blog.dmoon.tw/print-folder-tree-on-mac/"
+                    title="分享到 Google+"
+                    aria-label="分享到 Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+                <li class="post-action">
+                    <a
+                        class="post-action-btn btn btn--default"
+                        href="#disqus_thread"
+                        aria-label="Kommentieren"
+                    >
+                        <i class="fa fa-comment"></i>
+                    </a>
+                </li>
+            
+        
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Nach oben">
             
-                <i class="fa fa-list"></i>
+                <i class="fa fa-list" aria-hidden="true"></i>
             </a>
         </li>
     </ul>
 </div>
 
 
+        
         
             
                 <div id="disqus_thread">
@@ -373,61 +477,108 @@
 
             </div>
             
-                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
                     <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/daodu-tech-ep44/"  data-tooltip="科技島讀-台灣媒體的未來">
-                
-                    <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
-                </a>
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/diode-tech-ep44/"
+                    data-tooltip="科技島讀-台灣媒體的未來"
+                    aria-label="上一篇: 科技島讀-台灣媒體的未來"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                    </a>
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/introduce-firacode/" data-tooltip="讓程式碼更易讀的字型 FiraCode">
-                
-                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
-                    <i class="fa fa-angle-right"></i>
-                </a>
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/introduce-firacode/"
+                    data-tooltip="讓程式碼更易讀的字型 FiraCode"
+                    aria-label="下一篇: 讓程式碼更易讀的字型 FiraCode"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
             </li>
         </ul>
     </nav>
     <ul class="post-actions post-action-share">
         <li class="post-action hide-lg hide-md hide-sm">
-            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
-                <i class="fa fa-share-alt"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://blog.dmoon.tw/print-folder-tree-on-mac/">
-                <i class="fa fa-google-plus"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.dmoon.tw/print-folder-tree-on-mac/">
-                <i class="fa fa-facebook-official"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://blog.dmoon.tw/print-folder-tree-on-mac/">
-                <i class="fa fa-twitter"></i>
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Diesen Beitrag teilen"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
             </a>
         </li>
         
-            <li class="post-action">
-                <a class="post-action-btn btn btn--default" href="#disqus_thread">
-                    <i class="fa fa-comment-o"></i>
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.dmoon.tw/print-folder-tree-on-mac/"
+                    title="分享到 Facebook"
+                    aria-label="分享到 Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
         
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=https://blog.dmoon.tw/print-folder-tree-on-mac/"
+                    title="分享到 Twitter"
+                    aria-label="分享到 Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=https://blog.dmoon.tw/print-folder-tree-on-mac/"
+                    title="分享到 Google+"
+                    aria-label="分享到 Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+                <li class="post-action">
+                    <a
+                        class="post-action-btn btn btn--default"
+                        href="#disqus_thread"
+                        aria-label="Kommentieren"
+                    >
+                        <i class="fa fa-comment"></i>
+                    </a>
+                </li>
+            
+        
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Nach oben">
             
-                <i class="fa fa-list"></i>
+                <i class="fa fa-list" aria-hidden="true"></i>
             </a>
         </li>
     </ul>
@@ -435,26 +586,54 @@
 
 
                 </div>
-                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
-    <ul class="share-options">
-        <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://blog.dmoon.tw/print-folder-tree-on-mac/">
-                <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
-            </a>
-        </li>
-        <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.dmoon.tw/print-folder-tree-on-mac/">
-                <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
-            </a>
-        </li>
-        <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://blog.dmoon.tw/print-folder-tree-on-mac/">
-                <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
-            </a>
-        </li>
-    </ul>
-</div>
-<div id="share-options-mask" class="share-options-mask"></div>
+                
+    <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+        <i id="btn-close-shareoptions" class="fa fa-times"></i>
+        <ul class="share-options">
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://www.facebook.com/sharer/sharer.php?u=https://blog.dmoon.tw/print-folder-tree-on-mac/"
+                        aria-label="分享到 Facebook"
+                    >
+                        <i class="fab fa-facebook" aria-hidden="true"></i><span>分享到 Facebook</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://twitter.com/intent/tweet?text=https://blog.dmoon.tw/print-folder-tree-on-mac/"
+                        aria-label="分享到 Twitter"
+                    >
+                        <i class="fab fa-twitter" aria-hidden="true"></i><span>分享到 Twitter</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://plus.google.com/share?url=https://blog.dmoon.tw/print-folder-tree-on-mac/"
+                        aria-label="分享到 Google+"
+                    >
+                        <i class="fab fa-google-plus" aria-hidden="true"></i><span>分享到 Google+</span>
+                    </a>
+                </li>
+            
+        </ul>
+    </div>
+
+
             
         </div>
         
@@ -497,34 +676,67 @@
           
         </div>
     </div>
+    <!-- update origin <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <img id="about-card-picture" src="https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg" alt="作者的圖片"/>
+        
+            <h4 id="about-card-name">DMoon</h4>
+        
+            <div id="about-card-bio"><p>熱愛科技的資工系學生，喜歡學習新的技術</p>
+<p>目前主要開發 Web APP</p>
+<p>較熟悉的技術是 Node.JS / React.JS</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>學生 / 創科資訊實習生</p>
+
+            </div>
+        
+        
+            <div id="about-card-location">
+                <i class="fa fa-map-marker-alt"></i>
+                <br/>
+                Taichung, Taiwan
+            </div>
+        
+    </div> -->
 </div>
 
         
+        
 <div id="cover" style="background-image:url('/assets/images/myCover.jpeg');"></div>
-    </body>
-    <!--SCRIPTS-->
-<script src="/assets/js/scrip-bxxvsd4n4tu0lxfd23qyh44n9weuvdcmzweqijk10z8umo3eb9r1nhmiyvpz.min.js"></script>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-qorzkckqhbomlhsfohbzueuqlpk87aeixchancwz6resl7ddkfuytzsmttxj.min.js"></script>
 <!--SCRIPTS END-->
+
 
     
         <script>
-             var disqus_config = function () {
-                 this.page.url = 'https://blog.dmoon.tw/print-folder-tree-on-mac/';
-                 
-                    this.page.identifier = 'print-folder-tree-on-mac/';
-                                  
-             };
-            (function() {
-                var d = document, s = d.createElement('script');
-                var disqus_shortname = 'dmoonlaputa';
-                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          var disqus_config = function() {
+            this.page.url = 'https://blog.dmoon.tw/print-folder-tree-on-mac/';
+              
+            this.page.identifier = 'print-folder-tree-on-mac/';
+              
+          };
+          (function() {
+            var d = document, s = d.createElement('script');
+            var disqus_shortname = 'dmoonlaputa';
+            s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-            })();
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+          })();
         </script>
     
 
 
 
+
+    </body>
 </html>

@@ -14,17 +14,20 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="昨天在處理為 React Native 加上 聊天室的功能，首先遇到的問題就是串接 Socket ，要在 RN 上使用 socket 需要安裝 socket.io-client，安裝之後 import socket.io-client/socket.io 時，遇到了這個 error  undefined is not an object (evaluting &amp;#39;navigator.use">
-<meta name="keywords" content="React-Native,Socket.io">
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"DMoon","sameAs":["https://github.com/kyoyadmoon","https://www.facebook.com/dmoonhuang","/atom.xml"],"image":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"},"articleBody":"昨天在處理為 React Native 加上 聊天室的功能，首先遇到的問題就是串接 Socket ，要在 RN 上使用 socket 需要安裝 socket.io-client，安裝之後 import socket.io-client/socket.io 時，遇到了這個 error \nundefined is not an object (evaluting &#39;navigator.userAgent.match&#39;)\n\n\n找了一下解決方法\n發現這個套件不能用 import ，必需用 require\n另外需要 assign window.navigator.userAgent\n正確設定方法如下\n1234567import React, &#123; Component &#125; from 'react-native';window.navigator.userAgent = 'react-native';const io = require('socket.io-client/socket.io');const socket = io('ws://', &#123; jsonp: false &#125;);\n\n#Reference\nhttp://browniefed.com/blog/2015/05/16/react-native-and-socket-dot-io/\n","dateCreated":"2016-03-25T18:53:20+08:00","dateModified":"2019-08-26T03:31:24+08:00","datePublished":"2016-03-25T18:53:20+08:00","description":"昨天在處理為 React Native 加上 聊天室的功能，首先遇到的問題就是串接 Socket ，要在 RN 上使用 socket 需要安裝 socket.io-client，安裝之後 import socket.io-client/socket.io 時，遇到了這個 error \nundefined is not an object (evaluting &#39;navigator.userAgent.match&#39;)","headline":"React Native with Socket.io - error: evaluting 'navigator.userAgent.match'","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.dmoon.tw/react-native-with-socketIO/"},"publisher":{"@type":"Organization","name":"DMoon","sameAs":["https://github.com/kyoyadmoon","https://www.facebook.com/dmoonhuang","/atom.xml"],"image":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg","logo":{"@type":"ImageObject","url":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"}},"url":"https://blog.dmoon.tw/react-native-with-socketIO/","keywords":"React-Native, Socket.io"}</script>
+    <meta name="description" content="昨天在處理為 React Native 加上 聊天室的功能，首先遇到的問題就是串接 Socket ，要在 RN 上使用 socket 需要安裝 socket.io-client，安裝之後 import socket.io-client/socket.io 時，遇到了這個 error 
+undefined is not an object (evaluting &amp;#39;navigator.user">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="React Native with Socket.io - error: evaluting &#39;navigator.userAgent.match&#39;">
+<meta property="og:title" content="React Native with Socket.io - error: evaluting 'navigator.userAgent.match'">
 <meta property="og:url" content="https://blog.dmoon.tw/react-native-with-socketIO/index.html">
-<meta property="og:site_name" content="DMoon&#39;s Laputa">
-<meta property="og:description" content="昨天在處理為 React Native 加上 聊天室的功能，首先遇到的問題就是串接 Socket ，要在 RN 上使用 socket 需要安裝 socket.io-client，安裝之後 import socket.io-client/socket.io 時，遇到了這個 error  undefined is not an object (evaluting &amp;#39;navigator.use">
-<meta property="og:updated_time" content="2017-05-10T08:22:51.000Z">
+<meta property="og:site_name" content="DMoon's Laputa">
+<meta property="og:description" content="昨天在處理為 React Native 加上 聊天室的功能，首先遇到的問題就是串接 Socket ，要在 RN 上使用 socket 需要安裝 socket.io-client，安裝之後 import socket.io-client/socket.io 時，遇到了這個 error 
+undefined is not an object (evaluting &amp;#39;navigator.user">
+<meta property="og:updated_time" content="2019-08-25T19:31:24.848Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React Native with Socket.io - error: evaluting &#39;navigator.userAgent.match&#39;">
-<meta name="twitter:description" content="昨天在處理為 React Native 加上 聊天室的功能，首先遇到的問題就是串接 Socket ，要在 RN 上使用 socket 需要安裝 socket.io-client，安裝之後 import socket.io-client/socket.io 時，遇到了這個 error  undefined is not an object (evaluting &amp;#39;navigator.use">
+<meta name="twitter:title" content="React Native with Socket.io - error: evaluting 'navigator.userAgent.match'">
+<meta name="twitter:description" content="昨天在處理為 React Native 加上 聊天室的功能，首先遇到的問題就是串接 Socket ，要在 RN 上使用 socket 需要安裝 socket.io-client，安裝之後 import socket.io-client/socket.io 時，遇到了這個 error 
+undefined is not an object (evaluting &amp;#39;navigator.user">
     
     
         
@@ -39,19 +42,18 @@
 
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/style-rylrrsqywzl9hyui2n1ziymwh8cyf3cxpysf9outvwx8ofhjpty2ccllpauf.min.css">
+    <link rel="stylesheet" href="/assets/css/style-2o71hzttz2k9pq9pfin3x87oyv0konupeunubjb5vmvwocyfflcpdgglsdmb.min.css">
     <!--STYLES END-->
     
-    <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-57006180-2']);
-        _gaq.push(['_trackPageview']);
-        (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57006180-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-57006180-2');
     </script>
+
 
     
     <link rel="canonical" href="https://blog.dmoon.tw/react-native-with-socketIO/index.html" />
@@ -67,6 +69,31 @@
               enable_page_level_ads: true
          });
     </script>
+    <!-- update origin -->
+    <!--  -->
+    <!--STYLES-->
+    <!-- <link rel="stylesheet" href="/assets/css/all.css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/assets/css/thumbs.css">
+    <link rel="stylesheet" href="/assets/css/tranquilpeak.css"> -->
+    <!--STYLES END-->
+    <!-- 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57006180-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-57006180-2');
+    </script>
+
+
+    
+
+    
+        
+     -->
+    <!-- End of update origin -->
 </head>
 
     <body>
@@ -80,18 +107,27 @@
         
     
 
-<header id="header" data-behavior="3">
+<header id="header" data-behavior="4">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
-    <h1 class="header-title">
-        <a class="header-title-link" href="/ ">DMoon&#39;s Laputa</a>
-    </h1>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/ "
+            aria-label=""
+        >
+            DMoon&#39;s Laputa
+        </a>
+    </div>
     
         
-            <a  class="header-right-picture "
-                href="#about">
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="打開鏈接: /#about"
+            >
         
         
-            <img class="header-picture" src="https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"/>
+            <img class="header-picture" src="https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg" alt="作者的圖片"/>
         
         </a>
     
@@ -104,143 +140,152 @@
         
     
 
-<nav id="sidebar" data-behavior="3">
-    
-        <div class="sidebar-profile">
-            <a href="/#about">
-                    <img class="sidebar-profile-picture" src="https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"/>
-            </a>
-            <span class="sidebar-profile-name">DMoon</span>
-        </div>
-    
-    
-      
-        <ul class="sidebar-buttons button-link-block">
-          
-            <li class="sidebar-button">
-              
-                  <a  class="sidebar-button-link "
-                       href="/ "
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-home"></i>
-                  <span class="sidebar-button-desc">首頁</span>
-                  </a>
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a
+                    href="/#about"
+                    aria-label="閱讀有關作者的更多信息"
+                >
+                    <img class="sidebar-profile-picture" src="https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg" alt="作者的圖片"/>
+                </a>
+                <h4 class="sidebar-profile-name">DMoon</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>熱愛科技的資工系學生，喜歡學習新的技術</p>
+<p>目前主要開發 Web APP</p>
+<p>較熟悉的技術是 Node.JS / React.JS</p>
+</h5>
+                
+            </div>
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/ "
+                            
+                            title="首頁"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">首頁</span>
+                    </a>
             </li>
-          
-            <li class="sidebar-button">
-              
-                  <a  class="sidebar-button-link "
-                       href="/all-categories"
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
-                  <span class="sidebar-button-desc">分類</span>
-                  </a>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-categories"
+                            
+                            title="分類"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">分類</span>
+                    </a>
             </li>
-          
-            <li class="sidebar-button">
-              
-                  <a  class="sidebar-button-link "
-                       href="/all-tags"
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
-                  <span class="sidebar-button-desc">標籤</span>
-                  </a>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-tags"
+                            
+                            title="標籤"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">標籤</span>
+                    </a>
             </li>
-          
-            <li class="sidebar-button">
-              
-                  <a  class="sidebar-button-link "
-                       href="/all-archives"
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                  <span class="sidebar-button-desc">所有文章</span>
-                  </a>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-archives"
+                            
+                            title="所有文章"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">所有文章</span>
+                    </a>
             </li>
-          
-            <li class="sidebar-button">
-              
-                  <a  class="sidebar-button-link "
-                       href="#about"
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-question"></i>
-                  <span class="sidebar-button-desc">關於</span>
-                  </a>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="#about"
+                            
+                            title="關於"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-question" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">關於</span>
+                    </a>
             </li>
-          
+            
         </ul>
-      
-      
-    
-      
-      
-        <div class="sidebar-buttons flex-container space-around author_links">
-          
-            <!-- <li class="sidebar-button"> -->
-              
-                  <a  class="sidebar-button-link " href="https://github.com/kyoyadmoon" target="_blank">
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-github" style="color: #ebebeb "></i>
-                  <!-- <span class="sidebar-button-desc">GitHub</span> -->
-                  </a>
-            <!-- </li> -->
-          
-            <!-- <li class="sidebar-button"> -->
-              
-                  <a  class="sidebar-button-link " href="https://www.facebook.com/dmoonhuang" target="_blank">
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-facebook" style="color: #ebebeb "></i>
-                  <!-- <span class="sidebar-button-desc">Facebook</span> -->
-                  </a>
-            <!-- </li> -->
-          
-            <!-- <li class="sidebar-button"> -->
-              
-                  <a  target="_blank" class="sidebar-button-link "
-                       href="/atom.xml"
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-rss" style="color: #ebebeb "></i>
-                  <!-- <span class="sidebar-button-desc">RSS</span> -->
-                  </a>
-            <!-- </li> -->
-          
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://github.com/kyoyadmoon" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://www.facebook.com/dmoonhuang" target="_blank" rel="noopener" title="Facebook">
+                    
+                        <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/atom.xml"
+                            
+                            title="RSS"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-rss" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">RSS</span>
+                    </a>
+            </li>
+            
         </ul>
-      
-    
-      
-      
-    
+        
+    </div>
 </nav>
 
             
-            <div id="main" data-behavior="3"
+            <div id="main" data-behavior="4"
                  class="
                         hasCoverMetaIn
                         
                          " >
                 
-<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+<article class="post">
     
     
         <div class="post-header main-content-wrap text-left">
     
-        <h1 class="post-title" itemprop="headline">
+        <h1 class="post-title">
             React Native with Socket.io - error: evaluting &#39;navigator.userAgent.match&#39;
         </h1>
     
-    <div class="post-meta">
-    <time itemprop="datePublished" content="Fri Mar 25 2016 18:53:20 GMT+0800">
+    
+        <div class="post-meta">
+    <time datetime="2016-03-25T18:53:20+08:00">
 	
 		    3月 25, 2016
     	
@@ -253,25 +298,29 @@
 
     
 </div>
-</div>
+
     
-    <div class="post-content markdown" itemprop="articleBody">
+</div>
+
+    
+    <div class="post-content markdown">
         <div class="main-content-wrap">
             <p>昨天在處理為 React Native 加上 聊天室的功能，首先遇到的問題就是串接 Socket ，要在 RN 上使用 socket 需要安裝 <a href="https://github.com/socketio/socket.io-client" target="_blank" rel="external">socket.io-client</a>，安裝之後 import socket.io-client/socket.io 時，遇到了這個 error </p>
-<p><em>undefined is not an object (evaluting &#39;navigator.userAgent.match&#39;)</em></p>
+<p><em>undefined is not an object (evaluting &#39;navigator.userAgent.match&#39;)</em></p>
 <a id="more"></a>
+
 <p>找了一下解決方法
 發現這個套件不能用 import ，必需用 require
 另外需要 assign window.navigator.userAgent</p>
 <p>正確設定方法如下</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</div><div class="line"></div><div class="line"><span class="built_in">window</span>.navigator.userAgent = <span class="string">'react-native'</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> io = <span class="built_in">require</span>(<span class="string">'socket.io-client/socket.io'</span>);</div><div class="line"></div><div class="line"><span class="keyword">const</span> socket = io(<span class="string">'ws://'</span>, &#123; <span class="attr">jsonp</span>: <span class="literal">false</span> &#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react-native'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.navigator.userAgent = <span class="string">'react-native'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> io = <span class="built_in">require</span>(<span class="string">'socket.io-client/socket.io'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> socket = io(<span class="string">'ws://'</span>, &#123; <span class="attr">jsonp</span>: <span class="literal">false</span> &#125;);</span><br></pre></td></tr></table></figure>
+
 <p>#Reference</p>
 <p><a href="http://browniefed.com/blog/2015/05/16/react-native-and-socket-dot-io/" target="_blank" rel="external">http://browniefed.com/blog/2015/05/16/react-native-and-socket-dot-io/</a></p>
 
             
-                
 
-            
+
         </div>
     </div>
     <div id="post-footer" class="post-footer main-content-wrap">
@@ -283,66 +332,115 @@
 
             </div>
         
-        <div class="post-actions-wrap">
+        
+            <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/react-native-101/"  data-tooltip="React Native 初心者攻略 (OS X)">
-                
-                    <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
-                </a>
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/react-native-101/"
+                    data-tooltip="React Native 初心者攻略 (OS X)"
+                    aria-label="上一篇: React Native 初心者攻略 (OS X)"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                    </a>
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/eslint-react-extends-airbnb/" data-tooltip="ESLint React 心得 - extends Airbnb config">
-                
-                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
-                    <i class="fa fa-angle-right"></i>
-                </a>
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/eslint-react-extends-airbnb/"
+                    data-tooltip="ESLint React 心得 - extends Airbnb config"
+                    aria-label="下一篇: ESLint React 心得 - extends Airbnb config"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
             </li>
         </ul>
     </nav>
     <ul class="post-actions post-action-share">
         <li class="post-action hide-lg hide-md hide-sm">
-            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
-                <i class="fa fa-share-alt"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://blog.dmoon.tw/react-native-with-socketIO/">
-                <i class="fa fa-google-plus"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.dmoon.tw/react-native-with-socketIO/">
-                <i class="fa fa-facebook-official"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://blog.dmoon.tw/react-native-with-socketIO/">
-                <i class="fa fa-twitter"></i>
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Diesen Beitrag teilen"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
             </a>
         </li>
         
-            <li class="post-action">
-                <a class="post-action-btn btn btn--default" href="#disqus_thread">
-                    <i class="fa fa-comment-o"></i>
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.dmoon.tw/react-native-with-socketIO/"
+                    title="分享到 Facebook"
+                    aria-label="分享到 Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
         
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=https://blog.dmoon.tw/react-native-with-socketIO/"
+                    title="分享到 Twitter"
+                    aria-label="分享到 Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=https://blog.dmoon.tw/react-native-with-socketIO/"
+                    title="分享到 Google+"
+                    aria-label="分享到 Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+                <li class="post-action">
+                    <a
+                        class="post-action-btn btn btn--default"
+                        href="#disqus_thread"
+                        aria-label="Kommentieren"
+                    >
+                        <i class="fa fa-comment"></i>
+                    </a>
+                </li>
+            
+        
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Nach oben">
             
-                <i class="fa fa-list"></i>
+                <i class="fa fa-list" aria-hidden="true"></i>
             </a>
         </li>
     </ul>
 </div>
 
 
+        
         
             
                 <div id="disqus_thread">
@@ -363,61 +461,108 @@
 
             </div>
             
-                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
                     <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/react-native-101/"  data-tooltip="React Native 初心者攻略 (OS X)">
-                
-                    <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
-                </a>
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/react-native-101/"
+                    data-tooltip="React Native 初心者攻略 (OS X)"
+                    aria-label="上一篇: React Native 初心者攻略 (OS X)"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                    </a>
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/eslint-react-extends-airbnb/" data-tooltip="ESLint React 心得 - extends Airbnb config">
-                
-                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
-                    <i class="fa fa-angle-right"></i>
-                </a>
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/eslint-react-extends-airbnb/"
+                    data-tooltip="ESLint React 心得 - extends Airbnb config"
+                    aria-label="下一篇: ESLint React 心得 - extends Airbnb config"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
             </li>
         </ul>
     </nav>
     <ul class="post-actions post-action-share">
         <li class="post-action hide-lg hide-md hide-sm">
-            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
-                <i class="fa fa-share-alt"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://blog.dmoon.tw/react-native-with-socketIO/">
-                <i class="fa fa-google-plus"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.dmoon.tw/react-native-with-socketIO/">
-                <i class="fa fa-facebook-official"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://blog.dmoon.tw/react-native-with-socketIO/">
-                <i class="fa fa-twitter"></i>
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Diesen Beitrag teilen"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
             </a>
         </li>
         
-            <li class="post-action">
-                <a class="post-action-btn btn btn--default" href="#disqus_thread">
-                    <i class="fa fa-comment-o"></i>
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.dmoon.tw/react-native-with-socketIO/"
+                    title="分享到 Facebook"
+                    aria-label="分享到 Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
         
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=https://blog.dmoon.tw/react-native-with-socketIO/"
+                    title="分享到 Twitter"
+                    aria-label="分享到 Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=https://blog.dmoon.tw/react-native-with-socketIO/"
+                    title="分享到 Google+"
+                    aria-label="分享到 Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+                <li class="post-action">
+                    <a
+                        class="post-action-btn btn btn--default"
+                        href="#disqus_thread"
+                        aria-label="Kommentieren"
+                    >
+                        <i class="fa fa-comment"></i>
+                    </a>
+                </li>
+            
+        
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Nach oben">
             
-                <i class="fa fa-list"></i>
+                <i class="fa fa-list" aria-hidden="true"></i>
             </a>
         </li>
     </ul>
@@ -425,26 +570,54 @@
 
 
                 </div>
-                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
-    <ul class="share-options">
-        <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://blog.dmoon.tw/react-native-with-socketIO/">
-                <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
-            </a>
-        </li>
-        <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.dmoon.tw/react-native-with-socketIO/">
-                <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
-            </a>
-        </li>
-        <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://blog.dmoon.tw/react-native-with-socketIO/">
-                <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
-            </a>
-        </li>
-    </ul>
-</div>
-<div id="share-options-mask" class="share-options-mask"></div>
+                
+    <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+        <i id="btn-close-shareoptions" class="fa fa-times"></i>
+        <ul class="share-options">
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://www.facebook.com/sharer/sharer.php?u=https://blog.dmoon.tw/react-native-with-socketIO/"
+                        aria-label="分享到 Facebook"
+                    >
+                        <i class="fab fa-facebook" aria-hidden="true"></i><span>分享到 Facebook</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://twitter.com/intent/tweet?text=https://blog.dmoon.tw/react-native-with-socketIO/"
+                        aria-label="分享到 Twitter"
+                    >
+                        <i class="fab fa-twitter" aria-hidden="true"></i><span>分享到 Twitter</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://plus.google.com/share?url=https://blog.dmoon.tw/react-native-with-socketIO/"
+                        aria-label="分享到 Google+"
+                    >
+                        <i class="fab fa-google-plus" aria-hidden="true"></i><span>分享到 Google+</span>
+                    </a>
+                </li>
+            
+        </ul>
+    </div>
+
+
             
         </div>
         
@@ -487,34 +660,67 @@
           
         </div>
     </div>
+    <!-- update origin <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <img id="about-card-picture" src="https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg" alt="作者的圖片"/>
+        
+            <h4 id="about-card-name">DMoon</h4>
+        
+            <div id="about-card-bio"><p>熱愛科技的資工系學生，喜歡學習新的技術</p>
+<p>目前主要開發 Web APP</p>
+<p>較熟悉的技術是 Node.JS / React.JS</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>學生 / 創科資訊實習生</p>
+
+            </div>
+        
+        
+            <div id="about-card-location">
+                <i class="fa fa-map-marker-alt"></i>
+                <br/>
+                Taichung, Taiwan
+            </div>
+        
+    </div> -->
 </div>
 
         
+        
 <div id="cover" style="background-image:url('/assets/images/myCover.jpeg');"></div>
-    </body>
-    <!--SCRIPTS-->
-<script src="/assets/js/scrip-bxxvsd4n4tu0lxfd23qyh44n9weuvdcmzweqijk10z8umo3eb9r1nhmiyvpz.min.js"></script>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-qorzkckqhbomlhsfohbzueuqlpk87aeixchancwz6resl7ddkfuytzsmttxj.min.js"></script>
 <!--SCRIPTS END-->
+
 
     
         <script>
-             var disqus_config = function () {
-                 this.page.url = 'https://blog.dmoon.tw/react-native-with-socketIO/';
-                 
-                    this.page.identifier = 'react-native-with-socketIO/';
-                                  
-             };
-            (function() {
-                var d = document, s = d.createElement('script');
-                var disqus_shortname = 'dmoonlaputa';
-                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          var disqus_config = function() {
+            this.page.url = 'https://blog.dmoon.tw/react-native-with-socketIO/';
+              
+            this.page.identifier = 'react-native-with-socketIO/';
+              
+          };
+          (function() {
+            var d = document, s = d.createElement('script');
+            var disqus_shortname = 'dmoonlaputa';
+            s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-            })();
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+          })();
         </script>
     
 
 
 
+
+    </body>
 </html>

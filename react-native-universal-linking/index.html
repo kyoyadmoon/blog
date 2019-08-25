@@ -14,14 +14,14 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"DMoon","sameAs":["https://github.com/kyoyadmoon","https://www.facebook.com/dmoonhuang","/atom.xml"],"image":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"},"articleBody":"網址跳轉手機原生 App 功能，iOS 稱 Universal Links ，Android 稱 Deep Linking，原理是在裝置上新增 URL Scheme 設定，當開啟特定規則的連結時可以開啟 App，用這個方法可以提升應用程式跨 Web 與 Mobile App 平台的使用體驗，當使用者開啟連結時，判斷裝置上是否有安裝 App ，有的話會直接開啟 App，若沒有則使用瀏覽器開啟網頁版提供檢視，或者直接導向到該裝置平台的 App 下載畫面 (iOS 的 App Store / Android 的 Google Play)\n\n\n設定方法設定希望開啟 App 的  url scheme，你可以自定義一組 url 並且在安裝 App 時向裝置註冊這個 url 與 App 的綁定。例如你做了一個 ToDoApp，你可以設定開啟你ToDoApp的連結為 myToDo://blabla ，由於安裝時，會對這個 url 做註冊，當你開啟這個連結時就會跳轉到你的 App。\n如果你想註冊自己的 domain 為 url ，iOS 上需要額外做 domain 的驗證，確認你是 domain 的擁有者，帶來的好處是可以達到當使用者開啟 domain 連結時，如果有安裝 mobile App 可以直接用 native App 開啟，如果沒有的話則會自動使用瀏覽器打開網站。\niOS 設定 Associated Domains需要在你網站上新增一個 route ，你可以選擇直接掛在 domain 根目錄下或是多一層 .well-known\n範例如下\nhttps://&lt;fully qualified domain&gt;/apple-app-site-association\n或是\nhttps://&lt;fully qualified domain&gt;/.well-known/apple-app-site-association\n接下來要讓這個 route 回傳 JSON 格式的內容\n內容範例：\n1234567891011121314&#123;   \"webcredentials\": &#123;       \"apps\": [ \"D3KQX62K1A.com.example.DemoApp\" ]    &#125;,   \"applinks\": &#123;        \"apps\": [],        \"details\": [            &#123;                \"appID\": \"D3KQX62K1A.com.example.DemoApp\",                \"paths\": [ \"/app/*\" ]            &#125;        ]    &#125;&#125;\n\n\nApp ID 格式\n 1&lt;Team Identifier&gt;.&lt;Bundle Identifier&gt;\n\n\npaths 可以設定想要跳轉的 url 路徑規則\n\n設定 App Url SchemeiOSInfo.plist\n​1234567891011&lt;key&gt;CFBundleURLTypes&lt;/key&gt;&lt;array&gt;\t&lt;dict&gt;\t\t&lt;key&gt;CFBundleURLSchemes&lt;/key&gt;\t\t&lt;array&gt;\t\t\t&lt;string&gt;https://your.domain.com&lt;/string&gt;\t\t&lt;/array&gt;\t\t&lt;key&gt;CFBundleURLName&lt;/key&gt;\t\t&lt;string&gt;&lt;/string&gt;\t&lt;/dict&gt;&lt;/array&gt;\nAppDelegate.m\n12345678910#import \"RCTLinkingManager.h\" // import// ADD THIS METHOD- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler&#123; return [RCTLinkingManager application:application                  continueUserActivity:userActivity                    restorationHandler:restorationHandler];&#125;\n\nAndroid123456&lt;intent-filter android:label=\"&lt;YOUR_APP_NAME&gt;\"&gt;    &lt;action android:name=\"android.intent.action.VIEW\" /&gt;    &lt;category android:name=\"android.intent.category.DEFAULT\" /&gt;    &lt;category android:name=\"android.intent.category.BROWSABLE\" /&gt;    &lt;data android:scheme=\"https\" android:host=\"&lt;YOUR_DOMAIN&gt;\" /&gt;&lt;/intent-filter&gt;\n\nReact Native 端處理新增監聽 UniversalLinking 函式，並在 App 進入點的 componentDidMount 執行\n12345678910111213listenUniversalLinking = () =&gt; &#123;  // 當 App 從關閉狀態，被 universal links 呼叫開啟時，執行 restStackToProperRoute  Linking.getInitialURL()    .then((url) =&gt; &#123;      if (url) &#123;        this.resetStackToProperRoute(url);      &#125;    &#125;)    .catch((e) =&gt; &#123;&#125;);  // 當 App 因為 universal links 從背景被叫醒時，執行 this.appWokeUp   Linking.addEventListener('url', this.appWokeUp);&#125;;\n\n在 componentWillUnmount 事件加上移除監聽事件\n1234componentWillUnmount() &#123;    // Remove the listener    Linking.removeEventListener('url', this.appWokeUp);&#125;\n\nappWokeUp 處理\n1234appWokeUp = (event) =&gt; &#123;  console.log('appWokeUp', event);  this.resetStackToProperRoute(event.url);&#125;;\n\nresetStackToProperRoute 處理\n123resetStackToProperRoute = (url) =&gt; &#123;// 在這邊判斷 url，導向到對應的畫面 &#125;;\n\n測試方法 Test Universal Links, Deep Linking可以在裝置或模擬器上的瀏覽器輸入網址來進行測試\n或是更方便的透過下列指令來直接在裝置或模擬器上開啟網址\niOS1xcrun simctl openurl booted \"https://domain.com/something\"\n\nAndroid1adb shell am start -a android.intent.action.VIEW -d \"https://domain.com/something\"","dateCreated":"2018-11-23T15:00:07+08:00","dateModified":"2019-08-26T03:26:57+08:00","datePublished":"2018-11-23T15:00:07+08:00","description":"網址跳轉手機原生 App 功能，iOS 稱 Universal Links ，Android 稱 Deep Linking，原理是在裝置上新增 URL Scheme 設定，當開啟特定規則的連結時可以開啟 App，用這個方法可以提升應用程式跨 Web 與 Mobile App 平台的使用體驗，當使用者開啟連結時，判斷裝置上是否有安裝 App ，有的話會直接開啟 App，若沒有則使用瀏覽器開啟網頁版提供檢視，或者直接導向到該裝置平台的 App 下載畫面 (iOS 的 App Store / Android 的 Google Play)","headline":"React Native - Universal Linking","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.dmoon.tw/react-native-universal-linking/"},"publisher":{"@type":"Organization","name":"DMoon","sameAs":["https://github.com/kyoyadmoon","https://www.facebook.com/dmoonhuang","/atom.xml"],"image":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg","logo":{"@type":"ImageObject","url":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"}},"url":"https://blog.dmoon.tw/react-native-universal-linking/","keywords":"React Native, iOS, Android"}</script>
     <meta name="description" content="網址跳轉手機原生 App 功能，iOS 稱 Universal Links ，Android 稱 Deep Linking，原理是在裝置上新增 URL Scheme 設定，當開啟特定規則的連結時可以開啟 App，用這個方法可以提升應用程式跨 Web 與 Mobile App 平台的使用體驗，當使用者開啟連結時，判斷裝置上是否有安裝 App ，有的話會直接開啟 App，若沒有則使用瀏覽器開啟網頁版提">
-<meta name="keywords" content="React Native,iOS,Android">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="React Native - Universal Linking">
 <meta property="og:url" content="https://blog.dmoon.tw/react-native-universal-linking/index.html">
-<meta property="og:site_name" content="DMoon&#39;s Laputa">
+<meta property="og:site_name" content="DMoon's Laputa">
 <meta property="og:description" content="網址跳轉手機原生 App 功能，iOS 稱 Universal Links ，Android 稱 Deep Linking，原理是在裝置上新增 URL Scheme 設定，當開啟特定規則的連結時可以開啟 App，用這個方法可以提升應用程式跨 Web 與 Mobile App 平台的使用體驗，當使用者開啟連結時，判斷裝置上是否有安裝 App ，有的話會直接開啟 App，若沒有則使用瀏覽器開啟網頁版提">
-<meta property="og:updated_time" content="2018-11-29T16:59:01.718Z">
+<meta property="og:updated_time" content="2019-08-25T19:26:57.741Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React Native - Universal Linking">
 <meta name="twitter:description" content="網址跳轉手機原生 App 功能，iOS 稱 Universal Links ，Android 稱 Deep Linking，原理是在裝置上新增 URL Scheme 設定，當開啟特定規則的連結時可以開啟 App，用這個方法可以提升應用程式跨 Web 與 Mobile App 平台的使用體驗，當使用者開啟連結時，判斷裝置上是否有安裝 App ，有的話會直接開啟 App，若沒有則使用瀏覽器開啟網頁版提">
@@ -39,19 +39,18 @@
 
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/style-rylrrsqywzl9hyui2n1ziymwh8cyf3cxpysf9outvwx8ofhjpty2ccllpauf.min.css">
+    <link rel="stylesheet" href="/assets/css/style-2o71hzttz2k9pq9pfin3x87oyv0konupeunubjb5vmvwocyfflcpdgglsdmb.min.css">
     <!--STYLES END-->
     
-    <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-57006180-2']);
-        _gaq.push(['_trackPageview']);
-        (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57006180-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-57006180-2');
     </script>
+
 
     
     <link rel="canonical" href="https://blog.dmoon.tw/react-native-universal-linking/index.html" />
@@ -67,6 +66,31 @@
               enable_page_level_ads: true
          });
     </script>
+    <!-- update origin -->
+    <!--  -->
+    <!--STYLES-->
+    <!-- <link rel="stylesheet" href="/assets/css/all.css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/assets/css/thumbs.css">
+    <link rel="stylesheet" href="/assets/css/tranquilpeak.css"> -->
+    <!--STYLES END-->
+    <!-- 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57006180-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-57006180-2');
+    </script>
+
+
+    
+
+    
+        
+     -->
+    <!-- End of update origin -->
 </head>
 
     <body>
@@ -80,18 +104,27 @@
         
     
 
-<header id="header" data-behavior="3">
+<header id="header" data-behavior="4">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
-    <h1 class="header-title">
-        <a class="header-title-link" href="/ ">DMoon&#39;s Laputa</a>
-    </h1>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/ "
+            aria-label=""
+        >
+            DMoon&#39;s Laputa
+        </a>
+    </div>
     
         
-            <a  class="header-right-picture "
-                href="#about">
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="打開鏈接: /#about"
+            >
         
         
-            <img class="header-picture" src="https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"/>
+            <img class="header-picture" src="https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg" alt="作者的圖片"/>
         
         </a>
     
@@ -104,143 +137,152 @@
         
     
 
-<nav id="sidebar" data-behavior="3">
-    
-        <div class="sidebar-profile">
-            <a href="/#about">
-                    <img class="sidebar-profile-picture" src="https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"/>
-            </a>
-            <span class="sidebar-profile-name">DMoon</span>
-        </div>
-    
-    
-      
-        <ul class="sidebar-buttons button-link-block">
-          
-            <li class="sidebar-button">
-              
-                  <a  class="sidebar-button-link "
-                       href="/ "
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-home"></i>
-                  <span class="sidebar-button-desc">首頁</span>
-                  </a>
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a
+                    href="/#about"
+                    aria-label="閱讀有關作者的更多信息"
+                >
+                    <img class="sidebar-profile-picture" src="https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg" alt="作者的圖片"/>
+                </a>
+                <h4 class="sidebar-profile-name">DMoon</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>熱愛科技的資工系學生，喜歡學習新的技術</p>
+<p>目前主要開發 Web APP</p>
+<p>較熟悉的技術是 Node.JS / React.JS</p>
+</h5>
+                
+            </div>
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/ "
+                            
+                            title="首頁"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">首頁</span>
+                    </a>
             </li>
-          
-            <li class="sidebar-button">
-              
-                  <a  class="sidebar-button-link "
-                       href="/all-categories"
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
-                  <span class="sidebar-button-desc">分類</span>
-                  </a>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-categories"
+                            
+                            title="分類"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">分類</span>
+                    </a>
             </li>
-          
-            <li class="sidebar-button">
-              
-                  <a  class="sidebar-button-link "
-                       href="/all-tags"
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
-                  <span class="sidebar-button-desc">標籤</span>
-                  </a>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-tags"
+                            
+                            title="標籤"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">標籤</span>
+                    </a>
             </li>
-          
-            <li class="sidebar-button">
-              
-                  <a  class="sidebar-button-link "
-                       href="/all-archives"
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                  <span class="sidebar-button-desc">所有文章</span>
-                  </a>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-archives"
+                            
+                            title="所有文章"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">所有文章</span>
+                    </a>
             </li>
-          
-            <li class="sidebar-button">
-              
-                  <a  class="sidebar-button-link "
-                       href="#about"
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-question"></i>
-                  <span class="sidebar-button-desc">關於</span>
-                  </a>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="#about"
+                            
+                            title="關於"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-question" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">關於</span>
+                    </a>
             </li>
-          
+            
         </ul>
-      
-      
-    
-      
-      
-        <div class="sidebar-buttons flex-container space-around author_links">
-          
-            <!-- <li class="sidebar-button"> -->
-              
-                  <a  class="sidebar-button-link " href="https://github.com/kyoyadmoon" target="_blank">
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-github" style="color: #ebebeb "></i>
-                  <!-- <span class="sidebar-button-desc">GitHub</span> -->
-                  </a>
-            <!-- </li> -->
-          
-            <!-- <li class="sidebar-button"> -->
-              
-                  <a  class="sidebar-button-link " href="https://www.facebook.com/dmoonhuang" target="_blank">
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-facebook" style="color: #ebebeb "></i>
-                  <!-- <span class="sidebar-button-desc">Facebook</span> -->
-                  </a>
-            <!-- </li> -->
-          
-            <!-- <li class="sidebar-button"> -->
-              
-                  <a  target="_blank" class="sidebar-button-link "
-                       href="/atom.xml"
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-rss" style="color: #ebebeb "></i>
-                  <!-- <span class="sidebar-button-desc">RSS</span> -->
-                  </a>
-            <!-- </li> -->
-          
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://github.com/kyoyadmoon" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://www.facebook.com/dmoonhuang" target="_blank" rel="noopener" title="Facebook">
+                    
+                        <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/atom.xml"
+                            
+                            title="RSS"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-rss" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">RSS</span>
+                    </a>
+            </li>
+            
         </ul>
-      
-    
-      
-      
-    
+        
+    </div>
 </nav>
 
             
-            <div id="main" data-behavior="3"
+            <div id="main" data-behavior="4"
                  class="
                         hasCoverMetaIn
                         
                          " >
                 
-<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+<article class="post">
     
     
         <div class="post-header main-content-wrap text-left">
     
-        <h1 class="post-title" itemprop="headline">
+        <h1 class="post-title">
             React Native - Universal Linking
         </h1>
     
-    <div class="post-meta">
-    <time itemprop="datePublished" content="Fri Nov 23 2018 15:00:07 GMT+0800">
+    
+        <div class="post-meta">
+    <time datetime="2018-11-23T15:00:07+08:00">
 	
 		    11月 23, 2018
     	
@@ -253,12 +295,16 @@
 
     
 </div>
-</div>
+
     
-    <div class="post-content markdown" itemprop="articleBody">
+</div>
+
+    
+    <div class="post-content markdown">
         <div class="main-content-wrap">
             <p>網址跳轉手機原生 App 功能，iOS 稱 <strong>Universal Links</strong> ，Android 稱 <strong>Deep Linking</strong>，原理是在裝置上新增 URL Scheme 設定，當開啟特定規則的連結時可以開啟 App，用這個方法可以提升應用程式跨 Web 與 Mobile App 平台的使用體驗，當使用者開啟連結時，判斷裝置上是否有安裝 App ，有的話會直接開啟 App，若沒有則使用瀏覽器開啟網頁版提供檢視，或者直接導向到該裝置平台的 App 下載畫面 (iOS 的 <strong>App Store</strong> / Android 的 <strong>Google Play</strong>)</p>
 <a id="more"></a>
+
 <h2 id="設定方法"><a href="#設定方法" class="headerlink" title="設定方法"></a>設定方法</h2><p>設定希望開啟 App 的  url scheme，你可以自定義一組 url 並且在安裝 App 時向裝置註冊這個 url 與 App 的綁定。例如你做了一個 ToDoApp，你可以設定開啟你ToDoApp的連結為 <code>myToDo://blabla</code> ，由於安裝時，會對這個 url 做註冊，當你開啟這個連結時就會跳轉到你的 App。</p>
 <p>如果你想註冊自己的 domain 為 url ，iOS 上需要額外做 domain 的驗證，確認你是 domain 的擁有者，帶來的好處是可以達到當使用者開啟 domain 連結時，如果有安裝 mobile App 可以直接用 native App 開啟，如果沒有的話則會自動使用瀏覽器打開網站。</p>
 <h3 id="iOS-設定-Associated-Domains"><a href="#iOS-設定-Associated-Domains" class="headerlink" title="iOS 設定 Associated Domains"></a>iOS 設定 Associated Domains</h3><p>需要在你網站上新增一個 route ，你可以選擇直接掛在 domain 根目錄下或是多一層 <code>.well-known</code>
@@ -268,33 +314,42 @@
 <p><code>https://&lt;fully qualified domain&gt;/.well-known/apple-app-site-association</code></p>
 <p>接下來要讓這個 route 回傳 JSON 格式的內容
 內容範例：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">   <span class="attr">"webcredentials"</span>: &#123;</div><div class="line">       <span class="attr">"apps"</span>: [ <span class="string">"D3KQX62K1A.com.example.DemoApp"</span> ]</div><div class="line">    &#125;,</div><div class="line">   <span class="attr">"applinks"</span>: &#123;</div><div class="line">        <span class="attr">"apps"</span>: [],</div><div class="line">        <span class="attr">"details"</span>: [</div><div class="line">            &#123;</div><div class="line">                <span class="attr">"appID"</span>: <span class="string">"D3KQX62K1A.com.example.DemoApp"</span>,</div><div class="line">                <span class="attr">"paths"</span>: [ <span class="string">"/app/*"</span> ]</div><div class="line">            &#125;</div><div class="line">        ]</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   <span class="attr">"webcredentials"</span>: &#123;</span><br><span class="line">       <span class="attr">"apps"</span>: [ <span class="string">"D3KQX62K1A.com.example.DemoApp"</span> ]</span><br><span class="line">    &#125;,</span><br><span class="line">   <span class="attr">"applinks"</span>: &#123;</span><br><span class="line">        <span class="attr">"apps"</span>: [],</span><br><span class="line">        <span class="attr">"details"</span>: [</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="attr">"appID"</span>: <span class="string">"D3KQX62K1A.com.example.DemoApp"</span>,</span><br><span class="line">                <span class="attr">"paths"</span>: [ <span class="string">"/app/*"</span> ]</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><strong>App ID 格式</strong>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;Team Identifier&gt;.&lt;Bundle Identifier&gt;</div></pre></td></tr></table></figure></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Team Identifier&gt;.&lt;Bundle Identifier&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
 <p><strong>paths</strong> 可以設定想要跳轉的 url 路徑規則</p>
 </blockquote>
 <h3 id="設定-App-Url-Scheme"><a href="#設定-App-Url-Scheme" class="headerlink" title="設定 App Url Scheme"></a>設定 App Url Scheme</h3><h4 id="iOS"><a href="#iOS" class="headerlink" title="iOS"></a>iOS</h4><p><code>Info.plist</code>
-​<figure class="highlight plist"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>CFBundleURLTypes<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">array</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">dict</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">key</span>&gt;</span>CFBundleURLSchemes<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">array</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">string</span>&gt;</span>https://your.domain.com<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">array</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">key</span>&gt;</span>CFBundleURLName<span class="tag">&lt;/<span class="name">key</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">string</span>&gt;</span><span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">dict</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">array</span>&gt;</span></div></pre></td></tr></table></figure></p>
+​<figure class="highlight plist"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>CFBundleURLTypes<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">array</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dict</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">key</span>&gt;</span>CFBundleURLSchemes<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">array</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">string</span>&gt;</span>https://your.domain.com<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">array</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">key</span>&gt;</span>CFBundleURLName<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">string</span>&gt;</span><span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dict</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">array</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <p><code>AppDelegate.m</code></p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#import <span class="meta-string">"RCTLinkingManager.h"</span> // import</span></div><div class="line"></div><div class="line"><span class="comment">// ADD THIS METHOD</span></div><div class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)application continueUserActivity:(<span class="built_in">NSUserActivity</span> *)userActivity</div><div class="line"> restorationHandler:(<span class="keyword">void</span> (^)(<span class="built_in">NSArray</span> * _Nullable))restorationHandler</div><div class="line">&#123;</div><div class="line"> <span class="keyword">return</span> [RCTLinkingManager application:application</div><div class="line">                  continueUserActivity:userActivity</div><div class="line">                    restorationHandler:restorationHandler];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">intent-filter</span> <span class="attr">android:label</span>=<span class="string">"&lt;YOUR_APP_NAME&gt;"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"android.intent.action.VIEW"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"android.intent.category.DEFAULT"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"android.intent.category.BROWSABLE"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">data</span> <span class="attr">android:scheme</span>=<span class="string">"https"</span> <span class="attr">android:host</span>=<span class="string">"&lt;YOUR_DOMAIN&gt;"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">"RCTLinkingManager.h"</span> // import</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ADD THIS METHOD</span></span><br><span class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)application continueUserActivity:(<span class="built_in">NSUserActivity</span> *)userActivity</span><br><span class="line"> restorationHandler:(<span class="keyword">void</span> (^)(<span class="built_in">NSArray</span> * _Nullable))restorationHandler</span><br><span class="line">&#123;</span><br><span class="line"> <span class="keyword">return</span> [RCTLinkingManager application:application</span><br><span class="line">                  continueUserActivity:userActivity</span><br><span class="line">                    restorationHandler:restorationHandler];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">intent-filter</span> <span class="attr">android:label</span>=<span class="string">"&lt;YOUR_APP_NAME&gt;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">action</span> <span class="attr">android:name</span>=<span class="string">"android.intent.action.VIEW"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"android.intent.category.DEFAULT"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">category</span> <span class="attr">android:name</span>=<span class="string">"android.intent.category.BROWSABLE"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">data</span> <span class="attr">android:scheme</span>=<span class="string">"https"</span> <span class="attr">android:host</span>=<span class="string">"&lt;YOUR_DOMAIN&gt;"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">intent-filter</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="React-Native-端處理"><a href="#React-Native-端處理" class="headerlink" title="React Native 端處理"></a>React Native 端處理</h2><p>新增監聽 UniversalLinking 函式，並在 App 進入點的 <code>componentDidMount</code> 執行</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">listenUniversalLinking = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">  <span class="comment">// 當 App 從關閉狀態，被 universal links 呼叫開啟時，執行 restStackToProperRoute</span></div><div class="line">  Linking.getInitialURL()</div><div class="line">    .then(<span class="function">(<span class="params">url</span>) =&gt;</span> &#123;</div><div class="line">      <span class="keyword">if</span> (url) &#123;</div><div class="line">        <span class="keyword">this</span>.resetStackToProperRoute(url);</div><div class="line">      &#125;</div><div class="line">    &#125;)</div><div class="line">    .catch(<span class="function">(<span class="params">e</span>) =&gt;</span> &#123;&#125;);</div><div class="line"></div><div class="line">  <span class="comment">// 當 App 因為 universal links 從背景被叫醒時，執行 this.appWokeUp </span></div><div class="line">  Linking.addEventListener(<span class="string">'url'</span>, <span class="keyword">this</span>.appWokeUp);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">listenUniversalLinking = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 當 App 從關閉狀態，被 universal links 呼叫開啟時，執行 restStackToProperRoute</span></span><br><span class="line">  Linking.getInitialURL()</span><br><span class="line">    .then(<span class="function">(<span class="params">url</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (url) &#123;</span><br><span class="line">        <span class="keyword">this</span>.resetStackToProperRoute(url);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch(<span class="function">(<span class="params">e</span>) =&gt;</span> &#123;&#125;);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 當 App 因為 universal links 從背景被叫醒時，執行 this.appWokeUp </span></span><br><span class="line">  Linking.addEventListener(<span class="string">'url'</span>, <span class="keyword">this</span>.appWokeUp);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 <p>在 <code>componentWillUnmount</code> 事件加上移除監聽事件</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">componentWillUnmount() &#123;</div><div class="line">    <span class="comment">// Remove the listener</span></div><div class="line">    Linking.removeEventListener(<span class="string">'url'</span>, <span class="keyword">this</span>.appWokeUp);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">componentWillUnmount() &#123;</span><br><span class="line">    <span class="comment">// Remove the listener</span></span><br><span class="line">    Linking.removeEventListener(<span class="string">'url'</span>, <span class="keyword">this</span>.appWokeUp);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p><strong>appWokeUp</strong> 處理</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">appWokeUp = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'appWokeUp'</span>, event);</div><div class="line">  <span class="keyword">this</span>.resetStackToProperRoute(event.url);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">appWokeUp = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'appWokeUp'</span>, event);</span><br><span class="line">  <span class="keyword">this</span>.resetStackToProperRoute(event.url);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 <p><strong>resetStackToProperRoute</strong> 處理</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">resetStackToProperRoute = <span class="function">(<span class="params">url</span>) =&gt;</span> &#123;</div><div class="line"><span class="comment">// 在這邊判斷 url，導向到對應的畫面</span></div><div class="line"> &#125;;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">resetStackToProperRoute = <span class="function">(<span class="params">url</span>) =&gt;</span> &#123;</span><br><span class="line"><span class="comment">// 在這邊判斷 url，導向到對應的畫面</span></span><br><span class="line"> &#125;;</span><br></pre></td></tr></table></figure>
+
 <h2 id="測試方法-Test-Universal-Links-Deep-Linking"><a href="#測試方法-Test-Universal-Links-Deep-Linking" class="headerlink" title="測試方法 Test Universal Links, Deep Linking"></a>測試方法 Test Universal Links, Deep Linking</h2><p>可以在裝置或模擬器上的瀏覽器輸入網址來進行測試
 或是更方便的透過下列指令來直接在裝置或模擬器上開啟網址</p>
-<h3 id="iOS-1"><a href="#iOS-1" class="headerlink" title="iOS"></a>iOS</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xcrun simctl openurl booted <span class="string">"https://domain.com/something"</span></div></pre></td></tr></table></figure>
-<h3 id="Android-1"><a href="#Android-1" class="headerlink" title="Android"></a>Android</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell am start <span class="_">-a</span> android.intent.action.VIEW <span class="_">-d</span> <span class="string">"https://domain.com/something"</span></div></pre></td></tr></table></figure>
-            
-                
+<h3 id="iOS-1"><a href="#iOS-1" class="headerlink" title="iOS"></a>iOS</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xcrun simctl openurl booted <span class="string">"https://domain.com/something"</span></span><br></pre></td></tr></table></figure>
 
+<h3 id="Android-1"><a href="#Android-1" class="headerlink" title="Android"></a>Android</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell am start <span class="_">-a</span> android.intent.action.VIEW <span class="_">-d</span> <span class="string">"https://domain.com/something"</span></span><br></pre></td></tr></table></figure>
             
+
+
         </div>
     </div>
     <div id="post-footer" class="post-footer main-content-wrap">
@@ -306,66 +361,115 @@
 
             </div>
         
-        <div class="post-actions-wrap">
+        
+            <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/apply-apple-developer/"  data-tooltip="申請 Apple Developer 開發者帳號">
-                
-                    <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
-                </a>
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/apply-apple-developer/"
+                    data-tooltip="申請 Apple Developer 開發者帳號"
+                    aria-label="上一篇: 申請 Apple Developer 開發者帳號"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                    </a>
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017-iPhone-X-keynote/" data-tooltip="iPhone X 發表會心得">
-                
-                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
-                    <i class="fa fa-angle-right"></i>
-                </a>
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2017-iPhone-X-keynote/"
+                    data-tooltip="iPhone X 發表會心得"
+                    aria-label="下一篇: iPhone X 發表會心得"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
             </li>
         </ul>
     </nav>
     <ul class="post-actions post-action-share">
         <li class="post-action hide-lg hide-md hide-sm">
-            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
-                <i class="fa fa-share-alt"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://blog.dmoon.tw/react-native-universal-linking/">
-                <i class="fa fa-google-plus"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.dmoon.tw/react-native-universal-linking/">
-                <i class="fa fa-facebook-official"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://blog.dmoon.tw/react-native-universal-linking/">
-                <i class="fa fa-twitter"></i>
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Diesen Beitrag teilen"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
             </a>
         </li>
         
-            <li class="post-action">
-                <a class="post-action-btn btn btn--default" href="#disqus_thread">
-                    <i class="fa fa-comment-o"></i>
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.dmoon.tw/react-native-universal-linking/"
+                    title="分享到 Facebook"
+                    aria-label="分享到 Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
         
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=https://blog.dmoon.tw/react-native-universal-linking/"
+                    title="分享到 Twitter"
+                    aria-label="分享到 Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=https://blog.dmoon.tw/react-native-universal-linking/"
+                    title="分享到 Google+"
+                    aria-label="分享到 Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+                <li class="post-action">
+                    <a
+                        class="post-action-btn btn btn--default"
+                        href="#disqus_thread"
+                        aria-label="Kommentieren"
+                    >
+                        <i class="fa fa-comment"></i>
+                    </a>
+                </li>
+            
+        
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Nach oben">
             
-                <i class="fa fa-list"></i>
+                <i class="fa fa-list" aria-hidden="true"></i>
             </a>
         </li>
     </ul>
 </div>
 
 
+        
         
             
                 <div id="disqus_thread">
@@ -386,61 +490,108 @@
 
             </div>
             
-                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
                     <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/apply-apple-developer/"  data-tooltip="申請 Apple Developer 開發者帳號">
-                
-                    <i class="fa fa-angle-left"></i>
-                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
-                </a>
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/apply-apple-developer/"
+                    data-tooltip="申請 Apple Developer 開發者帳號"
+                    aria-label="上一篇: 申請 Apple Developer 開發者帳號"
+                >
+                    
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                    </a>
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017-iPhone-X-keynote/" data-tooltip="iPhone X 發表會心得">
-                
-                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
-                    <i class="fa fa-angle-right"></i>
-                </a>
+                    
+                <a
+                    class="post-action-btn btn btn--default tooltip--top"
+                    href="/2017-iPhone-X-keynote/"
+                    data-tooltip="iPhone X 發表會心得"
+                    aria-label="下一篇: iPhone X 發表會心得"
+                >
+                    
+                        <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </a>
             </li>
         </ul>
     </nav>
     <ul class="post-actions post-action-share">
         <li class="post-action hide-lg hide-md hide-sm">
-            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
-                <i class="fa fa-share-alt"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://blog.dmoon.tw/react-native-universal-linking/">
-                <i class="fa fa-google-plus"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.dmoon.tw/react-native-universal-linking/">
-                <i class="fa fa-facebook-official"></i>
-            </a>
-        </li>
-        <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://blog.dmoon.tw/react-native-universal-linking/">
-                <i class="fa fa-twitter"></i>
+            <a
+                class="post-action-btn btn btn--default btn-open-shareoptions"
+                href="#btn-open-shareoptions"
+                aria-label="Diesen Beitrag teilen"
+            >
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
             </a>
         </li>
         
-            <li class="post-action">
-                <a class="post-action-btn btn btn--default" href="#disqus_thread">
-                    <i class="fa fa-comment-o"></i>
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.dmoon.tw/react-native-universal-linking/"
+                    title="分享到 Facebook"
+                    aria-label="分享到 Facebook"
+                >
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
                 </a>
             </li>
         
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://twitter.com/intent/tweet?text=https://blog.dmoon.tw/react-native-universal-linking/"
+                    title="分享到 Twitter"
+                    aria-label="分享到 Twitter"
+                >
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a
+                    class="post-action-btn btn btn--default"
+                    target="new" href="https://plus.google.com/share?url=https://blog.dmoon.tw/react-native-universal-linking/"
+                    title="分享到 Google+"
+                    aria-label="分享到 Google+"
+                >
+                    <i class="fab fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+                <li class="post-action">
+                    <a
+                        class="post-action-btn btn btn--default"
+                        href="#disqus_thread"
+                        aria-label="Kommentieren"
+                    >
+                        <i class="fa fa-comment"></i>
+                    </a>
+                </li>
+            
+        
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Nach oben">
             
-                <i class="fa fa-list"></i>
+                <i class="fa fa-list" aria-hidden="true"></i>
             </a>
         </li>
     </ul>
@@ -448,26 +599,54 @@
 
 
                 </div>
-                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
-    <ul class="share-options">
-        <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https://blog.dmoon.tw/react-native-universal-linking/">
-                <i class="fa fa-google-plus"></i><span class="">分享到 Google+</span>
-            </a>
-        </li>
-        <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.dmoon.tw/react-native-universal-linking/">
-                <i class="fa fa-facebook-official"></i><span>分享到 Facebook</span>
-            </a>
-        </li>
-        <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https://blog.dmoon.tw/react-native-universal-linking/">
-                <i class="fa fa-twitter"></i><span>分享到 Twitter</span>
-            </a>
-        </li>
-    </ul>
-</div>
-<div id="share-options-mask" class="share-options-mask"></div>
+                
+    <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+        <i id="btn-close-shareoptions" class="fa fa-times"></i>
+        <ul class="share-options">
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://www.facebook.com/sharer/sharer.php?u=https://blog.dmoon.tw/react-native-universal-linking/"
+                        aria-label="分享到 Facebook"
+                    >
+                        <i class="fab fa-facebook" aria-hidden="true"></i><span>分享到 Facebook</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://twitter.com/intent/tweet?text=https://blog.dmoon.tw/react-native-universal-linking/"
+                        aria-label="分享到 Twitter"
+                    >
+                        <i class="fab fa-twitter" aria-hidden="true"></i><span>分享到 Twitter</span>
+                    </a>
+                </li>
+            
+                
+                
+                <li class="share-option">
+                    <a
+                        class="share-option-btn"
+                        target="new"
+                        href="https://plus.google.com/share?url=https://blog.dmoon.tw/react-native-universal-linking/"
+                        aria-label="分享到 Google+"
+                    >
+                        <i class="fab fa-google-plus" aria-hidden="true"></i><span>分享到 Google+</span>
+                    </a>
+                </li>
+            
+        </ul>
+    </div>
+
+
             
         </div>
         
@@ -510,34 +689,67 @@
           
         </div>
     </div>
+    <!-- update origin <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <img id="about-card-picture" src="https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg" alt="作者的圖片"/>
+        
+            <h4 id="about-card-name">DMoon</h4>
+        
+            <div id="about-card-bio"><p>熱愛科技的資工系學生，喜歡學習新的技術</p>
+<p>目前主要開發 Web APP</p>
+<p>較熟悉的技術是 Node.JS / React.JS</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>學生 / 創科資訊實習生</p>
+
+            </div>
+        
+        
+            <div id="about-card-location">
+                <i class="fa fa-map-marker-alt"></i>
+                <br/>
+                Taichung, Taiwan
+            </div>
+        
+    </div> -->
 </div>
 
         
+        
 <div id="cover" style="background-image:url('/assets/images/myCover.jpeg');"></div>
-    </body>
-    <!--SCRIPTS-->
-<script src="/assets/js/scrip-bxxvsd4n4tu0lxfd23qyh44n9weuvdcmzweqijk10z8umo3eb9r1nhmiyvpz.min.js"></script>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-qorzkckqhbomlhsfohbzueuqlpk87aeixchancwz6resl7ddkfuytzsmttxj.min.js"></script>
 <!--SCRIPTS END-->
+
 
     
         <script>
-             var disqus_config = function () {
-                 this.page.url = 'https://blog.dmoon.tw/react-native-universal-linking/';
-                 
-                    this.page.identifier = 'react-native-universal-linking/';
-                                  
-             };
-            (function() {
-                var d = document, s = d.createElement('script');
-                var disqus_shortname = 'dmoonlaputa';
-                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          var disqus_config = function() {
+            this.page.url = 'https://blog.dmoon.tw/react-native-universal-linking/';
+              
+            this.page.identifier = 'react-native-universal-linking/';
+              
+          };
+          (function() {
+            var d = document, s = d.createElement('script');
+            var disqus_shortname = 'dmoonlaputa';
+            s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-            })();
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+          })();
         </script>
     
 
 
 
+
+    </body>
 </html>

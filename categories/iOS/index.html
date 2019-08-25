@@ -14,12 +14,13 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
+    <script type="application/ld+json">{}</script>
     <meta property="og:type" content="blog">
-<meta property="og:title" content="DMoon&#39;s Laputa">
+<meta property="og:title" content="DMoon's Laputa">
 <meta property="og:url" content="https://blog.dmoon.tw/categories/iOS/index.html">
-<meta property="og:site_name" content="DMoon&#39;s Laputa">
+<meta property="og:site_name" content="DMoon's Laputa">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DMoon&#39;s Laputa">
+<meta name="twitter:title" content="DMoon's Laputa">
     
     
         
@@ -34,19 +35,18 @@
 
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/style-rylrrsqywzl9hyui2n1ziymwh8cyf3cxpysf9outvwx8ofhjpty2ccllpauf.min.css">
+    <link rel="stylesheet" href="/assets/css/style-2o71hzttz2k9pq9pfin3x87oyv0konupeunubjb5vmvwocyfflcpdgglsdmb.min.css">
     <!--STYLES END-->
     
-    <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-57006180-2']);
-        _gaq.push(['_trackPageview']);
-        (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57006180-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-57006180-2');
     </script>
+
 
     
     <link rel="canonical" href="https://blog.dmoon.tw/categories/iOS/index.html" />
@@ -62,6 +62,29 @@
               enable_page_level_ads: true
          });
     </script>
+    <!-- update origin -->
+    <!--  -->
+    <!--STYLES-->
+    <!-- <link rel="stylesheet" href="/assets/css/all.css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/assets/css/thumbs.css">
+    <link rel="stylesheet" href="/assets/css/tranquilpeak.css"> -->
+    <!--STYLES END-->
+    <!-- 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57006180-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-57006180-2');
+    </script>
+
+
+    
+
+     -->
+    <!-- End of update origin -->
 </head>
 
     <body>
@@ -77,16 +100,25 @@
 
 <header id="header" data-behavior="1">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
-    <h1 class="header-title">
-        <a class="header-title-link" href="/ ">DMoon&#39;s Laputa</a>
-    </h1>
+    <div class="header-title">
+        <a
+            class="header-title-link"
+            href="/ "
+            aria-label=""
+        >
+            DMoon&#39;s Laputa
+        </a>
+    </div>
     
         
-            <a  class="header-right-picture "
-                href="#about">
+            <a
+                class="header-right-picture "
+                href="#about"
+                aria-label="打開鏈接: /#about"
+            >
         
         
-            <img class="header-picture" src="https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"/>
+            <img class="header-picture" src="https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg" alt="作者的圖片"/>
         
         </a>
     
@@ -100,122 +132,130 @@
     
 
 <nav id="sidebar" data-behavior="1">
-    
-        <div class="sidebar-profile">
-            <a href="/#about">
-                    <img class="sidebar-profile-picture" src="https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"/>
-            </a>
-            <span class="sidebar-profile-name">DMoon</span>
-        </div>
-    
-    
-      
-        <ul class="sidebar-buttons button-link-block">
-          
-            <li class="sidebar-button">
-              
-                  <a  class="sidebar-button-link "
-                       href="/ "
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-home"></i>
-                  <span class="sidebar-button-desc">首頁</span>
-                  </a>
+    <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a
+                    href="/#about"
+                    aria-label="閱讀有關作者的更多信息"
+                >
+                    <img class="sidebar-profile-picture" src="https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg" alt="作者的圖片"/>
+                </a>
+                <h4 class="sidebar-profile-name">DMoon</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>熱愛科技的資工系學生，喜歡學習新的技術</p>
+<p>目前主要開發 Web APP</p>
+<p>較熟悉的技術是 Node.JS / React.JS</p>
+</h5>
+                
+            </div>
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/ "
+                            
+                            title="首頁"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">首頁</span>
+                    </a>
             </li>
-          
-            <li class="sidebar-button">
-              
-                  <a  class="sidebar-button-link "
-                       href="/all-categories"
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
-                  <span class="sidebar-button-desc">分類</span>
-                  </a>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-categories"
+                            
+                            title="分類"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">分類</span>
+                    </a>
             </li>
-          
-            <li class="sidebar-button">
-              
-                  <a  class="sidebar-button-link "
-                       href="/all-tags"
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
-                  <span class="sidebar-button-desc">標籤</span>
-                  </a>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-tags"
+                            
+                            title="標籤"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">標籤</span>
+                    </a>
             </li>
-          
-            <li class="sidebar-button">
-              
-                  <a  class="sidebar-button-link "
-                       href="/all-archives"
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
-                  <span class="sidebar-button-desc">所有文章</span>
-                  </a>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-archives"
+                            
+                            title="所有文章"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">所有文章</span>
+                    </a>
             </li>
-          
-            <li class="sidebar-button">
-              
-                  <a  class="sidebar-button-link "
-                       href="#about"
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-question"></i>
-                  <span class="sidebar-button-desc">關於</span>
-                  </a>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="#about"
+                            
+                            title="關於"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-question" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">關於</span>
+                    </a>
             </li>
-          
+            
         </ul>
-      
-      
-    
-      
-      
-        <div class="sidebar-buttons flex-container space-around author_links">
-          
-            <!-- <li class="sidebar-button"> -->
-              
-                  <a  class="sidebar-button-link " href="https://github.com/kyoyadmoon" target="_blank">
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-github" style="color: #ebebeb "></i>
-                  <!-- <span class="sidebar-button-desc">GitHub</span> -->
-                  </a>
-            <!-- </li> -->
-          
-            <!-- <li class="sidebar-button"> -->
-              
-                  <a  class="sidebar-button-link " href="https://www.facebook.com/dmoonhuang" target="_blank">
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-facebook" style="color: #ebebeb "></i>
-                  <!-- <span class="sidebar-button-desc">Facebook</span> -->
-                  </a>
-            <!-- </li> -->
-          
-            <!-- <li class="sidebar-button"> -->
-              
-                  <a  target="_blank" class="sidebar-button-link "
-                       href="/atom.xml"
-                      
-                  >
-              
-                  <i class="sidebar-button-icon fa fa-lg fa-rss" style="color: #ebebeb "></i>
-                  <!-- <span class="sidebar-button-desc">RSS</span> -->
-                  </a>
-            <!-- </li> -->
-          
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://github.com/kyoyadmoon" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://www.facebook.com/dmoonhuang" target="_blank" rel="noopener" title="Facebook">
+                    
+                        <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/atom.xml"
+                            
+                            title="RSS"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-rss" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">RSS</span>
+                    </a>
+            </li>
+            
         </ul>
-      
-    
-      
-      
-    
+        
+    </div>
 </nav>
 
             
@@ -228,20 +268,26 @@
     
 
 <section class="postShorten-group main-content-wrap bg-white main-section">
+<!-- <section class="postShorten-group main-content-wrap"> -->
     
     
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-bottom">
         <div class="postShorten-wrap">
+            
             <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
+                <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/apply-apple-developer/">
+                        <a
+                            class="link-unstyled"
+                            href="/apply-apple-developer/"
+                            aria-label=": 申請 Apple Developer 開發者帳號"
+                        >
                             申請 Apple Developer 開發者帳號
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Tue Nov 27 2018 16:35:29 GMT+0800">
+    <time datetime="2018-11-27T16:35:29+08:00">
 	
 		    11月 27, 2018
     	
@@ -254,10 +300,10 @@
 
     
 </div>
+
             </div>
             
-            
-                <div class="postShorten-content" itemprop="articleBody">
+                <div class="postShorten-content">
                     <h2 id="申請前需準備的資料"><a href="#申請前需準備的資料" class="headerlink" title="申請前需準備的資料"></a>申請前需準備的資料</h2><ul>
 <li>已開啟<a href="https://support.apple.com/zh-cn/HT204915" target="_blank" rel="external">雙重認證</a>的 Apple ID</li>
 <li>申請組織帳號 (Organization)<ul>
@@ -279,10 +325,15 @@
                     
                         
 
+
                     
                     
                         <p>
-                            <a href="/apply-apple-developer/#post-footer" class="postShorten-excerpt_link link">
+                            <a
+                                href="/apply-apple-developer/#post-footer"
+                                class="postShorten-excerpt_link link"
+                                aria-label=""
+                            >
                                 留言與分享
                             </a>
                         </p>
@@ -294,18 +345,23 @@
     </article>
     
     
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-bottom">
         <div class="postShorten-wrap">
+            
             <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
+                <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/2017-iPhone-X-keynote/">
+                        <a
+                            class="link-unstyled"
+                            href="/2017-iPhone-X-keynote/"
+                            aria-label=": iPhone X 發表會心得"
+                        >
                             iPhone X 發表會心得
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Fri Sep 15 2017 01:21:04 GMT+0800">
+    <time datetime="2017-09-15T01:21:04+08:00">
 	
 		    9月 15, 2017
     	
@@ -318,15 +374,20 @@
 
     
 </div>
+
             </div>
             
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
+                <div class="postShorten-excerpt">
                     <img src="/2017-iPhone-X-keynote/iPhone-X-keynote.png" alt="iPhone-X-keynote.png" title="">  
+
 <h4 id=""><a href="#" class="headerlink" title=" "></a> </h4><p>前天 (9/13) 凌晨是大家引頸期盼的 iPhone 十週年發表會，當然我也熬夜的看了直播，畢竟 iPhone 當時問世可說是劃時代的產品，顛覆了整個手機產業。而在十年之後，相信所有人都好奇，他們這次準備了哪些超乎想像的新驚喜，讓我們更接近未來。</p>
 <p>至於發表會的內容，我想大家應該就算沒看直播，也看過許多人整理的懶人包了，大多的消息在發表會之前就都走漏，因此也少了許多新鮮感。
                     
-                        <a href="/2017-iPhone-X-keynote/" class="postShorten-excerpt_link link">
+                        <a
+                            href="/2017-iPhone-X-keynote/"
+                            class="postShorten-excerpt_link link"
+                            aria-label=": iPhone X 發表會心得"
+                        >
                             繼續閱讀
                         </a>
                         
@@ -338,18 +399,23 @@
     </article>
     
     
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-bottom">
         <div class="postShorten-wrap">
+            
             <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
+                <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/iPhoneX-simulator-with-Xcode-9-GM/">
+                        <a
+                            class="link-unstyled"
+                            href="/iPhoneX-simulator-with-Xcode-9-GM/"
+                            aria-label=": iPhone X 模擬器搶鮮看"
+                        >
                             iPhone X 模擬器搶鮮看
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Fri Sep 15 2017 00:08:19 GMT+0800">
+    <time datetime="2017-09-15T00:08:19+08:00">
 	
 		    9月 15, 2017
     	
@@ -362,16 +428,20 @@
 
     
 </div>
+
             </div>
             
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
+                <div class="postShorten-excerpt">
                     <p>在 iPhone X 發表之前，大家應該就多少有聽到傳聞、甚至看到照片，而當時在看到全螢幕上方的咩咩頭瀏海時，我就開始疑惑 UI 會有什麼樣的變化，身為前端開發者，嗅到一股不太妙的預感，但憑著 &quot;在發表會之前，我只相信林志穎&quot; 的信念，這些都是幻覺，嚇不倒我的。</p>
 <p>萬萬沒想到，發表會影片一播，竟然如同傳聞的一模一樣...</p>
 <p>接著在發表會隔天就在 Facebook 看到其他開發者的哀嚎  </p>
 <h3 id=""><a href="#" class="headerlink" title=" "></a> </h3><img src="/iPhoneX-simulator-with-Xcode-9-GM/plurk-on-iphoneX.jpg" alt="plurk-on-iphoneX.jpg" title="">
                     
-                        <a href="/iPhoneX-simulator-with-Xcode-9-GM/" class="postShorten-excerpt_link link">
+                        <a
+                            href="/iPhoneX-simulator-with-Xcode-9-GM/"
+                            class="postShorten-excerpt_link link"
+                            aria-label=": iPhone X 模擬器搶鮮看"
+                        >
                             繼續閱讀
                         </a>
                         
@@ -383,18 +453,23 @@
     </article>
     
     
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-bottom">
         <div class="postShorten-wrap">
+            
             <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
+                <h1 class="postShorten-title">
                     
-                        <a class="link-unstyled" href="/iOS-App-Deploy-Signing-Failed/">
+                        <a
+                            class="link-unstyled"
+                            href="/iOS-App-Deploy-Signing-Failed/"
+                            aria-label=": iOS Deploy 證書簽發者無效 Failed to locate or generate matching signing assets"
+                        >
                             iOS Deploy 證書簽發者無效 Failed to locate or generate matching signing assets
                         </a>
                     
                 </h1>
                 <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Tue Feb 23 2016 00:05:03 GMT+0800">
+    <time datetime="2016-02-23T00:05:03+08:00">
 	
 		    2月 23, 2016
     	
@@ -407,16 +482,20 @@
 
     
 </div>
+
             </div>
             
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
+                <div class="postShorten-excerpt">
                     <p>這幾天在幫公司處理 iOS APP 上架的事情，整個流程需要一堆簽章，真的很麻煩</p>
 <p>其中最雷的就是這篇要講的證書的簽發者無效，是什麼證書的簽發者無效呢？</p>
 <p>我所有的 Apple 開發相關憑證上面全部都寫簽發者過期....</p>
 <p>查了才知道是 Apple 之前給開發者的憑證 ( Apple World Wide Developer Relation Certification Authority ) 有效期限到 2016.2.14 ，也就是說這是一個熱騰騰的雷阿!</p>
                     
-                        <a href="/iOS-App-Deploy-Signing-Failed/" class="postShorten-excerpt_link link">
+                        <a
+                            href="/iOS-App-Deploy-Signing-Failed/"
+                            class="postShorten-excerpt_link link"
+                            aria-label=": iOS Deploy 證書簽發者無效 Failed to locate or generate matching signing assets"
+                        >
                             繼續閱讀
                         </a>
                         
@@ -488,15 +567,48 @@
           
         </div>
     </div>
+    <!-- update origin <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <img id="about-card-picture" src="https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg" alt="作者的圖片"/>
+        
+            <h4 id="about-card-name">DMoon</h4>
+        
+            <div id="about-card-bio"><p>熱愛科技的資工系學生，喜歡學習新的技術</p>
+<p>目前主要開發 Web APP</p>
+<p>較熟悉的技術是 Node.JS / React.JS</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>學生 / 創科資訊實習生</p>
+
+            </div>
+        
+        
+            <div id="about-card-location">
+                <i class="fa fa-map-marker-alt"></i>
+                <br/>
+                Taichung, Taiwan
+            </div>
+        
+    </div> -->
 </div>
 
         
+        
 <div id="cover" style="background-image:url('/assets/images/myCover.jpeg');"></div>
-    </body>
-    <!--SCRIPTS-->
-<script src="/assets/js/scrip-bxxvsd4n4tu0lxfd23qyh44n9weuvdcmzweqijk10z8umo3eb9r1nhmiyvpz.min.js"></script>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-qorzkckqhbomlhsfohbzueuqlpk87aeixchancwz6resl7ddkfuytzsmttxj.min.js"></script>
 <!--SCRIPTS END-->
 
 
 
+
+
+    </body>
 </html>
