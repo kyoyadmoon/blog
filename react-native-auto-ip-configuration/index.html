@@ -14,7 +14,7 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"DMoon","sameAs":["https://github.com/kyoyadmoon","https://www.facebook.com/dmoonhuang","/atom.xml"],"image":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"},"articleBody":"\n\n在上一篇 React Native 初心者攻略 中有說明如何在實體 iPhone 上開發\n透過 AppDelegate.m 這個檔案我們可以將 localhost 手動更改成電腦 ip 來達到實機測試的目的\n但是這樣的開發方式有幾個缺點\n\n\n需要經常手動去做更改，尤其當你是使用筆電，甚至是和其他人共同開發的狀況，就會常常在 merge 時衝突，除非團隊都使用 localhost 以 simulator 進行開發\n沒辦法在實體機器上 Debug in Chrome\n\n\n在開發一段時間後，實在受不了，好在找到了自動設定的方法\n透過 shell script 抓取電腦的 IP 後，寫入到專案\n\n\n設置方法抓取電腦 IP我們需要先寫出能夠抓取電腦 IP 的指令\n網路上大多使用這個指令，可以先填到 terminal 執行看看，確認 IP 是否正確\n\nifconfig | grep inet\\ | tail -1 | cut -d &quot; &quot; -f 2\n\n但是因為我們專案後端 server 有使用到 docker ，使用上面 command 抓到的是錯誤的 IP\n所以我需要改成這樣\n\nifconfig | grep -Eo &#39;inet (addr:)?([0-9]*\\.){3}[0-9]*&#39; | grep -Eo &#39;([0-9]*\\.){3}[0-9]*&#39; | grep -v &#39;127.0.0.1&#39; | head -1\n\nOK 我們現在能夠拿到正確的 IP 了\nAdd Run Script再來我們需要設定在專案執行時執行一段 shell script 去抓取 IP 寫入到專案中\n照著圖中藍色 focus 的地方找到 Build Phases\n\n\n新增一個 Run Script 後的畫面\n\n\n接下來就是填入主角 script  了\n下面的 script 會在專案的 INFOPLIST 裡新增一個 SERVER_IP 的欄位，並把 IP 寫入\n123456INFOPLIST=&quot;$&#123;TARGET_BUILD_DIR&#125;/$&#123;INFOPLIST_PATH&#125;&quot;echo &quot;writing to $INFOPLIST&quot;PLISTCMD=&quot;Add :SERVER_IP string $(ifconfig | grep -Eo &apos;inet (addr:)?([0-9]*\\.)&#123;3&#125;[0-9]*&apos; | grep -Eo &apos;([0-9]*\\.)&#123;3&#125;[0-9]*&apos; | grep -v &apos;127.0.0.1&apos; | head -1)&quot;echo -n &quot;$INFOPLIST&quot; | xargs -0 /usr/libexec/PlistBuddy -c &quot;$PLISTCMD&quot; || truePLISTCMD=&quot;Set :SERVER_IP $(ifconfig | grep -Eo &apos;inet (addr:)?([0-9]*\\.)&#123;3&#125;[0-9]*&apos; | grep -Eo &apos;([0-9]*\\.)&#123;3&#125;[0-9]*&apos; | grep -v &apos;127.0.0.1&apos; | head -1)&quot;echo -n &quot;$INFOPLIST&quot; | xargs -0 /usr/libexec/PlistBuddy -c &quot;$PLISTCMD&quot; || true\n\n填好之後會像這樣\n\n\n在 AppDelegate.m 讀取 SERVER_IP打開 AppDelegate.m \n將原本\n1jsCodeLocation = [NSURL URLWithString:@&quot;http://localhost:8081/index.ios.bundle?platform=ios&amp;dev=true&quot;];\n\n替換成能夠動態改變 SERVER_IP 的 code\n1234NSString *serverIP = [[NSBundle mainBundle] objectForInfoDictionaryKey:@&quot;SERVER_IP&quot;];NSString *jsCodeUrlString = [NSString stringWithFormat:@&quot;http://%@:8081/index.ios.bundle?platform=ios&amp;dev=true&quot;, serverIP];NSString *jsBundleUrlString = [jsCodeUrlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];jsCodeLocation = [NSURL URLWithString:jsBundleUrlString];\n\n\n\n這時候你可以測試看看 simulator 和 real device 上是不是都能正常運作，可以的話就成功囉！\nDebug in Chrome on Real Device找到 RCTWebSocketExecutor.ｍ 的 setUp\n\n\n將這行\n1NSString *URLString = [NSString stringWithFormat:@&quot;http://localhost:%zd/debugger-proxy?role=client&quot;, port];\n\n替換成\n12NSString *serverIP = [[NSBundle mainBundle] objectForInfoDictionaryKey:@&quot;SERVER_IP&quot;];NSString *URLString = [NSString stringWithFormat:@&quot;http://%@:%zd/debugger-proxy?role=client&quot;, serverIP, port];\n\n這邊一樣是將 localhost 改成 SERVER_IP\n實體裝置就能透過 wifi 在電腦的 chrome 上進行 debug 了，趕快試試看！\nReferencehttp://moduscreate.com/automated-ip-configuration-for-react-native-development/\n","dateCreated":"2016-04-27T20:57:40+08:00","dateModified":"2019-08-26T03:31:16+08:00","datePublished":"2016-04-27T20:57:40+08:00","description":"\n\n在上一篇 React Native 初心者攻略 中有說明如何在實體 iPhone 上開發\n透過 AppDelegate.m 這個檔案我們可以將 localhost 手動更改成電腦 ip 來達到實機測試的目的\n但是這樣的開發方式有幾個缺點\n\n\n需要經常手動去做更改，尤其當你是使用筆電，甚至是和其他人共同開發的狀況，就會常常在 merge 時衝突，除非團隊都使用 localhost 以 simulator 進行開發\n沒辦法在實體機器上 Debug in Chrome\n\n\n在開發一段時間後，實在受不了，好在找到了自動設定的方法\n透過 shell script 抓取電腦的 IP 後，寫入到專案","headline":"React Native 進階開發配置-自動設定 IP","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.dmoon.tw/react-native-auto-ip-configuration/"},"publisher":{"@type":"Organization","name":"DMoon","sameAs":["https://github.com/kyoyadmoon","https://www.facebook.com/dmoonhuang","/atom.xml"],"image":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg","logo":{"@type":"ImageObject","url":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"}},"url":"https://blog.dmoon.tw/react-native-auto-ip-configuration/","keywords":"React Native, iOS"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"DMoon","sameAs":["https://github.com/kyoyadmoon","https://www.facebook.com/dmoonhuang","https://stackoverflow.com/users/7738466/dmoon-huang","dmoon.t@gmail.com","/atom.xml"],"image":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"},"articleBody":"\n\n在上一篇 React Native 初心者攻略 中有說明如何在實體 iPhone 上開發\n透過 AppDelegate.m 這個檔案我們可以將 localhost 手動更改成電腦 ip 來達到實機測試的目的\n但是這樣的開發方式有幾個缺點\n\n\n需要經常手動去做更改，尤其當你是使用筆電，甚至是和其他人共同開發的狀況，就會常常在 merge 時衝突，除非團隊都使用 localhost 以 simulator 進行開發\n沒辦法在實體機器上 Debug in Chrome\n\n\n在開發一段時間後，實在受不了，好在找到了自動設定的方法\n透過 shell script 抓取電腦的 IP 後，寫入到專案\n\n\n設置方法抓取電腦 IP我們需要先寫出能夠抓取電腦 IP 的指令\n網路上大多使用這個指令，可以先填到 terminal 執行看看，確認 IP 是否正確\n\nifconfig | grep inet\\ | tail -1 | cut -d &quot; &quot; -f 2\n\n但是因為我們專案後端 server 有使用到 docker ，使用上面 command 抓到的是錯誤的 IP\n所以我需要改成這樣\n\nifconfig | grep -Eo &#39;inet (addr:)?([0-9]*\\.){3}[0-9]*&#39; | grep -Eo &#39;([0-9]*\\.){3}[0-9]*&#39; | grep -v &#39;127.0.0.1&#39; | head -1\n\nOK 我們現在能夠拿到正確的 IP 了\nAdd Run Script再來我們需要設定在專案執行時執行一段 shell script 去抓取 IP 寫入到專案中\n照著圖中藍色 focus 的地方找到 Build Phases\n\n\n新增一個 Run Script 後的畫面\n\n\n接下來就是填入主角 script  了\n下面的 script 會在專案的 INFOPLIST 裡新增一個 SERVER_IP 的欄位，並把 IP 寫入\n123456INFOPLIST=&quot;$&#123;TARGET_BUILD_DIR&#125;/$&#123;INFOPLIST_PATH&#125;&quot;echo &quot;writing to $INFOPLIST&quot;PLISTCMD=&quot;Add :SERVER_IP string $(ifconfig | grep -Eo &apos;inet (addr:)?([0-9]*\\.)&#123;3&#125;[0-9]*&apos; | grep -Eo &apos;([0-9]*\\.)&#123;3&#125;[0-9]*&apos; | grep -v &apos;127.0.0.1&apos; | head -1)&quot;echo -n &quot;$INFOPLIST&quot; | xargs -0 /usr/libexec/PlistBuddy -c &quot;$PLISTCMD&quot; || truePLISTCMD=&quot;Set :SERVER_IP $(ifconfig | grep -Eo &apos;inet (addr:)?([0-9]*\\.)&#123;3&#125;[0-9]*&apos; | grep -Eo &apos;([0-9]*\\.)&#123;3&#125;[0-9]*&apos; | grep -v &apos;127.0.0.1&apos; | head -1)&quot;echo -n &quot;$INFOPLIST&quot; | xargs -0 /usr/libexec/PlistBuddy -c &quot;$PLISTCMD&quot; || true\n\n填好之後會像這樣\n\n\n在 AppDelegate.m 讀取 SERVER_IP打開 AppDelegate.m \n將原本\n1jsCodeLocation = [NSURL URLWithString:@&quot;http://localhost:8081/index.ios.bundle?platform=ios&amp;dev=true&quot;];\n\n替換成能夠動態改變 SERVER_IP 的 code\n1234NSString *serverIP = [[NSBundle mainBundle] objectForInfoDictionaryKey:@&quot;SERVER_IP&quot;];NSString *jsCodeUrlString = [NSString stringWithFormat:@&quot;http://%@:8081/index.ios.bundle?platform=ios&amp;dev=true&quot;, serverIP];NSString *jsBundleUrlString = [jsCodeUrlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];jsCodeLocation = [NSURL URLWithString:jsBundleUrlString];\n\n\n\n這時候你可以測試看看 simulator 和 real device 上是不是都能正常運作，可以的話就成功囉！\nDebug in Chrome on Real Device找到 RCTWebSocketExecutor.ｍ 的 setUp\n\n\n將這行\n1NSString *URLString = [NSString stringWithFormat:@&quot;http://localhost:%zd/debugger-proxy?role=client&quot;, port];\n\n替換成\n12NSString *serverIP = [[NSBundle mainBundle] objectForInfoDictionaryKey:@&quot;SERVER_IP&quot;];NSString *URLString = [NSString stringWithFormat:@&quot;http://%@:%zd/debugger-proxy?role=client&quot;, serverIP, port];\n\n這邊一樣是將 localhost 改成 SERVER_IP\n實體裝置就能透過 wifi 在電腦的 chrome 上進行 debug 了，趕快試試看！\nReferencehttp://moduscreate.com/automated-ip-configuration-for-react-native-development/\n","dateCreated":"2016-04-27T20:57:40+08:00","dateModified":"2019-08-26T03:31:16+08:00","datePublished":"2016-04-27T20:57:40+08:00","description":"\n\n在上一篇 React Native 初心者攻略 中有說明如何在實體 iPhone 上開發\n透過 AppDelegate.m 這個檔案我們可以將 localhost 手動更改成電腦 ip 來達到實機測試的目的\n但是這樣的開發方式有幾個缺點\n\n\n需要經常手動去做更改，尤其當你是使用筆電，甚至是和其他人共同開發的狀況，就會常常在 merge 時衝突，除非團隊都使用 localhost 以 simulator 進行開發\n沒辦法在實體機器上 Debug in Chrome\n\n\n在開發一段時間後，實在受不了，好在找到了自動設定的方法\n透過 shell script 抓取電腦的 IP 後，寫入到專案","headline":"React Native 進階開發配置-自動設定 IP","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.dmoon.tw/react-native-auto-ip-configuration/"},"publisher":{"@type":"Organization","name":"DMoon","sameAs":["https://github.com/kyoyadmoon","https://www.facebook.com/dmoonhuang","https://stackoverflow.com/users/7738466/dmoon-huang","dmoon.t@gmail.com","/atom.xml"],"image":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg","logo":{"@type":"ImageObject","url":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"}},"url":"https://blog.dmoon.tw/react-native-auto-ip-configuration/","keywords":"React Native, iOS"}</script>
     <meta name="description" content="在上一篇 React Native 初心者攻略 中有說明如何在實體 iPhone 上開發
 透過 AppDelegate.m 這個檔案我們可以將 localhost 手動更改成電腦 ip 來達到實機測試的目的
 但是這樣的開發方式有幾個缺點
@@ -59,9 +59,11 @@
 
     
 
+
+    <!-- Start of Old-->
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/style-2o71hzttz2k9pq9pfin3x87oyv0konupeunubjb5vmvwocyfflcpdgglsdmb.min.css">
+    <!-- <link rel="stylesheet" href="/assets/css/style-n2fee6bc6a0v6ho6x51cuqdbvxxzckzo3tvbvzyhkqonqrrfmtjrhihz23fu.min.css"> -->
     <!--STYLES END-->
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57006180-2"></script>
@@ -88,13 +90,14 @@
               enable_page_level_ads: true
          });
     </script>
+    <!-- End of Old-->
     <!-- update origin -->
     <!--  -->
     <!--STYLES-->
-    <!-- <link rel="stylesheet" href="/assets/css/all.css">
+    <link rel="stylesheet" href="/assets/css/all.css">
     <link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
     <link rel="stylesheet" href="/assets/css/thumbs.css">
-    <link rel="stylesheet" href="/assets/css/tranquilpeak.css"> -->
+    <link rel="stylesheet" href="/assets/css/tranquilpeak.css">
     <!--STYLES END-->
     <!-- 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57006180-2"></script>
@@ -265,6 +268,27 @@
                     
                         <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
                         <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://stackoverflow.com/users/7738466/dmoon-huang" target="_blank" rel="noopener" title="Stack Overflow">
+                    
+                        <i class="sidebar-button-icon fab fa-stack-overflow" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Stack Overflow</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/dmoon.t@gmail.com"
+                            title="Email"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Email</span>
                     </a>
             </li>
             
@@ -765,7 +789,7 @@
         
 <div id="cover" style="background-image:url('/assets/images/myCover.jpeg');"></div>
         <!--SCRIPTS-->
-<script src="/assets/js/script-qorzkckqhbomlhsfohbzueuqlpk87aeixchancwz6resl7ddkfuytzsmttxj.min.js"></script>
+<script src="/assets/js/script-n19udwdaaeb0c7r6qkuiua2otgi7ph17wo909oyxyjo0y8h2vl3odoawliyb.min.js"></script>
 <!--SCRIPTS END-->
 
 

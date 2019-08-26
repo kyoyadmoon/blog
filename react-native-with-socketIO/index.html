@@ -14,7 +14,7 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"DMoon","sameAs":["https://github.com/kyoyadmoon","https://www.facebook.com/dmoonhuang","/atom.xml"],"image":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"},"articleBody":"昨天在處理為 React Native 加上 聊天室的功能，首先遇到的問題就是串接 Socket ，要在 RN 上使用 socket 需要安裝 socket.io-client，安裝之後 import socket.io-client/socket.io 時，遇到了這個 error \nundefined is not an object (evaluting &#39;navigator.userAgent.match&#39;)\n\n\n找了一下解決方法\n發現這個套件不能用 import ，必需用 require\n另外需要 assign window.navigator.userAgent\n正確設定方法如下\n1234567import React, &#123; Component &#125; from 'react-native';window.navigator.userAgent = 'react-native';const io = require('socket.io-client/socket.io');const socket = io('ws://', &#123; jsonp: false &#125;);\n\n#Reference\nhttp://browniefed.com/blog/2015/05/16/react-native-and-socket-dot-io/\n","dateCreated":"2016-03-25T18:53:20+08:00","dateModified":"2019-08-26T03:31:24+08:00","datePublished":"2016-03-25T18:53:20+08:00","description":"昨天在處理為 React Native 加上 聊天室的功能，首先遇到的問題就是串接 Socket ，要在 RN 上使用 socket 需要安裝 socket.io-client，安裝之後 import socket.io-client/socket.io 時，遇到了這個 error \nundefined is not an object (evaluting &#39;navigator.userAgent.match&#39;)","headline":"React Native with Socket.io - error: evaluting 'navigator.userAgent.match'","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.dmoon.tw/react-native-with-socketIO/"},"publisher":{"@type":"Organization","name":"DMoon","sameAs":["https://github.com/kyoyadmoon","https://www.facebook.com/dmoonhuang","/atom.xml"],"image":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg","logo":{"@type":"ImageObject","url":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"}},"url":"https://blog.dmoon.tw/react-native-with-socketIO/","keywords":"React-Native, Socket.io"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"DMoon","sameAs":["https://github.com/kyoyadmoon","https://www.facebook.com/dmoonhuang","https://stackoverflow.com/users/7738466/dmoon-huang","dmoon.t@gmail.com","/atom.xml"],"image":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"},"articleBody":"昨天在處理為 React Native 加上 聊天室的功能，首先遇到的問題就是串接 Socket ，要在 RN 上使用 socket 需要安裝 socket.io-client，安裝之後 import socket.io-client/socket.io 時，遇到了這個 error \nundefined is not an object (evaluting &#39;navigator.userAgent.match&#39;)\n\n\n找了一下解決方法\n發現這個套件不能用 import ，必需用 require\n另外需要 assign window.navigator.userAgent\n正確設定方法如下\n1234567import React, &#123; Component &#125; from 'react-native';window.navigator.userAgent = 'react-native';const io = require('socket.io-client/socket.io');const socket = io('ws://', &#123; jsonp: false &#125;);\n\n#Reference\nhttp://browniefed.com/blog/2015/05/16/react-native-and-socket-dot-io/\n","dateCreated":"2016-03-25T18:53:20+08:00","dateModified":"2019-08-26T03:31:24+08:00","datePublished":"2016-03-25T18:53:20+08:00","description":"昨天在處理為 React Native 加上 聊天室的功能，首先遇到的問題就是串接 Socket ，要在 RN 上使用 socket 需要安裝 socket.io-client，安裝之後 import socket.io-client/socket.io 時，遇到了這個 error \nundefined is not an object (evaluting &#39;navigator.userAgent.match&#39;)","headline":"React Native with Socket.io - error: evaluting 'navigator.userAgent.match'","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.dmoon.tw/react-native-with-socketIO/"},"publisher":{"@type":"Organization","name":"DMoon","sameAs":["https://github.com/kyoyadmoon","https://www.facebook.com/dmoonhuang","https://stackoverflow.com/users/7738466/dmoon-huang","dmoon.t@gmail.com","/atom.xml"],"image":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg","logo":{"@type":"ImageObject","url":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"}},"url":"https://blog.dmoon.tw/react-native-with-socketIO/","keywords":"React-Native, Socket.io"}</script>
     <meta name="description" content="昨天在處理為 React Native 加上 聊天室的功能，首先遇到的問題就是串接 Socket ，要在 RN 上使用 socket 需要安裝 socket.io-client，安裝之後 import socket.io-client/socket.io 時，遇到了這個 error 
 undefined is not an object (evaluting &amp;#39;navigator.user">
 <meta property="og:type" content="blog">
@@ -40,9 +40,11 @@ undefined is not an object (evaluting &amp;#39;navigator.user">
 
     
 
+
+    <!-- Start of Old-->
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/style-2o71hzttz2k9pq9pfin3x87oyv0konupeunubjb5vmvwocyfflcpdgglsdmb.min.css">
+    <!-- <link rel="stylesheet" href="/assets/css/style-n2fee6bc6a0v6ho6x51cuqdbvxxzckzo3tvbvzyhkqonqrrfmtjrhihz23fu.min.css"> -->
     <!--STYLES END-->
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57006180-2"></script>
@@ -69,13 +71,14 @@ undefined is not an object (evaluting &amp;#39;navigator.user">
               enable_page_level_ads: true
          });
     </script>
+    <!-- End of Old-->
     <!-- update origin -->
     <!--  -->
     <!--STYLES-->
-    <!-- <link rel="stylesheet" href="/assets/css/all.css">
+    <link rel="stylesheet" href="/assets/css/all.css">
     <link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
     <link rel="stylesheet" href="/assets/css/thumbs.css">
-    <link rel="stylesheet" href="/assets/css/tranquilpeak.css"> -->
+    <link rel="stylesheet" href="/assets/css/tranquilpeak.css">
     <!--STYLES END-->
     <!-- 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57006180-2"></script>
@@ -246,6 +249,27 @@ undefined is not an object (evaluting &amp;#39;navigator.user">
                     
                         <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
                         <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://stackoverflow.com/users/7738466/dmoon-huang" target="_blank" rel="noopener" title="Stack Overflow">
+                    
+                        <i class="sidebar-button-icon fab fa-stack-overflow" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Stack Overflow</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/dmoon.t@gmail.com"
+                            title="Email"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Email</span>
                     </a>
             </li>
             
@@ -696,7 +720,7 @@ undefined is not an object (evaluting &amp;#39;navigator.user">
         
 <div id="cover" style="background-image:url('/assets/images/myCover.jpeg');"></div>
         <!--SCRIPTS-->
-<script src="/assets/js/script-qorzkckqhbomlhsfohbzueuqlpk87aeixchancwz6resl7ddkfuytzsmttxj.min.js"></script>
+<script src="/assets/js/script-n19udwdaaeb0c7r6qkuiua2otgi7ph17wo909oyxyjo0y8h2vl3odoawliyb.min.js"></script>
 <!--SCRIPTS END-->
 
 

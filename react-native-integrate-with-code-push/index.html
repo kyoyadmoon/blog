@@ -14,7 +14,7 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"DMoon","sameAs":["https://github.com/kyoyadmoon","https://www.facebook.com/dmoonhuang","/atom.xml"],"image":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"},"articleBody":"CodePush 是一個雲端服務，能夠讓 Cordova 和 React Native 的開發者將手機應用的更新，跳過提交審查，直接部署到用戶的設備上。 它擔任類似中間倉庫的角色，開發者可以把更新（JS，HTML，CSS和圖片）發佈到這個倉庫上，透過程式碼的整合，Apps 就能夠查詢到更新並且下載。\n\n\nSetup CodePush Service首先我們先從 CodePush 服務的準備開始～～\nInstall CodePush Management CLI首先我們需要安裝 CodePush CLI\n$ npm install -g code-push-cli\n安裝完後察看版本確認安裝成功\n$ code-push -v\nRegister &amp; Login CodePush$ code-push register\n執行後會開啟網頁讓你進行註冊，並在 terminal 要求填入 access key\n可以直接透過網頁以微軟或Github帳號做第三方登入進行授權\n註冊登入後頁面會給你 access key \n此時複製回到 terminal 貼上\n\n登入：$ code-push login \n登出：$ code-push loout \n\nAdd new App$ code-push app add &lt;appName&gt;\n新增完後透過 ls 指令確認新增成功\n新增的 App 將會有兩個預設的環境\n\nStaging：通常用來當作開發中的部署環境\nProduction：上線的部署環境\n\n每個部署環境可以當成是 git 當中不同的 branch 概念\n也能夠從 history 進行版本控制，做一些 rollback 的動作\nGet Deployment Key Of App$ code-push deployment ls &lt;appName&gt; -k\n就能看見該 App 所有部署環境的 deplyment key\nReact-Native-Code-Push 整合\nOfficial Docs\n\n文件寫得相當詳細，Step by step 照著文件作就可以\n這邊簡單說明流程\n由於不同的 React Native 版本所需要做的配置略有不同\n這邊以 React Native v0.41.2 為例\n\n安裝 react-native-code-push : \n$ npm install --save react-native-code-push@latest \n點一下這邊 確認 RN 版本和套件支援的版本相依性 \n\n安裝完後，接下來需要 link\n由於 React Native 版本在 0.27 之後，已經將 rnpm link 合併到 React Native CLI\n直接使用\n$ react-native link react-native-code-push\n0.27 以下的版本則可以透過 $ rnpm link 設置，詳細可以參考 Setup\n\n安裝完後還需要做兩個整合的動作 (這邊的設置方式對應不同的 RN 版本也有差異)\n\n設定 deployment key 到專案中\n\nAndroid :\n編輯 android/app/src/main/java/com/&lt;ProjectName&gt;/MainApplication.java\n1234567@Override    protected List&lt;ReactPackage&gt; getPackages() &#123;      return Arrays.&lt;ReactPackage&gt;asList(          new MainReactPackage(),            new CodePush(\"Deployment_Key\", getApplicationContext(), BuildConfig.DEBUG)      );    &#125;\n\n填入 app 的 deployment key\n\niOS :\n在 ios/&lt;Project_Name&gt;/info.plist 中 \n可以看見 CodePushDeploymentKey 欄位，在 value 欄填入 deployment key 即可\n\n\n\n\n\n最後是整合 JS 的部分\n使用 HOC (Higher Order Component) 的方式就能快速的整合到你的 App 中了\n程式碼如下\n123456import codePush from \"react-native-code-push\";class MyApp extends Component &#123;&#125;MyApp = codePush(MyApp);\n\n​\n\n\n進行更新release-react 是專門更新 React Native 專案的指令\n會自動將目前檔案產生 bundle 並上傳更新版本到 CodePush 的雲端上\n$ code-push release-react &lt;appName&gt;  &lt;platform&gt; -d &lt;deploymentName&gt;\n如果沒有給 -d 的 deploymentName 參數的話，預設將會是 Staging\nRead More\nhttp://www.jianshu.com/p/fa362da953c7\nhttp://www.jianshu.com/p/87ccfb795635\nhttp://bbs.reactnative.cn/topic/725/code-push-%E7%83%AD%E6%9B%B4%E6%96%B0%E4%BD%BF%E7%94%A8%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E%E5%92%8C%E6%95%99%E7%A8%8B\n\n","dateCreated":"2017-02-19T18:16:36+08:00","dateModified":"2019-08-26T03:26:57+08:00","datePublished":"2017-02-19T18:16:36+08:00","description":"CodePush 是一個雲端服務，能夠讓 Cordova 和 React Native 的開發者將手機應用的更新，跳過提交審查，直接部署到用戶的設備上。 它擔任類似中間倉庫的角色，開發者可以把更新（JS，HTML，CSS和圖片）發佈到這個倉庫上，透過程式碼的整合，Apps 就能夠查詢到更新並且下載。","headline":"React Native CodePush 偷天換日術","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.dmoon.tw/react-native-integrate-with-code-push/"},"publisher":{"@type":"Organization","name":"DMoon","sameAs":["https://github.com/kyoyadmoon","https://www.facebook.com/dmoonhuang","/atom.xml"],"image":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg","logo":{"@type":"ImageObject","url":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"}},"url":"https://blog.dmoon.tw/react-native-integrate-with-code-push/","keywords":"React Native"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"DMoon","sameAs":["https://github.com/kyoyadmoon","https://www.facebook.com/dmoonhuang","https://stackoverflow.com/users/7738466/dmoon-huang","dmoon.t@gmail.com","/atom.xml"],"image":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"},"articleBody":"CodePush 是一個雲端服務，能夠讓 Cordova 和 React Native 的開發者將手機應用的更新，跳過提交審查，直接部署到用戶的設備上。 它擔任類似中間倉庫的角色，開發者可以把更新（JS，HTML，CSS和圖片）發佈到這個倉庫上，透過程式碼的整合，Apps 就能夠查詢到更新並且下載。\n\n\nSetup CodePush Service首先我們先從 CodePush 服務的準備開始～～\nInstall CodePush Management CLI首先我們需要安裝 CodePush CLI\n$ npm install -g code-push-cli\n安裝完後察看版本確認安裝成功\n$ code-push -v\nRegister &amp; Login CodePush$ code-push register\n執行後會開啟網頁讓你進行註冊，並在 terminal 要求填入 access key\n可以直接透過網頁以微軟或Github帳號做第三方登入進行授權\n註冊登入後頁面會給你 access key \n此時複製回到 terminal 貼上\n\n登入：$ code-push login \n登出：$ code-push loout \n\nAdd new App$ code-push app add &lt;appName&gt;\n新增完後透過 ls 指令確認新增成功\n新增的 App 將會有兩個預設的環境\n\nStaging：通常用來當作開發中的部署環境\nProduction：上線的部署環境\n\n每個部署環境可以當成是 git 當中不同的 branch 概念\n也能夠從 history 進行版本控制，做一些 rollback 的動作\nGet Deployment Key Of App$ code-push deployment ls &lt;appName&gt; -k\n就能看見該 App 所有部署環境的 deplyment key\nReact-Native-Code-Push 整合\nOfficial Docs\n\n文件寫得相當詳細，Step by step 照著文件作就可以\n這邊簡單說明流程\n由於不同的 React Native 版本所需要做的配置略有不同\n這邊以 React Native v0.41.2 為例\n\n安裝 react-native-code-push : \n$ npm install --save react-native-code-push@latest \n點一下這邊 確認 RN 版本和套件支援的版本相依性 \n\n安裝完後，接下來需要 link\n由於 React Native 版本在 0.27 之後，已經將 rnpm link 合併到 React Native CLI\n直接使用\n$ react-native link react-native-code-push\n0.27 以下的版本則可以透過 $ rnpm link 設置，詳細可以參考 Setup\n\n安裝完後還需要做兩個整合的動作 (這邊的設置方式對應不同的 RN 版本也有差異)\n\n設定 deployment key 到專案中\n\nAndroid :\n編輯 android/app/src/main/java/com/&lt;ProjectName&gt;/MainApplication.java\n1234567@Override    protected List&lt;ReactPackage&gt; getPackages() &#123;      return Arrays.&lt;ReactPackage&gt;asList(          new MainReactPackage(),            new CodePush(\"Deployment_Key\", getApplicationContext(), BuildConfig.DEBUG)      );    &#125;\n\n填入 app 的 deployment key\n\niOS :\n在 ios/&lt;Project_Name&gt;/info.plist 中 \n可以看見 CodePushDeploymentKey 欄位，在 value 欄填入 deployment key 即可\n\n\n\n\n\n最後是整合 JS 的部分\n使用 HOC (Higher Order Component) 的方式就能快速的整合到你的 App 中了\n程式碼如下\n123456import codePush from \"react-native-code-push\";class MyApp extends Component &#123;&#125;MyApp = codePush(MyApp);\n\n​\n\n\n進行更新release-react 是專門更新 React Native 專案的指令\n會自動將目前檔案產生 bundle 並上傳更新版本到 CodePush 的雲端上\n$ code-push release-react &lt;appName&gt;  &lt;platform&gt; -d &lt;deploymentName&gt;\n如果沒有給 -d 的 deploymentName 參數的話，預設將會是 Staging\nRead More\nhttp://www.jianshu.com/p/fa362da953c7\nhttp://www.jianshu.com/p/87ccfb795635\nhttp://bbs.reactnative.cn/topic/725/code-push-%E7%83%AD%E6%9B%B4%E6%96%B0%E4%BD%BF%E7%94%A8%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E%E5%92%8C%E6%95%99%E7%A8%8B\n\n","dateCreated":"2017-02-19T18:16:36+08:00","dateModified":"2019-08-26T03:26:57+08:00","datePublished":"2017-02-19T18:16:36+08:00","description":"CodePush 是一個雲端服務，能夠讓 Cordova 和 React Native 的開發者將手機應用的更新，跳過提交審查，直接部署到用戶的設備上。 它擔任類似中間倉庫的角色，開發者可以把更新（JS，HTML，CSS和圖片）發佈到這個倉庫上，透過程式碼的整合，Apps 就能夠查詢到更新並且下載。","headline":"React Native CodePush 偷天換日術","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.dmoon.tw/react-native-integrate-with-code-push/"},"publisher":{"@type":"Organization","name":"DMoon","sameAs":["https://github.com/kyoyadmoon","https://www.facebook.com/dmoonhuang","https://stackoverflow.com/users/7738466/dmoon-huang","dmoon.t@gmail.com","/atom.xml"],"image":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg","logo":{"@type":"ImageObject","url":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"}},"url":"https://blog.dmoon.tw/react-native-integrate-with-code-push/","keywords":"React Native"}</script>
     <meta name="description" content="CodePush 是一個雲端服務，能夠讓 Cordova 和 React Native 的開發者將手機應用的更新，跳過提交審查，直接部署到用戶的設備上。 它擔任類似中間倉庫的角色，開發者可以把更新（JS，HTML，CSS和圖片）發佈到這個倉庫上，透過程式碼的整合，Apps 就能夠查詢到更新並且下載。">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="React Native CodePush 偷天換日術">
@@ -37,9 +37,11 @@
 
     
 
+
+    <!-- Start of Old-->
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/style-2o71hzttz2k9pq9pfin3x87oyv0konupeunubjb5vmvwocyfflcpdgglsdmb.min.css">
+    <!-- <link rel="stylesheet" href="/assets/css/style-n2fee6bc6a0v6ho6x51cuqdbvxxzckzo3tvbvzyhkqonqrrfmtjrhihz23fu.min.css"> -->
     <!--STYLES END-->
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57006180-2"></script>
@@ -66,13 +68,14 @@
               enable_page_level_ads: true
          });
     </script>
+    <!-- End of Old-->
     <!-- update origin -->
     <!--  -->
     <!--STYLES-->
-    <!-- <link rel="stylesheet" href="/assets/css/all.css">
+    <link rel="stylesheet" href="/assets/css/all.css">
     <link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
     <link rel="stylesheet" href="/assets/css/thumbs.css">
-    <link rel="stylesheet" href="/assets/css/tranquilpeak.css"> -->
+    <link rel="stylesheet" href="/assets/css/tranquilpeak.css">
     <!--STYLES END-->
     <!-- 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57006180-2"></script>
@@ -243,6 +246,27 @@
                     
                         <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
                         <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://stackoverflow.com/users/7738466/dmoon-huang" target="_blank" rel="noopener" title="Stack Overflow">
+                    
+                        <i class="sidebar-button-icon fab fa-stack-overflow" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Stack Overflow</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/dmoon.t@gmail.com"
+                            title="Email"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Email</span>
                     </a>
             </li>
             
@@ -762,7 +786,7 @@
         
 <div id="cover" style="background-image:url('/assets/images/myCover.jpeg');"></div>
         <!--SCRIPTS-->
-<script src="/assets/js/script-qorzkckqhbomlhsfohbzueuqlpk87aeixchancwz6resl7ddkfuytzsmttxj.min.js"></script>
+<script src="/assets/js/script-n19udwdaaeb0c7r6qkuiua2otgi7ph17wo909oyxyjo0y8h2vl3odoawliyb.min.js"></script>
 <!--SCRIPTS END-->
 
 

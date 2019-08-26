@@ -14,7 +14,7 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"DMoon","sameAs":["https://github.com/kyoyadmoon","https://www.facebook.com/dmoonhuang","/atom.xml"],"image":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"},"articleBody":"  \n\n最近寫文章需要將專案的檔案目錄結構用樹狀印出，方便閱讀，所以找了一些相關資料，整理一下做個筆記\nhomebrew 上就有個 tree 的套件可以做到這個功能\n\n\n安裝方法1brew install tree\n\n使用方式安裝完成後，就可以在 terminal 直接使用 tree 這個指令啦\n1tree\n\n常用參數中文亂碼當你用 tree 列印資料夾目錄時，可能會發現一些中文檔名會出現亂碼的情況\n加上 -N 參數，就可以印出原本的字元了\n1tree -N\n\n設定印出層數加上 -L 參數，並在後面加上層數的數字\n列印一層\n1tree -L 1\n\n依字母排序加上 -v 參數可以依照字母排序\n1tree -v\n\n其他參數可以透過　--help 指令查詢\n1tree --help\n\n這邊附上查詢得到的列表\n123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960usage: tree [-acdfghilnpqrstuvxACDFJQNSUX] [-H baseHREF] [-T title ]    [-L level [-R]] [-P pattern] [-I pattern] [-o filename] [--version]    [--help] [--inodes] [--device] [--noreport] [--nolinks] [--dirsfirst]    [--charset charset] [--filelimit[=]#] [--si] [--timefmt[=]&lt;f&gt;]    [--sort[=]&lt;name&gt;] [--matchdirs] [--ignore-case] [--] [&lt;directory list&gt;]  ------- Listing options -------  -a            All files are listed.  -d            List directories only.  -l            Follow symbolic links like directories.  -f            Print the full path prefix for each file.  -x            Stay on current filesystem only.  -L level      Descend only level directories deep.  -R            Rerun tree when max dir level reached.  -P pattern    List only those files that match the pattern given.  -I pattern    Do not list files that match the given pattern.  --ignore-case Ignore case when pattern matching.  --matchdirs   Include directory names in -P pattern matching.  --noreport    Turn off file/directory count at end of tree listing.  --charset X   Use charset X for terminal/HTML and indentation line output.  --filelimit # Do not descend dirs with more than # files in them.  --timefmt &lt;f&gt; Print and format time according to the format &lt;f&gt;.  -o filename   Output to file instead of stdout.  -------- File options ---------  -q            Print non-printable characters as &apos;?&apos;.  -N            Print non-printable characters as is.  -Q            Quote filenames with double quotes.  -p            Print the protections for each file.  -u            Displays file owner or UID number.  -g            Displays file group owner or GID number.  -s            Print the size in bytes of each file.  -h            Print the size in a more human readable way.  --si          Like -h, but use in SI units (powers of 1000).  -D            Print the date of last modification or (-c) status change.  -F            Appends &apos;/&apos;, &apos;=&apos;, &apos;*&apos;, &apos;@&apos;, &apos;|&apos; or &apos;&gt;&apos; as per ls -F.  --inodes      Print inode number of each file.  --device      Print device ID number to which each file belongs.  ------- Sorting options -------  -v            Sort files alphanumerically by version.  -t            Sort files by last modification time.  -c            Sort files by last status change time.  -U            Leave files unsorted.  -r            Reverse the order of the sort.  --dirsfirst   List directories before files (-U disables).  --sort X      Select sort: name,version,size,mtime,ctime.  ------- Graphics options ------  -i            Don&apos;t print indentation lines.  -A            Print ANSI lines graphic indentation lines.  -S            Print with CP437 (console) graphics indentation lines.  -n            Turn colorization off always (-C overrides).  -C            Turn colorization on always.  ------- XML/HTML/JSON options -------  -X            Prints out an XML representation of the tree.  -J            Prints out an JSON representation of the tree.  -H baseHREF   Prints out HTML format with baseHREF as top directory.  -T string     Replace the default HTML title and H1 header with string.  --nolinks     Turn off hyperlinks in HTML output.  ---- Miscellaneous options ----  --version     Print version and exit.  --help        Print usage and this help message and exit.  --            Options processing terminator.","dateCreated":"2018-11-29T23:53:35+08:00","dateModified":"2019-08-26T03:26:57+08:00","datePublished":"2018-11-29T23:53:35+08:00","description":"  \n\n最近寫文章需要將專案的檔案目錄結構用樹狀印出，方便閱讀，所以找了一些相關資料，整理一下做個筆記\nhomebrew 上就有個 tree 的套件可以做到這個功能","headline":"Mac 印出樹狀資料夾目錄結構","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.dmoon.tw/print-folder-tree-on-mac/"},"publisher":{"@type":"Organization","name":"DMoon","sameAs":["https://github.com/kyoyadmoon","https://www.facebook.com/dmoonhuang","/atom.xml"],"image":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg","logo":{"@type":"ImageObject","url":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"}},"url":"https://blog.dmoon.tw/print-folder-tree-on-mac/","keywords":"macOS"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"DMoon","sameAs":["https://github.com/kyoyadmoon","https://www.facebook.com/dmoonhuang","https://stackoverflow.com/users/7738466/dmoon-huang","dmoon.t@gmail.com","/atom.xml"],"image":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"},"articleBody":"  \n\n最近寫文章需要將專案的檔案目錄結構用樹狀印出，方便閱讀，所以找了一些相關資料，整理一下做個筆記\nhomebrew 上就有個 tree 的套件可以做到這個功能\n\n\n安裝方法1brew install tree\n\n使用方式安裝完成後，就可以在 terminal 直接使用 tree 這個指令啦\n1tree\n\n常用參數中文亂碼當你用 tree 列印資料夾目錄時，可能會發現一些中文檔名會出現亂碼的情況\n加上 -N 參數，就可以印出原本的字元了\n1tree -N\n\n設定印出層數加上 -L 參數，並在後面加上層數的數字\n列印一層\n1tree -L 1\n\n依字母排序加上 -v 參數可以依照字母排序\n1tree -v\n\n其他參數可以透過　--help 指令查詢\n1tree --help\n\n這邊附上查詢得到的列表\n123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960usage: tree [-acdfghilnpqrstuvxACDFJQNSUX] [-H baseHREF] [-T title ]    [-L level [-R]] [-P pattern] [-I pattern] [-o filename] [--version]    [--help] [--inodes] [--device] [--noreport] [--nolinks] [--dirsfirst]    [--charset charset] [--filelimit[=]#] [--si] [--timefmt[=]&lt;f&gt;]    [--sort[=]&lt;name&gt;] [--matchdirs] [--ignore-case] [--] [&lt;directory list&gt;]  ------- Listing options -------  -a            All files are listed.  -d            List directories only.  -l            Follow symbolic links like directories.  -f            Print the full path prefix for each file.  -x            Stay on current filesystem only.  -L level      Descend only level directories deep.  -R            Rerun tree when max dir level reached.  -P pattern    List only those files that match the pattern given.  -I pattern    Do not list files that match the given pattern.  --ignore-case Ignore case when pattern matching.  --matchdirs   Include directory names in -P pattern matching.  --noreport    Turn off file/directory count at end of tree listing.  --charset X   Use charset X for terminal/HTML and indentation line output.  --filelimit # Do not descend dirs with more than # files in them.  --timefmt &lt;f&gt; Print and format time according to the format &lt;f&gt;.  -o filename   Output to file instead of stdout.  -------- File options ---------  -q            Print non-printable characters as &apos;?&apos;.  -N            Print non-printable characters as is.  -Q            Quote filenames with double quotes.  -p            Print the protections for each file.  -u            Displays file owner or UID number.  -g            Displays file group owner or GID number.  -s            Print the size in bytes of each file.  -h            Print the size in a more human readable way.  --si          Like -h, but use in SI units (powers of 1000).  -D            Print the date of last modification or (-c) status change.  -F            Appends &apos;/&apos;, &apos;=&apos;, &apos;*&apos;, &apos;@&apos;, &apos;|&apos; or &apos;&gt;&apos; as per ls -F.  --inodes      Print inode number of each file.  --device      Print device ID number to which each file belongs.  ------- Sorting options -------  -v            Sort files alphanumerically by version.  -t            Sort files by last modification time.  -c            Sort files by last status change time.  -U            Leave files unsorted.  -r            Reverse the order of the sort.  --dirsfirst   List directories before files (-U disables).  --sort X      Select sort: name,version,size,mtime,ctime.  ------- Graphics options ------  -i            Don&apos;t print indentation lines.  -A            Print ANSI lines graphic indentation lines.  -S            Print with CP437 (console) graphics indentation lines.  -n            Turn colorization off always (-C overrides).  -C            Turn colorization on always.  ------- XML/HTML/JSON options -------  -X            Prints out an XML representation of the tree.  -J            Prints out an JSON representation of the tree.  -H baseHREF   Prints out HTML format with baseHREF as top directory.  -T string     Replace the default HTML title and H1 header with string.  --nolinks     Turn off hyperlinks in HTML output.  ---- Miscellaneous options ----  --version     Print version and exit.  --help        Print usage and this help message and exit.  --            Options processing terminator.","dateCreated":"2018-11-29T23:53:35+08:00","dateModified":"2019-08-26T03:26:57+08:00","datePublished":"2018-11-29T23:53:35+08:00","description":"  \n\n最近寫文章需要將專案的檔案目錄結構用樹狀印出，方便閱讀，所以找了一些相關資料，整理一下做個筆記\nhomebrew 上就有個 tree 的套件可以做到這個功能","headline":"Mac 印出樹狀資料夾目錄結構","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.dmoon.tw/print-folder-tree-on-mac/"},"publisher":{"@type":"Organization","name":"DMoon","sameAs":["https://github.com/kyoyadmoon","https://www.facebook.com/dmoonhuang","https://stackoverflow.com/users/7738466/dmoon-huang","dmoon.t@gmail.com","/atom.xml"],"image":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg","logo":{"@type":"ImageObject","url":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"}},"url":"https://blog.dmoon.tw/print-folder-tree-on-mac/","keywords":"macOS"}</script>
     <meta name="description" content="最近寫文章需要將專案的檔案目錄結構用樹狀印出，方便閱讀，所以找了一些相關資料，整理一下做個筆記
 homebrew 上就有個 tree 的套件可以做到這個功能">
 <meta property="og:type" content="blog">
@@ -42,9 +42,11 @@ homebrew 上就有個 tree 的套件可以做到這個功能">
 
     
 
+
+    <!-- Start of Old-->
     
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/style-2o71hzttz2k9pq9pfin3x87oyv0konupeunubjb5vmvwocyfflcpdgglsdmb.min.css">
+    <!-- <link rel="stylesheet" href="/assets/css/style-n2fee6bc6a0v6ho6x51cuqdbvxxzckzo3tvbvzyhkqonqrrfmtjrhihz23fu.min.css"> -->
     <!--STYLES END-->
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57006180-2"></script>
@@ -71,13 +73,14 @@ homebrew 上就有個 tree 的套件可以做到這個功能">
               enable_page_level_ads: true
          });
     </script>
+    <!-- End of Old-->
     <!-- update origin -->
     <!--  -->
     <!--STYLES-->
-    <!-- <link rel="stylesheet" href="/assets/css/all.css">
+    <link rel="stylesheet" href="/assets/css/all.css">
     <link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
     <link rel="stylesheet" href="/assets/css/thumbs.css">
-    <link rel="stylesheet" href="/assets/css/tranquilpeak.css"> -->
+    <link rel="stylesheet" href="/assets/css/tranquilpeak.css">
     <!--STYLES END-->
     <!-- 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57006180-2"></script>
@@ -248,6 +251,27 @@ homebrew 上就有個 tree 的套件可以做到這個功能">
                     
                         <i class="sidebar-button-icon fab fa-facebook" aria-hidden="true"></i>
                         <span class="sidebar-button-desc">Facebook</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://stackoverflow.com/users/7738466/dmoon-huang" target="_blank" rel="noopener" title="Stack Overflow">
+                    
+                        <i class="sidebar-button-icon fab fa-stack-overflow" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Stack Overflow</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/dmoon.t@gmail.com"
+                            title="Email"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-envelope" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Email</span>
                     </a>
             </li>
             
@@ -712,7 +736,7 @@ homebrew 上就有個 tree 的套件可以做到這個功能">
         
 <div id="cover" style="background-image:url('/assets/images/myCover.jpeg');"></div>
         <!--SCRIPTS-->
-<script src="/assets/js/script-qorzkckqhbomlhsfohbzueuqlpk87aeixchancwz6resl7ddkfuytzsmttxj.min.js"></script>
+<script src="/assets/js/script-n19udwdaaeb0c7r6qkuiua2otgi7ph17wo909oyxyjo0y8h2vl3odoawliyb.min.js"></script>
 <!--SCRIPTS END-->
 
 
