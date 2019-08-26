@@ -14,7 +14,7 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"DMoon","sameAs":["https://github.com/kyoyadmoon","https://www.facebook.com/dmoonhuang","https://stackoverflow.com/users/7738466/dmoon-huang","dmoon.t@gmail.com","/atom.xml"],"image":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"},"articleBody":"最近在爬文學習前端技術時，發現不少網誌都是用 github 的靜態網站來當 blog，覺得很酷，而且也不必煩惱主機的事，便搜尋了一下建立的方法，發現有滿多語言框架可以快速建立\n\n\nJavaScript : Hexo  \nRuby : Jekyll  \nPython : Hyde  \nPHP : Phrozn\n\n\n\n\n因為對於 js 較為熟悉所以選了 Hexo 來嘗試看看，先說心得好了， Hexo 框架真的很強大，blog 大多功能幾乎都包含在裡面了，而且只需透過編輯 _config.yml ，就能完成架構及功能設定，有些功能雖然是需要另外安裝 plugin 的，使用方法都相當簡單，程式碼都埋好了，只需申請服務後，填入 id 到設定檔就可以了\n\n\nSitemap\nRSS Feed\nGoogle Analytics\nComment: Disqus\n\n\nSetupinstal Node.js &amp; Hexo\n已經有 Node.js 環境可以直接安裝 Hexo\n$ npm install hexo -g\n詳細可以參考這裡 安裝 Hexo\nInit Your Bloghexo init &lt;blog_name&gt;\ncd &lt;blog_name&gt;\nnpm i\n再加裝一些 plugin\nnpm i hexo-deployer-git hexo-renderer-ejs hexo-renderer-marked hexo-renderer-stylus --save\n\nhexo-deployer-git:  deploy to github\n\nhexo g  # 產生 blog\nhexo new  # 建立一個新的文章\nhexo s  # hexo server 讓 blog 可以在 local 端檢視 http://localhost:4000\nBlog Setting前面有說過只需要透過設定 _config.yml 就可以完成，這邊需要注意的是， _config.yml 有兩個，一個在專案根目錄，另一個在 theme 資料夾裡\nBlog Deploydeploy 到 github 前需要先到 github 開一個 repo\n接著將 repo 的資訊填寫到 _config.yml 的 deploy 部分\n1234deploy:    type: git    repository: git@github.com:yourname/yourRepo.git    branch: gh-pages\n\nurl 的部分也需要調整一下，下面是範例\n12url: http://xxx.github.io/Blogroot: /Blog/\n\n透過指令部署之前請先確定你有 github 的 SSH key\n沒有的話請參考 這篇\n然後就可以部署到 github 上了\n1hexo d # hexo deploy\n\nReferenceHexo offical docs\nHexo 中文安裝教學\nhttp://v123582.github.io/blog/2015/10/25/用-hexo-建立一個自己的部落格/\n","dateCreated":"2016-02-21T18:22:32+08:00","dateModified":"2019-08-26T03:30:39+08:00","datePublished":"2016-02-21T18:22:32+08:00","description":"最近在爬文學習前端技術時，發現不少網誌都是用 github 的靜態網站來當 blog，覺得很酷，而且也不必煩惱主機的事，便搜尋了一下建立的方法，發現有滿多語言框架可以快速建立\n\n\nJavaScript : Hexo  \nRuby : Jekyll  \nPython : Hyde  \nPHP : Phrozn\n\n","headline":"Github Blog 架設 - Hexo","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.dmoon.tw/github-blog-build-with-hexo/"},"publisher":{"@type":"Organization","name":"DMoon","sameAs":["https://github.com/kyoyadmoon","https://www.facebook.com/dmoonhuang","https://stackoverflow.com/users/7738466/dmoon-huang","dmoon.t@gmail.com","/atom.xml"],"image":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg","logo":{"@type":"ImageObject","url":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"}},"url":"https://blog.dmoon.tw/github-blog-build-with-hexo/","keywords":"Hexo, Node.js, Github"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"DMoon","sameAs":["https://github.com/kyoyadmoon","https://www.facebook.com/dmoonhuang","https://stackoverflow.com/users/7738466/dmoon-huang","dmoon.t@gmail.com","/atom.xml"],"image":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"},"articleBody":"最近在爬文學習前端技術時，發現不少網誌都是用 github 的靜態網站來當 blog，覺得很酷，而且也不必煩惱主機的事，便搜尋了一下建立的方法，發現有滿多語言框架可以快速建立\n\n\nJavaScript : Hexo  \nRuby : Jekyll  \nPython : Hyde  \nPHP : Phrozn\n\n\n\n\n因為對於 js 較為熟悉所以選了 Hexo 來嘗試看看，先說心得好了， Hexo 框架真的很強大，blog 大多功能幾乎都包含在裡面了，而且只需透過編輯 _config.yml ，就能完成架構及功能設定，有些功能雖然是需要另外安裝 plugin 的，使用方法都相當簡單，程式碼都埋好了，只需申請服務後，填入 id 到設定檔就可以了\n\n\nSitemap\nRSS Feed\nGoogle Analytics\nComment: Disqus\n\n\nSetupinstal Node.js &amp; Hexo\n已經有 Node.js 環境可以直接安裝 Hexo\n$ npm install hexo -g\n詳細可以參考這裡 安裝 Hexo\nInit Your Bloghexo init &lt;blog_name&gt;\ncd &lt;blog_name&gt;\nnpm i\n再加裝一些 plugin\nnpm i hexo-deployer-git hexo-renderer-ejs hexo-renderer-marked hexo-renderer-stylus --save\n\nhexo-deployer-git:  deploy to github\n\nhexo g  # 產生 blog\nhexo new  # 建立一個新的文章\nhexo s  # hexo server 讓 blog 可以在 local 端檢視 http://localhost:4000\nBlog Setting前面有說過只需要透過設定 _config.yml 就可以完成，這邊需要注意的是， _config.yml 有兩個，一個在專案根目錄，另一個在 theme 資料夾裡\nBlog Deploydeploy 到 github 前需要先到 github 開一個 repo\n接著將 repo 的資訊填寫到 _config.yml 的 deploy 部分\n1234deploy:    type: git    repository: git@github.com:yourname/yourRepo.git    branch: gh-pages\n\nurl 的部分也需要調整一下，下面是範例\n12url: http://xxx.github.io/Blogroot: /Blog/\n\n透過指令部署之前請先確定你有 github 的 SSH key\n沒有的話請參考 這篇\n然後就可以部署到 github 上了\n1hexo d # hexo deploy\n\nReferenceHexo offical docs\nHexo 中文安裝教學\nhttp://v123582.github.io/blog/2015/10/25/用-hexo-建立一個自己的部落格/\n","dateCreated":"2016-02-21T18:22:32+08:00","dateModified":"2019-08-26T03:30:39+08:00","datePublished":"2016-02-21T18:22:32+08:00","description":"最近在爬文學習前端技術時，發現不少網誌都是用 github 的靜態網站來當 blog，覺得很酷，而且也不必煩惱主機的事，便搜尋了一下建立的方法，發現有滿多語言框架可以快速建立\n\n\nJavaScript : Hexo  \nRuby : Jekyll  \nPython : Hyde  \nPHP : Phrozn\n\n","headline":"Github Blog 架設 - Hexo","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.dmoon.tw/github-blog-build-with-hexo/"},"publisher":{"@type":"Organization","name":"DMoon","sameAs":["https://github.com/kyoyadmoon","https://www.facebook.com/dmoonhuang","https://stackoverflow.com/users/7738466/dmoon-huang","dmoon.t@gmail.com","/atom.xml"],"image":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg","logo":{"@type":"ImageObject","url":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"}},"url":"https://blog.dmoon.tw/github-blog-build-with-hexo/","keywords":"Node.js, Github, Hexo"}</script>
     <meta name="description" content="最近在爬文學習前端技術時，發現不少網誌都是用 github 的靜態網站來當 blog，覺得很酷，而且也不必煩惱主機的事，便搜尋了一下建立的方法，發現有滿多語言框架可以快速建立
 
 
@@ -59,7 +59,7 @@ PHP : Phrozn">
     <!-- Start of Old-->
     
     <!--STYLES-->
-    <!-- <link rel="stylesheet" href="/assets/css/style-n2fee6bc6a0v6ho6x51cuqdbvxxzckzo3tvbvzyhkqonqrrfmtjrhihz23fu.min.css"> -->
+    <link rel="stylesheet" href="/assets/css/style-csj1bnhf5uuj85mplqldiqs2reyd1tahohphxapxxhp0l9j2qrut46dupps9.min.css">
     <!--STYLES END-->
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57006180-2"></script>
@@ -79,21 +79,21 @@ PHP : Phrozn">
     if ((host == window.location.host) && (window.location.protocol != "https:"))
         window.location.protocol = "https";
     </script>
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
          (adsbygoogle = window.adsbygoogle || []).push({
               google_ad_client: "ca-pub-4668115387428978",
               enable_page_level_ads: true
          });
-    </script>
+    </script> -->
     <!-- End of Old-->
     <!-- update origin -->
     <!--  -->
     <!--STYLES-->
-    <link rel="stylesheet" href="/assets/css/all.css">
+    <!-- <link rel="stylesheet" href="/assets/css/all.css">
     <link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
     <link rel="stylesheet" href="/assets/css/thumbs.css">
-    <link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+    <link rel="stylesheet" href="/assets/css/tranquilpeak.css"> -->
     <!--STYLES END-->
     <!-- 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57006180-2"></script>
@@ -768,7 +768,7 @@ PHP : Phrozn">
         
 <div id="cover" style="background-image:url('/assets/images/myCover.jpeg');"></div>
         <!--SCRIPTS-->
-<script src="/assets/js/script-n19udwdaaeb0c7r6qkuiua2otgi7ph17wo909oyxyjo0y8h2vl3odoawliyb.min.js"></script>
+<script src="/assets/js/script-csorrie1r7upbz56z1pr4luwflxgi5njcl0jkzppebbhpibekj0adbif6gqw.min.js"></script>
 <!--SCRIPTS END-->
 
 
