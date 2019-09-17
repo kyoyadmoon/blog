@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.dmoon.tw/"/>
-  <updated>2019-09-17T21:51:11.257Z</updated>
+  <updated>2019-09-17T21:58:56.949Z</updated>
   <id>https://blog.dmoon.tw/</id>
   
   <author>
@@ -20,11 +20,13 @@
     <link href="https://blog.dmoon.tw/react-native-apk-duplicate-resource-error/"/>
     <id>https://blog.dmoon.tw/react-native-apk-duplicate-resource-error/</id>
     <published>2019-09-17T07:00:07.000Z</published>
-    <updated>2019-09-17T21:51:11.257Z</updated>
+    <updated>2019-09-17T21:58:56.949Z</updated>
     
     <content type="html"><![CDATA[<h2 id="問題說明"><a href="#問題說明" class="headerlink" title="問題說明"></a>問題說明</h2><p>在更新到 0.60 之後打包 android release APK 時遇到了這樣的錯誤：Error: Duplicate resources</p>
 <p><a href="https://github.com/facebook/react-native/issues/22234" target="_blank" rel="external">相關 issue 連結</a></p>
 <p>主要的問題是在進行 react-native bundle 指令時會重複的打包資源，因此在後續打包 APK 時出現錯誤</p>
+<a id="more"></a>
+
 <h2 id="解決方式"><a href="#解決方式" class="headerlink" title="解決方式"></a>解決方式</h2><p>主要的解決方法是在 react-native  library 的 <code>react.gradle</code> 檔案中找到 <code>doFirst</code> 程式區塊，並在下方加入一段 <code>doLast</code> 程式碼來避免重複的打包資源</p>
 <p><code>node_modules/react-native/react.gradle</code></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">doFirst &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** Add doLast */</span></span><br><span class="line">doLast &#123;</span><br><span class="line">    def moveFunc = &#123; resSuffix -&gt;</span><br><span class="line">        File originalDir = file(<span class="string">"$buildDir/generated/res/react/release/drawable-$&#123;resSuffix&#125;"</span>);</span><br><span class="line">        <span class="keyword">if</span> (originalDir.exists()) &#123;</span><br><span class="line">            File destDir = file(<span class="string">"$buildDir/../src/main/res/drawable-$&#123;resSuffix&#125;"</span>);</span><br><span class="line">            ant.move(file: originalDir, <span class="attr">tofile</span>: destDir);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    moveFunc.curry(<span class="string">"ldpi"</span>).call()</span><br><span class="line">    moveFunc.curry(<span class="string">"mdpi"</span>).call()</span><br><span class="line">    moveFunc.curry(<span class="string">"hdpi"</span>).call()</span><br><span class="line">    moveFunc.curry(<span class="string">"xhdpi"</span>).call()</span><br><span class="line">    moveFunc.curry(<span class="string">"xxhdpi"</span>).call()</span><br><span class="line">    moveFunc.curry(<span class="string">"xxxhdpi"</span>).call()</span><br><span class="line"></span><br><span class="line">    File originalDir = file(<span class="string">"$buildDir/generated/res/react/release/raw"</span>);</span><br><span class="line">        <span class="keyword">if</span> (originalDir.exists()) &#123;</span><br><span class="line">            File destDir = file(<span class="string">"$buildDir/../src/main/res/raw"</span>);</span><br><span class="line">            ant.move(file: originalDir, <span class="attr">tofile</span>: destDir);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -49,7 +51,9 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;問題說明&quot;&gt;&lt;a href=&quot;#問題說明&quot; class=&quot;headerlink&quot; title=&quot;問題說明&quot;&gt;&lt;/a&gt;問題說明&lt;/h2&gt;&lt;p&gt;在更新到 0.60 之後打包 android release APK 時遇到了這樣的錯誤：Error: Duplicate 
+      &lt;h2 id=&quot;問題說明&quot;&gt;&lt;a href=&quot;#問題說明&quot; class=&quot;headerlink&quot; title=&quot;問題說明&quot;&gt;&lt;/a&gt;問題說明&lt;/h2&gt;&lt;p&gt;在更新到 0.60 之後打包 android release APK 時遇到了這樣的錯誤：Error: Duplicate resources&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/facebook/react-native/issues/22234&quot;&gt;相關 issue 連結&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;主要的問題是在進行 react-native bundle 指令時會重複的打包資源，因此在後續打包 APK 時出現錯誤&lt;/p&gt;
     
     </summary>
     
