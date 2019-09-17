@@ -303,9 +303,9 @@
                         <a
                             class="link-unstyled"
                             href="/react-native-apk-duplicate-resource-error/"
-                            aria-label=": React Native - Android build Error: Duplicate Resource"
+                            aria-label=": React Native build release APK Error: duplicate resource"
                         >
-                            React Native - Android build Error: Duplicate Resource
+                            React Native build release APK Error: duplicate resource
                         </a>
                     
                 </h1>
@@ -327,7 +327,7 @@
             </div>
             
                 <div class="postShorten-content">
-                    <h1 id="React-Native-build-release-APK-Error-duplicate-resource"><a href="#React-Native-build-release-APK-Error-duplicate-resource" class="headerlink" title="React Native build release APK Error: duplicate resource"></a>React Native build release APK Error: duplicate resource</h1><h2 id="問題說明"><a href="#問題說明" class="headerlink" title="問題說明"></a>問題說明</h2><p>在更新到 0.60 之後打包 android release APK 時遇到了這樣的錯誤：Error: Duplicate resources</p>
+                    <h2 id="問題說明"><a href="#問題說明" class="headerlink" title="問題說明"></a>問題說明</h2><p>在更新到 0.60 之後打包 android release APK 時遇到了這樣的錯誤：Error: Duplicate resources</p>
 <p><a href="https://github.com/facebook/react-native/issues/22234" target="_blank" rel="external">相關 issue 連結</a></p>
 <p>主要的問題是在進行 react-native bundle 指令時會重複的打包資源，因此在後續打包 APK 時出現錯誤</p>
 <h2 id="解決方式"><a href="#解決方式" class="headerlink" title="解決方式"></a>解決方式</h2><p>主要的解決方法是在 react-native  library 的 <code>react.gradle</code> 檔案中找到 <code>doFirst</code> 程式區塊，並在下方加入一段 <code>doLast</code> 程式碼來避免重複的打包資源</p>
