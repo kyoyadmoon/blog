@@ -14,7 +14,7 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"DMoon","sameAs":["https://github.com/kyoyadmoon","https://www.facebook.com/dmoonhuang","https://stackoverflow.com/users/7738466/dmoon-huang","dmoon.t@gmail.com","/atom.xml"],"image":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"},"articleBody":"\n由於 React 的火熱程度，身邊許多朋友都開始接觸 React ，我也推薦他們玩玩看 React Native ，我覺得 React 的入門門檻有些其實和 React 本身無關，像是 Webpack, Babel 等等都多少在無形中增加了入門的難度，且有許多範例可能還使用了 ES6 語法，雖然不是必要，但可能會造成初學者混淆、失去信心，使學習過程更不順利。\n然而 React Native 完全就是一個超棒的東西，只要跟著官網的教學就可以很簡單的開始使用 React 撰寫跨平台的 App，不僅內建支援 ES6 ，還有 Live Reload , Hot Reloading 等強大功能, 甚至能在 Chrome 中 debug ，這些React Native 統統幫你包好了，省去了原先我們在 web 專案開發需要自行加入 webpack, babel 等等的處理過程。\n\n\n環境建立相關環境安裝的部分跟著 官網的詳細指示 (別擔心這裡有中文版) 操作就可以了，這部分就不多敘述\n建立RN專案$ npm install -g react-native-cli\n$ react-native init AwesomeProjectiOS環境準備安裝 Xcode 即可\n專案開發有兩種方法\n第一種是使用 Xcode ：\n\n開啟專案目錄下的 /ios/AwesomeProject.xcodeproj （應該會以 Xcode 開啟）, 按左上角的播放圖示按鈕就會自動開啟 iPhone 模擬器和 Packager server ，並把專案 build 成 App 到模擬器中。\n\n另一種是開啟 terminal 切換到專案目錄\n\n$ react-native run-ios\n這個指令可以不用開啟 Xcode 做和上面同樣的事情，一個指令解決，非常簡潔\n\n接著你就可以開始編輯專案目錄下的 index.ios.js 開始開發你的專案。\nTips在模擬器的 RN App 中你可以用快捷鍵 cmd+D 打開開發 Menu，這邊可以設定 Debug in Chrome, Live Reload, Hot Reloading 等等功能。\n若需要手動刷新可以使用熱鍵 cmd+R\n另外，如果你有實體 Apple 裝置的話，也能夠直接在實體裝置上測試、開發\n\n將 Apple 裝置用USB線連接到電腦，並和電腦連接同一個 wifi\n\n將專案用 Xcode 開啟（上面的第一種方法）\n\n在 Xcode 左上角播放圖示的右方應該可以看到 寫著 Apple 裝置的選項，點按後選到自己的實體裝置\n\n打開 Xcode 左邊檔案管理的導覽列 Tree View，找到 AwesomeProject/AppDelegate.m 這個檔案打開來\n可以在裡面找到這段，相信看到註解大家應該都知道要怎麼做了，把 localhost 換成電腦的 ip 就可以了\n12345678/*** To run on device, change `localhost` to the IP address of your computer* (you can get this by typing `ifconfig` into the terminal and selecting the* `inet` value under `en0:`) and make sure your computer and iOS device are* on the same Wi-Fi network.*/jsCodeLocation = [NSURL URLWithString:@&quot;http://localhost:8081/index.ios.bundle?platform=ios&amp;dev=true&quot;];\n\n按下 Xcode 左上角的播放鍵開始 Run 囉\n\n\nAndroid 環境準備由於目前我主要都是在 iOS 上開發， Android 部分還沒有很了解，如果有漏掉什麼還請各位大大提醒\nAndroid 在 OS X 上的環境準備相對 iOS 來說稍微麻煩一點，但也不難\n細心按照官方指示應該就能成功囉\n參考這裡\n開發準備安裝完 Android SDK 和 Genymotion 之後\n先打開 Genymotion 創建一個模擬器啟動\n接著開啟 terminal 切到專案目錄下\n$ react-native run-android\n然後就可以編輯 index.android.js 開始開發了\n在模擬器中按下 menu 按鈕可以打開開發 Menu ，這邊可以設定 Debug in Chrome, Live Reload, Hot Reloading 等等功能。\n如何使用別人寫好的 library, Package我的同事 yaode 寫了一篇詳細完整的教學文章\n大家可以參考看看\nhttp://trunk-studio.com/blog/react-native-how-to-use-component/\n記得有用到文章內的方法 link library 的話，是需要重新 build App 到模擬器才能正常運作的喔！（run-ios / run-android）\n","dateCreated":"2016-04-19T00:05:03+08:00","dateModified":"2019-08-26T03:31:13+08:00","datePublished":"2016-04-19T00:05:03+08:00","description":"\n由於 React 的火熱程度，身邊許多朋友都開始接觸 React ，我也推薦他們玩玩看 React Native ，我覺得 React 的入門門檻有些其實和 React 本身無關，像是 Webpack, Babel 等等都多少在無形中增加了入門的難度，且有許多範例可能還使用了 ES6 語法，雖然不是必要，但可能會造成初學者混淆、失去信心，使學習過程更不順利。\n然而 React Native 完全就是一個超棒的東西，只要跟著官網的教學就可以很簡單的開始使用 React 撰寫跨平台的 App，不僅內建支援 ES6 ，還有 Live Reload , Hot Reloading 等強大功能, 甚至能在 Chrome 中 debug ，這些React Native 統統幫你包好了，省去了原先我們在 web 專案開發需要自行加入 webpack, babel 等等的處理過程。","headline":"React Native 初心者攻略 (OS X)","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.dmoon.tw/react-native-101/"},"publisher":{"@type":"Organization","name":"DMoon","sameAs":["https://github.com/kyoyadmoon","https://www.facebook.com/dmoonhuang","https://stackoverflow.com/users/7738466/dmoon-huang","dmoon.t@gmail.com","/atom.xml"],"image":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg","logo":{"@type":"ImageObject","url":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"}},"url":"https://blog.dmoon.tw/react-native-101/","keywords":"React Native, iOS, Android, React"}</script>
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"DMoon","sameAs":["https://github.com/kyoyadmoon","https://www.facebook.com/dmoonhuang","https://stackoverflow.com/users/7738466/dmoon-huang","dmoon.t@gmail.com","/atom.xml"],"image":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"},"articleBody":"\n由於 React 的火熱程度，身邊許多朋友都開始接觸 React ，我也推薦他們玩玩看 React Native ，我覺得 React 的入門門檻有些其實和 React 本身無關，像是 Webpack, Babel 等等都多少在無形中增加了入門的難度，且有許多範例可能還使用了 ES6 語法，雖然不是必要，但可能會造成初學者混淆、失去信心，使學習過程更不順利。\n然而 React Native 完全就是一個超棒的東西，只要跟著官網的教學就可以很簡單的開始使用 React 撰寫跨平台的 App，不僅內建支援 ES6 ，還有 Live Reload , Hot Reloading 等強大功能, 甚至能在 Chrome 中 debug ，這些React Native 統統幫你包好了，省去了原先我們在 web 專案開發需要自行加入 webpack, babel 等等的處理過程。\n\n\n環境建立相關環境安裝的部分跟著 官網的詳細指示 (別擔心這裡有中文版) 操作就可以了，這部分就不多敘述\n建立RN專案$ npm install -g react-native-cli\n$ react-native init AwesomeProjectiOS環境準備安裝 Xcode 即可\n專案開發有兩種方法\n第一種是使用 Xcode ：\n\n開啟專案目錄下的 /ios/AwesomeProject.xcodeproj （應該會以 Xcode 開啟）, 按左上角的播放圖示按鈕就會自動開啟 iPhone 模擬器和 Packager server ，並把專案 build 成 App 到模擬器中。\n\n另一種是開啟 terminal 切換到專案目錄\n\n$ react-native run-ios\n這個指令可以不用開啟 Xcode 做和上面同樣的事情，一個指令解決，非常簡潔\n\n接著你就可以開始編輯專案目錄下的 index.ios.js 開始開發你的專案。\nTips在模擬器的 RN App 中你可以用快捷鍵 cmd+D 打開開發 Menu，這邊可以設定 Debug in Chrome, Live Reload, Hot Reloading 等等功能。\n若需要手動刷新可以使用熱鍵 cmd+R\n另外，如果你有實體 Apple 裝置的話，也能夠直接在實體裝置上測試、開發\n\n將 Apple 裝置用USB線連接到電腦，並和電腦連接同一個 wifi\n\n將專案用 Xcode 開啟（上面的第一種方法）\n\n在 Xcode 左上角播放圖示的右方應該可以看到 寫著 Apple 裝置的選項，點按後選到自己的實體裝置\n\n打開 Xcode 左邊檔案管理的導覽列 Tree View，找到 AwesomeProject/AppDelegate.m 這個檔案打開來\n可以在裡面找到這段，相信看到註解大家應該都知道要怎麼做了，把 localhost 換成電腦的 ip 就可以了\n12345678/*** To run on device, change `localhost` to the IP address of your computer* (you can get this by typing `ifconfig` into the terminal and selecting the* `inet` value under `en0:`) and make sure your computer and iOS device are* on the same Wi-Fi network.*/jsCodeLocation = [NSURL URLWithString:@&quot;http://localhost:8081/index.ios.bundle?platform=ios&amp;dev=true&quot;];\n\n按下 Xcode 左上角的播放鍵開始 Run 囉\n\n\nAndroid 環境準備由於目前我主要都是在 iOS 上開發， Android 部分還沒有很了解，如果有漏掉什麼還請各位大大提醒\nAndroid 在 OS X 上的環境準備相對 iOS 來說稍微麻煩一點，但也不難\n細心按照官方指示應該就能成功囉\n參考這裡\n開發準備安裝完 Android SDK 和 Genymotion 之後\n先打開 Genymotion 創建一個模擬器啟動\n接著開啟 terminal 切到專案目錄下\n$ react-native run-android\n然後就可以編輯 index.android.js 開始開發了\n在模擬器中按下 menu 按鈕可以打開開發 Menu ，這邊可以設定 Debug in Chrome, Live Reload, Hot Reloading 等等功能。\n如何使用別人寫好的 library, Package我的同事 yaode 寫了一篇詳細完整的教學文章\n大家可以參考看看\nhttp://trunk-studio.com/blog/react-native-how-to-use-component/\n記得有用到文章內的方法 link library 的話，是需要重新 build App 到模擬器才能正常運作的喔！（run-ios / run-android）\n","dateCreated":"2016-04-19T00:05:03+08:00","dateModified":"2019-08-26T03:31:13+08:00","datePublished":"2016-04-19T00:05:03+08:00","description":"\n由於 React 的火熱程度，身邊許多朋友都開始接觸 React ，我也推薦他們玩玩看 React Native ，我覺得 React 的入門門檻有些其實和 React 本身無關，像是 Webpack, Babel 等等都多少在無形中增加了入門的難度，且有許多範例可能還使用了 ES6 語法，雖然不是必要，但可能會造成初學者混淆、失去信心，使學習過程更不順利。\n然而 React Native 完全就是一個超棒的東西，只要跟著官網的教學就可以很簡單的開始使用 React 撰寫跨平台的 App，不僅內建支援 ES6 ，還有 Live Reload , Hot Reloading 等強大功能, 甚至能在 Chrome 中 debug ，這些React Native 統統幫你包好了，省去了原先我們在 web 專案開發需要自行加入 webpack, babel 等等的處理過程。","headline":"React Native 初心者攻略 (OS X)","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.dmoon.tw/react-native-101/"},"publisher":{"@type":"Organization","name":"DMoon","sameAs":["https://github.com/kyoyadmoon","https://www.facebook.com/dmoonhuang","https://stackoverflow.com/users/7738466/dmoon-huang","dmoon.t@gmail.com","/atom.xml"],"image":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg","logo":{"@type":"ImageObject","url":"https://zh-tw.gravatar.com/userimage/103575803/d07923037bbd8b9fe1a0b473e8fb61dc.jpeg"}},"url":"https://blog.dmoon.tw/react-native-101/","keywords":"React Native, Android, iOS, React"}</script>
     <meta name="description" content="由於 React 的火熱程度，身邊許多朋友都開始接觸 React ，我也推薦他們玩玩看 React Native ，我覺得 React 的入門門檻有些其實和 React 本身無關，像是 Webpack, Babel 等等都多少在無形中增加了入門的難度，且有許多範例可能還使用了 ES6 語法，雖然不是必要，但可能會造成初學者混淆、失去信心，使學習過程更不順利。
 然而 React Native 完全">
 <meta property="og:type" content="blog">
@@ -435,7 +435,7 @@ $ react-native init AwesomeProject</code></pre><h1 id="iOS"><a href="#iOS" class
             <a
                 class="post-action-btn btn btn--default btn-open-shareoptions"
                 href="#btn-open-shareoptions"
-                aria-label="Share this post"
+                aria-label="Diesen Beitrag teilen"
             >
                 <i class="fa fa-share-alt" aria-hidden="true"></i>
             </a>
@@ -486,7 +486,7 @@ $ react-native init AwesomeProject</code></pre><h1 id="iOS"><a href="#iOS" class
                     <a
                         class="post-action-btn btn btn--default"
                         href="#disqus_thread"
-                        aria-label="Leave a comment"
+                        aria-label="Kommentieren"
                     >
                         <i class="fa fa-comment"></i>
                     </a>
@@ -495,7 +495,7 @@ $ react-native init AwesomeProject</code></pre><h1 id="iOS"><a href="#iOS" class
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Nach oben">
             
                 <i class="fa fa-list" aria-hidden="true"></i>
             </a>
@@ -564,7 +564,7 @@ $ react-native init AwesomeProject</code></pre><h1 id="iOS"><a href="#iOS" class
             <a
                 class="post-action-btn btn btn--default btn-open-shareoptions"
                 href="#btn-open-shareoptions"
-                aria-label="Share this post"
+                aria-label="Diesen Beitrag teilen"
             >
                 <i class="fa fa-share-alt" aria-hidden="true"></i>
             </a>
@@ -615,7 +615,7 @@ $ react-native init AwesomeProject</code></pre><h1 id="iOS"><a href="#iOS" class
                     <a
                         class="post-action-btn btn btn--default"
                         href="#disqus_thread"
-                        aria-label="Leave a comment"
+                        aria-label="Kommentieren"
                     >
                         <i class="fa fa-comment"></i>
                     </a>
@@ -624,7 +624,7 @@ $ react-native init AwesomeProject</code></pre><h1 id="iOS"><a href="#iOS" class
         
         <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Nach oben">
             
                 <i class="fa fa-list" aria-hidden="true"></i>
             </a>

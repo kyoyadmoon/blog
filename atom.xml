@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.dmoon.tw/"/>
-  <updated>2019-09-17T21:41:44.547Z</updated>
+  <updated>2019-09-17T21:45:40.623Z</updated>
   <id>https://blog.dmoon.tw/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>React Native - Android build error</title>
+    <title>React Native - Android build Error: Duplicate Resource</title>
     <link href="https://blog.dmoon.tw/react-native-apk-duplicate-resource-error/"/>
     <id>https://blog.dmoon.tw/react-native-apk-duplicate-resource-error/</id>
     <published>2019-09-17T07:00:07.000Z</published>
-    <updated>2019-09-17T21:41:44.547Z</updated>
+    <updated>2019-09-17T21:45:40.623Z</updated>
     
     <content type="html"><![CDATA[<h1 id="React-Native-build-release-APK-Error-duplicate-resource"><a href="#React-Native-build-release-APK-Error-duplicate-resource" class="headerlink" title="React Native build release APK Error: duplicate resource"></a>React Native build release APK Error: duplicate resource</h1><h2 id="問題說明"><a href="#問題說明" class="headerlink" title="問題說明"></a>問題說明</h2><p>在更新到 0.60 之後打包 android release APK 時遇到了這樣的錯誤：Error: Duplicate resources</p>
 <p><a href="https://github.com/facebook/react-native/issues/22234" target="_blank" rel="external">相關 issue 連結</a></p>
@@ -58,9 +58,9 @@
     
       <category term="React Native" scheme="https://blog.dmoon.tw/tags/React-Native/"/>
     
-      <category term="Android" scheme="https://blog.dmoon.tw/tags/Android/"/>
-    
       <category term="Error" scheme="https://blog.dmoon.tw/tags/Error/"/>
+    
+      <category term="Android" scheme="https://blog.dmoon.tw/tags/Android/"/>
     
   </entry>
   
@@ -326,9 +326,9 @@
     
       <category term="React Native" scheme="https://blog.dmoon.tw/tags/React-Native/"/>
     
-      <category term="iOS" scheme="https://blog.dmoon.tw/tags/iOS/"/>
-    
       <category term="Android" scheme="https://blog.dmoon.tw/tags/Android/"/>
+    
+      <category term="iOS" scheme="https://blog.dmoon.tw/tags/iOS/"/>
     
   </entry>
   
@@ -888,9 +888,9 @@ $ react-native init AwesomeProject</code></pre><h1 id="iOS"><a href="#iOS" class
     
       <category term="React Native" scheme="https://blog.dmoon.tw/tags/React-Native/"/>
     
-      <category term="iOS" scheme="https://blog.dmoon.tw/tags/iOS/"/>
-    
       <category term="Android" scheme="https://blog.dmoon.tw/tags/Android/"/>
+    
+      <category term="iOS" scheme="https://blog.dmoon.tw/tags/iOS/"/>
     
       <category term="React" scheme="https://blog.dmoon.tw/tags/React/"/>
     
