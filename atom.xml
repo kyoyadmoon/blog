@@ -58,9 +58,9 @@
     
       <category term="React Native" scheme="https://blog.dmoon.tw/tags/React-Native/"/>
     
-      <category term="Error" scheme="https://blog.dmoon.tw/tags/Error/"/>
-    
       <category term="Android" scheme="https://blog.dmoon.tw/tags/Android/"/>
+    
+      <category term="Error" scheme="https://blog.dmoon.tw/tags/Error/"/>
     
   </entry>
   
@@ -326,9 +326,9 @@
     
       <category term="React Native" scheme="https://blog.dmoon.tw/tags/React-Native/"/>
     
-      <category term="Android" scheme="https://blog.dmoon.tw/tags/Android/"/>
-    
       <category term="iOS" scheme="https://blog.dmoon.tw/tags/iOS/"/>
+    
+      <category term="Android" scheme="https://blog.dmoon.tw/tags/Android/"/>
     
   </entry>
   
@@ -888,9 +888,9 @@ $ react-native init AwesomeProject</code></pre><h1 id="iOS"><a href="#iOS" class
     
       <category term="React Native" scheme="https://blog.dmoon.tw/tags/React-Native/"/>
     
-      <category term="Android" scheme="https://blog.dmoon.tw/tags/Android/"/>
-    
       <category term="iOS" scheme="https://blog.dmoon.tw/tags/iOS/"/>
+    
+      <category term="Android" scheme="https://blog.dmoon.tw/tags/Android/"/>
     
       <category term="React" scheme="https://blog.dmoon.tw/tags/React/"/>
     
